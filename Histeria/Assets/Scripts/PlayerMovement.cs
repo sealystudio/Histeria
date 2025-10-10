@@ -1,14 +1,22 @@
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
-public class PlayerMovement_Smooth_Final : MonoBehaviour
+public class PlayerMovement_WithDash : MonoBehaviour
 {
     [Header("Movimiento")]
     public float moveSpeed = 5f;
-    public float smoothTime = 0.05f; // Suavizado rápido para movimiento fluido
-    public bool showDebug = false;     // Activa o desactiva logs de debug
+    public float smoothTime = 0.05f;
+
+    [Header("Dash")]
+    public float dashSpeed = 12f;       // velocidad del dash
+    public float dashDuration = 0.15f;  // cuánto dura el dash
+    public float dashCooldown = 0.5f;   // tiempo antes de poder volver a usarlo
+
+    [Header("Debug")]
+    public bool showDebug = false;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -17,6 +25,10 @@ public class PlayerMovement_Smooth_Final : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 smoothInput;
     private Vector2 inputVelocity;
+    private Vector2 lastMoveDir; // para recordar hacia dónde se movía
+
+    private bool isDashing = false;
+    private bool canDash = true;
 
     void Awake()
     {
@@ -30,20 +42,32 @@ public class PlayerMovement_Smooth_Final : MonoBehaviour
 
     void Update()
     {
-        
+        // --- No permite controlar movimiento mientras dashea ---
+        if (isDashing) return;
+
+        // --- Movimiento normal ---
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
         moveInput = new Vector2(moveX, moveY).normalized;
 
-        //suavizaar movimeinto
         smoothInput = Vector2.SmoothDamp(smoothInput, moveInput, ref inputVelocity, smoothTime);
 
-        //valor Speed del animator
+        // --- Animación ---
         anim.SetFloat("Speed", moveInput.magnitude);
 
-        // Flip horizontal del sprite
+        // --- Dirección de movimiento ---
+        if (moveInput.sqrMagnitude > 0.01f)
+            lastMoveDir = moveInput; // actualiza la dirección mientras se mueve
+
+        // --- Flip sprite ---
         if (smoothInput.x != 0)
             sr.flipX = smoothInput.x < 0;
+
+        // --- Dash ---
+        if (Input.GetKeyDown(KeyCode.Space) && canDash && moveInput.magnitude > 0.1f)
+        {
+            StartCoroutine(DoDash());
+        }
 
         if (showDebug)
         {
@@ -53,7 +77,32 @@ public class PlayerMovement_Smooth_Final : MonoBehaviour
 
     void FixedUpdate()
     {
-        // movimeitno suavizado
-        rb.linearVelocity = smoothInput * moveSpeed;
+        if (!isDashing)
+        {
+            rb.linearVelocity = smoothInput * moveSpeed;
+        }
+    }
+
+    IEnumerator DoDash()
+    {
+        canDash = false;
+        isDashing = true;
+
+        anim.SetTrigger("Dash"); // Lanza la animación de dash
+
+        rb.linearVelocity = lastMoveDir * dashSpeed;
+
+        if (showDebug)
+            Debug.Log($"DASH → Dir: {lastMoveDir}, Velocidad: {rb.linearVelocity}");
+
+        yield return new WaitForSeconds(dashDuration);
+
+        isDashing = false;
+
+        // corta el movimiento al terminar el dash
+        rb.linearVelocity = Vector2.zero;
+
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 }
