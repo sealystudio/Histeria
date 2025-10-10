@@ -9,6 +9,7 @@ public class PlayerMovement_WithDash : MonoBehaviour
     [Header("Movimiento")]
     public float moveSpeed = 5f;
     public float smoothTime = 0.05f;
+    public CrosshairController crosshair;
 
     [Header("Dash")]
     public float dashSpeed = 12f;       // velocidad del dash
@@ -61,7 +62,9 @@ public class PlayerMovement_WithDash : MonoBehaviour
 
         // --- Flip sprite ---
         if (smoothInput.x != 0)
-            sr.flipX = smoothInput.x < 0;
+            sr.flipX = crosshair.dir.x < 0;
+        
+           
 
         // --- Dash ---
         if (Input.GetKeyDown(KeyCode.Space) && canDash && moveInput.magnitude > 0.1f)

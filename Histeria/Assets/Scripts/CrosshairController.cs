@@ -6,6 +6,10 @@ public class CrosshairController : MonoBehaviour
     public float distanceLimit = 5f; 
     public Transform player;
 
+    [Header("Vectores")]
+    private Vector3 mousePos;
+    public Vector3 dir;
+
     void Start()
     {
         Cursor.visible = false;
@@ -16,10 +20,10 @@ public class CrosshairController : MonoBehaviour
     {
         if (player == null) return;
 
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0f;
 
-        Vector3 dir = mousePos - player.position;
+        dir = mousePos - player.position;
         dir.z = 0f;
 
         if (dir.magnitude > distanceLimit) 
