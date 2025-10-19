@@ -1,3 +1,7 @@
+# LINKTREE DE SEALY STUDIO
+
+https://linktr.ee/sealy.studio
+
 ![Logo del proyecto](images/titulo2.png)
 
 
