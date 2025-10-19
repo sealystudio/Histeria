@@ -1,5 +1,5 @@
 --------------------------------------
-# HISTERIA: LOS FRAGMENTOS DE LA MENTE
+![Logo del proyecto](images/titulo2.png)
 --------------------------------------
 ## INTRODUCCIÓN
 ### DESCRIPCIÓN DEL CONCEPTO
