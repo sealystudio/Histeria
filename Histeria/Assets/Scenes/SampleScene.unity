@@ -285,6 +285,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eli
       objectReference: {fileID: 0}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: dashWindScale
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: punchDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: dashWindPrefab
+      value: 
+      objectReference: {fileID: 5247948005653730241, guid: dee6363f88f79534d8cf326f19eeb40f, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: enableDashWind
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: dashSmokePrefab
+      value: 
+      objectReference: {fileID: 7254193344188428526, guid: 496165d591aa2bc4e90430c78f7dbbd0, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: dashWindOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: dashSmokeOffset.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5610813372568682834, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.709717
