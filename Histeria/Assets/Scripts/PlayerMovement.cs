@@ -12,9 +12,24 @@ public class PlayerMovement_WithDash : MonoBehaviour
     public CrosshairController crosshair;
 
     [Header("Dash")]
-    public float dashSpeed = 12f;       // velocidad del dash
-    public float dashDuration = 0.15f;  // cuánto dura el dash
-    public float dashCooldown = 0.5f;   // tiempo antes de poder volver a usarlo
+    public float dashSpeed = 12f;
+    public float dashDuration = 0.15f;  
+    public float dashCooldown = 0.5f;
+
+    [Header("VFX Dash")]
+    public GameObject dashSmokePrefab;
+    public Vector2 dashSmokeOffset = new Vector2(0, -0.4f);
+
+    public bool enableDashWind = true; // true = VFX activado, false = desactivado
+    public GameObject dashWindPrefab;
+    public Vector2 dashWindOffset = new Vector2(-0.2f, 0f); // detrás
+    public float dashWindScale = 0.06f;
+
+
+
+    [Header("Ataque")]
+    public float punchDuration = 0.3f; 
+    public float punchCooldown = 0.5f;
 
     [Header("Debug")]
     public bool showDebug = false;
@@ -30,6 +45,8 @@ public class PlayerMovement_WithDash : MonoBehaviour
 
     private bool isDashing = false;
     private bool canDash = true;
+    private bool isPunching = false;
+    private bool canPunch = true;
 
     void Awake()
     {
@@ -72,6 +89,11 @@ public class PlayerMovement_WithDash : MonoBehaviour
             StartCoroutine(DoDash());
         }
 
+        if (Input.GetMouseButtonDown(0) && canPunch)
+        {
+            StartCoroutine(DoPunch());
+        }
+
         if (showDebug)
         {
             Debug.Log($"RawInput: {moveInput}, SmoothInput: {smoothInput}, Rigidbody Velocity: {smoothInput * moveSpeed}");
@@ -91,8 +113,48 @@ public class PlayerMovement_WithDash : MonoBehaviour
         canDash = false;
         isDashing = true;
 
-        anim.SetTrigger("Dash"); // Lanza la animación de dash
+        anim.SetTrigger("Dash");
 
+        // --- Humo en los pies ---
+        if (dashSmokePrefab != null)
+        {
+            Vector3 spawnPos = transform.position + (Vector3)dashSmokeOffset;
+            GameObject smoke = Instantiate(dashSmokePrefab, spawnPos, Quaternion.identity);
+            smoke.transform.localScale = Vector3.one * 0.5f; // porque el humo es 32x32
+            Destroy(smoke, 0.5f);
+        }
+
+        // --- Viento detrás del personaje ---
+        if (dashWindPrefab != null && enableDashWind)
+        {
+            
+
+            // Convertimos todo a Vector3
+            Vector3 moveDir3D = new Vector3(lastMoveDir.x, lastMoveDir.y, 0f);
+            Vector3 windOffset = (-moveDir3D * 0.3f) + new Vector3(dashWindOffset.x, dashWindOffset.y, 0f);
+            Vector3 spawnPos = transform.position + windOffset;
+
+            GameObject wind = Instantiate(dashWindPrefab, spawnPos, Quaternion.identity);
+            wind.transform.localScale = new Vector3(
+                  wind.transform.localScale.x,
+                 -Mathf.Abs(wind.transform.localScale.y),  // invertir el eje Y
+                 wind.transform.localScale.z
+            );
+            wind.transform.localPosition += new Vector3(-lastMoveDir.x * 0.8f, 0, 0); // para que este un poco detrás
+
+            // Escalado correcto (512x512 → 16x16)
+            wind.transform.localScale = Vector3.one * dashWindScale;
+
+            // Orientar según dirección
+            if (lastMoveDir.x < 0)
+                wind.transform.localScale = new Vector3(-dashWindScale, dashWindScale, 1);
+
+            wind.transform.SetParent(transform);
+
+            Destroy(wind, 0.6f);
+        }
+
+        // --- Movimiento del dash ---
         rb.linearVelocity = lastMoveDir * dashSpeed;
 
         if (showDebug)
@@ -101,11 +163,31 @@ public class PlayerMovement_WithDash : MonoBehaviour
         yield return new WaitForSeconds(dashDuration);
 
         isDashing = false;
-
-        // corta el movimiento al terminar el dash
         rb.linearVelocity = Vector2.zero;
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
+
+
+    IEnumerator DoPunch()
+    {
+        canPunch = false;
+        isPunching = true;
+
+        anim.SetTrigger("Punch");
+
+        // Detener movimiento
+        rb.linearVelocity = Vector2.zero;
+        moveInput = Vector2.zero;
+        smoothInput = Vector2.zero;
+
+        yield return new WaitForSeconds(punchDuration);
+
+        isPunching = false;
+
+        yield return new WaitForSeconds(punchCooldown);
+        canPunch = true;
+    }
+
 }
