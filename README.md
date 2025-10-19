@@ -1,6 +1,6 @@
---------------------------------------
 ![Logo del proyecto](images/titulo2.png)
---------------------------------------
+
+
 # INTRODUCCIÓN
 
 ## DESCRIPCIÓN BREVE DEL CONCEPTO
@@ -9,8 +9,6 @@
 El jugador controla a un único protagonista que se adentra en los recovecos de su subconsciente, enfrentándose a niveles generados de forma procedural. Cada jefe de nivel encarna uno de sus miedos más profundos, formando un viaje simbólico por los rincones ocultos de la mente y la histeria de los miedos del subconsciente.
 
 El juego combina el estilo de roguelike de acción y exploración con una fuerte carga narrativa y simbólica, buscando transmitir emociones más que recompensas tradicionales.
-
----
 
 ## DESCRIPCIÓN BREVE DE LA HISTORIA Y PERSONAJES
 
@@ -22,8 +20,6 @@ Eli comparte rasgos con Caroline (*What Remains of Edith Finch*), Clementine (*T
 - **Sael**: padre de Eli, principal causante del trauma infantil. Maltrataba física y psicológicamente tanto a Iris como a Eli antes de abandonarlas.
 
 **Enemigos simbólicos** como Las Sombras del Abandono, las Elis Corruptas, los Vacíos o las Criaturas Granates representan los miedos de Eli. Estos aparecerán en cada nivel, afectando la narrativa y contando partes de la historia.
-
----
 
 ## PROPÓSITO, PÚBLICO OBJETIVO Y PLATAFORMAS
 
@@ -67,8 +63,6 @@ El desarrollo se plantea en un ciclo de **tres meses**, dividido en fases semana
 
 **Histeria** busca representar una lucha interna contra miedos e inseguridades provocadas por el abandono y la pérdida. El jugador controla a Eli a través de un viaje onírico por recuerdos reprimidos.  
 El **estado emocional de Eli** influye directamente en el patrón de ataques durante la jugabilidad, lo que representa su evolución mental.
-
----
 
 ## CONTEXTO DE LA HISTORIA
 
