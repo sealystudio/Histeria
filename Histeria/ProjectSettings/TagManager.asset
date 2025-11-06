@@ -14,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Background
   - 
   - 
   - 
@@ -43,6 +43,24 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1776815793
+    locked: 0
+  - name: Front
+    uniqueID: 1125471947
+    locked: 0
+  - name: Front2
+    uniqueID: 2174748623
+    locked: 0
+  - name: Objetos
+    uniqueID: 546018529
+    locked: 0
+  - name: Enemigos
+    uniqueID: 506638373
+    locked: 0
+  - name: Jugador
+    uniqueID: 1675608889
     locked: 0
   m_RenderingLayers:
   - Default
