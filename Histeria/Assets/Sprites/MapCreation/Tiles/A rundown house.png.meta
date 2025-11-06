@@ -10584,7 +10584,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A rundown house_482
+      name: Espejo1
       rect:
         serializedVersion: 2
         x: 416
@@ -11024,7 +11024,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A rundown house_503
+      name: Espejo2
       rect:
         serializedVersion: 2
         x: 416
@@ -12312,7 +12312,6 @@ TextureImporter:
       A rundown house_479: 1260569442
       A rundown house_48: 8170771942163386139
       A rundown house_481: 377342767
-      A rundown house_482: -592536519
       A rundown house_483: 776288883
       A rundown house_484: 659743482
       A rundown house_485: 1313403156
@@ -12332,7 +12331,6 @@ TextureImporter:
       A rundown house_500: 476807397
       A rundown house_501: -389001863
       A rundown house_502: -1851068977
-      A rundown house_503: 497735637
       A rundown house_504: -1350039223
       A rundown house_505: 716286861
       A rundown house_506: -1775158576
@@ -12421,6 +12419,8 @@ TextureImporter:
       A rundown house_97: -5333378936396517345
       A rundown house_98: -1383299802008617707
       A rundown house_99: -9151875717736579840
+      Espejo1: -592536519
+      Espejo2: 497735637
       luz1: -773637856
       luz2: -2064634354
       mesa1: 1502945317
