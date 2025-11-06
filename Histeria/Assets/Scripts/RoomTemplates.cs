@@ -21,6 +21,7 @@ public class RoomTemplates : MonoBehaviour
         }
         else
         {
+            
             Destroy(gameObject);
         }
 
