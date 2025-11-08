@@ -30,6 +30,7 @@ public class PlayerMovement_WithDash : MonoBehaviour
     [Header("Ataque")]
     public float punchDuration = 0.3f; 
     public float punchCooldown = 0.5f;
+    [SerializeField] private PlayerAttack attack;
 
     [Header("Debug")]
     public bool showDebug = false;
@@ -56,6 +57,8 @@ public class PlayerMovement_WithDash : MonoBehaviour
 
         rb.gravityScale = 0;
         rb.freezeRotation = true;
+
+        attack = GetComponent<PlayerAttack>();
     }
 
     void Update()
@@ -89,10 +92,20 @@ public class PlayerMovement_WithDash : MonoBehaviour
             StartCoroutine(DoDash());
         }
 
+        // --- Ataques ---
+        //puño
         if (Input.GetMouseButtonDown(0) && canPunch)
         {
             StartCoroutine(DoPunch());
         }
+
+        //lagrimas
+        if (Input.GetMouseButtonDown(1)) 
+
+        {
+            attack.DispararLagrimas();
+        }
+
 
         if (showDebug)
         {
@@ -188,6 +201,9 @@ public class PlayerMovement_WithDash : MonoBehaviour
 
         yield return new WaitForSeconds(punchCooldown);
         canPunch = true;
+
+        attack.Punch();
+
     }
 
 }

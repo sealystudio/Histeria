@@ -7,15 +7,19 @@ TagManager:
   - SpawnPoint
   - Rooms
   - Room
+  - Car
+  - Door
+  - Key
+  - Pizza
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - Background
-  - 
+  - Lagrimas
   - 
   - 
   - 
@@ -59,8 +63,14 @@ TagManager:
   - name: Enemigos
     uniqueID: 506638373
     locked: 0
+  - name: Lagrimas
+    uniqueID: 1321808685
+    locked: 0
   - name: Jugador
     uniqueID: 1675608889
+    locked: 0
+  - name: "Part\xEDculas"
+    uniqueID: 2278401039
     locked: 0
   m_RenderingLayers:
   - Default
