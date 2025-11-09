@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7164903947806887533}
   - component: {fileID: 1309709428321065592}
   - component: {fileID: 2856568207210287769}
-  - component: {fileID: 2956848946650240112}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 526613459147738730}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.525043, y: -0.53, z: -0.0014972687}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0967966, y: 1.0967966, z: 1.0967966}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,7 +43,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 1
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 2
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -4834,19 +4833,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &2956848946650240112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526613459147738730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c4fdd7be8d9cbe45b7c313e0ff39a33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifetime: 1
 --- !u!1 &1911476856084973964
 GameObject:
   m_ObjectHideFlags: 0
@@ -4856,6 +4842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5728943017257428232}
+  - component: {fileID: 4560075145366529274}
   m_Layer: 0
   m_Name: DieEffect_SombrasAbandono
   m_TagString: Untagged
@@ -4879,3 +4866,16 @@ Transform:
   - {fileID: 7164903947806887533}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4560075145366529274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911476856084973964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c4fdd7be8d9cbe45b7c313e0ff39a33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 1

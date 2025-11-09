@@ -8,6 +8,8 @@ public class SombraAbandono : EnemyBase
     {
         if (data != null)
             InitializeStats(data.maxHealth);
+
+        
     }
 
     private void Update()
@@ -28,6 +30,15 @@ public class SombraAbandono : EnemyBase
             effect.transform.position = transform.position; // fuerza que esté en el enemigo
         }
 
+    }
+
+    protected override void OnHit()
+    {
+        if (animator != null)
+            animator.SetTrigger("Hit");
+
+        if (data != null && data.hitEffect != null)
+            Instantiate(data.hitEffect, transform.position, Quaternion.identity);
     }
 
     protected override void Die()

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
@@ -28,9 +29,16 @@ public class PlayerMovement_WithDash : MonoBehaviour
 
 
     [Header("Ataque")]
+    //Punch
     public float punchDuration = 0.3f; 
     public float punchCooldown = 0.5f;
+
+    //Lagrimas
     [SerializeField] private PlayerAttack attack;
+    private float lagrimasCooldown = 0.5f;
+    private bool puedeDisparar = true;
+    private bool estaDisparando = false;
+    public float lifeTime = 0.2f;
 
     [Header("Debug")]
     public bool showDebug = false;
@@ -100,10 +108,10 @@ public class PlayerMovement_WithDash : MonoBehaviour
         }
 
         //lagrimas
-        if (Input.GetMouseButtonDown(1)) 
+        if (Input.GetMouseButtonDown(1) && puedeDisparar) 
 
         {
-            attack.DispararLagrimas();
+            StartCoroutine(DoLagrimas());
         }
 
 
@@ -112,6 +120,8 @@ public class PlayerMovement_WithDash : MonoBehaviour
             Debug.Log($"RawInput: {moveInput}, SmoothInput: {smoothInput}, Rigidbody Velocity: {smoothInput * moveSpeed}");
         }
     }
+
+    
 
     void FixedUpdate()
     {
@@ -205,5 +215,20 @@ public class PlayerMovement_WithDash : MonoBehaviour
         attack.Punch();
 
     }
+
+    IEnumerator DoLagrimas()
+    {
+        puedeDisparar = false;
+        estaDisparando = true;
+
+        attack.DispararLagrimas();
+
+        yield return new WaitForSeconds(0.1f); 
+        estaDisparando = false;
+
+        yield return new WaitForSeconds(lagrimasCooldown);
+        puedeDisparar = true;
+    }
+
 
 }

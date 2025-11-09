@@ -10,7 +10,7 @@ TagManager:
   - Car
   - Door
   - Key
-  - Pizza
+  - Enemy
   layers:
   - Default
   - TransparentFX

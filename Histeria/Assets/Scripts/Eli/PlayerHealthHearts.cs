@@ -114,7 +114,7 @@ public class PlayerHealthHearts : MonoBehaviour
     IEnumerator ScaleHeart(RectTransform heartTransform)
     {
         Vector3 originalScale = Vector3.one;
-        Vector3 targetScale = originalScale * 1.2f;
+        Vector3 targetScale = originalScale * 1.05f;
         float duration = 0.1f;
 
         float time = 0;
