@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2789110598726073854}
   - component: {fileID: 2845522870822125194}
   - component: {fileID: 749075452093475672}
+  - component: {fileID: 7710701515339077443}
   m_Layer: 3
   m_Name: SombraAbandono
   m_TagString: Untagged
@@ -210,3 +211,261 @@ MonoBehaviour:
   animator: {fileID: 0}
   knockbackForce: {x: 2, y: 2}
   data: {fileID: 11400000, guid: 349d203abcf925441866a6ef14f54996, type: 2}
+--- !u!114 &7710701515339077443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6653928382663917490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeOnLoop: 0
+  interruptOptions: 0
+  _eventHandler:
+    debugStatusChanges: 0
+    identifier: 
+  data:
+    graphs:
+    - name: SombraAbandonoFSM
+      id: 9644e689-4289-4559-a6e6-d714015bad42
+      graph:
+        rid: 8180354636638846976
+      nodes:
+      - name: Idle
+        id: 0f7b79a7-ad6f-4c27-b28c-bc9fe23a627c
+        position: {x: 461.6, y: 257.6}
+        node:
+          rid: 8180354636638846977
+        references:
+        - fieldName: Action
+          value:
+            rid: 8180354636638847056
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - ee3599fb-4aa4-4267-8025-af54d5172dc1
+        childIds:
+        - dae7986b-4527-408f-bd38-03e3cbfbaf11
+        - bb51922a-5242-4ad8-b0e4-195b5f75c8dc
+      - name: Huir
+        id: d0ee4d10-05dc-4400-92fc-45516e5cbb5b
+        position: {x: 1055.2, y: 241.6}
+        node:
+          rid: 8180354636638846978
+        references:
+        - fieldName: Action
+          value:
+            rid: 8180354636638847057
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - dae7986b-4527-408f-bd38-03e3cbfbaf11
+        - bb51922a-5242-4ad8-b0e4-195b5f75c8dc
+        childIds:
+        - ee3599fb-4aa4-4267-8025-af54d5172dc1
+        - 94c62e7c-2b42-4a67-b421-0ee5a4bbc233
+      - name: player_near
+        id: dae7986b-4527-408f-bd38-03e3cbfbaf11
+        position: {x: 767.2, y: 111.200005}
+        node:
+          rid: 8180354636638846979
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8180354636638846982
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 0f7b79a7-ad6f-4c27-b28c-bc9fe23a627c
+        childIds:
+        - d0ee4d10-05dc-4400-92fc-45516e5cbb5b
+      - name: '!player_near'
+        id: ee3599fb-4aa4-4267-8025-af54d5172dc1
+        position: {x: 783.2, y: 544}
+        node:
+          rid: 8180354636638846981
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8180354636638847060
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - d0ee4d10-05dc-4400-92fc-45516e5cbb5b
+        childIds:
+        - 0f7b79a7-ad6f-4c27-b28c-bc9fe23a627c
+      - name: shadow_retreat
+        id: bb51922a-5242-4ad8-b0e4-195b5f75c8dc
+        position: {x: 761.6, y: 288}
+        node:
+          rid: 8180354636638846983
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8180354636638846984
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 0f7b79a7-ad6f-4c27-b28c-bc9fe23a627c
+        childIds:
+        - d0ee4d10-05dc-4400-92fc-45516e5cbb5b
+      - name: Transformar
+        id: 020ace10-fa03-4176-b26e-5225386c4ab7
+        position: {x: 1709.6, y: 127.200005}
+        node:
+          rid: 8180354636638847061
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 94c62e7c-2b42-4a67-b421-0ee5a4bbc233
+        childIds:
+        - 0f1d6a14-d9d7-4afd-a880-4a8cc8753380
+      - name: flashlight
+        id: 94c62e7c-2b42-4a67-b421-0ee5a4bbc233
+        position: {x: 1412, y: 233.6}
+        node:
+          rid: 8180354636638847062
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8180354636638847064
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - d0ee4d10-05dc-4400-92fc-45516e5cbb5b
+        childIds:
+        - 020ace10-fa03-4176-b26e-5225386c4ab7
+      - name: Delay
+        id: 0f1d6a14-d9d7-4afd-a880-4a8cc8753380
+        position: {x: 1717.6, y: 329.6}
+        node:
+          rid: 8180354636638847065
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8180354636638847066
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 020ace10-fa03-4176-b26e-5225386c4ab7
+        childIds: []
+    pushPerceptions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 8180354636638846976
+      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 8180354636638846977
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 8180354636638846978
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 8180354636638846979
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 8180354636638846981
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 8180354636638846982
+      type: {class: DistancePerception, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+      data:
+        OtherTransform: {fileID: 0}
+        MaxDistance: 5
+    - rid: 8180354636638846983
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 8180354636638846984
+      type: {class: DistancePerception, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+      data:
+        OtherTransform: {fileID: 794242103339176358}
+        MaxDistance: 4
+    - rid: 8180354636638847056
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: ' SombraAbandono'
+          methodName: Idle
+    - rid: 8180354636638847057
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: SombraAbandono
+          methodName: Huir
+    - rid: 8180354636638847060
+      type: {class: DistancePerception, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+      data:
+        OtherTransform: {fileID: 0}
+        MaxDistance: 5
+    - rid: 8180354636638847061
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 8180354636638847062
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 0
+    - rid: 8180354636638847064
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: SombraAbandono
+          methodName: transformado
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8180354636638847065
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 0
+    - rid: 8180354636638847066
+      type: {class: UnityTimePerception, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+      data:
+        TotalTime: 2

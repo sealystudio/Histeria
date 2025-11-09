@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SombraAbandono : EnemyBase
 {
@@ -29,6 +30,22 @@ public class SombraAbandono : EnemyBase
             GameObject effect = Instantiate(data.hitEffect, transform.position, Quaternion.identity);
             effect.transform.position = transform.position; // fuerza que esté en el enemigo
         }
+
+    }
+
+    //Para FSM
+    public void Huir(GameObject player)
+    {
+
+
+    }
+
+
+
+    public void Idle()
+    {
+
+
 
     }
 
