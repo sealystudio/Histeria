@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.InputSystem.UI.VirtualMouseInput;
 
 public class CrosshairController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class CrosshairController : MonoBehaviour
     private Vector3 mousePos;
     public Vector3 dir;
 
+
+
     void Start()
     {
         Cursor.visible = false;
@@ -19,6 +22,7 @@ public class CrosshairController : MonoBehaviour
 
     void Update()
     {
+       
         if (player == null) return;
 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -34,5 +38,8 @@ public class CrosshairController : MonoBehaviour
             
 
         transform.position = player.position + dir;
+
+       
+
     }
 }
