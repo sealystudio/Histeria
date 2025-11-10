@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 9b24c511cba51694a8b68929d73b0807
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2328332955052705764
+    second: Logo Sealy Studio Blanco_0
+  - first:
+      213: 6836188315930569917
+    second: Logo Sealy Studio Blanco_1
+  - first:
+      213: -3230851180588927077
+    second: Logo Sealy Studio Blanco_2
+  - first:
+      213: -2730600462648434853
+    second: Logo Sealy Studio Blanco_3
+  - first:
+      213: 8520888645559000193
+    second: Logo Sealy Studio Blanco_4
+  - first:
+      213: 51949520372097329
+    second: Logo Sealy Studio Blanco_5
+  - first:
+      213: 564757615331967498
+    second: Logo Sealy Studio Blanco_6
+  - first:
+      213: 3188567200977091441
+    second: Logo Sealy Studio Blanco_7
+  - first:
+      213: 1173808249664243536
+    second: Logo Sealy Studio Blanco_8
+  - first:
+      213: 8204306405586898334
+    second: Logo Sealy Studio Blanco_9
+  - first:
+      213: -5416029229769106593
+    second: Logo Sealy Studio Blanco_10
+  - first:
+      213: 1451327347940964696
+    second: Logo Sealy Studio Blanco_11
+  - first:
+      213: -316565812274236450
+    second: Logo Sealy Studio Blanco_12
+  - first:
+      213: 6334134668173703045
+    second: Logo Sealy Studio Blanco_13
+  - first:
+      213: 6260479220631027045
+    second: Logo Sealy Studio Blanco_14
+  - first:
+      213: -1984214823011367545
+    second: Logo Sealy Studio Blanco_15
+  - first:
+      213: -9178675966291524581
+    second: Logo Sealy Studio Blanco_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 291
+        width: 101
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c187f3f638910bfd0800000000000000
+      internalID: -2328332955052705764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 295
+        width: 113
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbca7bcbd050fde50800000000000000
+      internalID: 6836188315930569917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_2
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 295
+        width: 142
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9778d218f5b923d0800000000000000
+      internalID: -3230851180588927077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_3
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 295
+        width: 84
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5f9258b855fa1ad0800000000000000
+      internalID: -2730600462648434853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_4
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 229
+        width: 282
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18c1439d317404670800000000000000
+      internalID: 8520888645559000193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_5
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 311
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 131e70440df88b000800000000000000
+      internalID: 51949520372097329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_6
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 347
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a020f061f0c66d700800000000000000
+      internalID: 564757615331967498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_7
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 222
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17b73bcb9f0104c20800000000000000
+      internalID: 3188567200977091441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_8
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 263
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05709ab42643a4010800000000000000
+      internalID: 1173808249664243536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_9
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 262
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9d0875253d8bd170800000000000000
+      internalID: 8204306405586898334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_10
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 24
+        width: 102
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5bda726c1666d4b0800000000000000
+      internalID: -5416029229769106593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 27
+        width: 146
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 859b4d29886242410800000000000000
+      internalID: 1451327347940964696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_12
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 24
+        width: 141
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed37c5b22155b9bf0800000000000000
+      internalID: -316565812274236450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_13
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 56
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 587faf7cbed57e750800000000000000
+      internalID: 6334134668173703045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_14
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 27
+        width: 156
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56d3d658ea0b1e650800000000000000
+      internalID: 6260479220631027045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_15
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 27
+        width: 61
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 785c75c9127a674e0800000000000000
+      internalID: -1984214823011367545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio Blanco_16
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 25
+        width: 194
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1447c0e6dace9080800000000000000
+      internalID: -9178675966291524581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Logo Sealy Studio Blanco_0: -2328332955052705764
+      Logo Sealy Studio Blanco_1: 6836188315930569917
+      Logo Sealy Studio Blanco_10: -5416029229769106593
+      Logo Sealy Studio Blanco_11: 1451327347940964696
+      Logo Sealy Studio Blanco_12: -316565812274236450
+      Logo Sealy Studio Blanco_13: 6334134668173703045
+      Logo Sealy Studio Blanco_14: 6260479220631027045
+      Logo Sealy Studio Blanco_15: -1984214823011367545
+      Logo Sealy Studio Blanco_16: -9178675966291524581
+      Logo Sealy Studio Blanco_2: -3230851180588927077
+      Logo Sealy Studio Blanco_3: -2730600462648434853
+      Logo Sealy Studio Blanco_4: 8520888645559000193
+      Logo Sealy Studio Blanco_5: 51949520372097329
+      Logo Sealy Studio Blanco_6: 564757615331967498
+      Logo Sealy Studio Blanco_7: 3188567200977091441
+      Logo Sealy Studio Blanco_8: 1173808249664243536
+      Logo Sealy Studio Blanco_9: 8204306405586898334
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
