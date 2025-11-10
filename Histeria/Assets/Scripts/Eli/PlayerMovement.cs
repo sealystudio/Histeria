@@ -71,6 +71,11 @@ public class PlayerMovement_WithDash : MonoBehaviour
 
     void Update()
     {
+        //DEBUG DISTANCIA (Lo probaba para ELI , comentarlo si os molesta , era para comprobar distancias a ojo)
+
+        Debug.DrawRay(transform.position, Vector2.right * 3 , Color.red);
+
+
         // --- No permite controlar movimiento mientras dashea ---
         if (isDashing) return;
 

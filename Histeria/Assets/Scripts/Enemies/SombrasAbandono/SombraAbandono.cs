@@ -1,9 +1,19 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEditor.PlayerSettings;
 
 public class SombraAbandono : EnemyBase
 {
     public SombraAbandonoData data;
+
+
+
+    Vector2 direccionHuida;
+
+
+
+
 
     private void Start()
     {
@@ -16,7 +26,14 @@ public class SombraAbandono : EnemyBase
     private void Update()
     {
         if (data == null) return;
-        transform.Translate(Vector3.up * Mathf.Sin(Time.time * data.moveSpeed) * Time.deltaTime);
+
+
+        if (direccionHuida == Vector2.zero)
+            return;
+
+        transform.Translate(direccionHuida * data.moveSpeed * Time.deltaTime, Space.World);
+
+        //transform.Translate(Vector3.up * Mathf.Sin(Time.time * data.moveSpeed) * Time.deltaTime);
     }
 
     //solo se le puede matar con la linterna, por eso dara igual que le pegues
@@ -33,20 +50,61 @@ public class SombraAbandono : EnemyBase
 
     }
 
-    //Para FSM
+    //Para FSM y BT
+
+
+
     public void Huir(GameObject player)
     {
 
+         data.moveSpeed = 2.5f;
 
+        Vector2 dir = player.transform.position - transform.position;
+        direccionHuida = dir;
     }
 
+    public void HuirSombra(GameObject other)
+    {
+        data.moveSpeed = 2.5f;
+
+        
+        bool above = transform.position.y > other.transform.position.y;
+
+        
+        Vector2 perp = new Vector2(-direccionHuida.y, direccionHuida.x);
+
+       
+        if (!above)
+            perp = -perp;
+
+        
+        float t = Random.Range(0.1f, 0.9f);
+        Vector2 newDir = Vector2.Lerp(direccionHuida.normalized, perp.normalized, t).normalized;
+
+        direccionHuida = newDir;
+    }
+
+
+    public void PerseguirJugador(GameObject player)
+    {
+
+        data.moveSpeed = 2.5f;
+
+        Vector2 dir = transform.position - player.transform.position ;
+
+        direccionHuida = dir;
+
+    }
 
 
     public void Idle()
     {
 
+     data.moveSpeed = 0;  //Se para la sombra
 
+        Vector2 dir = Vector2.zero;
 
+        direccionHuida = dir;
     }
 
     protected override void OnHit()

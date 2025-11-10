@@ -7,6 +7,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SombraAbandonoData", menuName = "DatosEnemigos/SombraAbandonoData")]
 public class SombraAbandonoData : ScriptableObject
 {
+   
     public int maxHealth = 3;
     public float moveSpeed = 1.5f;
     public int damage = 1;
