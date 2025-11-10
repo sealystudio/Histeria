@@ -3,39 +3,80 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+[ExecuteAlways]
 public class PlayerHealthHearts : MonoBehaviour
 {
     [Header("Vida")]
-    public int maxHearts = 5;
+    public int maxHearts = 3;
     public int currentHealth; // Cada corazón = 2 puntos
 
     [Header("Referencias UI")]
     public Image heartPrefab;
     public Sprite fullHeart, halfHeart, emptyHeart;
 
-    private List<Image> hearts = new List<Image>();
+    private readonly List<Image> hearts = new List<Image>();
+
+    void OnEnable()
+    {
+        if (heartPrefab == null) return;
+
+        // Si no se está jugando, aseguramos la vista de edición
+        if (!Application.isPlaying)
+        {
+            currentHealth = maxHearts * 2;
+            RefreshHeartsInEditor();
+        }
+    }
+
+    void OnValidate()
+    {
+        if (heartPrefab == null) return;
+
+        // Clamp de valores y vista previa en editor
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHearts * 2);
+        RefreshHeartsInEditor();
+    }
 
     void Start()
     {
-        currentHealth = maxHearts * 2;
-        CreateHearts();
+        if (Application.isPlaying)
+        {
+            currentHealth = maxHearts * 2;
+            CreateHearts();
+            UpdateHearts();
+        }
+    }
+
+    // --------------------
+    // FUNCIONES PRINCIPALES
+    // --------------------
+
+    private void RefreshHeartsInEditor()
+    {
+        // Borra los corazones antiguos solo si hay duplicados o falta algo
+        if (transform.childCount != maxHearts)
+        {
+            foreach (Transform child in transform)
+                DestroyImmediate(child.gameObject);
+            hearts.Clear();
+
+            for (int i = 0; i < maxHearts; i++)
+            {
+                Image heart = Instantiate(heartPrefab, transform);
+                heart.transform.localScale = Vector3.one;
+                hearts.Add(heart);
+            }
+        }
+
         UpdateHearts();
     }
 
-   
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-            TakeDamage(1);
-
-        if (Input.GetKeyDown(KeyCode.J))
-            Heal(1);
-    }
-
-
     void CreateHearts()
     {
-        // Borra hijos anteriores (por si acaso)
         foreach (Transform child in transform)
             Destroy(child.gameObject);
 
@@ -43,9 +84,8 @@ public class PlayerHealthHearts : MonoBehaviour
 
         for (int i = 0; i < maxHearts; i++)
         {
-            // Instancia el prefab como hijo del panel vacío
             Image heart = Instantiate(heartPrefab, transform);
-            heart.transform.localScale = Vector3.one; // asegurar escala correcta
+            heart.transform.localScale = Vector3.one;
             hearts.Add(heart);
         }
     }
@@ -54,18 +94,22 @@ public class PlayerHealthHearts : MonoBehaviour
     {
         currentHealth = Mathf.Max(currentHealth - dmg, 0);
         UpdateHearts();
-        StartCoroutine(AnimateHearts());
+        if (Application.isPlaying)
+            StartCoroutine(AnimateHearts());
     }
 
     public void Heal(int amount)
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHearts * 2);
         UpdateHearts();
-        StartCoroutine(AnimateHearts());
+        if (Application.isPlaying)
+            StartCoroutine(AnimateHearts());
     }
 
     void UpdateHearts()
     {
+        if (hearts.Count == 0) return;
+
         int tempHealth = currentHealth;
 
         foreach (Image heart in hearts)
@@ -87,6 +131,12 @@ public class PlayerHealthHearts : MonoBehaviour
         }
     }
 
+
+
+    // --------------------
+    // ANIMACIÓN (solo en juego)
+    // --------------------
+
     private Dictionary<RectTransform, Coroutine> activeCoroutines = new Dictionary<RectTransform, Coroutine>();
 
     IEnumerator AnimateHearts()
@@ -95,7 +145,6 @@ public class PlayerHealthHearts : MonoBehaviour
         {
             RectTransform rt = heart.rectTransform;
 
-            // Si ya hay una animación en curso, la para
             if (activeCoroutines.ContainsKey(rt))
             {
                 StopCoroutine(activeCoroutines[rt]);
@@ -110,11 +159,10 @@ public class PlayerHealthHearts : MonoBehaviour
         yield return null;
     }
 
-
     IEnumerator ScaleHeart(RectTransform heartTransform)
     {
         Vector3 originalScale = Vector3.one;
-        Vector3 targetScale = originalScale * 1.05f;
+        Vector3 targetScale = originalScale * 1.2f;
         float duration = 0.1f;
 
         float time = 0;
@@ -135,8 +183,6 @@ public class PlayerHealthHearts : MonoBehaviour
         }
         heartTransform.localScale = originalScale;
 
-        // Quitar de diccionario
         activeCoroutines.Remove(heartTransform);
     }
-
 }
