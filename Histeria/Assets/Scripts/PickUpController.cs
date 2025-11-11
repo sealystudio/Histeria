@@ -6,19 +6,13 @@ public class PickUpController : MonoBehaviour
 {
     [SerializeField]
     public InventoryItem itemData;
-    
-    // --- VARIABLES ELIMINADAS ---
-    // public Canvas canvasTexto;
-    // public Canvas inventoryCanvas;
-    
-    // --- NUEVAS VARIABLES ---
+
     private UIManager uiManager;
     private bool isPlayerNearby = false;
 
-    // --- NUEVA FUNCIÓN Start() ---
     void Start()
     {
-        // Obtenemos la referencia al manager central
+        // obtenemos la referencia al manager central
         uiManager = UIManager.instance;
         if(uiManager == null)
         {
@@ -28,7 +22,7 @@ public class PickUpController : MonoBehaviour
 
     void Update()
     {
-        // Si el jugador está cerca y pulsa F
+        // si esta cerca y pulsa F:
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.F))
         {
             PickUp();
@@ -46,14 +40,12 @@ public class PickUpController : MonoBehaviour
                 bool added = inventory.AddItem(itemData);
                 if (added)
                 {
-                    // --- MODIFICADO ---
-                    // Actualizar la UI usando el manager
+                    // actualiar UI manager
                     uiManager.RefreshInventoryUI();
 
-                    // Mostrar texto usando el manager
+                    // mostar texto
                     uiManager.SetPickUpText($"Se ha añadido {itemData.itemName} al inventario");
 
-                    // Ahora sí se destruye el objeto del mundo
                     Destroy(gameObject);
                 }
                 else
@@ -65,27 +57,24 @@ public class PickUpController : MonoBehaviour
     }
 
 
-    // Detecta cuando el jugador entra en el área del objeto
+    // detecta cuando el jugador entra en el área del objeto
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             isPlayerNearby = true;
             Debug.Log("Pulsa F para recoger " + gameObject.name);
-            
-            // --- MODIFICADO ---
+
             uiManager.SetPickUpText($"Pulsa F para recoger {itemData.itemName}");
         }
     }
 
-    // Detecta cuando el jugador se aleja del objeto
+    // cuando el jugador se aleja del objeto
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             isPlayerNearby = false;
-            
-            // --- MODIFICADO (Esta era la línea 75 que fallaba) ---
             uiManager.SetPickUpText("");
         }
     }

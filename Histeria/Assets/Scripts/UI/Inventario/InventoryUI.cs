@@ -4,24 +4,23 @@ using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
-    public Inventory playerInventory;       // Inventario del jugador
-    public Button[] slots;                  // Slots fijos como botones
+    public Inventory playerInventory;
+    public Button[] slots; 
 
     [Header("Detalle del item")]
     public TextMeshProUGUI itemNameText;
     public TextMeshProUGUI itemDescriptionText;
 
-    private InventoryItem selectedItem = null;
+    private int selectedIndex = -1;
     public Button useButton;
 
     void Start()
     {
-        // Asignar los listeners a cada botón
         for (int i = 0; i < slots.Length; i++)
         {
-            int index = i; // Captura la variable
+            int index = i;
             slots[i].onClick.AddListener(() => OnSlotClicked(index));
-            slots[i].transform.SetAsLastSibling(); // Trae el botón al frente
+            slots[i].transform.SetAsLastSibling();
 
         }
 
@@ -70,47 +69,29 @@ public class InventoryUI : MonoBehaviour
                 slots[i].interactable = false;
             }
         }
-        itemNameText.text = "";
-        itemDescriptionText.text = "";
     }
 
     public void OnSlotClicked(int index)
     {
         if (index < playerInventory.items.Count)
         {
+            selectedIndex = index;
             var slot = playerInventory.items[index];
-            selectedItem = slot.itemData;  // guardamos el objeto, no el índice
             itemNameText.text = slot.itemData.itemName;
             itemDescriptionText.text = slot.itemData.description;
         }
-        else
-        {
-            selectedItem = null;
-            itemNameText.text = "";
-            itemDescriptionText.text = "";
-        }
     }
 
-
-    // 🔹 Al pulsar el botón "Usar"
     private void OnUseButtonClicked()
     {
-        if (selectedItem != null)
+        if (selectedIndex >= 0)
         {
-            playerInventory.UseItem(selectedItem);
-            selectedItem = null;
+            playerInventory.UseItemAt(selectedIndex);
+            selectedIndex = -1; // opcional: limpiar selección después
         }
         else
         {
             Debug.LogWarning("No hay ningún objeto seleccionado para usar.");
         }
     }
-
-    public void ClearSelection()
-    {
-        selectedItem = null;
-        itemNameText.text = "";
-        itemDescriptionText.text = "";
-    }
-
 }

@@ -2,75 +2,65 @@
 
 public class PlayerEquipment : MonoBehaviour
 {
-    [Header("Referencia al jugador")]
-    public SpriteRenderer playerRenderer; // arrastra aquí el SpriteRenderer del jugador
-    public Transform transformLinterna; // punto donde se instancia la linterna
 
+    [Header("Configuración")]
+    [Tooltip("Un objeto hijo vacío en el jugador que marca dónde debe aparecer el item equipado.")]
+    public Transform equipMountPoint;
     private GameObject currentEquip;
-    private bool lastFlipX;
 
-    // 🔹 AÑADIDO: Referencia a PlayerAttack para coger el crosshair
     private PlayerAttack playerAttack;
+    public bool IsEquipped { get; private set; }
 
-    // 🔹 AÑADIDO: Awake para obtener la referencia al script de ataque
     void Awake()
     {
-        // PlayerAttack debe estar en el mismo GameObject que PlayerEquipment
         playerAttack = GetComponent<PlayerAttack>();
         if (playerAttack == null)
         {
-            Debug.LogError("PlayerEquipment no pudo encontrar el script PlayerAttack en el jugador.");
+            Debug.LogError("PlayerEquipment no encontró el script PlayerAttack en el Jugador!");
+        }
+        playerAttack = GetComponent<PlayerAttack>();
+        if (playerAttack == null)
+        {
+            Debug.LogError("PlayerEquipment no encontró el script PlayerAttack en el Jugador!");
         }
     }
 
+    //inventory llamará a esto cuando le demos a usar
     public void Equip(GameObject equipPrefab)
     {
         if (currentEquip != null)
             Destroy(currentEquip);
 
-        // Instanciamos la linterna en el punto de anclaje (transformLinterna)
-        currentEquip = Instantiate(equipPrefab, transformLinterna);
+        Transform parentTransform = equipMountPoint != null ? equipMountPoint : transform;
 
-        // 🔹 AÑADIDO: Lógica para inicializar la linterna
-        // Buscamos el script FlashlightController en el prefab que acabamos de instanciar
+        currentEquip = Instantiate(equipPrefab, parentTransform);
+
+        currentEquip.transform.localPosition = Vector3.zero;
+
+        Debug.Log("Equipado: " + equipPrefab.name);
+
+        IsEquipped = true;
+
         FlashlightController flashlight = currentEquip.GetComponent<FlashlightController>();
         if (flashlight != null)
         {
-            // Si lo encontramos, y tenemos la referencia de PlayerAttack y su cruceta...
             if (playerAttack != null && playerAttack.crosshair != null)
             {
-                // ...le pasamos la cruceta a la linterna para que pueda apuntar.
                 flashlight.Initialize(playerAttack.crosshair);
             }
             else
             {
-                Debug.LogError("PlayerEquipment no pudo encontrar el crosshair (en PlayerAttack) para inicializar la linterna.");
+                Debug.LogError("¡No se pudo inicializar la linterna! Falta PlayerAttack o su Crosshair.");
             }
         }
-
-        // Esta es la lógica de tu compañero, la mantenemos
-        lastFlipX = playerRenderer.flipX;
-        UpdateFlip();
     }
 
-    // Esta es la lógica de tu compañero, la mantenemos
-    void Update()
+    public void Unequip()
     {
-        if (currentEquip == null || playerRenderer == null)
-            return;
+        if (currentEquip != null)
+            Destroy(currentEquip);
 
-        if (playerRenderer.flipX != lastFlipX)
-        {
-            lastFlipX = playerRenderer.flipX;
-            UpdateFlip();
-        }
-    }
-
-    // Esta es la lógica de tu compañero, la mantenemos
-    private void UpdateFlip()
-    {
-        Vector3 scale = currentEquip.transform.localScale;
-        scale.x = Mathf.Abs(scale.x) * (playerRenderer.flipX ? -1 : 1);
-        currentEquip.transform.localScale = scale;
+        IsEquipped = false;
+        currentEquip = null;
     }
 }

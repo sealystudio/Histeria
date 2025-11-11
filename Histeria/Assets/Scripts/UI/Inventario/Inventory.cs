@@ -6,7 +6,7 @@ using static UnityEditor.Progress;
 public class Inventory : MonoBehaviour
 {
     [Header("Configuración del inventario")]
-    public int maxSlots = 10;
+    public int maxSlots = 1;
     public List<ItemSlot> items = new List<ItemSlot>();
 
     [Header("Referencias")]
@@ -37,83 +37,68 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            ToggleInventory();
+            bool abrir = !inventoryCanvas.enabled;
+            inventoryCanvas.enabled = abrir;
+            isInventoryOpen = abrir; // <-- Indica si está abierto
+
+            if (abrir)
+            {
+                Time.timeScale = 0f;
+                Cursor.visible = true;
+                inventoryCanvas.GetComponent<InventoryUI>().RefreshUI();
+                hudCanvas.enabled = false;
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                Cursor.visible = false;
+                hudCanvas.enabled = true;
+            }
         }
     }
 
-    private void ToggleInventory()
-    {
-        bool abrir = !inventoryCanvas.enabled;
-        inventoryCanvas.enabled = abrir;
-        isInventoryOpen = abrir;
-
-        if (abrir)
-        {
-            Time.timeScale = 0f;
-            Cursor.visible = true;
-            hudCanvas.enabled = false;
-
-            var ui = inventoryCanvas.GetComponent<InventoryUI>();
-            if (ui != null) ui.RefreshUI();
-        }
-        else
-        {
-            Time.timeScale = 1f;
-            Cursor.visible = false;
-            hudCanvas.enabled = true;
-        }
-    }
 
     public bool AddItem(InventoryItem newItem)
     {
-        if (items.Count >= maxSlots)
+        // Buscar un slot libre en la lista de items
+        for (int i = 0; i < maxSlots; i++)
         {
-            Debug.Log("Inventario lleno");
-            return false;
+            if (i >= items.Count) // slot libre
+            {
+                items.Add(new Inventory.ItemSlot { itemData = newItem, quantity = 1 });
+                return true;
+            }
         }
 
-        items.Add(new ItemSlot { itemData = newItem, quantity = 1 });
-        return true;
-
+        Debug.Log("Inventario lleno");
+        return false;
     }
+
 
     public void RemoveItem(InventoryItem itemToRemove)
     {
-        if (itemToRemove == null) return;
-
-        // Buscar el primer slot que tenga ese objeto
         var slot = items.Find(i => i.itemData == itemToRemove);
-        if (slot == null)
-        {
-            Debug.LogWarning("El objeto no se encontró en el inventario.");
-            return;
-        }
-
-        if (itemToRemove.isStackable)
+        if (slot != null)
         {
             slot.quantity--;
             if (slot.quantity <= 0)
                 items.Remove(slot);
         }
-        else
-        {
-            items.Remove(slot);
-        }
-
-        // Refrescar UI si existe
-        if (inventoryCanvas != null)
-        {
-            InventoryUI ui = inventoryCanvas.GetComponent<InventoryUI>();
-            if (ui != null) ui.RefreshUI();
-        }
-
-        Debug.Log($"Eliminado {itemToRemove.itemName} del inventario.");
     }
 
-
-    public void UseItem(InventoryItem item)
+    public void UseItemAt(int index)
     {
-        if (item == null) return;
+        if (index < 0 || index >= items.Count) return;
+
+        // 💡 ¡LÍNEA CLAVE QUE PROBABLEMENTE BORRASTE! 
+        // Esta línea define la variable 'item' para que el resto del método pueda usarla.
+        InventoryItem item = items[index].itemData;
+
+        if (item == null)
+        {
+            Debug.LogWarning("El slot está vacío.");
+            return;
+        }
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
@@ -122,73 +107,53 @@ public class Inventory : MonoBehaviour
             return;
         }
 
-        playerHealth = player.GetComponent<PlayerHealthHearts>();
-        playerEquipment = player.GetComponent<PlayerEquipment>();
+        PlayerHealthHearts playerHearts = player.GetComponent<PlayerHealthHearts>();
+        PlayerEquipment playerEquipment = player.GetComponent<PlayerEquipment>();
 
         switch (item.itemType)
         {
             case ItemType.Consumible:
-                if (playerHealth != null)
+                if (item.consumableData != null && playerHearts != null)
                 {
-                    playerHealth.Heal(item.healAmount);
+                    playerHearts.Heal(item.consumableData.healAmount);
                     RemoveItem(item);
+                }
+                else
+                {
+                    Debug.LogWarning("No se pudo usar el objeto consumible, falta referencia.");
                 }
                 break;
 
             case ItemType.Narrativo:
-                if (item.narrationClip != null)
+                if (item.storyData != null && item.storyData.narrationClip != null)
                 {
-                    AudioSource.PlayClipAtPoint(item.narrationClip, player.transform.position);
+                    AudioSource.PlayClipAtPoint(item.storyData.narrationClip, player.transform.position);
                     RemoveItem(item);
                 }
                 else
                 {
-                    Debug.LogWarning("No hay clip asignado en el ítem narrativo.");
+                    Debug.LogWarning("No se pudo reproducir el objeto narrativo, falta clip o datos.");
                 }
                 break;
 
             case ItemType.Equipable:
-                if (item.equipPrefab != null && playerEquipment != null)
+                if (item.equipableData != null && playerEquipment != null)
                 {
-                    // 1. Simplemente le decimos a PlayerEquipment que equipe el prefab.
-                    playerEquipment.Equip(item.equipPrefab);
-
-                    // 2. Eliminamos el item del inventario.
+                    playerEquipment.Equip(item.equipableData.equipPrefab);
                     RemoveItem(item);
-
-                    // 🔹 (Hemos quitado la lógica de "pa.tieneLinterna = true", 
-                    // ya no es necesaria)
                 }
                 else
                 {
-                    Debug.LogWarning("El ítem equipable no tiene prefab o no se encontró PlayerEquipment.");
+                    Debug.LogWarning("No se pudo equipar el objeto, falta referencia.");
                 }
                 break;
         }
 
-        var ui = inventoryCanvas.GetComponent<InventoryUI>();
-        if (ui != null) ui.RefreshUI();
-
-        CloseInventory();
-    }
-
-
-    private void CloseInventory()
-    {
-        inventoryCanvas.enabled = false;
-        hudCanvas.enabled = true;
-        Time.timeScale = 1f;
-        Cursor.visible = false;
-        isInventoryOpen = false;
-
-
-        var ui = inventoryCanvas.GetComponent<InventoryUI>();
-        if (ui != null)
+        if (inventoryCanvas != null)
         {
-            ui.ClearSelection(); // limpia la selección visual y la variable interna
+            InventoryUI ui = inventoryCanvas.GetComponent<InventoryUI>();
+            if (ui != null) ui.RefreshUI();
         }
     }
-    
-
 
 }

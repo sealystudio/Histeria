@@ -15,60 +15,46 @@ public class HitFlicker : MonoBehaviour
     [Tooltip("Duración de cada parpadeo (ej: 0.1s rojo, 0.1s normal).")]
     public float flickerDuration = 0.1f;
 
-    // --- Referencias Internas ---
+
     private SpriteRenderer spriteRenderer;
-    private Color originalColor; // Para guardar el color normal
-    private Coroutine flickerCoroutine; // Para controlar si ya estamos parpadeando
+    private Color originalColor; 
+    private Coroutine flickerCoroutine;
 
     void Awake()
     {
-        // 1. Obtener el SpriteRenderer
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-        // 2. Guardar el color original (normalmente es 'white')
         originalColor = spriteRenderer.color;
     }
 
-    /// <summary>
-    /// Llama a esta función desde otro script cuando el personaje recibe daño.
-    /// </summary>
     public void TriggerHitEffect()
     {
-        // Si ya estábamos parpadeando por un golpe anterior, detenemos esa
-        // corutina para empezar la nueva. Evita errores visuales.
+        // si ya estábamos parpadeando paramos para empezar el nuevo
+        
         if (flickerCoroutine != null)
         {
             StopCoroutine(flickerCoroutine);
         }
 
-        // Empezamos la nueva corutina de parpadeo
         flickerCoroutine = StartCoroutine(FlickerRoutine());
     }
-
-    /// <summary>
-    /// La Corutina que maneja el parpadeo en el tiempo.
-    /// </summary>
     private IEnumerator FlickerRoutine()
     {
-        // Repetir el número de veces que dijimos
+        // repetir el numero de veces
         for (int i = 0; i < numberOfFlickers; i++)
         {
-            // Poner color ROJO
+            // rojo
             spriteRenderer.color = hitColor;
-            // Esperar (ej: 0.1 segundos)
+            // esperar
             yield return new WaitForSeconds(flickerDuration);
 
-            // Poner color NORMAL
+            // devuelta el color
             spriteRenderer.color = originalColor;
-            // Esperar (ej: 0.1 segundos)
+            // esperar
             yield return new WaitForSeconds(flickerDuration);
         }
-
-        // Al terminar el bucle, nos aseguramos de que el color
-        // SIEMPRE vuelva a ser el original.
+        // original ed vuelta
         spriteRenderer.color = originalColor;
-
-        // Marcamos que la corutina ha terminado
         flickerCoroutine = null;
     }
 }
