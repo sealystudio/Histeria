@@ -150,16 +150,15 @@ public class Inventory : MonoBehaviour
             case ItemType.Equipable:
                 if (item.equipPrefab != null && playerEquipment != null)
                 {
+                    // 1. Simplemente le decimos a PlayerEquipment que equipe el prefab.
                     playerEquipment.Equip(item.equipPrefab);
 
-                    // 🔹 Si es la linterna, avisar a PlayerAttack
-                    PlayerAttack pa = player.GetComponent<PlayerAttack>();
-                    if (pa != null && item.itemName.ToLower().Contains("linterna"))
-                        pa.tieneLinterna = true;
-                    
+                    // 2. Eliminamos el item del inventario.
                     RemoveItem(item);
-                }
 
+                    // 🔹 (Hemos quitado la lógica de "pa.tieneLinterna = true", 
+                    // ya no es necesaria)
+                }
                 else
                 {
                     Debug.LogWarning("El ítem equipable no tiene prefab o no se encontró PlayerEquipment.");
