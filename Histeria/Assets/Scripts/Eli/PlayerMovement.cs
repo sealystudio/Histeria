@@ -5,6 +5,7 @@ using System;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(AudioSource))]
 public class PlayerMovement_WithDash : MonoBehaviour
 {
     [Header("Movimiento")]
@@ -57,11 +58,30 @@ public class PlayerMovement_WithDash : MonoBehaviour
     private bool isPunching = false;
     private bool canPunch = true;
 
+    [Header("Sonido")]
+    [Tooltip("Añade aquí todos los clips de audio de pasos que tengas")]
+    public AudioClip[] footstepSounds; // Ahora es un array
+    [Tooltip("Qué tan fuerte deben sonar los pasos (0.0 = silencio, 1.0 = volumen máximo)")]
+    [Range(0f, 1f)]
+    public float footstepVolume = 0.2f; // Añade esto para el volumen
+
+    [Tooltip("Clip de audio para el Dash")]
+    public AudioClip dashSound;
+    [Tooltip("Volumen del sonido de Dash (0.0 a 1.0)")]
+    [Range(0f, 1f)]
+    public float dashVolume = 0.7f;
+
+    private AudioSource audioSource;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+
+        
+        audioSource = GetComponent<AudioSource>(); 
+        audioSource.playOnAwake = false;
 
         rb.gravityScale = 0;
         rb.freezeRotation = true;
@@ -102,6 +122,10 @@ public class PlayerMovement_WithDash : MonoBehaviour
         // --- Dash ---
         if (Input.GetKeyDown(KeyCode.Space) && canDash && moveInput.magnitude > 0.1f)
         {
+            if (dashSound != null)
+            {
+                audioSource.PlayOneShot(dashSound, dashVolume);
+            }
             StartCoroutine(DoDash());
         }
 
@@ -233,6 +257,27 @@ public class PlayerMovement_WithDash : MonoBehaviour
 
         yield return new WaitForSeconds(lagrimasCooldown);
         puedeDisparar = true;
+    }
+
+    public void PlayFootstepSound()
+    {
+        // 1. Comprobar si el array tiene sonidos
+        if (footstepSounds == null || footstepSounds.Length == 0)
+        {
+            // No hay sonidos para reproducir, salir.
+            return;
+        }
+
+        // 2. Elegir un clip aleatorio del array
+        int randIndex = UnityEngine.Random.Range(0, footstepSounds.Length);
+        AudioClip clipToPlay = footstepSounds[randIndex];
+
+        // 3. Reproducir el clip con el volumen ajustable
+        if (clipToPlay != null)
+        {
+            // Usamos el segundo parámetro de PlayOneShot para el volumen
+            audioSource.PlayOneShot(clipToPlay, footstepVolume);
+        }
     }
 
 

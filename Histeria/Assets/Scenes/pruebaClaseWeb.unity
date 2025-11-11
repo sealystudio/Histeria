@@ -3075,8 +3075,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1304708898}
     - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: dashSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0518e10b95ca5b74b969a1a34fe429b6, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: showDebug
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: dashVolume
+      value: 0.101
       objectReference: {fileID: 0}
     - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: dashWindScale
@@ -3095,6 +3103,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: footstepVolume
+      value: 0.023
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: dashSmokePrefab
       value: 
       objectReference: {fileID: 7254193344188428526, guid: 496165d591aa2bc4e90430c78f7dbbd0, type: 3}
@@ -3106,6 +3118,34 @@ PrefabInstance:
       propertyPath: dashSmokeOffset.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: footstepSounds.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: 'footstepSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 67506134f2e99e54ba57d3ce97b4bf66, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: 'footstepSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 783316f3268c0194887c48096846dd92, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: 'footstepSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 8d66b086c4f901b48804b0ba62edc196, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: 'footstepSounds.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 498c0c0169d4cfe4c85c225c20e37f3a, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: 'footstepSounds.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5475d1423aa2dec41a5cbf5f3d13d3e1, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: 'footstepSounds.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7ca48113233bcaa4c840ba06ff54e2e0, type: 3}
     - target: {fileID: 4037189673966534863, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: crosshair
       value: 
