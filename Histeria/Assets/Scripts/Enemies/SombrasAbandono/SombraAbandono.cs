@@ -1,7 +1,24 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
 using static UnityEditor.PlayerSettings;
+
+
+public struct LightTarget
+{
+    public Light2D light2D;
+    public Vector2 position;
+
+
+    public LightTarget(Light2D light2D, Vector2 position)
+    {
+        this.light2D = light2D;
+        this.position = position;
+    }
+
+}
+
 
 public class SombraAbandono : EnemyBase
 {
@@ -11,16 +28,28 @@ public class SombraAbandono : EnemyBase
 
     Vector2 direccionHuida;
 
+    LightTarget? target;
 
+    public Light2D globalTargetLight;
+    public Vector2 globalLightPos;
 
+    private GameObject player;
+    private PlayerAttack playerAttack;
 
+    private GameObject[] lights;
+
+    bool _playerFlashlight;
 
     private void Start()
     {
         if (data != null)
             InitializeStats(data.maxHealth);
 
-        
+        player = GameObject.FindGameObjectWithTag("player");
+
+        playerAttack = player.GetComponent<PlayerAttack>(); 
+
+        lights = GameObject.FindGameObjectsWithTag("Light");
     }
 
     private void Update()
@@ -52,14 +81,95 @@ public class SombraAbandono : EnemyBase
 
     //Para FSM y BT
 
+    private void OnEnable()
+    {
+        playerAttack.OnFlashlightChanged += HandleFlashlightChanged;
+    }
+
+    private void OnDisable()
+    {
+        playerAttack.OnFlashlightChanged -= HandleFlashlightChanged;
+    }
+
+    private void HandleFlashlightChanged(bool hasFlashlight)
+    {
+        _playerFlashlight = hasFlashlight;
+
+    }
+    public bool PlayerHasFlashLight()
+    {
+
+        return _playerFlashlight;
+    }
+
+    LightTarget? SeekLight()
+    {
+        
+        Light2D closestLight = null;
+        Vector2 closestPos = Vector2.zero;
+        float minDist = Mathf.Infinity;
+
+        foreach (GameObject obj in lights)
+        {
+            Light2D l = obj.GetComponent<Light2D>();
+            if (l != null  && l.intensity > 0f)
+            {
+                float dist = Vector2.Distance(transform.position, obj.transform.position);
+                if (dist < minDist && dist <= detectionRange)
+                {
+                    minDist = dist;
+                    closestLight = l;
+                    closestPos = obj.transform.position;
+                }
+            }
+        }
+
+        if (closestLight != null) 
+            return new LightTarget(closestLight, closestPos);
+
+        return null;
+        
+    }
 
 
-    public void Huir(GameObject player)
+    public void MoveToLight()
+    {
+
+        target = SeekLight();
+
+        if (!target.HasValue)
+        return;
+
+       
+        globalTargetLight = target.Value.light2D;
+        globalLightPos = target.Value.position;
+
+        data.moveSpeed = 2.5f;
+
+        Vector2 dir = (Vector2)transform.position - globalLightPos;
+        direccionHuida = dir;
+    }
+
+    public void SwitchOffLight()
+    {
+
+        if (!target.HasValue)
+            return;
+
+
+        LightTarget light = target.Value;
+
+
+        light.light2D.intensity = 0f;
+
+    }
+
+    public void Huir()
     {
 
          data.moveSpeed = 2.5f;
 
-        Vector2 dir = player.transform.position - transform.position;
+        Vector2 dir = transform.position - player.transform.position ;
         direccionHuida = dir;
     }
 
@@ -85,12 +195,12 @@ public class SombraAbandono : EnemyBase
     }
 
 
-    public void PerseguirJugador(GameObject player)
+    public void PerseguirJugador()
     {
 
         data.moveSpeed = 2.5f;
 
-        Vector2 dir = transform.position - player.transform.position ;
+        Vector2 dir =  player.transform.position - transform.position ;
 
         direccionHuida = dir;
 

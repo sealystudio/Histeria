@@ -237,7 +237,7 @@ MonoBehaviour:
       nodes:
       - name: Idle
         id: deed234b-2d18-4f21-915b-205e6a9584ff
-        position: {x: 877.6, y: 274.4}
+        position: {x: 429.81082, y: 498.27563}
         node:
           rid: 8180354659019653120
         references:
@@ -250,9 +250,10 @@ MonoBehaviour:
         childIds:
         - e8fb3c45-3c5d-4fcf-8634-23b343f62266
         - cb6f7657-722e-43ec-b110-0e347a980720
+        - 0d9454e1-202d-44a2-9cc1-a6b6a40647ad
       - name: Huir
         id: 8ae76eb0-b219-4841-83c2-8e5d37384c88
-        position: {x: 1555.2, y: 129.6}
+        position: {x: -245.35663, y: 771.70886}
         node:
           rid: 8180354659019653121
         references:
@@ -266,7 +267,7 @@ MonoBehaviour:
         childIds: []
       - name: PerseguirJugador
         id: 2bc52253-e0f8-451f-956b-29e41dd8a36b
-        position: {x: 1329.6, y: 373.6}
+        position: {x: 1811.4722, y: -1258.5222}
         node:
           rid: 8180354659019653122
         references:
@@ -277,28 +278,29 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
         parentIds: []
         childIds: []
-      - name: 
+      - name: ApagarLuces
         id: 0219e6aa-5b1c-42d3-b7b7-80e9742cfff2
-        position: {x: 956, y: 685.60004}
+        position: {x: 1120.3054, y: 741.7157}
         node:
           rid: 8180354659019653123
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 8180354681457344518
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
-        parentIds: []
+        parentIds:
+        - e8fb3c45-3c5d-4fcf-8634-23b343f62266
         childIds: []
       - name: Delay
         id: e8fb3c45-3c5d-4fcf-8634-23b343f62266
-        position: {x: 885.6, y: 445.6}
+        position: {x: 824.8, y: 636.80005}
         node:
           rid: 8180354659019653126
         references:
         - fieldName: Perception
           value:
-            rid: 8180354659019653127
+            rid: 8180354681457344529
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         - fieldName: Action
@@ -308,10 +310,11 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
         parentIds:
         - deed234b-2d18-4f21-915b-205e6a9584ff
-        childIds: []
+        childIds:
+        - 0219e6aa-5b1c-42d3-b7b7-80e9742cfff2
       - name: Has_flashlight
         id: cb6f7657-722e-43ec-b110-0e347a980720
-        position: {x: 1192, y: 186.4}
+        position: {x: 62.417404, y: 650.2711}
         node:
           rid: 8180354659019653203
         references:
@@ -329,6 +332,25 @@ MonoBehaviour:
         - deed234b-2d18-4f21-915b-205e6a9584ff
         childIds:
         - 8ae76eb0-b219-4841-83c2-8e5d37384c88
+      - name: DontHaveFlashlight
+        id: 0d9454e1-202d-44a2-9cc1-a6b6a40647ad
+        position: {x: 388.11487, y: 172.23987}
+        node:
+          rid: 8180354681457344521
+        references:
+        - fieldName: Perception
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - deed234b-2d18-4f21-915b-205e6a9584ff
+        childIds: []
     - name: BuscarLuces
       id: 21699957-1a50-4f2b-bfb6-844fcc28a916
       graph:
@@ -341,6 +363,61 @@ MonoBehaviour:
           rid: 8180354659019653125
         references: []
         parentIds: []
+        childIds:
+        - 85192621-a1ae-47ae-aa87-3992dcfdf5a9
+      - name: MainSequence
+        id: 85192621-a1ae-47ae-aa87-3992dcfdf5a9
+        position: {x: 1006.4, y: 505.6}
+        node:
+          rid: 8180354681457344512
+        references: []
+        parentIds:
+        - 465afe0e-4d3d-4376-9d40-7bbeeee5ec5e
+        childIds:
+        - 38835911-eba4-4019-9e6e-d6342de1913d
+        - 41f6b293-cbec-4586-b345-d5d601e2087c
+        - c462bfea-a37a-4ad5-b68e-b88585030221
+      - name: SwitchOff
+        id: c462bfea-a37a-4ad5-b68e-b88585030221
+        position: {x: 1310.4, y: 720}
+        node:
+          rid: 8180354681457344517
+        references:
+        - fieldName: Action
+          value:
+            rid: 8180354681457344527
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 85192621-a1ae-47ae-aa87-3992dcfdf5a9
+        childIds: []
+      - name: Light_on
+        id: 38835911-eba4-4019-9e6e-d6342de1913d
+        position: {x: 750.4, y: 744}
+        node:
+          rid: 8180354681457344523
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8180354681457344524
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 85192621-a1ae-47ae-aa87-3992dcfdf5a9
+        childIds: []
+      - name: Light_near
+        id: 41f6b293-cbec-4586-b345-d5d601e2087c
+        position: {x: 1022.4, y: 736}
+        node:
+          rid: 8180354681457344525
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8180354681457344526
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 85192621-a1ae-47ae-aa87-3992dcfdf5a9
         childIds: []
     pushPerceptions: []
   references:
@@ -369,16 +446,12 @@ MonoBehaviour:
     - rid: 8180354659019653125
       type: {class: LoopUntilNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
-        TargetStatus: 2
+        TargetStatus: 4
         MaxIterations: -1
     - rid: 8180354659019653126
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
         StatusFlags: -1
-    - rid: 8180354659019653127
-      type: {class: UnityTimePerception, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
-      data:
-        TotalTime: 2
     - rid: 8180354659019653203
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -401,3 +474,73 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
+    - rid: 8180354681457344512
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 8180354681457344517
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8180354681457344518
+      type: {class: SubgraphAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        ExecuteOnLoop: 0
+        InterruptOptions: 2
+        subgraphId: 21699957-1a50-4f2b-bfb6-844fcc28a916
+    - rid: 8180354681457344521
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 8180354681457344523
+      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8180354681457344524
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: 
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8180354681457344525
+      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8180354681457344526
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: 
+          methodName: 
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8180354681457344527
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: 
+          methodName: 
+    - rid: 8180354681457344529
+      type: {class: DistancePerception, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+      data:
+        OtherTransform: {fileID: 0}
+        MaxDistance: 0

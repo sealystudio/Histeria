@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -13,6 +14,21 @@ public class PlayerAttack : MonoBehaviour
     [Header("Lagrimas")]
     public GameObject lagrima;
 
+    [Header("Tengo Linterna?")]
+    private bool _hasFlashlight;
+    public  event Action<bool> OnFlashlightChanged;
+
+    public void SetFlashlight(bool value)
+    {
+        if (_hasFlashlight == value) return; // No notificar si no cambió
+        _hasFlashlight = value;
+        OnFlashlightChanged?.Invoke(_hasFlashlight); // Notificar a todos los enemigos
+    }
+
+    public bool PlayerHasFlashLight()
+    {
+        return _hasFlashlight;
+    }
 
 
     public void Punch()
