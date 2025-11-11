@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Foto Rota
   m_EditorClassIdentifier: 
   itemName: Foto Rota
-  itemType: 1
-  icon: {fileID: 7573596729693363352, guid: e169e90545292a54fa3361b06de5ed7e, type: 3}
   description: Aquella foto que nos hicimos, justo antes de que todo se fuera a la
     mierda...
-  isStackable: 0
-  maxStack: 99
-  healAmount: 0
-  narrationClip: {fileID: 8300000, guid: 24139dc6952d31f4486ec25245533cb1, type: 3}
-  equipPrefab: {fileID: 0}
+  icon: {fileID: 7573596729693363352, guid: e169e90545292a54fa3361b06de5ed7e, type: 3}
+  itemType: 1
+  consumableData:
+    healAmount: 0
+  storyData:
+    narrationClip: {fileID: 8300000, guid: 2638340574fe08e4ca49b88174dda3a1, type: 3}
+  equipableData:
+    equipPrefab: {fileID: 0}
