@@ -8,7 +8,7 @@ using UnityEngine;
 public class SombraAbandonoData : ScriptableObject
 {
    
-    public int maxHealth = 3;
+    public int maxHealth = 100;
     public float moveSpeed = 1.5f;
     public int damage = 1;
     public GameObject hitEffect;

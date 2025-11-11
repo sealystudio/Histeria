@@ -136,14 +136,13 @@ public class PlayerMovement : MonoBehaviour
 
         // ataques
         //puño
-        if (Input.GetMouseButtonDown(0) && canPunch)
+        if (Input.GetMouseButtonDown(0) && canPunch && (playerEquipment == null || !playerEquipment.IsEquipped))
         {
             StartCoroutine(DoPunch());
         }
 
-        if (Input.GetMouseButtonDown(1) && puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
+        if (Input.GetMouseButtonDown(1) && puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
         {
-            canPunch = false;
             StartCoroutine(DoLagrimas());
         }
 
@@ -261,7 +260,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void PlayFootstepSound()
     {
-        
+
         if (footstepSounds == null || footstepSounds.Length == 0)
         {
             return;

@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Escape))
         {
             bool abrir = !inventoryCanvas.enabled;
             inventoryCanvas.enabled = abrir;
@@ -154,6 +154,15 @@ public class Inventory : MonoBehaviour
             InventoryUI ui = inventoryCanvas.GetComponent<InventoryUI>();
             if (ui != null) ui.RefreshUI();
         }
-    }
 
+        CloseInventory();
+    }
+    private void CloseInventory()
+    {
+        inventoryCanvas.enabled = false;
+        hudCanvas.enabled = true;
+        Time.timeScale = 1f;
+        Cursor.visible = false;
+        isInventoryOpen = false;
+    }
 }

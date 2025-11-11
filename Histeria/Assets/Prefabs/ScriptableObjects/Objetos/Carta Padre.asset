@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Carta Padre
   m_EditorClassIdentifier: 
   itemName: Carta de papa
-  itemType: 1
-  icon: {fileID: 7273223033332845547, guid: 84bcbd51acee495489ef13daa19398e9, type: 3}
   description: La carta que escribi y nunca le mande...
-  isStackable: 0
-  maxStack: 99
-  healAmount: 0
-  narrationClip: {fileID: 8300000, guid: 69994e2ff543a7c40ba881ddacb0c0dc, type: 3}
-  equipPrefab: {fileID: 0}
+  icon: {fileID: 7273223033332845547, guid: 84bcbd51acee495489ef13daa19398e9, type: 3}
+  itemType: 1
+  consumableData:
+    healAmount: 0
+  storyData:
+    narrationClip: {fileID: 8300000, guid: 24139dc6952d31f4486ec25245533cb1, type: 3}
+  equipableData:
+    equipPrefab: {fileID: 0}
