@@ -69,6 +69,9 @@ TagManager:
   - name: Jugador
     uniqueID: 1675608889
     locked: 0
+  - name: ObjetosEquipables
+    uniqueID: 4044063973
+    locked: 0
   - name: "Part\xEDculas"
     uniqueID: 2278401039
     locked: 0

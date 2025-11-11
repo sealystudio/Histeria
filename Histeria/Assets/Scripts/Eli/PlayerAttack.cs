@@ -1,4 +1,4 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -9,6 +9,13 @@ public class PlayerAttack : MonoBehaviour
     [Header("Punch")]
     public int punchDamage = 1;
     public float punchRange = 1f;
+
+    [Header("Linterna")]
+    public bool tieneLinterna = false;
+    public GameObject flashPrefab; // Prefab del tri√°ngulo
+    public Transform linternaPoint; // punto de salida de la linterna
+
+
 
     [Header("Lagrimas")]
     public GameObject lagrima;
@@ -29,10 +36,34 @@ public class PlayerAttack : MonoBehaviour
             SombraAbandono sombra = hit.GetComponent<SombraAbandono>();
             if (sombra != null)
             {
-                sombra.TakeDamageFromLight(1); // placeholder daÒo
+                sombra.TakeDamageFromLight(1); // placeholder da√±o
             }
         }
     }
+
+    public void DispararLinterna()
+    {
+        if (!tieneLinterna || flashPrefab == null || linternaPoint == null) return;
+
+        // Punto fijo de salida del flash (por ejemplo la mano)
+        Vector3 spawnPos = linternaPoint.position;
+
+        // Rotaci√≥n hacia el cursor
+        Vector3 target = crosshair.transform.position;
+        // Instanciamos el flash en ese punto fijo
+        GameObject flash = Instantiate(flashPrefab, target.normalized, Quaternion.identity);
+
+        Vector3 dir = (target - spawnPos).normalized;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        flash.transform.rotation = Quaternion.Euler(0, 0, angle+90);
+
+        // Inicializar script del flash
+        FlashLightAttack f = flash.GetComponent<FlashLightAttack>();
+        if (f != null)
+            f.Initialize();
+    }
+
+
 
 
     public void DispararLagrimas()
@@ -45,26 +76,26 @@ public class PlayerAttack : MonoBehaviour
 
 
 
-        // instanciamos la l·grima en la posiciÛn de Eli
+        // instanciamos la l√°grima en la posici√≥n de Eli
         GameObject tear = Instantiate(lagrima, new Vector3(transform.position.x, transform.position.y, 0f), Quaternion.identity);
 
-        Debug.Log("L·grima instanciada en " + transform.position);
+        Debug.Log("L√°grima instanciada en " + transform.position);
 
 
-        // inicializamos el script de la l·grima con la direcciÛn
+        // inicializamos el script de la l√°grima con la direcci√≥n
         LagrimasAttack la = tear.GetComponent<LagrimasAttack>();
         if (la != null)
             la.Initialize(dir);
         
 
-        // opcional: rotar el sprite seg˙n la direcciÛn
+        // opcional: rotar el sprite seg√∫n la direcci√≥n
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         tear.transform.rotation = Quaternion.Euler(0, 0, angle) * lagrima.transform.rotation;
 
     }
 
 
-    public void MegaPuÒo()
+    public void MegaPu√±o()
     {
 
     }
