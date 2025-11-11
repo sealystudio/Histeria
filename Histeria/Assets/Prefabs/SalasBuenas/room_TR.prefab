@@ -1148,6 +1148,7 @@ Transform:
   - {fileID: 1481016538235662326}
   - {fileID: 1230925136517782085}
   - {fileID: 5846821669267971016}
+  - {fileID: 8490626514405226779}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2942333962843531501
@@ -3225,7 +3226,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 14
-      m_TileSpriteIndex: 14
+      m_TileSpriteIndex: 17
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3470,14 +3471,14 @@ Tilemap:
     m_Data: {fileID: -1756586335, guid: 7f4d6e07dc88a5445ad30e44561313ac, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -783131258, guid: 7f4d6e07dc88a5445ad30e44561313ac, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -1219853988, guid: 7f4d6e07dc88a5445ad30e44561313ac, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -1531349653565129501, guid: 7f4d6e07dc88a5445ad30e44561313ac, type: 3}
   m_TileMatrixArray:
@@ -4221,3 +4222,65 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!1001 &2644504474261959370
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5686385995261293098}
+    m_Modifications:
+    - target: {fileID: 5865913340721777617, guid: fb69c07bafc111548b708b224ad5c5df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865913340721777617, guid: fb69c07bafc111548b708b224ad5c5df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865913340721777617, guid: fb69c07bafc111548b708b224ad5c5df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.040138997
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865913340721777617, guid: fb69c07bafc111548b708b224ad5c5df, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865913340721777617, guid: fb69c07bafc111548b708b224ad5c5df, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865913340721777617, guid: fb69c07bafc111548b708b224ad5c5df, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865913340721777617, guid: fb69c07bafc111548b708b224ad5c5df, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865913340721777617, guid: fb69c07bafc111548b708b224ad5c5df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865913340721777617, guid: fb69c07bafc111548b708b224ad5c5df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865913340721777617, guid: fb69c07bafc111548b708b224ad5c5df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806050873372021124, guid: fb69c07bafc111548b708b224ad5c5df, type: 3}
+      propertyPath: m_Name
+      value: _ObjectSpawnPoint
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb69c07bafc111548b708b224ad5c5df, type: 3}
+--- !u!4 &8490626514405226779 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5865913340721777617, guid: fb69c07bafc111548b708b224ad5c5df, type: 3}
+  m_PrefabInstance: {fileID: 2644504474261959370}
+  m_PrefabAsset: {fileID: 0}

@@ -1,25 +1,37 @@
-using UnityEditorInternal.Profiling.Memory.Experimental;
+// (Probablemente puedas borrar esta línea, no parece necesaria)
+// using UnityEditorInternal.Profiling.Memory.Experimental; 
 using UnityEngine;
-
 
 public class PickUpController : MonoBehaviour
 {
     [SerializeField]
-    public InventoryItem itemData; 
-    public Canvas canvasTexto;
-    public Canvas inventoryCanvas;
+    public InventoryItem itemData;
     
+    // --- VARIABLES ELIMINADAS ---
+    // public Canvas canvasTexto;
+    // public Canvas inventoryCanvas;
+    
+    // --- NUEVAS VARIABLES ---
+    private UIManager uiManager;
     private bool isPlayerNearby = false;
 
-
+    // --- NUEVA FUNCIÓN Start() ---
+    void Start()
+    {
+        // Obtenemos la referencia al manager central
+        uiManager = UIManager.instance;
+        if(uiManager == null)
+        {
+            Debug.LogError("¡UIManager.instance no encontrado! Asegúrate de que el script UIManager está en un objeto en la escena.");
+        }
+    }
 
     void Update()
     {
-        // Si el jugador est� cerca y pulsa F
+        // Si el jugador está cerca y pulsa F
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.F))
         {
             PickUp();
-        
         }
     }
 
@@ -34,16 +46,14 @@ public class PickUpController : MonoBehaviour
                 bool added = inventory.AddItem(itemData);
                 if (added)
                 {
-                    // Actualizar la UI antes de destruir
-                    InventoryUI inventoryUI = inventoryCanvas.GetComponent<InventoryUI>();
-                    if (inventoryUI != null)
-                        inventoryUI.RefreshUI();
+                    // --- MODIFICADO ---
+                    // Actualizar la UI usando el manager
+                    uiManager.RefreshInventoryUI();
 
-                    // Mostrar texto
-                    canvasTexto.GetComponentInChildren<TMPro.TextMeshProUGUI>().text =
-                        $"Se ha a�adido {itemData.itemName} al inventario";
+                    // Mostrar texto usando el manager
+                    uiManager.SetPickUpText($"Se ha añadido {itemData.itemName} al inventario");
 
-                    // Ahora s� se destruye el objeto del mundo
+                    // Ahora sí se destruye el objeto del mundo
                     Destroy(gameObject);
                 }
                 else
@@ -55,14 +65,16 @@ public class PickUpController : MonoBehaviour
     }
 
 
-    // Detecta cuando el jugador entra en el �rea del objeto
+    // Detecta cuando el jugador entra en el área del objeto
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             isPlayerNearby = true;
             Debug.Log("Pulsa F para recoger " + gameObject.name);
-            canvasTexto.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = $"Pulsa F para recoger {itemData.itemName}";
+            
+            // --- MODIFICADO ---
+            uiManager.SetPickUpText($"Pulsa F para recoger {itemData.itemName}");
         }
     }
 
@@ -72,8 +84,9 @@ public class PickUpController : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isPlayerNearby = false;
-            canvasTexto.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "";
+            
+            // --- MODIFICADO (Esta era la línea 75 que fallaba) ---
+            uiManager.SetPickUpText("");
         }
     }
 }
-
