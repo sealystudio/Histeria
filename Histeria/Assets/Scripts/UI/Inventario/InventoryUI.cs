@@ -11,7 +11,7 @@ public class InventoryUI : MonoBehaviour
     public TextMeshProUGUI itemNameText;
     public TextMeshProUGUI itemDescriptionText;
 
-    private int selectedIndex = -1;
+    private InventoryItem selectedItem = null;
     public Button useButton;
 
     void Start()
@@ -70,30 +70,47 @@ public class InventoryUI : MonoBehaviour
                 slots[i].interactable = false;
             }
         }
+        itemNameText.text = "";
+        itemDescriptionText.text = "";
     }
 
     public void OnSlotClicked(int index)
     {
         if (index < playerInventory.items.Count)
         {
-            selectedIndex = index;
             var slot = playerInventory.items[index];
+            selectedItem = slot.itemData;  // guardamos el objeto, no el índice
             itemNameText.text = slot.itemData.itemName;
             itemDescriptionText.text = slot.itemData.description;
         }
+        else
+        {
+            selectedItem = null;
+            itemNameText.text = "";
+            itemDescriptionText.text = "";
+        }
     }
+
 
     // 🔹 Al pulsar el botón "Usar"
     private void OnUseButtonClicked()
     {
-        if (selectedIndex >= 0)
+        if (selectedItem != null)
         {
-            playerInventory.UseItemAt(selectedIndex);
-            selectedIndex = -1; // opcional: limpiar selección después
+            playerInventory.UseItem(selectedItem);
+            selectedItem = null;
         }
         else
         {
             Debug.LogWarning("No hay ningún objeto seleccionado para usar.");
         }
     }
+
+    public void ClearSelection()
+    {
+        selectedItem = null;
+        itemNameText.text = "";
+        itemDescriptionText.text = "";
+    }
+
 }

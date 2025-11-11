@@ -1,16 +1,16 @@
-using NUnit.Framework.Interfaces;
+ï»¿using NUnit.Framework.Interfaces;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
-    [Header("Configuración del inventario")]
-    public int maxSlots = 1;
+    [Header("ConfiguraciÃ³n del inventario")]
+    public int maxSlots = 10;
     public List<ItemSlot> items = new List<ItemSlot>();
 
     [Header("Referencias")]
-    public Canvas inventoryCanvas; // Asigna el Canvas del inventario aquí
+    public Canvas inventoryCanvas; // Asigna el Canvas del inventario aquÃ­
     public Canvas hudCanvas;
     public static bool isInventoryOpen = false;
 
@@ -37,120 +37,159 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            bool abrir = !inventoryCanvas.enabled;
-            inventoryCanvas.enabled = abrir;
-            isInventoryOpen = abrir; // <-- Indica si está abierto
-
-            if (abrir)
-            {
-                Time.timeScale = 0f;
-                Cursor.visible = true;
-                inventoryCanvas.GetComponent<InventoryUI>().RefreshUI();
-                hudCanvas.enabled = false;
-            }
-            else
-            {
-                Time.timeScale = 1f;
-                Cursor.visible = false;
-                hudCanvas.enabled = true;
-            }
+            ToggleInventory();
         }
     }
 
+    private void ToggleInventory()
+    {
+        bool abrir = !inventoryCanvas.enabled;
+        inventoryCanvas.enabled = abrir;
+        isInventoryOpen = abrir;
+
+        if (abrir)
+        {
+            Time.timeScale = 0f;
+            Cursor.visible = true;
+            hudCanvas.enabled = false;
+
+            var ui = inventoryCanvas.GetComponent<InventoryUI>();
+            if (ui != null) ui.RefreshUI();
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            Cursor.visible = false;
+            hudCanvas.enabled = true;
+        }
+    }
 
     public bool AddItem(InventoryItem newItem)
     {
-        // Buscar un slot libre en la lista de items
-        for (int i = 0; i < maxSlots; i++)
+        if (items.Count >= maxSlots)
         {
-            if (i >= items.Count) // slot libre
-            {
-                items.Add(new Inventory.ItemSlot { itemData = newItem, quantity = 1 });
-                return true;
-            }
+            Debug.Log("Inventario lleno");
+            return false;
         }
 
-        Debug.Log("Inventario lleno");
-        return false;
-    }
+        items.Add(new ItemSlot { itemData = newItem, quantity = 1 });
+        return true;
 
+    }
 
     public void RemoveItem(InventoryItem itemToRemove)
     {
+        if (itemToRemove == null) return;
+
+        // Buscar el primer slot que tenga ese objeto
         var slot = items.Find(i => i.itemData == itemToRemove);
-        if (slot != null)
+        if (slot == null)
+        {
+            Debug.LogWarning("El objeto no se encontrÃ³ en el inventario.");
+            return;
+        }
+
+        if (itemToRemove.isStackable)
         {
             slot.quantity--;
             if (slot.quantity <= 0)
                 items.Remove(slot);
         }
-    }
-
-    public void UseItemAt(int index)
-    {
-        if (index < 0 || index >= items.Count) return;
-
-        InventoryItem item = items[index].itemData;
-        if (item == null)
+        else
         {
-            Debug.LogWarning("El slot está vacío.");
-            return;
+            items.Remove(slot);
         }
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player == null)
-        {
-            Debug.LogWarning("No se encontró el jugador para aplicar el objeto.");
-            return;
-        }
-
-        PlayerHealthHearts playerHearts = player.GetComponent<PlayerHealthHearts>();
-        PlayerEquipment playerEquipment = player.GetComponent<PlayerEquipment>();
-
-        switch (item.itemType)
-        {
-            case ItemType.Consumible:
-                if (item.consumableData != null && playerHearts != null)
-                {
-                    playerHearts.Heal(item.consumableData.healAmount);
-                    RemoveItem(item);
-                }
-                else
-                {
-                    Debug.LogWarning("No se pudo usar el objeto consumible, falta referencia.");
-                }
-                break;
-
-            case ItemType.Narrativo:
-                if (item.storyData != null && item.storyData.narrationClip != null)
-                {
-                    AudioSource.PlayClipAtPoint(item.storyData.narrationClip, player.transform.position);
-                    RemoveItem(item);
-                }
-                else
-                {
-                    Debug.LogWarning("No se pudo reproducir el objeto narrativo, falta clip o datos.");
-                }
-                break;
-
-            case ItemType.Equipable:
-                if (item.equipableData != null && playerEquipment != null)
-                {
-                    playerEquipment.Equip(item.equipableData.equipPrefab);
-                }
-                else
-                {
-                    Debug.LogWarning("No se pudo equipar el objeto, falta referencia.");
-                }
-                break;
-        }
-
-        // Refrescar UI
+        // Refrescar UI si existe
         if (inventoryCanvas != null)
         {
             InventoryUI ui = inventoryCanvas.GetComponent<InventoryUI>();
             if (ui != null) ui.RefreshUI();
         }
+
+        Debug.Log($"Eliminado {itemToRemove.itemName} del inventario.");
     }
+
+
+    public void UseItem(InventoryItem item)
+    {
+        if (item == null) return;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+        {
+            Debug.LogWarning("No se encontrÃ³ el jugador para aplicar el objeto.");
+            return;
+        }
+
+        playerHealth = player.GetComponent<PlayerHealthHearts>();
+        playerEquipment = player.GetComponent<PlayerEquipment>();
+
+        switch (item.itemType)
+        {
+            case ItemType.Consumible:
+                if (playerHealth != null)
+                {
+                    playerHealth.Heal(item.healAmount);
+                    RemoveItem(item);
+                }
+                break;
+
+            case ItemType.Narrativo:
+                if (item.narrationClip != null)
+                {
+                    AudioSource.PlayClipAtPoint(item.narrationClip, player.transform.position);
+                    RemoveItem(item);
+                }
+                else
+                {
+                    Debug.LogWarning("No hay clip asignado en el Ã­tem narrativo.");
+                }
+                break;
+
+            case ItemType.Equipable:
+                if (item.equipPrefab != null && playerEquipment != null)
+                {
+                    playerEquipment.Equip(item.equipPrefab);
+
+                    // ðŸ”¹ Si es la linterna, avisar a PlayerAttack
+                    PlayerAttack pa = player.GetComponent<PlayerAttack>();
+                    if (pa != null && item.itemName.ToLower().Contains("linterna"))
+                        pa.tieneLinterna = true;
+                    
+                    RemoveItem(item);
+                }
+
+                else
+                {
+                    Debug.LogWarning("El Ã­tem equipable no tiene prefab o no se encontrÃ³ PlayerEquipment.");
+                }
+                break;
+        }
+
+        var ui = inventoryCanvas.GetComponent<InventoryUI>();
+        if (ui != null) ui.RefreshUI();
+
+        CloseInventory();
+    }
+
+
+    private void CloseInventory()
+    {
+        inventoryCanvas.enabled = false;
+        hudCanvas.enabled = true;
+        Time.timeScale = 1f;
+        Cursor.visible = false;
+        isInventoryOpen = false;
+
+
+        var ui = inventoryCanvas.GetComponent<InventoryUI>();
+        if (ui != null)
+        {
+            ui.ClearSelection(); // limpia la selecciÃ³n visual y la variable interna
+        }
+    }
+    
+
 
 }

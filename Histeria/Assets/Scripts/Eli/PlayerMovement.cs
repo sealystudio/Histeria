@@ -140,7 +140,8 @@ public class PlayerMovement_WithDash : MonoBehaviour
         if (Input.GetMouseButtonDown(1) && puedeDisparar) 
 
         {
-            StartCoroutine(DoLagrimas());
+            canPunch = false;
+            StartCoroutine(DoLinterna());
         }
 
 
@@ -243,6 +244,22 @@ public class PlayerMovement_WithDash : MonoBehaviour
 
         attack.Punch();
 
+    }
+
+    IEnumerator DoLinterna()
+    {
+        if (!attack.tieneLinterna) yield break; // No hace nada si no tiene linterna
+
+        puedeDisparar = false;
+        estaDisparando = true;
+
+        attack.DispararLinterna(); // Solo flash de linterna
+
+        yield return new WaitForSeconds(0.1f);
+        estaDisparando = false;
+
+        yield return new WaitForSeconds(lagrimasCooldown);
+        puedeDisparar = true;
     }
 
     IEnumerator DoLagrimas()

@@ -18,9 +18,6 @@ MonoBehaviour:
   description: La carta que escribi y nunca le mande...
   isStackable: 0
   maxStack: 99
-  consumableData:
-    healAmount: 0
-  storyData:
-    narrationClip: {fileID: 8300000, guid: 24139dc6952d31f4486ec25245533cb1, type: 3}
-  equipableData:
-    equipPrefab: {fileID: 0}
+  healAmount: 0
+  narrationClip: {fileID: 8300000, guid: 69994e2ff543a7c40ba881ddacb0c0dc, type: 3}
+  equipPrefab: {fileID: 0}

@@ -19,9 +19,6 @@ MonoBehaviour:
     a tus miedos..."
   isStackable: 0
   maxStack: 1
-  consumableData:
-    healAmount: 0
-  storyData:
-    narrationClip: {fileID: 0}
-  equipableData:
-    equipPrefab: {fileID: 0}
+  healAmount: 0
+  narrationClip: {fileID: 0}
+  equipPrefab: {fileID: 5140559787462685156, guid: 249882eb279227546bb44b683d0eb73e, type: 3}
