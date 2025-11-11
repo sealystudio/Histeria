@@ -1,11 +1,15 @@
+<<<<<<< HEAD
 using System;
 using UnityEngine;
+=======
+Ôªøusing UnityEngine;
+>>>>>>> origin/main
 
 public class PlayerAttack : MonoBehaviour
 {
     [Header("UI")]
     public CrosshairController crosshair; // referencia al crosshair
-    
+
 
     [Header("Punch")]
     public int punchDamage = 1;
@@ -36,7 +40,7 @@ public class PlayerAttack : MonoBehaviour
         if (crosshair == null) return;
 
         Vector3 attackPos = transform.position;
-       
+
 
         // Detecta enemigos cercanos en rango
         Collider2D[] hits = Physics2D.OverlapCircleAll(attackPos, punchRange);
@@ -45,7 +49,7 @@ public class PlayerAttack : MonoBehaviour
             SombraAbandono sombra = hit.GetComponent<SombraAbandono>();
             if (sombra != null)
             {
-                sombra.TakeDamageFromLight(1); // placeholder daÒo
+                sombra.TakeDamageFromLight(1); // placeholder da√±o
             }
         }
     }
@@ -61,29 +65,28 @@ public class PlayerAttack : MonoBehaviour
 
 
 
-        // instanciamos la l·grima en la posiciÛn de Eli
+        // instanciamos la l√°grima en la posici√≥n de Eli
         GameObject tear = Instantiate(lagrima, new Vector3(transform.position.x, transform.position.y, 0f), Quaternion.identity);
 
-        Debug.Log("L·grima instanciada en " + transform.position);
+        Debug.Log("L√°grima instanciada en " + transform.position);
 
 
-        // inicializamos el script de la l·grima con la direcciÛn
+        // inicializamos el script de la l√°grima con la direcci√≥n
         LagrimasAttack la = tear.GetComponent<LagrimasAttack>();
         if (la != null)
             la.Initialize(dir);
-        
 
-        // opcional: rotar el sprite seg˙n la direcciÛn
+
+        // opcional: rotar el sprite seg√∫n la direcci√≥n
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         tear.transform.rotation = Quaternion.Euler(0, 0, angle) * lagrima.transform.rotation;
 
     }
 
 
-    public void MegaPuÒo()
+    public void MegaPu√±o()
     {
 
     }
 
 }
-

@@ -66,6 +66,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4641807652063260240}
+  - {fileID: 9147722093050662031}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9054580742944166746
@@ -199,6 +200,7 @@ MonoBehaviour:
   punchDuration: 0.3
   punchCooldown: 0.5
   attack: {fileID: 4037189673966534863}
+  lifeTime: 0.2
   showDebug: 1
 --- !u!114 &4037189673966534863
 MonoBehaviour:
@@ -215,4 +217,38 @@ MonoBehaviour:
   crosshair: {fileID: 0}
   punchDamage: 1
   punchRange: 1
+  tieneLinterna: 0
+  flashPrefab: {fileID: 6280786593680865271, guid: 67ebaee3eeb293e4ea95438ae37c97a5, type: 3}
+  linternaPoint: {fileID: 9147722093050662031}
   lagrima: {fileID: 1198046803155164575, guid: 900788e29f5d4134c9333533b8eb4390, type: 3}
+--- !u!1 &5510569793729307021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9147722093050662031}
+  m_Layer: 0
+  m_Name: equipableManoPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9147722093050662031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5510569793729307021}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.32, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5610813372568682834}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

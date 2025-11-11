@@ -4,8 +4,8 @@ using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
-    public Inventory playerInventory;       // Inventario del jugador
-    public Button[] slots;                  // Slots fijos como botones
+    public Inventory playerInventory;
+    public Button[] slots; 
 
     [Header("Detalle del item")]
     public TextMeshProUGUI itemNameText;
@@ -16,12 +16,11 @@ public class InventoryUI : MonoBehaviour
 
     void Start()
     {
-        // Asignar los listeners a cada botón
         for (int i = 0; i < slots.Length; i++)
         {
-            int index = i; // Captura la variable
+            int index = i;
             slots[i].onClick.AddListener(() => OnSlotClicked(index));
-            slots[i].transform.SetAsLastSibling(); // Trae el botón al frente
+            slots[i].transform.SetAsLastSibling();
 
         }
 
@@ -83,7 +82,6 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    // 🔹 Al pulsar el botón "Usar"
     private void OnUseButtonClicked()
     {
         if (selectedIndex >= 0)

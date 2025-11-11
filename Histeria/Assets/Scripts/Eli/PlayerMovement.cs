@@ -6,7 +6,8 @@ using System;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(AudioSource))]
-public class PlayerMovement_WithDash : MonoBehaviour
+
+public class PlayerMovement : MonoBehaviour
 {
     [Header("Movimiento")]
     public float moveSpeed = 5f;
@@ -15,23 +16,23 @@ public class PlayerMovement_WithDash : MonoBehaviour
 
     [Header("Dash")]
     public float dashSpeed = 12f;
-    public float dashDuration = 0.15f;  
+    public float dashDuration = 0.15f;
     public float dashCooldown = 0.5f;
 
     [Header("VFX Dash")]
     public GameObject dashSmokePrefab;
     public Vector2 dashSmokeOffset = new Vector2(0, -0.4f);
 
-    public bool enableDashWind = true; // true = VFX activado, false = desactivado
+    public bool enableDashWind = true;
     public GameObject dashWindPrefab;
-    public Vector2 dashWindOffset = new Vector2(-0.2f, 0f); // detrás
+    public Vector2 dashWindOffset = new Vector2(-0.2f, 0f);
     public float dashWindScale = 0.06f;
 
 
 
     [Header("Ataque")]
     //Punch
-    public float punchDuration = 0.3f; 
+    public float punchDuration = 0.3f;
     public float punchCooldown = 0.5f;
 
     //Lagrimas
@@ -51,7 +52,7 @@ public class PlayerMovement_WithDash : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 smoothInput;
     private Vector2 inputVelocity;
-    private Vector2 lastMoveDir; // para recordar hacia dónde se movía
+    private Vector2 lastMoveDir;
 
     private bool isDashing = false;
     private bool canDash = true;
@@ -60,16 +61,18 @@ public class PlayerMovement_WithDash : MonoBehaviour
 
     [Header("Sonido")]
     [Tooltip("Añade aquí todos los clips de audio de pasos que tengas")]
-    public AudioClip[] footstepSounds; // Ahora es un array
+    public AudioClip[] footstepSounds;
     [Tooltip("Qué tan fuerte deben sonar los pasos (0.0 = silencio, 1.0 = volumen máximo)")]
     [Range(0f, 1f)]
-    public float footstepVolume = 0.2f; // Añade esto para el volumen
+    public float footstepVolume = 0.2f;
 
     [Tooltip("Clip de audio para el Dash")]
     public AudioClip dashSound;
     [Tooltip("Volumen del sonido de Dash (0.0 a 1.0)")]
     [Range(0f, 1f)]
     public float dashVolume = 0.7f;
+
+    private PlayerEquipment playerEquipment;
 
     private AudioSource audioSource;
 
@@ -79,49 +82,56 @@ public class PlayerMovement_WithDash : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
 
-        
-        audioSource = GetComponent<AudioSource>(); 
+
+        audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
 
         rb.gravityScale = 0;
         rb.freezeRotation = true;
 
         attack = GetComponent<PlayerAttack>();
+
+        playerEquipment = GetComponent<PlayerEquipment>();
     }
 
     void Update()
     {
         //DEBUG DISTANCIA (Lo probaba para ELI , comentarlo si os molesta , era para comprobar distancias a ojo)
 
+<<<<<<< HEAD
         Debug.DrawRay(transform.position, Vector2.right * 4.5f , Color.red);
         Debug.DrawRay(transform.position, Vector2.down * 4.5f, Color.red);
         Debug.DrawRay(transform.position, Vector2.up * 4.5f, Color.red);
         Debug.DrawRay(transform.position, Vector2.left * 4.5f, Color.red);
+=======
+        Debug.DrawRay(transform.position, Vector2.right * 3, Color.red);
 
-        // --- No permite controlar movimiento mientras dashea ---
+>>>>>>> origin/main
+
+        // block de movimeinto en el dash
         if (isDashing) return;
 
-        // --- Movimiento normal ---
+        // movieminto base
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
         moveInput = new Vector2(moveX, moveY).normalized;
 
         smoothInput = Vector2.SmoothDamp(smoothInput, moveInput, ref inputVelocity, smoothTime);
 
-        // --- Animación ---
+        // valor para los valores de animacion
         anim.SetFloat("Speed", moveInput.magnitude);
 
-        // --- Dirección de movimiento ---
+        // direccion
         if (moveInput.sqrMagnitude > 0.01f)
-            lastMoveDir = moveInput; // actualiza la dirección mientras se mueve
+            lastMoveDir = moveInput;
 
-        // --- Flip sprite ---
+        // flipper
         if (smoothInput.x != 0)
             sr.flipX = crosshair.dir.x < 0;
-        
-           
 
-        // --- Dash ---
+
+
+        // dash
         if (Input.GetKeyDown(KeyCode.Space) && canDash && moveInput.magnitude > 0.1f)
         {
             if (dashSound != null)
@@ -131,19 +141,20 @@ public class PlayerMovement_WithDash : MonoBehaviour
             StartCoroutine(DoDash());
         }
 
-        // --- Ataques ---
+        // ataques
         //puño
         if (Input.GetMouseButtonDown(0) && canPunch)
         {
             StartCoroutine(DoPunch());
         }
 
-        //lagrimas
-        if (Input.GetMouseButtonDown(1) && puedeDisparar) 
-
+        if (Input.GetMouseButtonDown(1) && puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
         {
+            canPunch = false;
             StartCoroutine(DoLagrimas());
         }
+
+
 
 
         if (showDebug)
@@ -152,7 +163,7 @@ public class PlayerMovement_WithDash : MonoBehaviour
         }
     }
 
-    
+
 
     void FixedUpdate()
     {
@@ -169,7 +180,7 @@ public class PlayerMovement_WithDash : MonoBehaviour
 
         anim.SetTrigger("Dash");
 
-        // --- Humo en los pies ---
+        // sapwnear humo en el dash
         if (dashSmokePrefab != null)
         {
             Vector3 spawnPos = transform.position + (Vector3)dashSmokeOffset;
@@ -178,12 +189,9 @@ public class PlayerMovement_WithDash : MonoBehaviour
             Destroy(smoke, 0.5f);
         }
 
-        // --- Viento detrás del personaje ---
+        // el viento que no usamos pero lo edjo por si acaso
         if (dashWindPrefab != null && enableDashWind)
         {
-            
-
-            // Convertimos todo a Vector3
             Vector3 moveDir3D = new Vector3(lastMoveDir.x, lastMoveDir.y, 0f);
             Vector3 windOffset = (-moveDir3D * 0.3f) + new Vector3(dashWindOffset.x, dashWindOffset.y, 0f);
             Vector3 spawnPos = transform.position + windOffset;
@@ -196,10 +204,8 @@ public class PlayerMovement_WithDash : MonoBehaviour
             );
             wind.transform.localPosition += new Vector3(-lastMoveDir.x * 0.8f, 0, 0); // para que este un poco detrás
 
-            // Escalado correcto (512x512 → 16x16)
             wind.transform.localScale = Vector3.one * dashWindScale;
 
-            // Orientar según dirección
             if (lastMoveDir.x < 0)
                 wind.transform.localScale = new Vector3(-dashWindScale, dashWindScale, 1);
 
@@ -208,7 +214,6 @@ public class PlayerMovement_WithDash : MonoBehaviour
             Destroy(wind, 0.6f);
         }
 
-        // --- Movimiento del dash ---
         rb.linearVelocity = lastMoveDir * dashSpeed;
 
         if (showDebug)
@@ -254,7 +259,7 @@ public class PlayerMovement_WithDash : MonoBehaviour
 
         attack.DispararLagrimas();
 
-        yield return new WaitForSeconds(0.1f); 
+        yield return new WaitForSeconds(0.1f);
         estaDisparando = false;
 
         yield return new WaitForSeconds(lagrimasCooldown);
@@ -263,24 +268,20 @@ public class PlayerMovement_WithDash : MonoBehaviour
 
     public void PlayFootstepSound()
     {
-        // 1. Comprobar si el array tiene sonidos
+        
         if (footstepSounds == null || footstepSounds.Length == 0)
         {
-            // No hay sonidos para reproducir, salir.
             return;
         }
 
-        // 2. Elegir un clip aleatorio del array
+        // clip aleatorio
         int randIndex = UnityEngine.Random.Range(0, footstepSounds.Length);
         AudioClip clipToPlay = footstepSounds[randIndex];
 
-        // 3. Reproducir el clip con el volumen ajustable
+        // volumen
         if (clipToPlay != null)
         {
-            // Usamos el segundo parámetro de PlayOneShot para el volumen
             audioSource.PlayOneShot(clipToPlay, footstepVolume);
         }
     }
-
-
 }

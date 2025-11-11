@@ -1,16 +1,16 @@
-using NUnit.Framework.Interfaces;
+﻿using NUnit.Framework.Interfaces;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
-    [Header("Configuraci�n del inventario")]
+    [Header("Configuración del inventario")]
     public int maxSlots = 1;
     public List<ItemSlot> items = new List<ItemSlot>();
 
     [Header("Referencias")]
-    public Canvas inventoryCanvas; // Asigna el Canvas del inventario aqu�
+    public Canvas inventoryCanvas; // Asigna el Canvas del inventario aquí
     public Canvas hudCanvas;
     public static bool isInventoryOpen = false;
 
@@ -39,7 +39,7 @@ public class Inventory : MonoBehaviour
         {
             bool abrir = !inventoryCanvas.enabled;
             inventoryCanvas.enabled = abrir;
-            isInventoryOpen = abrir; // <-- Indica si est� abierto
+            isInventoryOpen = abrir; // <-- Indica si está abierto
 
             if (abrir)
             {
@@ -90,17 +90,20 @@ public class Inventory : MonoBehaviour
     {
         if (index < 0 || index >= items.Count) return;
 
+        // 💡 ¡LÍNEA CLAVE QUE PROBABLEMENTE BORRASTE! 
+        // Esta línea define la variable 'item' para que el resto del método pueda usarla.
         InventoryItem item = items[index].itemData;
+
         if (item == null)
         {
-            Debug.LogWarning("El slot est� vac�o.");
+            Debug.LogWarning("El slot está vacío.");
             return;
         }
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
         {
-            Debug.LogWarning("No se encontr� el jugador para aplicar el objeto.");
+            Debug.LogWarning("No se encontró el jugador para aplicar el objeto.");
             return;
         }
 
@@ -137,6 +140,7 @@ public class Inventory : MonoBehaviour
                 if (item.equipableData != null && playerEquipment != null)
                 {
                     playerEquipment.Equip(item.equipableData.equipPrefab);
+                    RemoveItem(item);
                 }
                 else
                 {
@@ -145,7 +149,6 @@ public class Inventory : MonoBehaviour
                 break;
         }
 
-        // Refrescar UI
         if (inventoryCanvas != null)
         {
             InventoryUI ui = inventoryCanvas.GetComponent<InventoryUI>();
