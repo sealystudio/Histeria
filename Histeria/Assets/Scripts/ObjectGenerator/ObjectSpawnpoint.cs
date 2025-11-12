@@ -9,7 +9,7 @@ public class ObjectSpawnPoint : MonoBehaviour
         if (DungeonPopulator.instance != null)
         {
             // 2. Se añade a sí mismo a la lista de "disponibles"
-            DungeonPopulator.instance.availableSpawnPoints.Add(this.transform);
+            DungeonPopulator.instance.objectSpawnPoints.Add(this.transform);
         }
         else
         {
