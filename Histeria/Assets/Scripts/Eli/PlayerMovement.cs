@@ -98,15 +98,15 @@ public class PlayerMovement : MonoBehaviour
     {
         //DEBUG DISTANCIA (Lo probaba para ELI , comentarlo si os molesta , era para comprobar distancias a ojo)
 
-<<<<<<< HEAD
+
         Debug.DrawRay(transform.position, Vector2.right * 4.5f , Color.red);
         Debug.DrawRay(transform.position, Vector2.down * 4.5f, Color.red);
         Debug.DrawRay(transform.position, Vector2.up * 4.5f, Color.red);
         Debug.DrawRay(transform.position, Vector2.left * 4.5f, Color.red);
-=======
+
         Debug.DrawRay(transform.position, Vector2.right * 3, Color.red);
 
->>>>>>> origin/main
+
 
         // block de movimeinto en el dash
         if (isDashing) return;

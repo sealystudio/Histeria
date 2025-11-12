@@ -1,9 +1,9 @@
-<<<<<<< HEAD
+
 using System;
 using UnityEngine;
-=======
-﻿using UnityEngine;
->>>>>>> origin/main
+
+using UnityEngine;
+
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -83,10 +83,10 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
-
+    /*
     public void MegaPuño()
     {
 
     }
-
+    */
 }
