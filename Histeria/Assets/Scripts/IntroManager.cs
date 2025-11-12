@@ -98,7 +98,8 @@ public class IntroManager : MonoBehaviour
         if (vozTexto != null)
             vozTexto.Play();
 
-        yield return new WaitForSeconds(tiempoTextoVisible);
+        yield return new WaitForSeconds(4f);
+        StartCoroutine(FadeOutAudio(vozTexto, 2f));
 
         // 6️ Fade out del texto
         yield return StartCoroutine(FadeCanvasGroup(textoDialogo, 1f, 0f, fadeDuration));
@@ -179,7 +180,6 @@ public class IntroManager : MonoBehaviour
 
     public void IrAlMenu()
     {
-        Debug.Log("HOLA");
         StartCoroutine(IrAlMenuCoroutine());
     }
 
