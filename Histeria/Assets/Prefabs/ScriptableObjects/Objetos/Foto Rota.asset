@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0333879417dad34d9857aeb6456558b, type: 3}
+  m_Name: Foto Rota
+  m_EditorClassIdentifier: 
+  itemName: Foto Rota
+  description: Aquella foto que nos hicimos, justo antes de que todo se fuera a la
+    mierda...
+  icon: {fileID: 7573596729693363352, guid: e169e90545292a54fa3361b06de5ed7e, type: 3}
+  itemType: 1
+  consumableData:
+    healAmount: 0
+  storyData:
+    narrationClip: {fileID: 8300000, guid: 2638340574fe08e4ca49b88174dda3a1, type: 3}
+  equipableData:
+    equipPrefab: {fileID: 0}

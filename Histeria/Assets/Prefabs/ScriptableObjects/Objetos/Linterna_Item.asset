@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0333879417dad34d9857aeb6456558b, type: 3}
+  m_Name: Linterna_Item
+  m_EditorClassIdentifier: 
+  itemName: Linterna
+  description: "Una vieja linterna. El bot\xF3n derecho la enciendo."
+  icon: {fileID: -3509768373723393573, guid: ae05cd69df41b6b439d7253f21390fc0, type: 3}
+  itemType: 2
+  consumableData:
+    healAmount: 0
+  storyData:
+    narrationClip: {fileID: 0}
+  equipableData:
+    equipPrefab: {fileID: 6167946967984723839, guid: bd160c98f36bf224c9bfca8c281ff6ed, type: 3}

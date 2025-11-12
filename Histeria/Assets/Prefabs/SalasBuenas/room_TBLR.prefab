@@ -2435,7 +2435,7 @@ GameObject:
   - component: {fileID: 6695248169840249838}
   m_Layer: 0
   m_Name: Light 2D (6)
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2475,7 +2475,7 @@ MonoBehaviour:
   m_Intensity: 1.92
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000b10ee869cb561543cf07a08139c3df63
+  m_ApplyToSortingLayers: 00000000b10ee869cb561543cf07a081e1948b2025b0321e39c3df63
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -2993,7 +2993,7 @@ GameObject:
   - component: {fileID: 470436542831719682}
   m_Layer: 0
   m_Name: Light 2D (5)
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3033,7 +3033,7 @@ MonoBehaviour:
   m_Intensity: 1.85
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000b10ee869cb561543cf07a08139c3df63
+  m_ApplyToSortingLayers: 00000000b10ee869cb561543cf07a081e1948b2025b0321e39c3df63
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -3093,7 +3093,7 @@ GameObject:
   - component: {fileID: 7702784864220328778}
   m_Layer: 0
   m_Name: Light 2D (3)
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3133,7 +3133,7 @@ MonoBehaviour:
   m_Intensity: 1.45
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000b10ee869cb561543cf07a08139c3df63
+  m_ApplyToSortingLayers: 00000000b10ee869cb561543cf07a081e1948b2025b0321e39c3df63
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -4458,7 +4458,7 @@ GameObject:
   - component: {fileID: 6591283654760859866}
   m_Layer: 0
   m_Name: Light 2D (7)
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4498,7 +4498,7 @@ MonoBehaviour:
   m_Intensity: 1.32
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000b10ee869cb561543cf07a08139c3df63
+  m_ApplyToSortingLayers: 00000000b10ee869cb561543cf07a081e1948b2025b0321e39c3df63
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

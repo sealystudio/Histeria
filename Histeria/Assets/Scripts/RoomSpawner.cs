@@ -31,8 +31,6 @@ public class RoomSpawner : MonoBehaviour
             }
         }
 
-        // --- El resto del script es idéntico ---
-
         spawned = true;
         templates.roomPositions.Add(transform.position);
 
