@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2789110598726073854}
   - component: {fileID: 2845522870822125194}
   - component: {fileID: 749075452093475672}
-  - component: {fileID: 7710701515339077443}
+  - component: {fileID: 3972918158902773534}
   m_Layer: 3
   m_Name: SombraAbandono
   m_TagString: Untagged
@@ -211,14 +211,16 @@ MonoBehaviour:
   animator: {fileID: 0}
   knockbackForce: {x: 2, y: 2}
   data: {fileID: 11400000, guid: 349d203abcf925441866a6ef14f54996, type: 2}
---- !u!114 &7710701515339077443
+  globalTargetLight: {fileID: 0}
+  globalLightPos: {x: 0, y: 0}
+--- !u!114 &3972918158902773534
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6653928382663917490}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
   m_Name: 
@@ -230,233 +232,278 @@ MonoBehaviour:
     identifier: 
   data:
     graphs:
-    - name: SombraAbandonoFSM
-      id: 9644e689-4289-4559-a6e6-d714015bad42
+    - name: BTSombraAbandono
+      id: 76c8922f-956e-4a4f-a8cb-3ed58f79948d
       graph:
-        rid: 8180354636638846976
+        rid: 8180354703411904524
       nodes:
-      - name: Idle
-        id: deed234b-2d18-4f21-915b-205e6a9584ff
-        position: {x: 429.81082, y: 498.27563}
+      - name: MainLoop
+        id: b790bd72-9a42-45a3-873b-a7881abd922f
+        position: {x: -353.6, y: -261.6}
         node:
-          rid: 8180354659019653120
-        references:
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
+          rid: 8180354703411904612
+        references: []
         parentIds: []
         childIds:
-        - e8fb3c45-3c5d-4fcf-8634-23b343f62266
-        - cb6f7657-722e-43ec-b110-0e347a980720
-        - 0d9454e1-202d-44a2-9cc1-a6b6a40647ad
+        - 077baded-9993-483f-8c8b-c2a297364eb5
+      - name: Main Selector
+        id: 077baded-9993-483f-8c8b-c2a297364eb5
+        position: {x: -352, y: -144.79999}
+        node:
+          rid: 8180354703411904525
+        references: []
+        parentIds:
+        - b790bd72-9a42-45a3-873b-a7881abd922f
+        childIds:
+        - ac9eff8e-1533-4502-868f-19db683326a5
+        - f88b0594-79c2-4295-80ac-529c8ed16da6
+      - name: jugador_secuencia
+        id: ac9eff8e-1533-4502-868f-19db683326a5
+        position: {x: -693.6, y: 33.6}
+        node:
+          rid: 8180354703411904526
+        references: []
+        parentIds:
+        - 077baded-9993-483f-8c8b-c2a297364eb5
+        childIds:
+        - 515d86c0-0595-4f3c-9ec0-f5107bfddbcf
+        - 16c07d23-5417-4ce1-9b45-3251c1109bcc
+      - name: jugador_cerca
+        id: 515d86c0-0595-4f3c-9ec0-f5107bfddbcf
+        position: {x: -836, y: 209.6}
+        node:
+          rid: 8180354703411904527
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8180354703411904528
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - ac9eff8e-1533-4502-868f-19db683326a5
+        childIds:
+        - 51ebe2d8-0bff-4820-a7bd-01118f9a691e
+      - name: action_selector
+        id: 51ebe2d8-0bff-4820-a7bd-01118f9a691e
+        position: {x: -844, y: 451.99997}
+        node:
+          rid: 8180354703411904599
+        references: []
+        parentIds:
+        - 515d86c0-0595-4f3c-9ec0-f5107bfddbcf
+        childIds:
+        - 3a8489ce-c2ca-49b5-9475-8df2735e01e3
+        - 9eb27b13-b18b-428b-b09f-3859b59f223b
+        - f30d10a0-852c-4e28-a786-18178cb70cc6
+      - name: player_tiene_linterna
+        id: 3a8489ce-c2ca-49b5-9475-8df2735e01e3
+        position: {x: -1123.2, y: 669.60004}
+        node:
+          rid: 8180354703411904600
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8180354703411904601
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 51ebe2d8-0bff-4820-a7bd-01118f9a691e
+        childIds:
+        - 813eec22-a59e-4570-b626-1c5a7ded5486
       - name: Huir
-        id: 8ae76eb0-b219-4841-83c2-8e5d37384c88
-        position: {x: -245.35663, y: 771.70886}
+        id: 813eec22-a59e-4570-b626-1c5a7ded5486
+        position: {x: -1124, y: 886.4}
         node:
-          rid: 8180354659019653121
+          rid: 8180354703411904602
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 8180354703411904603
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - cb6f7657-722e-43ec-b110-0e347a980720
+        - 3a8489ce-c2ca-49b5-9475-8df2735e01e3
         childIds: []
-      - name: PerseguirJugador
-        id: 2bc52253-e0f8-451f-956b-29e41dd8a36b
-        position: {x: 1811.4722, y: -1258.5222}
+      - name: sombra_huyendo
+        id: 9eb27b13-b18b-428b-b09f-3859b59f223b
+        position: {x: -834.4, y: 668}
         node:
-          rid: 8180354659019653122
+          rid: 8180354703411904604
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8180354703411904625
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 51ebe2d8-0bff-4820-a7bd-01118f9a691e
+        childIds:
+        - 1efbb935-34c4-409d-a69d-f7b11861229c
+      - name: HuirSombra
+        id: 1efbb935-34c4-409d-a69d-f7b11861229c
+        position: {x: -826.4, y: 884.80005}
+        node:
+          rid: 8180354703411904605
         references:
         - fieldName: Action
           value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds: []
-        childIds: []
-      - name: ApagarLuces
-        id: 0219e6aa-5b1c-42d3-b7b7-80e9742cfff2
-        position: {x: 1120.3054, y: 741.7157}
-        node:
-          rid: 8180354659019653123
-        references:
-        - fieldName: Action
-          value:
-            rid: 8180354681457344518
+            rid: 8180354703411904606
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - e8fb3c45-3c5d-4fcf-8634-23b343f62266
+        - 9eb27b13-b18b-428b-b09f-3859b59f223b
+        childIds: []
+      - name: Sucess
+        id: 16c07d23-5417-4ce1-9b45-3251c1109bcc
+        position: {x: -546.4, y: 225.6}
+        node:
+          rid: 8180354703411904607
+        references: []
+        parentIds:
+        - ac9eff8e-1533-4502-868f-19db683326a5
+        childIds: []
+      - name: luces_secuencia
+        id: f88b0594-79c2-4295-80ac-529c8ed16da6
+        position: {x: -125.6, y: 188}
+        node:
+          rid: 8180354703411904608
+        references: []
+        parentIds:
+        - 077baded-9993-483f-8c8b-c2a297364eb5
+        childIds:
+        - 8d0bb3f1-7103-4486-adc0-31ea47a3ba9b
+        - 320825ff-f82e-4007-8d94-718569e5e485
+        - 9fa394ec-6521-452b-8860-5ca12d6e5479
+        - 99ffbabe-6785-44e1-8eea-62ffbd08e47b
+      - name: Idle
+        id: 8d0bb3f1-7103-4486-adc0-31ea47a3ba9b
+        position: {x: -499.2, y: 475.99997}
+        node:
+          rid: 8180354703411904609
+        references:
+        - fieldName: Action
+          value:
+            rid: 8180354703411904610
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - f88b0594-79c2-4295-80ac-529c8ed16da6
         childIds: []
       - name: Delay
-        id: e8fb3c45-3c5d-4fcf-8634-23b343f62266
-        position: {x: 824.8, y: 636.80005}
+        id: 320825ff-f82e-4007-8d94-718569e5e485
+        position: {x: -236.8, y: 483.99997}
         node:
-          rid: 8180354659019653126
-        references:
-        - fieldName: Perception
-          value:
-            rid: 8180354681457344529
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - deed234b-2d18-4f21-915b-205e6a9584ff
-        childIds:
-        - 0219e6aa-5b1c-42d3-b7b7-80e9742cfff2
-      - name: Has_flashlight
-        id: cb6f7657-722e-43ec-b110-0e347a980720
-        position: {x: 62.417404, y: 650.2711}
-        node:
-          rid: 8180354659019653203
-        references:
-        - fieldName: Perception
-          value:
-            rid: 8180354659019653205
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - deed234b-2d18-4f21-915b-205e6a9584ff
-        childIds:
-        - 8ae76eb0-b219-4841-83c2-8e5d37384c88
-      - name: DontHaveFlashlight
-        id: 0d9454e1-202d-44a2-9cc1-a6b6a40647ad
-        position: {x: 388.11487, y: 172.23987}
-        node:
-          rid: 8180354681457344521
-        references:
-        - fieldName: Perception
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - deed234b-2d18-4f21-915b-205e6a9584ff
-        childIds: []
-    - name: BuscarLuces
-      id: 21699957-1a50-4f2b-bfb6-844fcc28a916
-      graph:
-        rid: 8180354659019653124
-      nodes:
-      - name: LoopUntilFail
-        id: 465afe0e-4d3d-4376-9d40-7bbeeee5ec5e
-        position: {x: 998.752, y: 270.848}
-        node:
-          rid: 8180354659019653125
-        references: []
-        parentIds: []
-        childIds:
-        - 85192621-a1ae-47ae-aa87-3992dcfdf5a9
-      - name: MainSequence
-        id: 85192621-a1ae-47ae-aa87-3992dcfdf5a9
-        position: {x: 1006.4, y: 505.6}
-        node:
-          rid: 8180354681457344512
+          rid: 8180354703411904611
         references: []
         parentIds:
-        - 465afe0e-4d3d-4376-9d40-7bbeeee5ec5e
+        - f88b0594-79c2-4295-80ac-529c8ed16da6
         childIds:
-        - 38835911-eba4-4019-9e6e-d6342de1913d
-        - 41f6b293-cbec-4586-b345-d5d601e2087c
-        - c462bfea-a37a-4ad5-b68e-b88585030221
-      - name: SwitchOff
-        id: c462bfea-a37a-4ad5-b68e-b88585030221
-        position: {x: 1310.4, y: 720}
+        - 24994754-2eb9-4280-a3d6-b30ca5a26085
+      - name: BuscarLuz
+        id: 24994754-2eb9-4280-a3d6-b30ca5a26085
+        position: {x: -260.8, y: 661.60004}
         node:
-          rid: 8180354681457344517
+          rid: 8180354703411904613
         references:
         - fieldName: Action
           value:
-            rid: 8180354681457344527
+            rid: 8180354703411904614
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 85192621-a1ae-47ae-aa87-3992dcfdf5a9
+        - 320825ff-f82e-4007-8d94-718569e5e485
         childIds: []
-      - name: Light_on
-        id: 38835911-eba4-4019-9e6e-d6342de1913d
-        position: {x: 750.4, y: 744}
+      - name: TengoLuz
+        id: 9fa394ec-6521-452b-8860-5ca12d6e5479
+        position: {x: -2.4, y: 459.99997}
         node:
-          rid: 8180354681457344523
+          rid: 8180354703411904615
         references:
         - fieldName: Perception
           value:
-            rid: 8180354681457344524
+            rid: 8180354703411904616
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 85192621-a1ae-47ae-aa87-3992dcfdf5a9
-        childIds: []
-      - name: Light_near
-        id: 41f6b293-cbec-4586-b345-d5d601e2087c
-        position: {x: 1022.4, y: 736}
+        - f88b0594-79c2-4295-80ac-529c8ed16da6
+        childIds:
+        - 11189f66-bb19-48fd-ae1e-fe41cf68d311
+      - name: MoverseHaciaLuz
+        id: 11189f66-bb19-48fd-ae1e-fe41cf68d311
+        position: {x: -1.6, y: 661.60004}
         node:
-          rid: 8180354681457344525
+          rid: 8180354703411904617
+        references:
+        - fieldName: Action
+          value:
+            rid: 8180354703411904618
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 9fa394ec-6521-452b-8860-5ca12d6e5479
+        childIds: []
+      - name: HaLlegadoLuz
+        id: 99ffbabe-6785-44e1-8eea-62ffbd08e47b
+        position: {x: 240.8, y: 467.99997}
+        node:
+          rid: 8180354703411904619
         references:
         - fieldName: Perception
           value:
-            rid: 8180354681457344526
+            rid: 8180354703411904620
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 85192621-a1ae-47ae-aa87-3992dcfdf5a9
+        - f88b0594-79c2-4295-80ac-529c8ed16da6
+        childIds:
+        - aa40f78e-3766-49f8-8663-6b8a4ae44431
+      - name: ApagarLuz
+        id: aa40f78e-3766-49f8-8663-6b8a4ae44431
+        position: {x: 248.8, y: 669.60004}
+        node:
+          rid: 8180354703411904621
+        references:
+        - fieldName: Action
+          value:
+            rid: 8180354703411904622
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 99ffbabe-6785-44e1-8eea-62ffbd08e47b
+        childIds: []
+      - name: PerseguirJugador
+        id: f30d10a0-852c-4e28-a786-18178cb70cc6
+        position: {x: -556, y: 700}
+        node:
+          rid: 8180354703411904623
+        references:
+        - fieldName: Action
+          value:
+            rid: 8180354703411904624
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 51ebe2d8-0bff-4820-a7bd-01118f9a691e
         childIds: []
     pushPerceptions: []
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
-    - rid: 8180354636638846976
-      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 8180354659019653120
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 8180354659019653121
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 8180354659019653122
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 8180354659019653123
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 8180354659019653124
+    - rid: 8180354703411904524
       type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8180354659019653125
-      type: {class: LoopUntilNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+    - rid: 8180354703411904525
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
-        TargetStatus: 4
-        MaxIterations: -1
-    - rid: 8180354659019653126
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+        IsRandomized: 0
+    - rid: 8180354703411904526
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
-        StatusFlags: -1
-    - rid: 8180354659019653203
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: -1
-    - rid: 8180354659019653205
+        IsRandomized: 0
+    - rid: 8180354703411904527
+      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8180354703411904528
       type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
         init:
@@ -464,7 +511,7 @@ MonoBehaviour:
           methodName: 
         check:
           componentName: SombraAbandono
-          methodName: playerHasFlashLight
+          methodName: JugadorCerca
         reset:
           componentName: 
           methodName: 
@@ -474,35 +521,145 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
-    - rid: 8180354681457344512
+    - rid: 8180354703411904599
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 8180354703411904600
+      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8180354703411904601
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: SombraAbandono
+          methodName: PlayerHasFlashLight
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8180354703411904602
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8180354703411904603
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: SombraAbandono
+          methodName: Huir
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8180354703411904604
+      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8180354703411904605
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8180354703411904606
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: SombraAbandono
+          methodName: HuirSombra
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8180354703411904607
+      type: {class: SuccederNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8180354703411904608
       type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
         IsRandomized: 0
-    - rid: 8180354681457344517
+    - rid: 8180354703411904609
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8180354681457344518
-      type: {class: SubgraphAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8180354703411904610
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        ExecuteOnLoop: 0
-        InterruptOptions: 2
-        subgraphId: 21699957-1a50-4f2b-bfb6-844fcc28a916
-    - rid: 8180354681457344521
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: SombraAbandono
+          methodName: Idle
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8180354703411904611
+      type: {class: TimerDecoratorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
-        StatusFlags: -1
-    - rid: 8180354681457344523
+        Time: 2
+    - rid: 8180354703411904612
+      type: {class: LoopNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        Iterations: -1
+    - rid: 8180354703411904613
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8180354703411904614
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: SombraAbandono
+          methodName: SeekLight
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8180354703411904615
       type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8180354681457344524
+    - rid: 8180354703411904616
       type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
         init:
           componentName: 
           methodName: 
         check:
-          componentName: 
-          methodName: 
+          componentName: SombraAbandono
+          methodName: TengoLuz
         reset:
           componentName: 
           methodName: 
@@ -512,18 +669,39 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
-    - rid: 8180354681457344525
+    - rid: 8180354703411904617
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8180354703411904618
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: SombraAbandono
+          methodName: MoveToLight
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8180354703411904619
       type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8180354681457344526
+    - rid: 8180354703411904620
       type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
         init:
           componentName: 
           methodName: 
         check:
-          componentName: 
-          methodName: 
+          componentName: SombraAbandono
+          methodName: HaLlegadoLuz
         reset:
           componentName: 
           methodName: 
@@ -533,14 +711,63 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
-    - rid: 8180354681457344527
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8180354703411904621
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8180354703411904622
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        method:
+        start:
           componentName: 
           methodName: 
-    - rid: 8180354681457344529
-      type: {class: DistancePerception, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+        update:
+          componentName: SombraAbandono
+          methodName: SwitchOffLight
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8180354703411904623
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8180354703411904624
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        OtherTransform: {fileID: 0}
-        MaxDistance: 0
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: SombraAbandono
+          methodName: PerseguirJugador
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8180354703411904625
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: SombraAbandono
+          methodName: OtraSombraHuyendo
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 

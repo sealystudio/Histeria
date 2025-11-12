@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -29,6 +30,7 @@ public class SombraAbandono : EnemyBase
     Vector2 direccionHuida;
 
     LightTarget? target;
+    private bool _hasTarget;
 
     public Light2D globalTargetLight;
     public Vector2 globalLightPos;
@@ -39,6 +41,12 @@ public class SombraAbandono : EnemyBase
     private GameObject[] lights;
 
     bool _playerFlashlight;
+    float detectionRange = 1f;
+
+    public static List<SombraAbandono> todasLasSombras = new List<SombraAbandono>();
+
+    private bool _estoyHuyendo;
+
 
     private void Start()
     {
@@ -102,12 +110,84 @@ public class SombraAbandono : EnemyBase
         return _playerFlashlight;
     }
 
+    public bool PlayerHasNoFlashLight()
+    {
+
+        return !_playerFlashlight;
+    }
+
+    public bool EstoyHuyendo()
+    {
+
+        return _estoyHuyendo;
+
+    }
+
+    public bool OtraSombraHuyendo(GameObject otraSombra)
+    {
+        SombraAbandono sombraHuye;
+        if (otraSombra == null) 
+            return false;
+
+        if (otraSombra.GetComponent<SombraAbandono>() != null) { 
+            
+            return false;
+
+        }
+        else
+        {
+
+          sombraHuye = otraSombra.GetComponentInParent<SombraAbandono>();
+
+        }
+
+
+        if(Vector2.Distance(transform.position , otraSombra.transform.position) < detectionRange) {
+
+
+         return sombraHuye.EstoyHuyendo();
+
+        }
+        else
+        {
+
+            return false;
+        }
+
+
+        
+
+    }
+
+    public bool JugadorCerca()
+    {
+        return Vector2.Distance(transform.position, player.transform.position) < detectionRange;
+    }
+
+    public bool JugadorNoCerca()
+    {
+        return !(Vector2.Distance(transform.position, player.transform.position) < detectionRange);
+    }
+
+
+
+    public bool TengoLuz()
+    {
+
+        return _hasTarget;
+
+    }
+    public bool HaLlegadoLuz(LightTarget? destino)
+    {
+
+        return Vector2.Distance(transform.position, destino.Value.position) < 0.2f;
+    }
     LightTarget? SeekLight()
     {
         
         Light2D closestLight = null;
         Vector2 closestPos = Vector2.zero;
-        float minDist = Mathf.Infinity;
+        float minDist = 0;
 
         foreach (GameObject obj in lights)
         {
@@ -175,7 +255,7 @@ public class SombraAbandono : EnemyBase
 
     public void HuirSombra(GameObject other)
     {
-        data.moveSpeed = 2.5f;
+        data.moveSpeed = 5f;
 
         
         bool above = transform.position.y > other.transform.position.y;
@@ -198,7 +278,7 @@ public class SombraAbandono : EnemyBase
     public void PerseguirJugador()
     {
 
-        data.moveSpeed = 2.5f;
+        data.moveSpeed = 5f;
 
         Vector2 dir =  player.transform.position - transform.position ;
 
