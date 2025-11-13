@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemiesSpawnPoint : MonoBehaviour
+public class EnemySpawnPoint : MonoBehaviour
 {
     void Start()
     {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b447d4bb5d82514a97967d874b60ab5, type: 3}
   m_Name: SombraAbandonoData
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 50
   moveSpeed: 1.5
   damage: 1
   hitEffect: {fileID: 9211891721484735670, guid: 02db1f102b3ad81428d3ff23707eed5a, type: 3}

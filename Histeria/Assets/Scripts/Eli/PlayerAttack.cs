@@ -49,7 +49,8 @@ public class PlayerAttack : MonoBehaviour
             SombraAbandono sombra = hit.GetComponent<SombraAbandono>();
             if (sombra != null)
             {
-                sombra.TakeDamageFromLight(1); // placeholder daÃ±o
+                //las sombras no reciben daño del puño
+                //sombra.TakeDamageFromLight(1); // placeholder daÃ±o
             }
         }
     }

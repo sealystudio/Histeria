@@ -6,7 +6,7 @@ public class ObjectSpawnPoint : MonoBehaviour
     {
         if (DungeonPopulator.instance != null)
         {
-            DungeonPopulator.instance.availableSpawnPoints.Add(this.transform);
+            DungeonPopulator.instance.objectSpawnPoints.Add(this.transform);
         }
         else
         {

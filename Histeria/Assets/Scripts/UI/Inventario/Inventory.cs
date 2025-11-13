@@ -33,6 +33,7 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Escape))
         {
             bool abrir = !inventoryCanvas.enabled;
+            PlayerMovement pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
             inventoryCanvas.enabled = abrir;
             isInventoryOpen = abrir;
 
@@ -41,13 +42,16 @@ public class Inventory : MonoBehaviour
                 Time.timeScale = 0f;
                 Cursor.visible = true;
                 inventoryCanvas.GetComponent<InventoryUI>().RefreshUI();
+                pm.canPunch = false;
                 hudCanvas.enabled = false;
             }
             else
             {
                 Time.timeScale = 1f;
                 Cursor.visible = false;
+                pm.canPunch = true;
                 hudCanvas.enabled = true;
+                
             }
         }
     }
@@ -112,6 +116,8 @@ public class Inventory : MonoBehaviour
             items.RemoveAt(index);
 
         inventoryCanvas.GetComponent<InventoryUI>().RefreshUI();
+
+        CloseInventory();
     }
 
     public void CloseInventory()
