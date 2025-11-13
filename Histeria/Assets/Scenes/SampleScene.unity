@@ -1129,9 +1129,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0029069767
-    width: 0.99934685
-    height: 0.99627906
+    y: 0.0027247956
+    width: 1
+    height: 0.9964032
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -2999,9 +2999,12 @@ MonoBehaviour:
   objectsToSpawn:
   - {fileID: 3422355972939029151, guid: 8277b30923cc48846beed42063a66337, type: 3}
   - {fileID: 3703909108270433135, guid: 69dafba8323c465459b0ef46d85c23ae, type: 3}
-  - {fileID: 3268063015829470887, guid: 7280c3d245c29934dbf6969caf61a820, type: 3}
-  - {fileID: 3268063015829470887, guid: 7280c3d245c29934dbf6969caf61a820, type: 3}
   - {fileID: 4563766033848260579, guid: 78feed662ae618c45841210bada107f5, type: 3}
+  - {fileID: 7841130041481084924, guid: f70ca4a5c2ee2f941acb372e986ebe5e, type: 3}
+  - {fileID: 3394067301948519984, guid: 7cd4d8d57c617d64b94256db3d1915c1, type: 3}
+  - {fileID: 3268063015829470887, guid: 7280c3d245c29934dbf6969caf61a820, type: 3}
+  - {fileID: 3268063015829470887, guid: 7280c3d245c29934dbf6969caf61a820, type: 3}
+  - {fileID: 3268063015829470887, guid: 7280c3d245c29934dbf6969caf61a820, type: 3}
   populationDelay: 1
   availableSpawnPoints: []
 --- !u!114 &1339741444

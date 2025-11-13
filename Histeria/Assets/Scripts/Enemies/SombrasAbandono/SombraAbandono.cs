@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -47,6 +48,10 @@ public class SombraAbandono : EnemyBase
 
     private bool _estoyHuyendo;
 
+    private bool isIdle = false;
+    private Vector3 idleStartPos;
+    private float floatAmplitude = 0.2f; // altura del flotado
+    private float floatFrequency = 1f;   // velocidad del flotado
 
     private void Start()
     {
@@ -62,15 +67,20 @@ public class SombraAbandono : EnemyBase
 
     private void Update()
     {
-        if (data == null) return;
+        if (data == null || isDead) return; // no flotamos si está muerto
 
+        // Flotado si está en idle
+        if (isIdle)
+        {
+            float yOffset = Mathf.Sin(Time.time * floatFrequency) * floatAmplitude;
+            transform.position = idleStartPos + new Vector3(0f, yOffset, 0f);
+        }
+        else if (direccionHuida != Vector2.zero)
+        {
+            transform.Translate(direccionHuida * data.moveSpeed * Time.deltaTime, Space.World);
+            //transform.Translate(Vector3.up * Mathf.Sin(Time.time * data.moveSpeed) * Time.deltaTime);
+        }
 
-        if (direccionHuida == Vector2.zero)
-            return;
-
-        transform.Translate(direccionHuida * data.moveSpeed * Time.deltaTime, Space.World);
-
-        //transform.Translate(Vector3.up * Mathf.Sin(Time.time * data.moveSpeed) * Time.deltaTime);
     }
 
     //solo se le puede matar con la linterna, por eso dara igual que le pegues
@@ -289,12 +299,18 @@ public class SombraAbandono : EnemyBase
 
     public void Idle()
     {
+        data.moveSpeed = 0;  // Se para la sombra
+        direccionHuida = Vector2.zero;
 
-     data.moveSpeed = 0;  //Se para la sombra
+        // Activamos el flotado
+        if (!isIdle)
+        {
+            idleStartPos = transform.position; // guardamos posición base
+            isIdle = true;
+        }
 
-        Vector2 dir = Vector2.zero;
-
-        direccionHuida = dir;
+        if (animator != null)
+            animator.SetTrigger("Idle"); // si quieres usar animación de sprite estático
     }
 
     protected override void OnHit()
@@ -308,6 +324,9 @@ public class SombraAbandono : EnemyBase
 
     protected override void Die()
     {
+        if (animator != null)
+            animator.SetTrigger("Die"); // dispara la animación de muerte
+
         if (data != null && data.dieEffect != null)
             Instantiate(data.dieEffect, transform.position, Quaternion.identity);
 

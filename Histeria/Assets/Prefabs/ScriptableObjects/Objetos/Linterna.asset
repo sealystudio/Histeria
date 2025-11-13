@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0333879417dad34d9857aeb6456558b, type: 3}
-  m_Name: Linterna_Item
+  m_Name: Linterna
   m_EditorClassIdentifier: 
   itemName: Linterna
   description: "Una vieja linterna. El bot\xF3n derecho la enciendo."

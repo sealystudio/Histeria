@@ -208,7 +208,7 @@ MonoBehaviour:
   isDead: 0
   canMove: 1
   canAttack: 1
-  animator: {fileID: 0}
+  animator: {fileID: 6900242033296458286}
   knockbackForce: {x: 2, y: 2}
   data: {fileID: 11400000, guid: 349d203abcf925441866a6ef14f54996, type: 2}
   globalTargetLight: {fileID: 0}

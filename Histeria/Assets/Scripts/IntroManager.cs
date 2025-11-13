@@ -209,11 +209,11 @@ public class IntroManager : MonoBehaviour
     private IEnumerator IrAlMenuCoroutine()
     {
         StartCoroutine(MoverYRedimensionarLogo(logoHist, logoFinalPos, 3f));
+        botonContinuar.SetActive(false);
         yield return new WaitForSeconds(3f);
 
         StartCoroutine(FadeCanvasGroup(continuar, 1f, 0f, 2f));
         StartCoroutine(FadeCanvasGroup(panelNegro, 1f, 0f, 2f));
-        botonContinuar.SetActive(false);
 
         StartCoroutine(FadeCanvasGroup(jugar, 0f, 1f, 2f));
         StartCoroutine(FadeCanvasGroup(creditos, 0f, 1f, 2f));
