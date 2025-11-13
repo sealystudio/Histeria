@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Linterna
   description: "Una vieja linterna. El bot\xF3n derecho la enciendo."
-  icon: {fileID: -3509768373723393573, guid: ae05cd69df41b6b439d7253f21390fc0, type: 3}
+  icon: {fileID: 5642844357850739608, guid: 30e93dbb2a8c78440a681f5707b84839, type: 3}
   itemType: 2
   consumableData:
     healAmount: 0

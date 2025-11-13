@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5, y: 2, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,8 +102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 0332f98d232eb7c4b856c226ac351564, type: 2}
-  canvasTexto: {fileID: 0}
-  inventoryCanvas: {fileID: 0}
 --- !u!70 &4347694443033366980
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -139,5 +137,5 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.23, y: 0.1}
+  m_Size: {x: 51.762028, y: 51.762028}
   m_Direction: 0

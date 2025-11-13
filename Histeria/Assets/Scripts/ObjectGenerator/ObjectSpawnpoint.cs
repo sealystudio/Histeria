@@ -2,13 +2,10 @@ using UnityEngine;
 
 public class ObjectSpawnPoint : MonoBehaviour
 {
-    // Esta función se llama tan pronto como el prefab de la habitación se instancia
     void Start()
     {
-        // 1. Busca el manager
         if (DungeonPopulator.instance != null)
         {
-            // 2. Se añade a sí mismo a la lista de "disponibles"
             DungeonPopulator.instance.availableSpawnPoints.Add(this.transform);
         }
         else
@@ -17,11 +14,10 @@ public class ObjectSpawnPoint : MonoBehaviour
         }
     }
 
-    // (Opcional) Esto dibuja un icono en tu editor de escenas
-    // para que puedas ver dónde están tus spawn points.
+    //funcion visual para ver los spawnpoints
     void OnDrawGizmos()
     {
-        Gizmos.color = new Color(0, 1, 0, 0.5f); // Verde semitransparente
+        Gizmos.color = new Color(0, 1, 0, 0.5f); 
         Gizmos.DrawSphere(transform.position, 0.5f);
     }
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 30e93dbb2a8c78440a681f5707b84839
+guid: ac7739dc53f053b4a8a8550056518ec3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5642844357850739608
-    second: Linterna_0
+      213: 2100592875457711318
+    second: CorazonVacio1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Linterna_0
+      name: CorazonVacio1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 5
-        width: 32
-        height: 19
+        x: 1
+        y: 0
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 893b280eb096f4e40800000000000000
-      internalID: 5642844357850739608
+      spriteID: 6dc8f5f371ec62d10800000000000000
+      internalID: 2100592875457711318
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Linterna_0: 5642844357850739608
+      CorazonVacio1_0: 2100592875457711318
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

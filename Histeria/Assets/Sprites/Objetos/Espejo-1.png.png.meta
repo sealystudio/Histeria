@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 30e93dbb2a8c78440a681f5707b84839
+guid: e2856f4f236b06449959300b4f9f8f1c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5642844357850739608
-    second: Linterna_0
+      213: -3152559878667850079
+    second: Espejo-1.png_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Linterna_0
+      name: Espejo-1.png_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 5
-        width: 32
-        height: 19
+        x: 1
+        y: 0
+        width: 29
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 893b280eb096f4e40800000000000000
-      internalID: 5642844357850739608
+      spriteID: 1aeaada4e7bdf34d0800000000000000
+      internalID: -3152559878667850079
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Linterna_0: 5642844357850739608
+      Espejo-1.png_0: -3152559878667850079
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
