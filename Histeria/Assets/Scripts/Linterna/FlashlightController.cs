@@ -1,11 +1,12 @@
 // Pon este script en el Prefab "LinternaEquipable"
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class FlashlightController : MonoBehaviour
 {
     [Header("Referencias de Sprites")]
     public SpriteRenderer spriteRendererOff;
-    public SpriteRenderer spriteRendererOn; 
+    private Light2D luzLinterna;
 
     [Header("Configuración de Ataque")]
     public float attackRange = 8f;
@@ -14,6 +15,10 @@ public class FlashlightController : MonoBehaviour
 
     private CrosshairController crosshair;
 
+    public AudioClip onSound;
+    public AudioClip offSound;
+    private AudioSource audioSource;
+
     public void Initialize(CrosshairController targetCrosshair)
     {
         crosshair = targetCrosshair;
@@ -21,8 +26,10 @@ public class FlashlightController : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        luzLinterna = GetComponent<Light2D>();
         //luz apagada por defecto
-        if (spriteRendererOn) spriteRendererOn.enabled = false;
+        luzLinterna.enabled = false;
         if (spriteRendererOff) spriteRendererOff.enabled = true;
     }
 
@@ -45,17 +52,20 @@ public class FlashlightController : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             // cambiar a luz encendida
-            if (spriteRendererOn) spriteRendererOn.enabled = true;
-            if (spriteRendererOff) spriteRendererOff.enabled = false;
+            audioSource.PlayOneShot(onSound, 1f);
+            luzLinterna.enabled = true;
 
             //ataca
             PerformLightAttack(dir);
         }
         else
         {
+            audioSource.Stop();
+
             //mostar luz apagada
-            if (spriteRendererOn) spriteRendererOn.enabled = false;
-            if (spriteRendererOff) spriteRendererOff.enabled = true;
+            audioSource.PlayOneShot(offSound, 1f);
+            luzLinterna.enabled = false;
+
         }
     }
 
@@ -63,7 +73,7 @@ public class FlashlightController : MonoBehaviour
     void PerformLightAttack(Vector3 direction)
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(
-            transform.position, // Origen
+            luzLinterna.transform.position, // Origen
             attackWidth,        // Ancho del rayo
             direction,          // Dirección
             attackRange         // Distancia

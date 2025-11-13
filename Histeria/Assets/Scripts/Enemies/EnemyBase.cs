@@ -26,17 +26,15 @@ public abstract class EnemyBase : MonoBehaviour
     [Header("Animaciones y efectos")]
     public Animator animator;
     public Vector2 knockbackForce = new Vector2(2f, 2f);
-    public AudioClip hitSound;           // sonido al recibir daño
     public float flashDuration = 0.15f;  // duración del parpadeo
     private SpriteRenderer spriteRenderer;
-    private AudioSource audioSource;
+    
     private Rigidbody2D rb;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        audioSource = GetComponent<AudioSource>();
 
 
         if (rb != null)
@@ -83,9 +81,7 @@ public abstract class EnemyBase : MonoBehaviour
         if (animator != null)
             animator.SetTrigger("Hit");
 
-        // reproducir sonido si existe
-        if (hitSound != null && audioSource != null)
-            audioSource.PlayOneShot(hitSound);
+       
 
         // parpadeo visual
         if (spriteRenderer != null)
@@ -97,7 +93,9 @@ public abstract class EnemyBase : MonoBehaviour
     {
         if (animator != null)
             animator.SetTrigger("Die");
-        
+
+       
+
         Destroy(gameObject, 0.5f); //Destruir el gameobject
     }
 

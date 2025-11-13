@@ -1129,9 +1129,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.0024937657
     width: 1
-    height: 1
+    height: 0.99571073
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -2819,6 +2819,9 @@ MonoBehaviour:
   - {fileID: 4563766033848260579, guid: 78feed662ae618c45841210bada107f5, type: 3}
   - {fileID: 7841130041481084924, guid: f70ca4a5c2ee2f941acb372e986ebe5e, type: 3}
   - {fileID: 3394067301948519984, guid: 7cd4d8d57c617d64b94256db3d1915c1, type: 3}
+  - {fileID: 3315931310599578974, guid: dae85f53deb95de49ab8c081a0e1ab6a, type: 3}
+  - {fileID: 7492991434519927874, guid: d79840f8dde55314da1e724789ad65e8, type: 3}
+  - {fileID: 7638846088084033093, guid: 892f22a6a81fc60498ae16c0bfa71472, type: 3}
   - {fileID: 3268063015829470887, guid: 7280c3d245c29934dbf6969caf61a820, type: 3}
   - {fileID: 3268063015829470887, guid: 7280c3d245c29934dbf6969caf61a820, type: 3}
   - {fileID: 3268063015829470887, guid: 7280c3d245c29934dbf6969caf61a820, type: 3}
@@ -4109,10 +4112,10 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.6918832, g: 0.76861334, b: 0.8679245, a: 1}
-  m_Intensity: 0.77
+  m_Intensity: 0.35
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000b10ee869cb561543cf07a081e1948b2025b0321e39c3df632d33c94e0fa4cd87e5840bf1
+  m_ApplyToSortingLayers: 00000000b10ee869cb561543cf07a08125b0321e2d33c94e0fa4cd87e5840bf1e1948b2039c3df63
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

@@ -53,12 +53,23 @@ public class SombraAbandono : EnemyBase
     private float floatAmplitude = 0.2f; // altura del flotado
     private float floatFrequency = 1f;   // velocidad del flotado
 
+
+    private AudioSource audioSource;
+    public AudioClip dieSound;           // sonido al recibir daño
+
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            // si no tiene audioSource, se lo añadimos
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
         if (data != null)
             InitializeStats(data.maxHealth);
 
-        player = GameObject.FindGameObjectWithTag("player");
+        player = GameObject.FindGameObjectWithTag("Player");
 
         playerAttack = player.GetComponent<PlayerAttack>(); 
 
@@ -326,6 +337,10 @@ public class SombraAbandono : EnemyBase
     {
         if (animator != null)
             animator.SetTrigger("Die"); // dispara la animación de muerte
+                                        // reproducir el sonido sin que se corte
+        if (dieSound != null)
+            AudioSource.PlayClipAtPoint(dieSound, transform.position, 0.8f);
+
 
         if (data != null && data.dieEffect != null)
             Instantiate(data.dieEffect, transform.position, Quaternion.identity);

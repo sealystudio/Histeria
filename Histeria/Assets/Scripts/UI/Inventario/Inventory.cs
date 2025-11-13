@@ -15,6 +15,9 @@ public class Inventory : MonoBehaviour
     private PlayerHealthHearts playerHealth;
     private PlayerEquipment playerEquipment;
 
+    private AudioSource audioSource;
+
+
     [System.Serializable]
     public class ItemSlot
     {
@@ -24,6 +27,13 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            // si no tiene audioSource, se lo añadimos
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
         if (inventoryCanvas != null)
             inventoryCanvas.enabled = false;
     }
@@ -100,8 +110,20 @@ public class Inventory : MonoBehaviour
 
             case ItemType.Narrativo:
                 if (item.storyData != null && item.storyData.narrationClip != null)
-                    AudioSource.PlayClipAtPoint(item.storyData.narrationClip, player.transform.position);
+                {
+                    GameObject tempAudioObj = new GameObject("TempNarrationAudio");
+                    AudioSource tempSource = tempAudioObj.AddComponent<AudioSource>();
+                    tempSource.clip = item.storyData.narrationClip;
+                    tempSource.playOnAwake = false;
+                    tempSource.spatialBlend = 0f; // 2D
+                    tempSource.volume = 1f;
+                    tempSource.Play();
+
+                    // Destruye el objeto una vez terminado el clip
+                    GameObject.Destroy(tempAudioObj, tempSource.clip.length);
+                }
                 break;
+
 
             case ItemType.Equipable:
                 if (item.equipableData != null && playerEquipment != null)
