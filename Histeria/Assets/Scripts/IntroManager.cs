@@ -11,11 +11,12 @@ public class IntroManager : MonoBehaviour
     public CanvasGroup logoHisteria;   // CanvasGroup del logo Histeria
     public CanvasGroup presents;   // CanvasGroup de PRESENTA
     public CanvasGroup continuar;   // CanvasGroup de CONTINUAR
-    public CanvasGroup panelNegro;   // CanvasGroup del panel de fondo
+    public CanvasGroup fondoNegro;   // CanvasGroup del panel de fondo
     public CanvasGroup jugar;   // CanvasGroup del boton jugar
     public CanvasGroup creditos;   // CanvasGroup del boton creditos
     public CanvasGroup salir;   // CanvasGroup del boton salir
     public CanvasGroup logoPeque;   // CanvasGroup del logo de Sealy Studio
+    public CanvasGroup fondo;   // CanvasGroup del logo de Sealy Studio
     [SerializeField] private GameObject botonContinuar;
     [SerializeField] private GameObject botonJugar;
     [SerializeField] private GameObject botonCreditos;
@@ -52,6 +53,7 @@ public class IntroManager : MonoBehaviour
         creditos.alpha = 0f;
         salir.alpha = 0f;
         logoPeque.alpha = 0f;
+        fondo.alpha = 0f;
 
         if (botonContinuar != null)
             botonContinuar.SetActive(false);
@@ -112,8 +114,11 @@ public class IntroManager : MonoBehaviour
         yield return new WaitForSeconds(tiempoLogoHisteria);
 
         yield return new WaitForSeconds(1f);
-        yield return StartCoroutine(MoverLogo(logoHist, targetPosition, moveDuration));
+        StartCoroutine(MoverLogo(logoHist, targetPosition, moveDuration));
+        StartCoroutine(FadeCanvasGroup(fondo, 0f, 1f, fadeDuration));
 
+        yield return new WaitForSeconds(3f);
+        StartCoroutine(FadeCanvasGroup(fondoNegro, 1f, 0f, fadeDuration));
         yield return new WaitForSeconds(1f);
         botonContinuar.SetActive(true);
         yield return StartCoroutine(FadeCanvasGroup(continuar, 0f, 1f, fadeDuration));
@@ -209,11 +214,10 @@ public class IntroManager : MonoBehaviour
     private IEnumerator IrAlMenuCoroutine()
     {
         StartCoroutine(MoverYRedimensionarLogo(logoHist, logoFinalPos, 3f));
-        botonContinuar.SetActive(false);
         yield return new WaitForSeconds(3f);
 
         StartCoroutine(FadeCanvasGroup(continuar, 1f, 0f, 2f));
-        StartCoroutine(FadeCanvasGroup(panelNegro, 1f, 0f, 2f));
+        botonContinuar.SetActive(false);
 
         StartCoroutine(FadeCanvasGroup(jugar, 0f, 1f, 2f));
         StartCoroutine(FadeCanvasGroup(creditos, 0f, 1f, 2f));

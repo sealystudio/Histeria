@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: aa8b55eb377cc034aa8f5955b0726b3c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8288932989725462135
+    second: Logo Histeria Letras_0
+  - first:
+      213: 5922817062333262770
+    second: Logo Histeria Letras_1
+  - first:
+      213: 2238108910344381308
+    second: Logo Histeria Letras_2
+  - first:
+      213: 6328645063788748747
+    second: Logo Histeria Letras_3
+  - first:
+      213: 2181561099898217219
+    second: Logo Histeria Letras_4
+  - first:
+      213: -8331310458835585339
+    second: Logo Histeria Letras_5
+  - first:
+      213: -3587469695777612500
+    second: Logo Histeria Letras_6
+  - first:
+      213: -8488219639858426427
+    second: Logo Histeria Letras_7
+  - first:
+      213: -8183053629092105936
+    second: Logo Histeria Letras_8
+  - first:
+      213: -2307304739175563037
+    second: Logo Histeria Letras_9
+  - first:
+      213: -4108377572190459791
+    second: Logo Histeria Letras_10
+  - first:
+      213: 2466092275807071892
+    second: Logo Histeria Letras_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Logo Histeria Letras_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 137
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 981b56ccc5bc7fc80800000000000000
+      internalID: -8288932989725462135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Histeria Letras_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 137
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb2ffddcb2123250800000000000000
+      internalID: 5922817062333262770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Histeria Letras_2
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 137
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c73a6b9223c5f0f10800000000000000
+      internalID: 2238108910344381308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Histeria Letras_3
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 137
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcf58a8a72dd3d750800000000000000
+      internalID: 6328645063788748747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Histeria Letras_4
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 137
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3036e3f0346764e10800000000000000
+      internalID: 2181561099898217219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Histeria Letras_5
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 137
+        width: 111
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c6bb93674d316c80800000000000000
+      internalID: -8331310458835585339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Histeria Letras_6
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 137
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2d52b4a15fb63ec0800000000000000
+      internalID: -3587469695777612500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Histeria Letras_7
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 109
+        width: 59
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cd8eb6c539c33a80800000000000000
+      internalID: -8488219639858426427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Histeria Letras_8
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 109
+        width: 187
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0317efb7414ff6e80800000000000000
+      internalID: -8183053629092105936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Histeria Letras_9
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 109
+        width: 42
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e08dd8709ecaffd0800000000000000
+      internalID: -2307304739175563037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Histeria Letras_10
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 109
+        width: 41
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178e76e7d5c1cf6c0800000000000000
+      internalID: -4108377572190459791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Histeria Letras_11
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 109
+        width: 97
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49ea0d2ebd1593220800000000000000
+      internalID: 2466092275807071892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Logo Histeria Letras_0: -8288932989725462135
+      Logo Histeria Letras_1: 5922817062333262770
+      Logo Histeria Letras_10: -4108377572190459791
+      Logo Histeria Letras_11: 2466092275807071892
+      Logo Histeria Letras_2: 2238108910344381308
+      Logo Histeria Letras_3: 6328645063788748747
+      Logo Histeria Letras_4: 2181561099898217219
+      Logo Histeria Letras_5: -8331310458835585339
+      Logo Histeria Letras_6: -3587469695777612500
+      Logo Histeria Letras_7: -8488219639858426427
+      Logo Histeria Letras_8: -8183053629092105936
+      Logo Histeria Letras_9: -2307304739175563037
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 089927aac68d65b42ba63ddc44421357
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3632098791882086480
+    second: Logo Sealy Studio_0
+  - first:
+      213: -2188328648560208915
+    second: Logo Sealy Studio_1
+  - first:
+      213: 8911744483012118754
+    second: Logo Sealy Studio_2
+  - first:
+      213: -5490124962820744907
+    second: Logo Sealy Studio_3
+  - first:
+      213: 2276451954820612345
+    second: Logo Sealy Studio_4
+  - first:
+      213: -5605617978762219446
+    second: Logo Sealy Studio_5
+  - first:
+      213: -8096865732241414053
+    second: Logo Sealy Studio_6
+  - first:
+      213: -8073734909985452630
+    second: Logo Sealy Studio_7
+  - first:
+      213: -2627736289818917310
+    second: Logo Sealy Studio_8
+  - first:
+      213: -1820283331432838413
+    second: Logo Sealy Studio_9
+  - first:
+      213: 7359103921294801021
+    second: Logo Sealy Studio_10
+  - first:
+      213: -5463009906106831735
+    second: Logo Sealy Studio_11
+  - first:
+      213: -4526531873934637037
+    second: Logo Sealy Studio_12
+  - first:
+      213: -8339406398539438558
+    second: Logo Sealy Studio_13
+  - first:
+      213: 6870169954332388656
+    second: Logo Sealy Studio_14
+  - first:
+      213: -808659018757656982
+    second: Logo Sealy Studio_15
+  - first:
+      213: 766371768486983138
+    second: Logo Sealy Studio_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Logo Sealy Studio_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 291
+        width: 101
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b72eb87461389dc0800000000000000
+      internalID: -3632098791882086480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 295
+        width: 113
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de312ca30be71a1e0800000000000000
+      internalID: -2188328648560208915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_2
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 295
+        width: 142
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e80cfe0460ecab70800000000000000
+      internalID: 8911744483012118754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_3
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 295
+        width: 84
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 539909a2f682fc3b0800000000000000
+      internalID: -5490124962820744907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_4
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 229
+        width: 282
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f08353edf4979f10800000000000000
+      internalID: 2276451954820612345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_5
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 311
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a40b55de528d432b0800000000000000
+      internalID: -5605617978762219446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_6
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 347
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b58a7bbf38722af80800000000000000
+      internalID: -8096865732241414053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_7
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 222
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aad85a730e454ff80800000000000000
+      internalID: -8073734909985452630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_8
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 263
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 246c0f944c7688bd0800000000000000
+      internalID: -2627736289818917310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_9
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 262
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fa816f44fd0db6e0800000000000000
+      internalID: -1820283331432838413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_10
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 24
+        width: 102
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d78f5f5b60ac02660800000000000000
+      internalID: 7359103921294801021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 27
+        width: 146
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98cef064f6d7f24b0800000000000000
+      internalID: -5463009906106831735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_12
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 24
+        width: 141
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31884a54e378e21c0800000000000000
+      internalID: -4526531873934637037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_13
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 56
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 226ef69801a744c80800000000000000
+      internalID: -8339406398539438558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_14
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 27
+        width: 156
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03d2b8a7c2fb75f50800000000000000
+      internalID: 6870169954332388656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_15
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 27
+        width: 61
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6ea88a28e017c4f0800000000000000
+      internalID: -808659018757656982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo Sealy Studio_16
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 25
+        width: 194
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e5fd822013b2aa00800000000000000
+      internalID: 766371768486983138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Logo Sealy Studio_0: -3632098791882086480
+      Logo Sealy Studio_1: -2188328648560208915
+      Logo Sealy Studio_10: 7359103921294801021
+      Logo Sealy Studio_11: -5463009906106831735
+      Logo Sealy Studio_12: -4526531873934637037
+      Logo Sealy Studio_13: -8339406398539438558
+      Logo Sealy Studio_14: 6870169954332388656
+      Logo Sealy Studio_15: -808659018757656982
+      Logo Sealy Studio_16: 766371768486983138
+      Logo Sealy Studio_2: 8911744483012118754
+      Logo Sealy Studio_3: -5490124962820744907
+      Logo Sealy Studio_4: 2276451954820612345
+      Logo Sealy Studio_5: -5605617978762219446
+      Logo Sealy Studio_6: -8096865732241414053
+      Logo Sealy Studio_7: -8073734909985452630
+      Logo Sealy Studio_8: -2627736289818917310
+      Logo Sealy Studio_9: -1820283331432838413
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
