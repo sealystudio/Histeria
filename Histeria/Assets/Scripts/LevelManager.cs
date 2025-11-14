@@ -3,18 +3,37 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    DungeonPopulator populator;
+    public static LevelManager instance;
 
     private void Awake()
     {
-        populator = new DungeonPopulator();
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);  // Mantener entre escenas
+        }
+        else
+        {
+            Destroy(gameObject); // Evita duplicados
+        }
     }
 
-    public void Update()
+    // Cargar escena concreta por nombre
+    public void LoadScene(string sceneName)
     {
-        if (populator.enemyNumber < 1)
+        if (string.IsNullOrEmpty(sceneName))
         {
-            SceneManager.LoadScene("Level2");
+            Debug.LogError("[LevelManager] Nombre de escena vacío.");
+            return;
         }
+
+        SceneManager.LoadScene(sceneName);
+    }
+
+    // Avanzar a la siguiente escena en build index
+    public void LoadNextScene()
+    {
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentIndex + 1);
     }
 }
