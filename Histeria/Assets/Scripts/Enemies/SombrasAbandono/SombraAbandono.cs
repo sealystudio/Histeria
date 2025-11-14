@@ -57,8 +57,10 @@ public class SombraAbandono : EnemyBase
     private AudioSource audioSource;
     public AudioClip dieSound;           // sonido al recibir daño
 
+    private LevelManager lm;
     private void Start()
     {
+        lm = FindAnyObjectByType<LevelManager>();
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -344,6 +346,8 @@ public class SombraAbandono : EnemyBase
 
         if (data != null && data.dieEffect != null)
             Instantiate(data.dieEffect, transform.position, Quaternion.identity);
+
+        lm.numeroDeSombras --;
 
         base.Die();
     }
