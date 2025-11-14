@@ -1130,9 +1130,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0019047619
-    width: 0.99999994
-    height: 0.9952
+    y: 0.15211971
+    width: 0.8976157
+    height: 0.8937656
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -2892,7 +2892,6 @@ MonoBehaviour:
   objectsToSpawn:
   - {fileID: 3422355972939029151, guid: 8277b30923cc48846beed42063a66337, type: 3}
   - {fileID: 3703909108270433135, guid: 69dafba8323c465459b0ef46d85c23ae, type: 3}
-  - {fileID: 3394067301948519984, guid: 1b0fe2c39cbc26a4a9e6ba46a825531e, type: 3}
   - {fileID: 4563766033848260579, guid: 78feed662ae618c45841210bada107f5, type: 3}
   - {fileID: 7841130041481084924, guid: f70ca4a5c2ee2f941acb372e986ebe5e, type: 3}
   - {fileID: 3394067301948519984, guid: 7cd4d8d57c617d64b94256db3d1915c1, type: 3}
@@ -3365,50 +3364,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391642377}
   m_CullTransparentMesh: 1
---- !u!1 &1422107599
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1422107601}
-  - component: {fileID: 1422107600}
-  m_Layer: 0
-  m_Name: LevelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1422107600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422107599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 652ac1ed8df874d4484b2ae50fa7aa63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1422107601
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422107599}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.88423574, y: -2.4178755, z: 6.247878}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1469279887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9147722093050662031, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
@@ -3882,8 +3837,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSlots: 10
   items: []
-  triggersLevelChange: 0
-  nextSceneName: 
   inventoryCanvas: {fileID: 1526528936}
   hudCanvas: {fileID: 340835797}
 --- !u!114 &1665382356
@@ -4356,4 +4309,3 @@ SceneRoots:
   - {fileID: 340835793}
   - {fileID: 454432037}
   - {fileID: 13008785}
-  - {fileID: 1422107601}

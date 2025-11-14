@@ -7,6 +7,10 @@ public class Inventory : MonoBehaviour
     public int maxSlots = 1;
     public List<ItemSlot> items = new List<ItemSlot>();
 
+    [Header("Cambio de escena al usar")]
+    public bool triggersLevelChange = false;
+    public string nextSceneName = "";
+
     [Header("Referencias")]
     public Canvas inventoryCanvas;
     public Canvas hudCanvas;
@@ -137,9 +141,19 @@ public class Inventory : MonoBehaviour
         else
             items.RemoveAt(index);
 
+        // Refrescar UI
         inventoryCanvas.GetComponent<InventoryUI>().RefreshUI();
 
+        // NUEVO: cambiar de escena si el item lo requiere
+        if (item.triggersLevelChange)
+        {
+            Debug.Log("[Inventory] El ítem usado activa cambio de escena → " + item.nextSceneName);
+            LevelManager.instance.LoadScene(item.nextSceneName);
+        }
+
+        // Cerrar inventario
         CloseInventory();
+
     }
 
     public void CloseInventory()
