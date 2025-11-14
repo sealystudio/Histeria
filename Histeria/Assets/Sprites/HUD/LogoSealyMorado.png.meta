@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 07dc1d4c36565e240bd3f94bb2e2619c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3820060822520144225
+    second: LogoSealyMorado_0
+  - first:
+      213: -2316827593191487278
+    second: LogoSealyMorado_1
+  - first:
+      213: 7922271209321804650
+    second: LogoSealyMorado_2
+  - first:
+      213: -4549331085492011892
+    second: LogoSealyMorado_3
+  - first:
+      213: 872385122029141494
+    second: LogoSealyMorado_4
+  - first:
+      213: 4983253834706411009
+    second: LogoSealyMorado_5
+  - first:
+      213: -8791942577475692352
+    second: LogoSealyMorado_6
+  - first:
+      213: -2100352628376308104
+    second: LogoSealyMorado_7
+  - first:
+      213: -8515314408646035891
+    second: LogoSealyMorado_8
+  - first:
+      213: 4906992894167870036
+    second: LogoSealyMorado_9
+  - first:
+      213: 7500412614405458035
+    second: LogoSealyMorado_10
+  - first:
+      213: -7149274266955641021
+    second: LogoSealyMorado_11
+  - first:
+      213: 116218835803784411
+    second: LogoSealyMorado_12
+  - first:
+      213: -7699257645458283379
+    second: LogoSealyMorado_13
+  - first:
+      213: 4450245913831111620
+    second: LogoSealyMorado_14
+  - first:
+      213: 3341879498385757610
+    second: LogoSealyMorado_15
+  - first:
+      213: -7365428104382622524
+    second: LogoSealyMorado_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LogoSealyMorado_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 291
+        width: 101
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9edc45ebea6cfac0800000000000000
+      internalID: -3820060822520144225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 295
+        width: 113
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d88ffd3499f8dfd0800000000000000
+      internalID: -2316827593191487278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_2
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 295
+        width: 142
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a633eedd0bf81fd60800000000000000
+      internalID: 7922271209321804650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_3
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 295
+        width: 84
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8c3b9b2b778dd0c0800000000000000
+      internalID: -4549331085492011892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_4
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 229
+        width: 282
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fdf1e975a55b1c00800000000000000
+      internalID: 872385122029141494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_5
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 311
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10e5743d5f2182540800000000000000
+      internalID: 4983253834706411009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_6
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 347
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8dde7becebcf580800000000000000
+      internalID: -8791942577475692352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_7
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 222
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8767292a96c0ad2e0800000000000000
+      internalID: -2100352628376308104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_8
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 263
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4633e159a683d980800000000000000
+      internalID: -8515314408646035891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_9
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 262
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45aed34f904291440800000000000000
+      internalID: 4906992894167870036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_10
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 24
+        width: 102
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3780f7ea881d61860800000000000000
+      internalID: 7500412614405458035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 27
+        width: 146
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34f8444ceeca8cc90800000000000000
+      internalID: -7149274266955641021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_12
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 24
+        width: 141
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd44b485a64ec9100800000000000000
+      internalID: 116218835803784411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_13
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 56
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d84af30c6fdb62590800000000000000
+      internalID: -7699257645458283379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_14
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 27
+        width: 156
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cb7909841372cd30800000000000000
+      internalID: 4450245913831111620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_15
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 27
+        width: 61
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa5917f92bdb06e20800000000000000
+      internalID: 3341879498385757610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoSealyMorado_16
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 25
+        width: 194
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c4589ba92eb8c990800000000000000
+      internalID: -7365428104382622524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LogoSealyMorado_0: -3820060822520144225
+      LogoSealyMorado_1: -2316827593191487278
+      LogoSealyMorado_10: 7500412614405458035
+      LogoSealyMorado_11: -7149274266955641021
+      LogoSealyMorado_12: 116218835803784411
+      LogoSealyMorado_13: -7699257645458283379
+      LogoSealyMorado_14: 4450245913831111620
+      LogoSealyMorado_15: 3341879498385757610
+      LogoSealyMorado_16: -7365428104382622524
+      LogoSealyMorado_2: 7922271209321804650
+      LogoSealyMorado_3: -4549331085492011892
+      LogoSealyMorado_4: 872385122029141494
+      LogoSealyMorado_5: 4983253834706411009
+      LogoSealyMorado_6: -8791942577475692352
+      LogoSealyMorado_7: -2100352628376308104
+      LogoSealyMorado_8: -8515314408646035891
+      LogoSealyMorado_9: 4906992894167870036
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
