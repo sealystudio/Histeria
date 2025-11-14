@@ -1130,9 +1130,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0024937657
+    y: 0.003921569
     width: 1
-    height: 0.99571073
+    height: 0.99482363
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1376,13 +1376,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.295
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 770720665289283624, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3906850852819965559, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1665382349}
     - targetCorrespondingSourceObject: {fileID: 3906850852819965559, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1665382355}
@@ -3886,52 +3884,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3906850852819965559, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
   m_PrefabInstance: {fileID: 617183935}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &1665382349
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665382344}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0.0625, y: 0.0625, z: 0.0625, w: 0.0625}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.0625}
-    newSize: {x: 1, y: 1.0625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.0625}
-  m_EdgeRadius: 0
 --- !u!114 &1665382355
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     //Lagrimas
     [SerializeField] private PlayerAttack attack;
     private float lagrimasCooldown = 0.5f;
-    private bool puedeDisparar = true;
+    public bool puedeDisparar = true;
     private bool estaDisparando = false;
     public float lifeTime = 0.2f;
 
@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash = true;
     private bool isPunching = false;
     public bool canPunch = true;
+    public bool canMove = true;
 
     [Header("Sonido")]
     [Tooltip("Añade aquí todos los clips de audio de pasos que tengas")]
@@ -73,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
     public float dashVolume = 0.7f;
 
     private PlayerEquipment playerEquipment;
+    public static bool IsPaused = false;
 
     private AudioSource audioSource;
 
@@ -96,6 +98,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
+        if (IsPaused) return;
+        
         //DEBUG DISTANCIA (Lo probaba para ELI , comentarlo si os molesta , era para comprobar distancias a ojo)
 
 
@@ -108,8 +113,8 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        // block de movimeinto en el dash
-        if (isDashing) return;
+        // block de movimeinto en el dash y bloqueo de movimiento en dialogos
+        if (isDashing || !canMove) return;
 
         // movieminto base
         float moveX = Input.GetAxisRaw("Horizontal");

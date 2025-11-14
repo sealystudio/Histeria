@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4688052118759696786}
   - component: {fileID: 1833389720230822322}
   m_Layer: 0
-  m_Name: Muneco-1.png_0
+  m_Name: PortalTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 546018529
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5367552544923455254, guid: b3fd34f8b38d0874697b874979c4f2c5, type: 3}
+  m_Sprite: {fileID: -5219851995449889559, guid: 780d8f5977973a84b9fb6ed9a7113108, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f21a34393838094583ffece6fa94cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: ccc45dbc998eab940bd446c281228c6c, type: 2}
+  itemData: {fileID: 11400000, guid: 042c038798c825d4eabb4f96b7f35fae, type: 2}
   itemSound: {fileID: 8300000, guid: b0fddd320e1e96845b3fb06a8491388e, type: 3}
 --- !u!61 &4688052118759696786
 BoxCollider2D:
@@ -142,13 +142,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1.875, y: 2}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 16.143452, y: 15.665921}
+  m_Size: {x: 13.681868, y: 15.665903}
   m_EdgeRadius: 0
 --- !u!82 &1833389720230822322
 AudioSource:
@@ -171,7 +171,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.9366733
+  MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0

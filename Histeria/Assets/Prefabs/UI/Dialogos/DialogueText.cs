@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.Rendering.Universal;
 
 [System.Serializable]
 public class DialogueLine
@@ -26,24 +27,46 @@ public class DialogueText : MonoBehaviour
     private int index;
     private DialogueData dialogueData;
     public UnityEngine.UI.Image CharacterPortrait;
+    [Header("HUD")]
+    public Canvas hudCanvas; // <-- Añade tu HUD aquí en el inspector
+
+    private bool abrirDialogo;
+    private PlayerMovement playerMovement;
+    public Light2D luzAmbiente;
 
     void Start()
     {
-        LoadDialogue("dialogue_tutorial"); // nombre del archivo JSON sin extensión
+        luzAmbiente.intensity = 0;
+        abrirDialogo = true;
+
+        // Bloquear movimiento
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        if (playerMovement != null)
+        {
+            playerMovement.canMove = false;
+            playerMovement.puedeDisparar = false;
+
+        }
+
+        LoadDialogue("dialogue_tutorial");
         StartDialogue();
     }
 
     void Update()
     {
+        Cursor.visible = abrirDialogo;
+
+        if (!abrirDialogo) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             string fullLine = dialogueData.lines[index].showSpeaker
-                              ? $"{dialogueData.lines[index].speaker}: {dialogueData.lines[index].text}"
-                              : dialogueData.lines[index].text;
+                ? $"{dialogueData.lines[index].speaker.ToUpper()}: {dialogueData.lines[index].text}"
+    :           dialogueData.lines[index].text;
+
+
             if (dialogueText.text == fullLine)
-            {
                 NextLine();
-            }
             else
             {
                 StopAllCoroutines();
@@ -148,16 +171,23 @@ public class DialogueText : MonoBehaviour
         if (index < dialogueData.lines.Count - 1)
         {
             index++;
-            dialogueText.text = string.Empty;
+            dialogueText.text = "";
             StartCoroutine(WriteLine());
         }
         else
         {
+            abrirDialogo = false;
+            luzAmbiente.intensity = 0.35f;
+
             gameObject.SetActive(false);
+
+            // Habilitar movimiento al terminar
+            if (playerMovement != null)
+                playerMovement.canMove = true;
+
+            // Oculta retrato
             if (CharacterPortrait != null)
-            {
                 CharacterPortrait.enabled = false;
-            }
         }
     }
 }
