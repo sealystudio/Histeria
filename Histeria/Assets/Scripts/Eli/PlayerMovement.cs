@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing = false;
     private bool canDash = true;
     private bool isPunching = false;
-    private bool canPunch = true;
+    public bool canPunch = true;
 
     [Header("Sonido")]
     [Tooltip("Añade aquí todos los clips de audio de pasos que tengas")]

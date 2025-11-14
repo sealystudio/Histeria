@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject lagrima;
 
     [Header("Tengo Linterna?")]
-    private bool _hasFlashlight;
+    public bool _hasFlashlight;
     public  event Action<bool> OnFlashlightChanged;
 
     public void SetFlashlight(bool value)
@@ -49,7 +49,8 @@ public class PlayerAttack : MonoBehaviour
             SombraAbandono sombra = hit.GetComponent<SombraAbandono>();
             if (sombra != null)
             {
-                sombra.TakeDamageFromLight(1); // placeholder daÃ±o
+                //las sombras no reciben daño del puño
+                //sombra.TakeDamageFromLight(1); // placeholder daÃ±o
             }
         }
     }

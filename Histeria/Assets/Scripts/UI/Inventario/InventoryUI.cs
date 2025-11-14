@@ -5,24 +5,33 @@ using TMPro;
 public class InventoryUI : MonoBehaviour
 {
     public Inventory playerInventory;
-    public Button[] slots; 
+    public Button[] slots;
 
     [Header("Detalle del item")]
     public TextMeshProUGUI itemNameText;
     public TextMeshProUGUI itemDescriptionText;
+    public Button useButton;
 
     private int selectedIndex = -1;
-    public Button useButton;
+    void Update()
+    {
+        useButton.interactable = selectedIndex >= 0;
+    }
 
     void Start()
     {
         for (int i = 0; i < slots.Length; i++)
         {
             int index = i;
+            slots[i].onClick.RemoveAllListeners();
             slots[i].onClick.AddListener(() => OnSlotClicked(index));
-            slots[i].transform.SetAsLastSibling();
 
+            // Esto es lo clave:
+            var btnNav = slots[i].navigation;
+            btnNav.mode = Navigation.Mode.None;
+            slots[i].navigation = btnNav;
         }
+
 
         if (useButton != null)
             useButton.onClick.AddListener(OnUseButtonClicked);
@@ -38,28 +47,11 @@ public class InventoryUI : MonoBehaviour
 
             if (i < playerInventory.items.Count)
             {
-                Sprite itemSprite = playerInventory.items[i].itemData.icon;
-                img.sprite = itemSprite;
-                img.color = Color.white;
+                var slot = playerInventory.items[i];
+                img.sprite = slot.itemData.icon;
+                img.color = (i == selectedIndex) ? Color.yellow : Color.white; // resalta seleccionado
                 img.enabled = true;
                 img.preserveAspect = true;
-
-                // Ajustar tamaño según lado más largo
-                RectTransform rt = img.GetComponent<RectTransform>();
-                float slotWidth = rt.rect.width;
-                float slotHeight = rt.rect.height;
-
-                if (itemSprite.rect.width > itemSprite.rect.height)
-                {
-                    rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, slotWidth);
-                    rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, slotWidth * itemSprite.rect.height / itemSprite.rect.width);
-                }
-                else
-                {
-                    rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, slotHeight);
-                    rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, slotHeight * itemSprite.rect.width / itemSprite.rect.height);
-                }
-
                 slots[i].interactable = true;
             }
             else
@@ -69,29 +61,50 @@ public class InventoryUI : MonoBehaviour
                 slots[i].interactable = false;
             }
         }
+
+        // Si el índice seleccionado ya no existe
+        if (selectedIndex >= playerInventory.items.Count)
+        {
+            selectedIndex = -1;
+            ClearItemDetails();
+        }
     }
 
     public void OnSlotClicked(int index)
     {
-        if (index < playerInventory.items.Count)
-        {
-            selectedIndex = index;
-            var slot = playerInventory.items[index];
-            itemNameText.text = slot.itemData.itemName;
-            itemDescriptionText.text = slot.itemData.description;
-        }
+        if (index >= playerInventory.items.Count)
+            return;
+
+        selectedIndex = index;
+
+        var slotData = playerInventory.items[index];
+        itemNameText.text = slotData.itemData.itemName;
+        itemDescriptionText.text = slotData.itemData.description;
+
+        RefreshUI();
+        Debug.Log($"[InventoryUI] Seleccionado '{slotData.itemData.itemName}' (índice {index})");
     }
 
-    private void OnUseButtonClicked()
+    public void OnUseButtonClicked()
     {
-        if (selectedIndex >= 0)
+        if (selectedIndex >= 0 && selectedIndex < playerInventory.items.Count)
         {
-            playerInventory.UseItemAt(selectedIndex);
-            selectedIndex = -1; // opcional: limpiar selección después
+            playerInventory.UseItemSlot(selectedIndex);
+
+            selectedIndex = -1;
+            ClearItemDetails();
+            RefreshUI();
         }
         else
         {
             Debug.LogWarning("No hay ningún objeto seleccionado para usar.");
         }
+    }
+
+
+    private void ClearItemDetails()
+    {
+        itemNameText.text = "";
+        itemDescriptionText.text = "";
     }
 }

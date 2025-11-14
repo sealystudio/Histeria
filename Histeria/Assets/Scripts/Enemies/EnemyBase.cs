@@ -1,4 +1,5 @@
 using BehaviourAPI.Core.Perceptions;
+using System.Collections;
 using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour
@@ -13,20 +14,29 @@ public abstract class EnemyBase : MonoBehaviour
     public float attackRange;
     public int damage;
 
+    [Header("Daño por contacto")]
+    public float contactCooldown = 2f;  // 1 segundo de cooldown entre daños
+    private float lastContactTime = -10f;
+
     [Header("Comportamiento general")]
     public bool isDead;
     public bool canMove;
     public bool canAttack;
 
-    [Header("Animaciones")]
+    [Header("Animaciones y efectos")]
     public Animator animator;
     public Vector2 knockbackForce = new Vector2(2f, 2f);
+    public float flashDuration = 0.15f;  // duración del parpadeo
+    private SpriteRenderer spriteRenderer;
+    
     private Rigidbody2D rb;
-
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+
         if (rb != null)
         {
             rb.gravityScale = 0f;
@@ -54,7 +64,7 @@ public abstract class EnemyBase : MonoBehaviour
         //empuje hacia atras cuando reciben daño
         if (rb != null)
         {
-            rb.linearVelocity = Vector2.zero; //resetea velocidad previa
+            rb.linearVelocity = Vector2.zero;
             rb.AddForce(new Vector2(hitDirection.x * knockbackForce.x, hitDirection.y * knockbackForce.y), ForceMode2D.Impulse);
         }
 
@@ -70,6 +80,12 @@ public abstract class EnemyBase : MonoBehaviour
     {
         if (animator != null)
             animator.SetTrigger("Hit");
+
+       
+
+        // parpadeo visual
+        if (spriteRenderer != null)
+            StartCoroutine(FlashCoroutine());
     }
 
     //el enemigo muere
@@ -77,25 +93,43 @@ public abstract class EnemyBase : MonoBehaviour
     {
         if (animator != null)
             animator.SetTrigger("Die");
-        
+
+       
+
         Destroy(gameObject, 0.5f); //Destruir el gameobject
     }
 
-    // Este método se llama automáticamente cuando este collider toca a otro
-    private void OnCollisionEnter2D(Collision2D collision)
+    private IEnumerator FlashCoroutine()
     {
-        // 1. Comprobamos si el objeto con el que chocamos tiene el tag "Player"
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            // 2. Si es el jugador, intentamos obtener su script de salud
-            //    (Asumo que tu jugador tiene un script como "PlayerHealthHearts")
-            PlayerHealthHearts playerHealth = collision.gameObject.GetComponent<PlayerHealthHearts>();
+        if (spriteRenderer == null) yield break;
 
+        spriteRenderer.enabled = false;
+        yield return new WaitForSeconds(flashDuration);
+        spriteRenderer.enabled = true;
+    }
+
+    // Este método se llama automáticamente cuando este collider toca a otro
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (Time.time - lastContactTime < contactCooldown) return;
+
+            PlayerHealthHearts playerHealth = other.GetComponent<PlayerHealthHearts>();
             if (playerHealth != null)
             {
-                // 3. Si encontramos el script, le decimos que reciba daño
-                //    (Asegúrate de que tu script de jugador tenga un método "TakeDamage")
+                // Daño
                 playerHealth.TakeDamage(damage);
+
+                // Knockback más fuerte hacia atrás
+                if (rb != null)
+                {
+                    Vector2 knockDir = (other.transform.position - transform.position).normalized;
+                    rb.linearVelocity = Vector2.zero;
+                    rb.AddForce(-knockDir * knockbackForce.magnitude * 1.5f, ForceMode2D.Impulse); // más fuerte
+                }
+
+                lastContactTime = Time.time;
             }
         }
     }

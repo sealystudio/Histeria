@@ -9,9 +9,18 @@ public class PickUpController : MonoBehaviour
 
     private UIManager uiManager;
     private bool isPlayerNearby = false;
-
+    
+    public AudioClip itemSound;
+    private AudioSource audioSource;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            // si no tiene audioSource, se lo añadimos
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
         // obtenemos la referencia al manager central
         uiManager = UIManager.instance;
         if(uiManager == null)
@@ -26,33 +35,34 @@ public class PickUpController : MonoBehaviour
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.F))
         {
             PickUp();
+
         }
     }
 
     void PickUp()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
+        if (player == null) return;
+
+        Inventory inventory = player.GetComponent<Inventory>();
+        if (inventory == null) return;
+
+        bool added = inventory.AddItem(itemData);
+
+        if (added)
         {
-            Inventory inventory = player.GetComponent<Inventory>();
-            if (inventory != null)
-            {
-                bool added = inventory.AddItem(itemData);
-                if (added)
-                {
-                    // actualiar UI manager
-                    uiManager.RefreshInventoryUI();
+            // reproducir el sonido sin que se corte
+            if (itemSound != null)
+                AudioSource.PlayClipAtPoint(itemSound, transform.position, 0.8f);
 
-                    // mostar texto
-                    uiManager.SetPickUpText($"Se ha añadido {itemData.itemName} al inventario");
+            uiManager.RefreshInventoryUI();
+            uiManager.SetPickUpText($"Se ha añadido {itemData.itemName} al inventario");
 
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    Debug.Log("Inventario lleno, no se puede recoger.");
-                }
-            }
+            Destroy(gameObject); // se destruye el ítem después de reproducir el sonido
+        }
+        else
+        {
+            Debug.Log("Inventario lleno, no se puede recoger.");
         }
     }
 

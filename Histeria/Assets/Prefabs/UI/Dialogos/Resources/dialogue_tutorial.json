@@ -1,0 +1,21 @@
+{
+  "scene": "Tutorial",
+  "lines": [
+    { "speaker": "Eli", "text": "¿Qué…Qué hago aquí? ¿Qué ocurre? Todo se ve oscuro…" },
+    { "speaker": "Subconsciente", "text": "Bienvenida, Eli." },
+    { "speaker": "Eli", "text": "¿Quién eres?" },
+    { "speaker": "Subconsciente", "text": "Tranquila Eli, soy tú, y tú eres yo. ¿De qué te extrañas?" },
+    { "speaker": "Eli", "text": "No entiendo nada… ¿Qué está pasando? ¿Por qué todo se ve oscuro? ¿Dónde estoy?" },
+    { "speaker": "Subconsciente", "text": "Estás dentro de ti, en tu cabeza. Mira cómo se ve todo, por tu culpa este lugar está así, aquí dentro nunca fui feliz y ahora tú estás aquí por eso." },
+    { "speaker": "Eli", "text": "¿Qué culpa tengo yo? ¿Cómo que dentro de mí? ¡Explícate!" },
+    { "speaker": "Subconsciente", "text": "Sabes desde hace mucho tiempo que algo no anda bien aquí dentro, que tienes que afrontar esta situación y seguir adelante, no lo niegues más." },
+    { "speaker": "Eli", "text": "¿Afrontar el qué? ¡Sal de mi cabeza y da la cara!" },
+    { "speaker": "Subconsciente", "text": "Pero… JAJAJA ¡Eres tú quien está dentro de tu propia cabeza! Te lo he dicho hace un momento Eli, no me hagas perder el tiempo." },
+    { "speaker": "Eli", "text": "Entonces… ¿Qué hago aquí exactamente? O más bien… ¿Cómo he llegado aquí?" },
+    { "speaker": "Subconsciente", "text": "A ver cálmate un momento, no es el fin del mundo ni nada de eso, no al menos por el momento. Como veo que no te acuerdas de nada voy a hacerte un pequeño resumen. Tu madre murió hace unas semanas debido a su enfermedad, y para colmo tu padre nos abandonó hace ya años de la noche a la mañana. Debido a todo eso digamos que tu vida nunca ha sido la más idílica ni mucho menos, así que tuviste la fantástica idea de quitarte de en medio mezclando tus antidepresivos recetados con una botella de vino barato, pero (se hace la sorprendida) ¡Todavía no la has palmado, tienes una segunda oportunidad de seguir con vida, pero tendrás que poner de tu parte!" },
+    { "speaker": "Eli", "text": "Vale vale a ver si lo he entendido. Me desmayé y he viajado a mi propio subconsciente, pero, ¿por qué?" },
+    { "speaker": "Subconsciente", "text": "Para arreglarte a ti misma Eli. Has sufrido mucho durante mucho tiempo, te mereces sanar y vivir tu vida en paz." },
+    { "speaker": "Eli", "text": "…Está bien, dime qué debo hacer." },
+    { "speaker": "Subconsciente", "text": "Adéntrate en tu mente Eli, haz frente a tus emociones, y haz las paces contigo misma." }
+  ]
+}

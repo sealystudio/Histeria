@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: 667bb7ca49be1a440adca29e9bf9948b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spriteRendererOff: {instanceID: 0}
+  - spriteRendererOn: {instanceID: 0}
+  - onSound: {instanceID: 0}
+  - offSound: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

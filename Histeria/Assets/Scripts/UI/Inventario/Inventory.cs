@@ -1,7 +1,5 @@
-﻿using NUnit.Framework.Interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
@@ -9,14 +7,19 @@ public class Inventory : MonoBehaviour
     public int maxSlots = 1;
     public List<ItemSlot> items = new List<ItemSlot>();
 
+    [Header("Cambio de escena al usar")]
+    public bool triggersLevelChange = false;
+    public string nextSceneName = "";
+
     [Header("Referencias")]
-    public Canvas inventoryCanvas; // Asigna el Canvas del inventario aquí
+    public Canvas inventoryCanvas;
     public Canvas hudCanvas;
     public static bool isInventoryOpen = false;
 
-
     private PlayerHealthHearts playerHealth;
     private PlayerEquipment playerEquipment;
+
+    private AudioSource audioSource;
 
 
     [System.Serializable]
@@ -28,9 +31,15 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            // si no tiene audioSource, se lo añadimos
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
         if (inventoryCanvas != null)
             inventoryCanvas.enabled = false;
-
     }
 
     void Update()
@@ -38,126 +47,116 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Escape))
         {
             bool abrir = !inventoryCanvas.enabled;
+            PlayerMovement pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
             inventoryCanvas.enabled = abrir;
-            isInventoryOpen = abrir; // <-- Indica si está abierto
+            isInventoryOpen = abrir;
 
             if (abrir)
             {
                 Time.timeScale = 0f;
                 Cursor.visible = true;
                 inventoryCanvas.GetComponent<InventoryUI>().RefreshUI();
+                pm.canPunch = false;
                 hudCanvas.enabled = false;
             }
             else
             {
                 Time.timeScale = 1f;
                 Cursor.visible = false;
+                pm.canPunch = true;
                 hudCanvas.enabled = true;
+                
             }
         }
     }
-
 
     public bool AddItem(InventoryItem newItem)
     {
-        // Buscar un slot libre en la lista de items
-        for (int i = 0; i < maxSlots; i++)
+        if (items.Count < maxSlots)
         {
-            if (i >= items.Count) // slot libre
-            {
-                items.Add(new Inventory.ItemSlot { itemData = newItem, quantity = 1 });
-                return true;
-            }
+            items.Add(new ItemSlot { itemData = newItem, quantity = 1 });
+            Debug.Log($"[Inventory] Añadido item '{newItem.itemName}'. Total ahora: {items.Count}");
+            return true;
         }
 
-        Debug.Log("Inventario lleno");
+        Debug.Log("[Inventory] Inventario lleno");
         return false;
     }
 
-
-    public void RemoveItem(InventoryItem itemToRemove)
+    public void UseItemSlot(int index)
     {
-        var slot = items.Find(i => i.itemData == itemToRemove);
-        if (slot != null)
+        if (index < 0 || index >= items.Count)
         {
-            slot.quantity--;
-            if (slot.quantity <= 0)
-                items.Remove(slot);
-        }
-    }
-
-    public void UseItemAt(int index)
-    {
-        if (index < 0 || index >= items.Count) return;
-
-        // 💡 ¡LÍNEA CLAVE QUE PROBABLEMENTE BORRASTE! 
-        // Esta línea define la variable 'item' para que el resto del método pueda usarla.
-        InventoryItem item = items[index].itemData;
-
-        if (item == null)
-        {
-            Debug.LogWarning("El slot está vacío.");
+            Debug.LogWarning("[Inventory] Índice de slot inválido.");
             return;
         }
+
+        ItemSlot slot = items[index];
+        InventoryItem item = slot.itemData;
+        Debug.Log($"[Inventory] >>> Usando '{item.itemName}' en índice {index}. Tipo: {item.itemType}");
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
         {
-            Debug.LogWarning("No se encontró el jugador para aplicar el objeto.");
+            Debug.LogWarning("[Inventory] No se encontró Player con tag 'Player'.");
             return;
         }
 
-        PlayerHealthHearts playerHearts = player.GetComponent<PlayerHealthHearts>();
-        PlayerEquipment playerEquipment = player.GetComponent<PlayerEquipment>();
+        playerHealth = player.GetComponent<PlayerHealthHearts>();
+        playerEquipment = player.GetComponent<PlayerEquipment>();
 
         switch (item.itemType)
         {
             case ItemType.Consumible:
-                if (item.consumableData != null && playerHearts != null)
-                {
-                    playerHearts.Heal(item.consumableData.healAmount);
-                    RemoveItem(item);
-                }
-                else
-                {
-                    Debug.LogWarning("No se pudo usar el objeto consumible, falta referencia.");
-                }
+                if (item.consumableData != null && playerHealth != null)
+                    playerHealth.Heal(item.consumableData.healAmount);
                 break;
 
             case ItemType.Narrativo:
                 if (item.storyData != null && item.storyData.narrationClip != null)
                 {
-                    AudioSource.PlayClipAtPoint(item.storyData.narrationClip, player.transform.position);
-                    RemoveItem(item);
-                }
-                else
-                {
-                    Debug.LogWarning("No se pudo reproducir el objeto narrativo, falta clip o datos.");
+                    GameObject tempAudioObj = new GameObject("TempNarrationAudio");
+                    AudioSource tempSource = tempAudioObj.AddComponent<AudioSource>();
+                    tempSource.clip = item.storyData.narrationClip;
+                    tempSource.playOnAwake = false;
+                    tempSource.spatialBlend = 0f; // 2D
+                    tempSource.volume = 1f;
+                    tempSource.Play();
+
+                    // Destruye el objeto una vez terminado el clip
+                    GameObject.Destroy(tempAudioObj, tempSource.clip.length);
                 }
                 break;
+
 
             case ItemType.Equipable:
                 if (item.equipableData != null && playerEquipment != null)
-                {
                     playerEquipment.Equip(item.equipableData.equipPrefab);
-                    RemoveItem(item);
-                }
-                else
-                {
-                    Debug.LogWarning("No se pudo equipar el objeto, falta referencia.");
-                }
                 break;
         }
 
-        if (inventoryCanvas != null)
+        // Reducir cantidad o eliminar slot
+        if (slot.quantity > 1)
+            slot.quantity--;
+        else
+            items.RemoveAt(index);
+
+        // Refrescar UI
+        inventoryCanvas.GetComponent<InventoryUI>().RefreshUI();
+
+        // NUEVO: cambiar de escena si el item lo requiere
+        if (item.triggersLevelChange)
         {
-            InventoryUI ui = inventoryCanvas.GetComponent<InventoryUI>();
-            if (ui != null) ui.RefreshUI();
+            Debug.Log("[Inventory] El ítem usado activa cambio de escena → " + item.nextSceneName);
+            LevelManager.instance.LoadScene(item.nextSceneName);
         }
 
+        // Cerrar inventario
         CloseInventory();
+
     }
-    private void CloseInventory()
+
+    public void CloseInventory()
     {
         inventoryCanvas.enabled = false;
         hudCanvas.enabled = true;

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -29,6 +31,7 @@ public class SombraAbandono : EnemyBase
     Vector2 direccionHuida;
 
     LightTarget? target;
+    private bool _hasTarget;
 
     public Light2D globalTargetLight;
     public Vector2 globalLightPos;
@@ -39,13 +42,36 @@ public class SombraAbandono : EnemyBase
     private GameObject[] lights;
 
     bool _playerFlashlight;
+    float detectionRange = 1f;
 
+    public static List<SombraAbandono> todasLasSombras = new List<SombraAbandono>();
+
+    private bool _estoyHuyendo;
+
+    private bool isIdle = false;
+    private Vector3 idleStartPos;
+    private float floatAmplitude = 0.2f; // altura del flotado
+    private float floatFrequency = 1f;   // velocidad del flotado
+
+
+    private AudioSource audioSource;
+    public AudioClip dieSound;           // sonido al recibir daño
+
+    private LevelManager lm;
     private void Start()
     {
+        lm = FindAnyObjectByType<LevelManager>();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            // si no tiene audioSource, se lo añadimos
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
         if (data != null)
             InitializeStats(data.maxHealth);
 
-        player = GameObject.FindGameObjectWithTag("player");
+        player = GameObject.FindGameObjectWithTag("Player");
 
         playerAttack = player.GetComponent<PlayerAttack>(); 
 
@@ -54,15 +80,20 @@ public class SombraAbandono : EnemyBase
 
     private void Update()
     {
-        if (data == null) return;
+        if (data == null || isDead) return; // no flotamos si está muerto
 
+        // Flotado si está en idle
+        if (isIdle)
+        {
+            float yOffset = Mathf.Sin(Time.time * floatFrequency) * floatAmplitude;
+            transform.position = idleStartPos + new Vector3(0f, yOffset, 0f);
+        }
+        else if (direccionHuida != Vector2.zero)
+        {
+            transform.Translate(direccionHuida * data.moveSpeed * Time.deltaTime, Space.World);
+            //transform.Translate(Vector3.up * Mathf.Sin(Time.time * data.moveSpeed) * Time.deltaTime);
+        }
 
-        if (direccionHuida == Vector2.zero)
-            return;
-
-        transform.Translate(direccionHuida * data.moveSpeed * Time.deltaTime, Space.World);
-
-        //transform.Translate(Vector3.up * Mathf.Sin(Time.time * data.moveSpeed) * Time.deltaTime);
     }
 
     //solo se le puede matar con la linterna, por eso dara igual que le pegues
@@ -102,12 +133,84 @@ public class SombraAbandono : EnemyBase
         return _playerFlashlight;
     }
 
+    public bool PlayerHasNoFlashLight()
+    {
+
+        return !_playerFlashlight;
+    }
+
+    public bool EstoyHuyendo()
+    {
+
+        return _estoyHuyendo;
+
+    }
+
+    public bool OtraSombraHuyendo(GameObject otraSombra)
+    {
+        SombraAbandono sombraHuye;
+        if (otraSombra == null) 
+            return false;
+
+        if (otraSombra.GetComponent<SombraAbandono>() != null) { 
+            
+            return false;
+
+        }
+        else
+        {
+
+          sombraHuye = otraSombra.GetComponentInParent<SombraAbandono>();
+
+        }
+
+
+        if(Vector2.Distance(transform.position , otraSombra.transform.position) < detectionRange) {
+
+
+         return sombraHuye.EstoyHuyendo();
+
+        }
+        else
+        {
+
+            return false;
+        }
+
+
+        
+
+    }
+
+    public bool JugadorCerca()
+    {
+        return Vector2.Distance(transform.position, player.transform.position) < detectionRange;
+    }
+
+    public bool JugadorNoCerca()
+    {
+        return !(Vector2.Distance(transform.position, player.transform.position) < detectionRange);
+    }
+
+
+
+    public bool TengoLuz()
+    {
+
+        return _hasTarget;
+
+    }
+    public bool HaLlegadoLuz(LightTarget? destino)
+    {
+
+        return Vector2.Distance(transform.position, destino.Value.position) < 0.2f;
+    }
     LightTarget? SeekLight()
     {
         
         Light2D closestLight = null;
         Vector2 closestPos = Vector2.zero;
-        float minDist = Mathf.Infinity;
+        float minDist = 0;
 
         foreach (GameObject obj in lights)
         {
@@ -175,7 +278,7 @@ public class SombraAbandono : EnemyBase
 
     public void HuirSombra(GameObject other)
     {
-        data.moveSpeed = 2.5f;
+        data.moveSpeed = 5f;
 
         
         bool above = transform.position.y > other.transform.position.y;
@@ -198,7 +301,7 @@ public class SombraAbandono : EnemyBase
     public void PerseguirJugador()
     {
 
-        data.moveSpeed = 2.5f;
+        data.moveSpeed = 5f;
 
         Vector2 dir =  player.transform.position - transform.position ;
 
@@ -209,12 +312,18 @@ public class SombraAbandono : EnemyBase
 
     public void Idle()
     {
+        data.moveSpeed = 0;  // Se para la sombra
+        direccionHuida = Vector2.zero;
 
-     data.moveSpeed = 0;  //Se para la sombra
+        // Activamos el flotado
+        if (!isIdle)
+        {
+            idleStartPos = transform.position; // guardamos posición base
+            isIdle = true;
+        }
 
-        Vector2 dir = Vector2.zero;
-
-        direccionHuida = dir;
+        if (animator != null)
+            animator.SetTrigger("Idle"); // si quieres usar animación de sprite estático
     }
 
     protected override void OnHit()
@@ -228,8 +337,17 @@ public class SombraAbandono : EnemyBase
 
     protected override void Die()
     {
+        if (animator != null)
+            animator.SetTrigger("Die"); // dispara la animación de muerte
+                                        // reproducir el sonido sin que se corte
+        if (dieSound != null)
+            AudioSource.PlayClipAtPoint(dieSound, transform.position, 0.8f);
+
+
         if (data != null && data.dieEffect != null)
             Instantiate(data.dieEffect, transform.position, Quaternion.identity);
+
+        lm.numeroDeSombras --;
 
         base.Die();
     }
