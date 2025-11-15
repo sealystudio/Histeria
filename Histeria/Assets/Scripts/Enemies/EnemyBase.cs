@@ -15,7 +15,7 @@ public abstract class EnemyBase : MonoBehaviour
     public int damage;
 
     [Header("Daño por contacto")]
-    public float contactCooldown = 2f;  // 1 segundo de cooldown entre daños
+    public float contactCooldown = 1f;  // 1 segundo de cooldown entre daños
     private float lastContactTime = -10f;
 
     [Header("Comportamiento general")]

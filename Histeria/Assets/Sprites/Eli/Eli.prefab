@@ -390,6 +390,8 @@ GameObject:
   - component: {fileID: 4029321851287820816}
   - component: {fileID: 4037189673966534863}
   - component: {fileID: 7226142167659855441}
+  - component: {fileID: 7595817822089428849}
+  - component: {fileID: 770720665289283624}
   m_Layer: 0
   m_Name: Eli
   m_TagString: Player
@@ -545,20 +547,29 @@ MonoBehaviour:
   dashSpeed: 12
   dashDuration: 0.15
   dashCooldown: 0.5
-  dashSmokePrefab: {fileID: 0}
+  dashSmokePrefab: {fileID: 7254193344188428526, guid: 496165d591aa2bc4e90430c78f7dbbd0, type: 3}
   dashSmokeOffset: {x: 0, y: -0.4}
   enableDashWind: 1
-  dashWindPrefab: {fileID: 0}
+  dashWindPrefab: {fileID: 5247948005653730241, guid: dee6363f88f79534d8cf326f19eeb40f, type: 3}
   dashWindOffset: {x: -0.2, y: 0}
   dashWindScale: 0.06
   punchDuration: 0.3
   punchCooldown: 0.5
   attack: {fileID: 4037189673966534863}
+  puedeDisparar: 1
   lifeTime: 0.2
   showDebug: 1
-  footstepSounds: []
+  canPunch: 1
+  canMove: 1
+  footstepSounds:
+  - {fileID: 8300000, guid: 67506134f2e99e54ba57d3ce97b4bf66, type: 3}
+  - {fileID: 8300000, guid: 783316f3268c0194887c48096846dd92, type: 3}
+  - {fileID: 8300000, guid: 8d66b086c4f901b48804b0ba62edc196, type: 3}
+  - {fileID: 8300000, guid: 498c0c0169d4cfe4c85c225c20e37f3a, type: 3}
+  - {fileID: 8300000, guid: 5475d1423aa2dec41a5cbf5f3d13d3e1, type: 3}
+  - {fileID: 8300000, guid: 7ca48113233bcaa4c840ba06ff54e2e0, type: 3}
   footstepVolume: 0.2
-  dashSound: {fileID: 0}
+  dashSound: {fileID: 8300000, guid: ab23c81f411a5ad4194419d10315ac1c, type: 3}
   dashVolume: 0.7
 --- !u!114 &4037189673966534863
 MonoBehaviour:
@@ -576,6 +587,7 @@ MonoBehaviour:
   punchDamage: 1
   punchRange: 1
   lagrima: {fileID: 1198046803155164575, guid: 900788e29f5d4134c9333533b8eb4390, type: 3}
+  _hasFlashlight: 0
 --- !u!82 &7226142167659855441
 AudioSource:
   m_ObjectHideFlags: 0
@@ -673,6 +685,70 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &7595817822089428849
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3906850852819965559}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.0625, y: 0.0625, z: 0.0625, w: 0.0625}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.0625}
+    newSize: {x: 1, y: 1.0625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1.0625}
+  m_EdgeRadius: 0
+--- !u!114 &770720665289283624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3906850852819965559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52896f4f989d6c64ab1d81a80adfb01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSlots: 1
+  items: []
+  triggersLevelChange: 0
+  nextSceneName: 
+  inventoryCanvas: {fileID: 0}
+  hudCanvas: {fileID: 0}
 --- !u!1 &4184371753560797485
 GameObject:
   m_ObjectHideFlags: 0

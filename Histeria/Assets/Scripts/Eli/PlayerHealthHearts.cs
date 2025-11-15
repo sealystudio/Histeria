@@ -1,7 +1,4 @@
-﻿
-using System;
-using System.Collections;
-using UnityEditor.SearchService;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,39 +15,39 @@ public class PlayerHealthHearts : MonoBehaviour
     [Range(0, 3)]
     public int currentHealth = 3;
 
+    public GameObject deathCanvas; // ← Arrastra aquí tu Canvas de muerte
+
+    private void Start()
+    {
+        if (deathCanvas != null)
+            deathCanvas.SetActive(false); // ocultar al iniciar
+    }
+
     private void Update()
     {
-        
-        if(currentHealth == 0)
+        if (currentHealth == 0)
         {
             Die();
         }
-
     }
+
     public void TakeDamage(int amount = 1)
     {
-       
         currentHealth = Mathf.Max(currentHealth - amount, 0);
         UpdateHearts();
+
         SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
         if (sr != null)
         {
             StartCoroutine(DamageFlash(sr));
         }
-
     }
 
     private IEnumerator DamageFlash(SpriteRenderer sr)
     {
         Color originalColor = sr.color;
-
-        // Poner rojo
         sr.color = Color.red;
-
-        // Esperar un pequeño tiempo para que se vea el efecto
         yield return new WaitForSeconds(0.2f);
-
-        // Volver al color original
         sr.color = originalColor;
     }
 
@@ -65,56 +62,44 @@ public class PlayerHealthHearts : MonoBehaviour
         heart1.sprite = currentHealth >= 1 ? fullHeart : emptyHeart;
         heart2.sprite = currentHealth >= 2 ? fullHeart : emptyHeart;
         heart3.sprite = currentHealth >= 3 ? fullHeart : emptyHeart;
-        // Lanzar animación de pulso para los corazones afectados
-        if (currentHealth >= 1) StartCoroutine(PulseHeart(heart1.transform));
-        if (currentHealth >= 2) StartCoroutine(PulseHeart(heart2.transform));
-        if (currentHealth >= 3) StartCoroutine(PulseHeart(heart3.transform));
-    }
-
-    private IEnumerator PulseHeart(Transform heart)
-    {
-        Vector3 originalScale = heart.localScale;
-        Vector3 targetScale = originalScale * 1.2f; // crecer 20%
-        float duration = 0.1f; // tiempo para crecer
-
-        // Crecer
-        float t = 0f;
-        while (t < duration)
-        {
-            t += Time.deltaTime;
-            heart.localScale = Vector3.Lerp(originalScale, targetScale, t / duration);
-            yield return null;
-        }
-
-        // Volver a tamaño normal
-        t = 0f;
-        while (t < duration)
-        {
-            t += Time.deltaTime;
-            heart.localScale = Vector3.Lerp(targetScale, originalScale, t / duration);
-            yield return null;
-        }
-
-        heart.localScale = originalScale; // asegurar valor final
     }
 
     private void Die()
     {
-        Transform t = gameObject.GetComponent<Transform>();
-        if (t != null)
-        {
-            StartCoroutine(DieAnimation(t));
-        }
-
+        StartCoroutine(DieAnimation());
     }
 
-    private IEnumerator DieAnimation(Transform t)
+    private IEnumerator DieAnimation()
     {
-       
-        t.rotation = Quaternion.AngleAxis(90.0f, new Vector3(0.0f,0.0f,90.0f));
+        // Animación opcional
+        transform.rotation = Quaternion.Euler(0, 0, 90);
 
         yield return new WaitForSeconds(0.2f);
 
+        // En vez de recargar escena → mostrar canvas
+        if (deathCanvas != null)
+            deathCanvas.SetActive(true);
+
+        // Congelar el juego
+        Time.timeScale = 0f;
+    }
+
+    // BOTÓN REINTENTAR
+    public void Retry()
+    {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    // BOTÓN SALIR
+    public void QuitGame()
+    {
+        Time.timeScale = 1f;
+        Application.Quit();
+
+        // Para que funcione en el editor:
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }

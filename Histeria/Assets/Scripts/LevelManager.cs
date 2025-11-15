@@ -5,19 +5,29 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
-    public GameObject objetoCollar;
+    public GameObject objetoCambioEscena;
     public GameObject eli;
 
     private DungeonPopulator dp;
     public int numeroDeSombras;
     private bool objetoAparecido = false;
+    private bool level1= false;
     private void Awake()
     {
-        dp = FindAnyObjectByType<DungeonPopulator>();
-        numeroDeSombras = dp.enemyNumber;
+
+        if (level1 == true)
+        {
+            dp = FindAnyObjectByType<DungeonPopulator>();
+            numeroDeSombras = dp.enemyNumber;
+            objetoCambioEscena.gameObject.SetActive(false);
+
+        }
+        else
+        {
+            return;
+        }
 
 
-        objetoCollar.gameObject.SetActive(false);
         if (instance == null)
         {
             instance = this;
@@ -66,9 +76,9 @@ public class LevelManager : MonoBehaviour
     private void dropObject()
     {
         Vector3 posEli = eli.transform.position;
-        objetoCollar.transform.position = posEli;
+        objetoCambioEscena.transform.position = posEli;
 
-        objetoCollar.gameObject.SetActive(true);
+        objetoCambioEscena.gameObject.SetActive(true);
 
         objetoAparecido = true;
     }
