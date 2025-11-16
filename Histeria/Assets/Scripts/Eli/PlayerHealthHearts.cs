@@ -42,6 +42,8 @@ public class PlayerHealthHearts : MonoBehaviour
     {
         if (!primerCorazon)
         {
+            Time.timeScale = 0f;
+
             // Activar canvas de diálogo
             dialogoLinterna.SetActive(true);
 

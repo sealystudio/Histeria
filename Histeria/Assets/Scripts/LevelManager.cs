@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
@@ -13,7 +14,10 @@ public class LevelManager : MonoBehaviour
     private bool objetoAparecido = false;
 
     [Header("Configuración de escena")]
-    public bool usaDungeonPopulator = true; // ✅ marcar en el inspector si la escena usa enemigos
+    public bool usaDungeonPopulator = true; // marcar en el inspector si la escena usa enemigos
+
+    // Evitar que Update dispare lógica antes de inicializar el contador
+    private bool contadorInicializado = false;
 
     private void Awake()
     {
@@ -24,39 +28,65 @@ public class LevelManager : MonoBehaviour
         else
         {
             Destroy(gameObject); // Evita duplicados
+            return;
         }
 
+        if (objetoCambioEscena != null)
+            objetoCambioEscena.SetActive(false);
+    }
+
+    private void Start()
+    {
         if (usaDungeonPopulator)
         {
             dp = FindAnyObjectByType<DungeonPopulator>();
-            if (dp != null)
-            {
-                numeroDeSombras = dp.enemyNumber;
-                objetoCambioEscena.gameObject.SetActive(false);
-            }
+            // Inicializamos el contador de forma segura, esperando a que el dungeon esté poblado
+            StartCoroutine(InitContadorSombras());
         }
+        else
+        {
+            // En escenas sin enemigos, no usamos el contador
+            contadorInicializado = true;
+        }
+    }
+
+    private IEnumerator InitContadorSombras()
+    {
+        // Esperar a que exista el DungeonPopulator
+        while (dp == null)
+        {
+            dp = FindAnyObjectByType<DungeonPopulator>();
+            yield return null;
+        }
+
+        // Esperar a que termine de poblar (usa populationDelay en DP). 
+        float wait = Mathf.Max(0f, dp.populationDelay) + 0.1f;
+        yield return new WaitForSeconds(wait);
+
+        // Contar enemigos reales presentes
+        var enemigos = FindObjectsOfType<SombraAbandono>();
+        numeroDeSombras = enemigos.Length;
+
+        contadorInicializado = true;
+
+        Debug.Log("[LevelManager] Enemigos iniciales contabilizados: " + numeroDeSombras);
     }
 
     private void Update()
     {
+        if (!contadorInicializado) return;
+
         if (usaDungeonPopulator)
         {
-            // 🔹 Solo se ejecuta en niveles con enemigos
-            if (dp == null)
-            {
-                dp = FindAnyObjectByType<DungeonPopulator>();
-                if (dp == null) return; // Evita excepción
-            }
-
-            if (numeroDeSombras < 1 && !objetoAparecido)
+            // Solo aparece cuando el contador llega exactamente a 0 (tras el último enemigo)
+            if (numeroDeSombras == 0 && !objetoAparecido)
             {
                 dropObject();
             }
         }
         else
         {
-            // 🔹 En tutorial no hay DungeonPopulator
-            // Aquí puedes poner la condición de inventario
+            // En tutorial no hay DungeonPopulator
             if (TutorialItemConsumido() && !objetoAparecido)
             {
                 dropObject();
@@ -84,13 +114,17 @@ public class LevelManager : MonoBehaviour
 
     private void dropObject()
     {
+        if (eli == null || objetoCambioEscena == null) return;
+
         Vector3 posEli = eli.transform.position;
         objetoCambioEscena.transform.position = posEli;
-        objetoCambioEscena.gameObject.SetActive(true);
+        objetoCambioEscena.SetActive(true);
         objetoAparecido = true;
+
+        Debug.Log("[LevelManager] Objeto de cambio de escena activado.");
     }
 
-    // 🔹 Método que puedes conectar con tu sistema de inventario del tutorial
+    // Método que puedes conectar con tu sistema de inventario del tutorial
     private bool TutorialItemConsumido()
     {
         // Aquí pones la lógica de inventario del tutorial

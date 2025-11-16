@@ -38,6 +38,18 @@ public class EnemyFollow : MonoBehaviour
             {
                 transform.Translate(dir * speed * Time.deltaTime);
             }
+
+            // 🔹 Girar en el eje X según la posición del jugador
+            if (player.position.x > transform.position.x)
+            {
+                // Eli está a la derecha → mirar a la derecha
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else if (player.position.x < transform.position.x)
+            {
+                // Eli está a la izquierda → mirar a la izquierda
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
         }
     }
 }

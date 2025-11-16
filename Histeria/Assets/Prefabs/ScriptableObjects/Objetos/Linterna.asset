@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Linterna
   m_EditorClassIdentifier: 
   itemName: Linterna
-  description: "Una vieja linterna. El bot\xF3n derecho la enciendo."
+  description: "Una vieja linterna. Pulsa el click derecho del rat\xF3n para encenderla..."
   icon: {fileID: 5642844357850739608, guid: 30e93dbb2a8c78440a681f5707b84839, type: 3}
   itemType: 2
   consumableData:
@@ -22,3 +22,5 @@ MonoBehaviour:
     narrationClip: {fileID: 0}
   equipableData:
     equipPrefab: {fileID: 6167946967984723839, guid: bd160c98f36bf224c9bfca8c281ff6ed, type: 3}
+  triggersLevelChange: 0
+  nextSceneName: 

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+Ôªøusing System.Collections.Generic;
 using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -55,16 +55,20 @@ public class SombraAbandono : EnemyBase
 
 
     private AudioSource audioSource;
-    public AudioClip dieSound;           // sonido al recibir daÒo
+    public AudioClip dieSound;           // sonido al recibir da√±o
 
-    private LevelManager lm;
+    private LevelManager lm; 
+    private bool alreadyCounted = false;
+
+
+
     private void Start()
     {
         lm = FindAnyObjectByType<LevelManager>();
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
-            // si no tiene audioSource, se lo aÒadimos
+            // si no tiene audioSource, se lo a√±adimos
             audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.playOnAwake = false;
         }
@@ -80,9 +84,9 @@ public class SombraAbandono : EnemyBase
 
     private void Update()
     {
-        if (data == null || isDead) return; // no flotamos si est· muerto
+        if (data == null || isDead) return; // no flotamos si est√° muerto
 
-        // Flotado si est· en idle
+        // Flotado si est√° en idle
         if (isIdle)
         {
             float yOffset = Mathf.Sin(Time.time * floatFrequency) * floatAmplitude;
@@ -105,7 +109,7 @@ public class SombraAbandono : EnemyBase
         if (data != null && data.hitEffect != null)
         {
             GameObject effect = Instantiate(data.hitEffect, transform.position, Quaternion.identity);
-            effect.transform.position = transform.position; // fuerza que estÈ en el enemigo
+            effect.transform.position = transform.position; // fuerza que est√© en el enemigo
         }
 
     }
@@ -318,12 +322,12 @@ public class SombraAbandono : EnemyBase
         // Activamos el flotado
         if (!isIdle)
         {
-            idleStartPos = transform.position; // guardamos posiciÛn base
+            idleStartPos = transform.position; // guardamos posici√≥n base
             isIdle = true;
         }
 
         if (animator != null)
-            animator.SetTrigger("Idle"); // si quieres usar animaciÛn de sprite est·tico
+            animator.SetTrigger("Idle"); // si quieres usar animaci√≥n de sprite est√°tico
     }
 
     protected override void OnHit()
@@ -335,20 +339,25 @@ public class SombraAbandono : EnemyBase
             Instantiate(data.hitEffect, transform.position, Quaternion.identity);
     }
 
+
     protected override void Die()
     {
         if (animator != null)
-            animator.SetTrigger("Die"); // dispara la animaciÛn de muerte
-                                        // reproducir el sonido sin que se corte
+            animator.SetTrigger("Die");
+
         if (dieSound != null)
             AudioSource.PlayClipAtPoint(dieSound, transform.position, 0.8f);
-
 
         if (data != null && data.dieEffect != null)
             Instantiate(data.dieEffect, transform.position, Quaternion.identity);
 
-        lm.numeroDeSombras --;
+        if (!alreadyCounted && lm != null)
+        {
+            lm.numeroDeSombras--;
+            alreadyCounted = true;
+        }
 
         base.Die();
     }
+
 }

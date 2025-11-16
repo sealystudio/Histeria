@@ -7,6 +7,11 @@ public class ShowLevelStartCanvas : MonoBehaviour
     public GameObject inventoryCanvas;
     public GameObject textCanvas;
 
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
     private void Start()
     {
         if (levelStartCanvas != null)

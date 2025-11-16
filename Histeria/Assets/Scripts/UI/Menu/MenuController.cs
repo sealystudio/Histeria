@@ -5,7 +5,7 @@ public class MenuController : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("DialogoIntro"); 
+        SceneManager.LoadScene("TutorialScene"); 
     }
 
     public void ShowCredits()

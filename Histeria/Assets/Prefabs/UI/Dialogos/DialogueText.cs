@@ -233,7 +233,12 @@ public class DialogueText : MonoBehaviour
 
 
             if (playerMovement != null)
+            {
                 playerMovement.canMove = true;
+                Time.timeScale = 1f;
+
+            }
+
 
             if (CharacterPortrait != null)
                 CharacterPortrait.enabled = false;
