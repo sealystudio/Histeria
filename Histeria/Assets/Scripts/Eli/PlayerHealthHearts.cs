@@ -15,16 +15,23 @@ public class PlayerHealthHearts : MonoBehaviour
     [Range(0, 3)]
     public int currentHealth = 3;
 
-    public GameObject deathCanvas; // ← Arrastra aquí tu Canvas de muerte
+    public GameObject deathCanvas;
+    public GameObject dialogoLinterna;
+
+    private bool primerCorazon = false;
 
     private void Start()
     {
+        if (dialogoLinterna != null)
+            dialogoLinterna.SetActive(false);
+
         if (deathCanvas != null)
-            deathCanvas.SetActive(false); // ocultar al iniciar
+            deathCanvas.SetActive(false);
     }
 
     private void Update()
     {
+        if (dialogoLinterna == null) return;
         if (currentHealth == 0)
         {
             Die();
@@ -33,6 +40,28 @@ public class PlayerHealthHearts : MonoBehaviour
 
     public void TakeDamage(int amount = 1)
     {
+        if (!primerCorazon)
+        {
+            // Activar canvas de diálogo
+            dialogoLinterna.SetActive(true);
+
+            // Bloquear movimiento YA aquí
+            PlayerMovement pm = GetComponent<PlayerMovement>();
+            if (pm != null)
+            {
+                pm.canMove = false;
+                pm.puedeDisparar = false;
+            }
+
+            DialogueText dt = dialogoLinterna.GetComponentInChildren<DialogueText>();
+            if (dt != null)
+            {
+                dt.InitDialogue("Nivel_1_prov");
+            }
+
+            primerCorazon = true;
+        }
+
         currentHealth = Mathf.Max(currentHealth - amount, 0);
         UpdateHearts();
 
@@ -42,6 +71,7 @@ public class PlayerHealthHearts : MonoBehaviour
             StartCoroutine(DamageFlash(sr));
         }
     }
+
 
     private IEnumerator DamageFlash(SpriteRenderer sr)
     {
@@ -67,6 +97,12 @@ public class PlayerHealthHearts : MonoBehaviour
     private void Die()
     {
         StartCoroutine(DieAnimation());
+        // Detener todos los audios de la escena
+        AudioSource[] allAudio = FindObjectsOfType<AudioSource>();
+        foreach (AudioSource a in allAudio)
+        {
+            a.Stop();
+        }
     }
 
     private IEnumerator DieAnimation()
@@ -78,7 +114,10 @@ public class PlayerHealthHearts : MonoBehaviour
 
         // En vez de recargar escena → mostrar canvas
         if (deathCanvas != null)
+        {
             deathCanvas.SetActive(true);
+            Cursor.visible = true;
+        }
 
         // Congelar el juego
         Time.timeScale = 0f;

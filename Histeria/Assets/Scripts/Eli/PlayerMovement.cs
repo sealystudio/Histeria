@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     //Lagrimas
     [SerializeField] private PlayerAttack attack;
     private float lagrimasCooldown = 0.5f;
-    public bool puedeDisparar = true;
+    public bool puedeDisparar = false;
     private bool estaDisparando = false;
     public float lifeTime = 0.2f;
 
@@ -153,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(DoPunch());
         }
 
-        if (Input.GetMouseButtonDown(1) && puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
+        if (Input.GetMouseButtonDown(1) && puedeDisparar && (playerEquipment == null && !playerEquipment.IsEquipped))
         {
             StartCoroutine(DoLagrimas());
         }

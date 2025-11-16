@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4688052118759696786}
   - component: {fileID: 1833389720230822322}
   m_Layer: 0
-  m_Name: PortalTutorial
+  m_Name: Artefacto Raro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

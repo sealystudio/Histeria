@@ -178,8 +178,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: MOCHILA
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 89605e91dc7cc5f4fac6ec6ec02780e2, type: 2}
+  m_sharedMaterial: {fileID: -2123507467653720746, guid: 89605e91dc7cc5f4fac6ec6ec02780e2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13640,7 +13640,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -13691,7 +13691,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -14143,6 +14143,18 @@ PrefabInstance:
       value: Cartel3
       objectReference: {fileID: 0}
     - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.42
       objectReference: {fileID: 0}
@@ -14261,7 +14273,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -14367,6 +14379,18 @@ PrefabInstance:
     - target: {fileID: 2732194537962520924, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
       propertyPath: m_Name
       value: Cartel2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15083,7 +15107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetoCambioEscena: {fileID: 3394067301948519984, guid: 4fd69c5f975db8742a76db1f19b0912b, type: 3}
   eli: {fileID: 198912072}
-  numeroDeSombras: 1
+  numeroDeSombras: 0
+  usaDungeonPopulator: 0
 --- !u!4 &1010592918
 Transform:
   m_ObjectHideFlags: 0
@@ -15110,6 +15135,18 @@ PrefabInstance:
     - target: {fileID: 2732194537962520924, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
       propertyPath: m_Name
       value: Cartel4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15620,8 +15657,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 89605e91dc7cc5f4fac6ec6ec02780e2, type: 2}
+  m_sharedMaterial: {fileID: -2123507467653720746, guid: 89605e91dc7cc5f4fac6ec6ec02780e2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16020,8 +16057,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 89605e91dc7cc5f4fac6ec6ec02780e2, type: 2}
+  m_sharedMaterial: {fileID: -2123507467653720746, guid: 89605e91dc7cc5f4fac6ec6ec02780e2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16680,10 +16717,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Usar
+  m_text: USAR
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 89605e91dc7cc5f4fac6ec6ec02780e2, type: 2}
+  m_sharedMaterial: {fileID: -2123507467653720746, guid: 89605e91dc7cc5f4fac6ec6ec02780e2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17626,7 +17663,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -18108,8 +18145,20 @@ PrefabInstance:
       value: Cartel1
       objectReference: {fileID: 0}
     - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.23
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 2861929277120999794, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18163,6 +18212,10 @@ PrefabInstance:
       propertyPath: cartelCanvas4
       value: 
       objectReference: {fileID: 2012123720}
+    - target: {fileID: 6858764461090245992, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5912589756444407452, guid: d9df01d6fab3e04428769cda9160e4c4, type: 3}
     - target: {fileID: 6858764461090245992, guid: 4591bf5a04168a84784e6830e77e2b77, type: 3}
       propertyPath: m_SortingLayer
       value: 4

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0333879417dad34d9857aeb6456558b, type: 3}
   m_Name: Collar
   m_EditorClassIdentifier: 
-  itemName: Collar
-  description: Prueba
+  itemName: Trozo de Collar
+  description: "El collar que me regal\xF3 mam\xE1... Pero est\xE1 roto, \xBFhabr\xE1
+    m\xE1s trozos? "
   icon: {fileID: 5367552544923455254, guid: b3fd34f8b38d0874697b874979c4f2c5, type: 3}
   itemType: 1
   consumableData:

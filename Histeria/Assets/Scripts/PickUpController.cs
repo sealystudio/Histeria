@@ -12,6 +12,7 @@ public class PickUpController : MonoBehaviour
     
     public AudioClip itemSound;
     private AudioSource audioSource;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -48,6 +49,8 @@ public class PickUpController : MonoBehaviour
         if (inventory == null) return;
 
         bool added = inventory.AddItem(itemData);
+
+
 
         if (added)
         {

@@ -132,6 +132,7 @@ public class Inventory : MonoBehaviour
             case ItemType.Equipable:
                 if (item.equipableData != null && playerEquipment != null)
                     playerEquipment.Equip(item.equipableData.equipPrefab);
+
                 break;
         }
 

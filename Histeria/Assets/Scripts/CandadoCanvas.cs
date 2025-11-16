@@ -1,15 +1,25 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShowLevelStartCanvas : MonoBehaviour
 {
     public GameObject levelStartCanvas;
+    public GameObject hudCanvas;
+    public GameObject inventoryCanvas;
+    public GameObject textCanvas;
 
     private void Start()
     {
         if (levelStartCanvas != null)
         {
             levelStartCanvas.SetActive(true);
-            Time.timeScale = 0f; // Pausa el juego
+
+            Cursor.lockState = CursorLockMode.None; 
+            Cursor.visible = true;                 
+
+            hudCanvas.SetActive(false);
+            inventoryCanvas.SetActive(false);
+            textCanvas.SetActive(false);
+            Time.timeScale = 0f; 
         }
     }
 

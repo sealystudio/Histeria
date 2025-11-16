@@ -303,7 +303,8 @@ MonoBehaviour:
   dialogueText: {fileID: 7000504550809511552}
   textSpeed: 0.1
   CharacterPortrait: {fileID: 497777114780417758}
-  nombreJSON: dialogue_tutorial
+  autoStart: 1
+  nombreJSON: Nivel_1_prov
   hudCanvas: {fileID: 9166439009364903911}
   luzAmbiente: {fileID: 0}
 --- !u!1 &8893074750125486884
@@ -319,7 +320,7 @@ GameObject:
   - component: {fileID: 1399952996809668827}
   - component: {fileID: 517792756445117305}
   m_Layer: 5
-  m_Name: "Di\xE1logosTutorial"
+  m_Name: Nivel1_prov
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

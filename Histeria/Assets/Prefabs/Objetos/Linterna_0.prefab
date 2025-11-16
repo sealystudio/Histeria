@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 5f2e3b313c06e8b449e8eda5e748fa6f, type: 2}
   itemSound: {fileID: 8300000, guid: b0fddd320e1e96845b3fb06a8491388e, type: 3}
+  dialogoLinterna: {fileID: 8893074750125486884, guid: c5d5a2d45cce0ab4ea32af2093dab394, type: 3}
 --- !u!82 &560830009091122270
 AudioSource:
   m_ObjectHideFlags: 0

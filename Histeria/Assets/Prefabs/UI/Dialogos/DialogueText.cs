@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -27,43 +27,84 @@ public class DialogueText : MonoBehaviour
     private int index;
     private DialogueData dialogueData;
     public UnityEngine.UI.Image CharacterPortrait;
+    
+    [Header("Opciones")]
+    public bool autoStart = false;
+    public string nombreJSON = "";
+
     [Header("HUD")]
-    public Canvas hudCanvas; // <-- Añade tu HUD aquí en el inspector
+    public Canvas hudCanvas;
 
     private bool abrirDialogo;
     private PlayerMovement playerMovement;
     public Light2D luzAmbiente;
 
+
+
+    public void InitDialogue(string jsonName)
+    {
+        nombreJSON = jsonName;
+
+        if (!gameObject.activeSelf)
+            gameObject.SetActive(true); 
+
+        if (dialogueText == null)
+        {
+            Debug.LogError("TMP text no asignado en DialogueText!");
+            return;
+        }
+
+        playerMovement = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerMovement>();
+        if (playerMovement != null)
+        {
+            playerMovement.canMove = false;
+            playerMovement.puedeDisparar = false;
+        }
+
+        abrirDialogo = true;
+        gameObject.SetActive(true);
+
+        LoadDialogue(nombreJSON);
+        StartDialogue();
+    }
+
+
+
+
     void Start()
     {
+        if (!autoStart) return;
+
+        if (string.IsNullOrEmpty(nombreJSON))
+            return;
+
         luzAmbiente.intensity = 0;
         abrirDialogo = true;
 
-        // Bloquear movimiento
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         if (playerMovement != null)
         {
             playerMovement.canMove = false;
             playerMovement.puedeDisparar = false;
-
         }
 
-        LoadDialogue("dialogue_tutorial");
+        LoadDialogue(nombreJSON);
         StartDialogue();
     }
+
+
 
     void Update()
     {
         Cursor.visible = abrirDialogo;
 
-        if (!abrirDialogo) return;
+        if (!abrirDialogo || dialogueData == null) return;
 
         if (Input.GetMouseButtonDown(0))
         {
             string fullLine = dialogueData.lines[index].showSpeaker
                 ? $"{dialogueData.lines[index].speaker.ToUpper()}: {dialogueData.lines[index].text}"
-    :           dialogueData.lines[index].text;
-
+                : dialogueData.lines[index].text;
 
             if (dialogueText.text == fullLine)
                 NextLine();
@@ -74,6 +115,8 @@ public class DialogueText : MonoBehaviour
             }
         }
     }
+
+
 
     List<string> SplitLongLine(string text, int maxLength = 200)
     {
@@ -89,23 +132,29 @@ public class DialogueText : MonoBehaviour
         }
 
         if (!string.IsNullOrEmpty(text))
-        {
             parts.Add(text);
-        }
 
         return parts;
     }
 
+
+
     void LoadDialogue(string fileName)
     {
         TextAsset jsonFile = Resources.Load<TextAsset>(fileName);
+
+        if (jsonFile == null)
+        {
+            Debug.LogError($"? JSON NO ENCONTRADO: Resources/{fileName}.json");
+            return;
+        }
+
         dialogueData = JsonUtility.FromJson<DialogueData>(jsonFile.text);
 
         List<DialogueLine> processedLines = new List<DialogueLine>();
 
         foreach (var line in dialogueData.lines)
         {
-            // Dividir la línea si es demasiado larga
             List<string> splitParts = SplitLongLine(line.text);
 
             for (int i = 0; i < splitParts.Count; i++)
@@ -114,13 +163,16 @@ public class DialogueText : MonoBehaviour
                 {
                     speaker = line.speaker,
                     text = splitParts[i],
-                    showSpeaker = (i == 0) // solo la primera parte muestra el nombre
+                    showSpeaker = (i == 0),
+                    portrait = line.portrait
                 });
             }
         }
 
         dialogueData.lines = processedLines;
     }
+
+
 
     public void StartDialogue()
     {
@@ -129,18 +181,17 @@ public class DialogueText : MonoBehaviour
         StartCoroutine(WriteLine());
     }
 
+
+
     IEnumerator WriteLine()
     {
-        // Limpiar texto anterior
-        dialogueText.text = string.Empty;
+        dialogueText.text = "";
 
-        // Construir la línea completa con o sin speaker
         string fullLine = dialogueData.lines[index].showSpeaker
             ? $"{dialogueData.lines[index].speaker}: {dialogueData.lines[index].text}"
             : dialogueData.lines[index].text;
 
-        // --- Mostrar retrato del personaje ---
-        // Si el JSON tiene un campo portrait, úsalo. Si no, usa el speaker como nombre de archivo.
+        // Retrato
         string portraitName = string.IsNullOrEmpty(dialogueData.lines[index].portrait)
             ? dialogueData.lines[index].speaker.ToLower()
             : dialogueData.lines[index].portrait.ToLower();
@@ -153,10 +204,9 @@ public class DialogueText : MonoBehaviour
         }
         else
         {
-            CharacterPortrait.enabled = false; // ocultar si no hay imagen
+            CharacterPortrait.enabled = false;
         }
 
-        // --- Efecto de escritura letra por letra ---
         foreach (char letter in fullLine.ToCharArray())
         {
             dialogueText.text += letter;
@@ -181,11 +231,10 @@ public class DialogueText : MonoBehaviour
 
             gameObject.SetActive(false);
 
-            // Habilitar movimiento al terminar
+
             if (playerMovement != null)
                 playerMovement.canMove = true;
 
-            // Oculta retrato
             if (CharacterPortrait != null)
                 CharacterPortrait.enabled = false;
         }
