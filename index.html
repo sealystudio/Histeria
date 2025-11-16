@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Sealy Studio — Portfolio</title>
+        <link rel="icon" type="image/png" href="img/LogoRedes2.png" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" />
+
+        <style>
+            @font-face {
+                font-family: 'Pixellari';
+                src: url('fonts/Pixellari.ttf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Upheaval';
+                src: url('fonts/Upheavtt.ttf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            section p {
+                max-width: 1100px;
+            }
+
+            body {
+                font-family: 'Pixellari', sans-serif;
+                color: #ffffff;
+                background: url('img/FondoPixel2.jpg') repeat;
+            }
+
+            .w3-bar .w3-bar-item {
+                font-size: 1.5rem;
+                padding: 12px 20px;
+            }
+
+            .pixellari {
+                font-family: 'Pixellari', sans-serif;
+            }
+
+            .upheaval {
+                font-family: 'Upheaval', sans-serif;
+            }
+
+            /*INICIO*/
+            .hero-image { 
+                font-family: 'Upheaval', sans-serif;
+                background: url('img/BannerYT.png') center/cover no-repeat; 
+                height: 70vh;
+                position: relative;
+            }
+            .hero-overlay {      
+                background: rgba(0,0,0,0.55);
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+            }
+            .hero-text {
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+                color: #fff;
+                text-align: center;
+            }
+
+            /*SECCIONES*/
+            #studio {
+                background: rgba(108, 57, 132, 0.9);
+                color: #ffffff;
+            }
+
+            #project {
+                background:rgba(22, 0, 33, 0.9);
+                color: #ffffff;
+            }
+
+            #contact {
+                background: rgba(108, 57, 132, 0.9);
+                color: #ffffff;
+            }
+
+            #contact p {
+                line-height: 1.2;
+                margin: 5px 0;
+            }
+
+            /*IMÁGENES*/
+            .project-img {
+                width: 100%;
+                border-radius: 6px;
+            }
+
+            h2 {
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+
+            .team-container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 30px;
+                margin-top: 30px;
+                max-width: 1100px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .team-card {
+                width: 180px;
+                background: #ffffff;
+                border-radius: 10px;
+                text-align: center;
+                padding: 15px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                transition: transform 0.3s;
+            }
+
+            .team-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .team-card img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+
+            .team-card h3 {
+                font-family: 'Pixellari', sans-serif;
+                margin: 5px 0;
+                font-size: 1.2rem;
+                color:#6c3984
+            }
+
+            .team-card p {
+                margin: 0;
+                font-size: 0.9rem;
+                opacity: 0.7;
+                color:#6c3984
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- NAVBAR -->
+        <div class="w3-bar w3-black w3-padding w3-top w3-opacity-min">
+        <a href="#home" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey">Inicio</a>
+        <a href="#studio" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey">Sealy Studio</a>
+        <a href="#project" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey">Histeria</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey">Contacto</a>
+        </div>
+
+        <!-- INICIO -->
+        <header id="home" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1 class="w3-xxxlarge upheaval" style="font-weight:700;">Sealy Studio</h1>
+            <p class="w3-xlarge" style="margin-top:10px;">De Móstoles para el mundo</p>
+        </div>
+        </header>
+
+        <!-- SOBRE NOSOTROS -->
+        <section id="studio" class="w3-container w3-padding-64">
+        <h2 class="w3-xxxlarge upheaval">Sobre Nosotros</h2>
+        <p class="w3-large" style="max-width:1100px;">
+            Sealy Studio es un pequeño estudio ficticio creado para un proyecto del Grado de Diseño y Desarrollo de Videojuegos de la Universidad Rey Juan Carlos de Móstoles.
+            Somos 5 jóvenes estudiantes que pretenden llegar a lo más profundo de todos los usuarios, utilizando el juego como la perfecta forma lúdica de concienciación y enseñanza.
+            Creamos Histeria con el objetivo de concienciar a las nuevas generaciones sobre uno de los mayores problemas en el mundo actual: el deterioro de la salud mental.
+        </p>
+        <div class="team-container">
+
+                <div class="team-card">
+                    <img src="img/Mario.jpeg" alt="Mario">
+                    <h3>Mario Martín Escribano</h3>
+                    <p>Diseño y desarrollo</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="img/Daniel.png" alt="Daniel">
+                    <h3>Daniel Pérez Navarro</h3>
+                    <p>Diseño y desarrollo</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="img/Sergio.jpeg" alt="Sergio">
+                    <h3>Sergio Delgado López</h3>
+                    <p>Diseño y desarrollo</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="img/Javier.png" alt="Javier">
+                    <h3>Javier Martín García</h3>
+                    <p>Diseño y desarrollo</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="img/Raul.png" alt="Raul">
+                    <h3>Raúl Delgado Alcázar</h3>
+                    <p>Diseño y desarrollo</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HISTERIA -->
+        <section id="project" class="w3-padding-64">
+        <div class="w3-content" style="max-width:1100px;">
+            <h2 class="w3-xxxlarge upheaval">Histeria: Los fragmentos de la mente</h2>
+            <p class="w3-large">
+            Nuestro proyecto principal: una aventura psicológica que explora la degradación mental de una joven que pasa por los peores momentos de su vida.
+            </p>
+
+            <div style="margin-top:20px;">
+                <img src="img/TeaserHisteria.png" class="project-img" alt="TeaserHisteria" style="width:50%; display:block; margin:20px auto;" />
+            </div>
+
+            <p class="w3-large w3-margin-top">
+            Histeria combina exploración, puzzles, narrativa psicológica y una estética oscura y fragmentada. 
+            El jugador reconstruye la historia a través de recuerdos rotos, entornos simbólicos y una presencia que siempre parece observar.
+            </p>
+        </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contact" class="w3-container w3-padding-64">
+            <h2 class="w3-xxxlarge upheaval">Contacto</h2>
+            <p class="w3-xxlarge">¿Quieres colaborar, preguntar o seguir el desarrollo?</p>
+
+            <p class="w3-xxlarge"><strong>Email:</strong> sealystudiourjc@gmail.com</p>
+            <p class="w3-xxlarge">
+                <strong>Instagram:</strong>
+                <a href="https://www.instagram.com/sealy.studio" target="_blank" style="color: #ffffff; text-decoration: underline;">
+                    @Sealy.Studio
+                </a>
+            </p>
+            <p class="w3-xxlarge">
+                <strong>X:</strong>
+                <a href="https://x.com/SealyStudio" target="_blank" style="color: #ffffff; text-decoration: underline;">
+                    @SealyStudio
+                </a>
+            </p>
+            <p class="w3-xxlarge">
+                <strong>YouTube:</strong>
+                <a href="https://www.youtube.com/@Sealy.Studio" target="_blank" style="color: #ffffff; text-decoration: underline;">
+                    @Sealy.Studio
+                </a>
+            </p>
+            <p class="w3-xxlarge">
+                <strong>Itch.io:</strong> 
+                <a href="https://sealystudio.itch.io/histeria-fragmentos-de-la-mente-v000" target="_blank" style="color: #ffffff; text-decoration: underline;">
+                    ¡JUEGA HISTERIA!
+                </a>
+            </p>
+        </section>
+
+        <!-- PIE DE PAGINA -->
+        <footer class="w3-center w3-black w3-padding-32">
+            <p>© 2025 Sealy Studio — Todos los derechos reservados</p>
+        </footer>
+
+    </body>
+</html>
