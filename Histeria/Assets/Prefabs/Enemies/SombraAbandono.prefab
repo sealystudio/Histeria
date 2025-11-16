@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 749075452093475672}
   - component: {fileID: 3972918158902773534}
   - component: {fileID: 5740095599532383992}
+  - component: {fileID: 7173362368923641822}
   m_Layer: 3
   m_Name: SombraAbandono
   m_TagString: Untagged
@@ -202,11 +203,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 0
-  moveSpeed: 0
-  detectionRange: 0
+  moveSpeed: 3
+  detectionRange: 10
   attackRange: 0
   damage: 1
-  contactCooldown: 2
+  contactCooldown: 1
   isDead: 0
   canMove: 1
   canAttack: 1
@@ -224,7 +225,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6653928382663917490}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
   m_Name: 
@@ -872,3 +873,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7173362368923641822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6653928382663917490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1743d9dc0a951914181aef0685caafe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3.4
+  followDistance: 8
