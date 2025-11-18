@@ -42,7 +42,7 @@ public class SombraAbandono : EnemyBase
     private GameObject[] lights;
 
     bool _playerFlashlight;
-    float detectionRange = 1f;
+    float detectionRange = 4f;
 
     public static List<SombraAbandono> todasLasSombras = new List<SombraAbandono>();
 
@@ -60,7 +60,7 @@ public class SombraAbandono : EnemyBase
     private LevelManager lm; 
     private bool alreadyCounted = false;
 
-
+    Rigidbody2D rb;
 
     private void Start()
     {
@@ -94,7 +94,8 @@ public class SombraAbandono : EnemyBase
         }
         else if (direccionHuida != Vector2.zero)
         {
-            transform.Translate(direccionHuida * data.moveSpeed * Time.deltaTime, Space.World);
+            //rb.MovePosition(rb.position + data.moveSpeed* direccionHuida * Time.fixedDeltaTime);
+            transform.Translate(direccionHuida * data.moveSpeed * Time.time, Space.World);
             //transform.Translate(Vector3.up * Mathf.Sin(Time.time * data.moveSpeed) * Time.deltaTime);
         }
 
@@ -116,14 +117,24 @@ public class SombraAbandono : EnemyBase
 
     //Para FSM y BT
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+            playerAttack = player.GetComponent<PlayerAttack>();
+    }
     private void OnEnable()
     {
-        playerAttack.OnFlashlightChanged += HandleFlashlightChanged;
+        if (playerAttack != null)
+            playerAttack.OnFlashlightChanged += HandleFlashlightChanged;
+        else
+            Debug.LogWarning("[SombraAbandono] playerAttack está null en OnEnable()");
     }
-
     private void OnDisable()
     {
-        playerAttack.OnFlashlightChanged -= HandleFlashlightChanged;
+        if (playerAttack != null)
+            playerAttack.OnFlashlightChanged -= HandleFlashlightChanged;
     }
 
     private void HandleFlashlightChanged(bool hasFlashlight)
@@ -316,18 +327,25 @@ public class SombraAbandono : EnemyBase
 
     public void Idle()
     {
-        data.moveSpeed = 0;  // Se para la sombra
+        // Se detiene completamente la sombra
+        data.moveSpeed = 0;
         direccionHuida = Vector2.zero;
 
-        // Activamos el flotado
+        if (rb != null)
+        {
+            rb.velocity = Vector2.zero;        // <-- Detiene la velocidad
+            rb.angularVelocity = 0f;           // <-- Limpia rotación (opcional)
+        }
+
+        // Activamos el flotado (idle behavior visual)
         if (!isIdle)
         {
-            idleStartPos = transform.position; // guardamos posición base
+            idleStartPos = transform.position;
             isIdle = true;
         }
 
         if (animator != null)
-            animator.SetTrigger("Idle"); // si quieres usar animación de sprite estático
+            animator.SetTrigger("Idle");
     }
 
     protected override void OnHit()
