@@ -39,16 +39,34 @@ public class DungeonPopulator : MonoBehaviour
         if (isPopulated) return;
         isPopulated = true;
 
-        // --- Spawnear objetos ---
+        // Spawnear objetos
         SpawnFromList(objectsToSpawn, objectSpawnPoints);
-        for(int i = 0; i < enemyNumber; i++)
-        {
-            // --- Spawnear enemigos ---
-            
-            SpawnFromList(enemiesToSpawn, enemySpawnPoints);
 
+        // Spawnear enemigos
+        SpawnEnemies(enemyNumber);
+    }
+
+    void SpawnEnemies(int quantity)
+    {
+        for (int i = 0; i < quantity; i++)
+        {
+            if (enemySpawnPoints.Count == 0)
+            {
+                Debug.LogWarning("No quedan spawn points para enemigos.");
+                return;
+            }
+
+            int randIndex = Random.Range(0, enemySpawnPoints.Count);
+            int randEnemy = Random.Range(0, enemiesToSpawn.Length);
+
+            Transform point = enemySpawnPoints[randIndex];
+            Instantiate(enemiesToSpawn[randEnemy], point.position, Quaternion.identity);
+
+            enemySpawnPoints.RemoveAt(randIndex);
+            Destroy(point.gameObject);
         }
     }
+
 
     private void SpawnFromList(GameObject[] prefabs, List<Transform> spawnPoints)
     {
