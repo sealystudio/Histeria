@@ -32,7 +32,7 @@ public class SombraAbandono : EnemyBase
     private GameObject[] lights;
 
     bool _playerFlashlight;
-    float detectionRange = 0.5f;
+    float detectionRange = 10f;
 
     public static List<SombraAbandono> todasLasSombras = new List<SombraAbandono>();
 
@@ -77,25 +77,23 @@ public class SombraAbandono : EnemyBase
 
     private void Update()
     {
-
-        Vector3 dir = direccionHuida;
-
-        if (float.IsNaN(dir.x) || float.IsNaN(dir.y) ||
-            float.IsInfinity(dir.x) || float.IsInfinity(dir.y))
+       
+        if (direccionHuida == Vector2.zero ||
+            float.IsNaN(direccionHuida.x) || float.IsNaN(direccionHuida.y))
         {
-            Debug.LogWarning("Dirección corrupta detectada, regenerando…");
-
-            dir = Random.insideUnitCircle.normalized;
-            direccionHuida = dir;
+            direccionHuida = Random.insideUnitCircle.normalized;
         }
 
-
-        transform.Translate(dir * data.moveSpeed * Time.deltaTime * 0.5f);
+        
+        if (rb != null)
+        {
+            rb.linearVelocity = direccionHuida.normalized * data.moveSpeed;
+        }
 
         if (playerAttack != null)
             _playerFlashlight = playerAttack._hasFlashlight;
-
     }
+
 
     //solo se le puede matar con la linterna, por eso dara igual que le pegues
 
@@ -180,6 +178,8 @@ public class SombraAbandono : EnemyBase
     public bool JugadorCerca()
     {
         Debug.Log("Funciona JugadorCerca");
+        Debug.Log(detectionRange);
+        Debug.Log(player.transform.position - transform.position);
         return Vector2.Distance(transform.position, player.transform.position) < detectionRange;
     }
 
@@ -200,9 +200,9 @@ public class SombraAbandono : EnemyBase
     public bool HaLlegadoLuz()
     {
 
-        return Vector2.Distance(transform.position, globalLightPos) < 0.2f;
+        return Vector2.Distance(transform.position, globalLightPos) < 1f;
     }
-    public void SeekLight()
+    public StatusFlags SeekLight()
     {
         float minDist = float.MaxValue;
         _hasTarget = false;
@@ -223,6 +223,7 @@ public class SombraAbandono : EnemyBase
                     globalTargetLight = l;
                     globalLightPos = obj.transform.position;
                     _hasTarget = true;
+                    return StatusFlags.Success;
                 }
             }
         }
@@ -231,6 +232,7 @@ public class SombraAbandono : EnemyBase
             Debug.Log("He encontrado una luz: " + globalTargetLight.name);
         else
             Debug.Log("No hay luces disponibles.");
+        return StatusFlags.Failure;
     }
 
 
