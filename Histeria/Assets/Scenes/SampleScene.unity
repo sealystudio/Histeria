@@ -1453,9 +1453,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.001953125
+    y: 0.0019193857
     width: 1
-    height: 0.9953125
+    height: 0.9953167
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -5614,6 +5614,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SombraAbandono (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6653928382663917490, guid: 324c58677f8e23748842c5ddf35c1635, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5773,7 +5777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1123836858427076802, guid: efa9ec7e811d7e546a9a51fa4b7816f5, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1330374184906165673, guid: efa9ec7e811d7e546a9a51fa4b7816f5, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
@@ -5801,11 +5805,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5324555849563202351, guid: efa9ec7e811d7e546a9a51fa4b7816f5, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5711929491020935459, guid: efa9ec7e811d7e546a9a51fa4b7816f5, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6433216430610290782, guid: efa9ec7e811d7e546a9a51fa4b7816f5, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
@@ -5861,7 +5865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051378671431067045, guid: efa9ec7e811d7e546a9a51fa4b7816f5, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8075859957116513775, guid: efa9ec7e811d7e546a9a51fa4b7816f5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10165,6 +10169,10 @@ PrefabInstance:
     - target: {fileID: 6653928382663917490, guid: 324c58677f8e23748842c5ddf35c1635, type: 3}
       propertyPath: m_Name
       value: SombraAbandono (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653928382663917490, guid: 324c58677f8e23748842c5ddf35c1635, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14748,6 +14756,10 @@ PrefabInstance:
     - target: {fileID: 6653928382663917490, guid: 324c58677f8e23748842c5ddf35c1635, type: 3}
       propertyPath: m_Name
       value: SombraAbandono (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653928382663917490, guid: 324c58677f8e23748842c5ddf35c1635, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20607,6 +20619,10 @@ PrefabInstance:
     - target: {fileID: 6653928382663917490, guid: 324c58677f8e23748842c5ddf35c1635, type: 3}
       propertyPath: m_Name
       value: SombraAbandono (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653928382663917490, guid: 324c58677f8e23748842c5ddf35c1635, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

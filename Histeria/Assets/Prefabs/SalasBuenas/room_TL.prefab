@@ -5860,6 +5860,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SombraAbandono (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6653928382663917490, guid: 324c58677f8e23748842c5ddf35c1635, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

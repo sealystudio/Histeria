@@ -29,7 +29,7 @@ public class SombraAbandono : EnemyBase
     private GameObject player;
     private PlayerAttack playerAttack;
 
-    private GameObject[] lights;
+    private Light2D[] lights;
 
     bool _playerFlashlight;
     float detectionRange = 10f;
@@ -72,7 +72,8 @@ public class SombraAbandono : EnemyBase
 
         _playerFlashlight = playerAttack._hasFlashlight;
 
-        lights = GameObject.FindGameObjectsWithTag("Light");
+        lights = FindObjectsOfType<Light2D>();
+        Debug.Log("Luces encontradas: " + lights.Length);
     }
 
     private void Update()
@@ -177,15 +178,13 @@ public class SombraAbandono : EnemyBase
 
     public bool JugadorCerca()
     {
-        Debug.Log("Funciona JugadorCerca");
-        Debug.Log(detectionRange);
-        Debug.Log(player.transform.position - transform.position);
+
         return Vector2.Distance(transform.position, player.transform.position) < detectionRange;
     }
 
     public bool JugadorNoCerca()
     {
-        Debug.Log("Funciona JugadorNOCerca");
+
         return Vector2.Distance(transform.position, player.transform.position) > detectionRange;
     }
 
@@ -200,40 +199,44 @@ public class SombraAbandono : EnemyBase
     public bool HaLlegadoLuz()
     {
 
-        return Vector2.Distance(transform.position, globalLightPos) < 1f;
+        return Vector2.Distance(transform.position, globalLightPos) < 5f;
     }
     public StatusFlags SeekLight()
     {
-        float minDist = float.MaxValue;
-        _hasTarget = false;
-        globalTargetLight = null;
+        lights = FindObjectsOfType<Light2D>();
 
-        foreach (GameObject obj in lights)
+        float minDist = Mathf.Infinity;
+        Light2D bestLight = null;
+
+        foreach (Light2D l in lights)
         {
-            Light2D l = obj.GetComponent<Light2D>();
+            if (l == null || l.intensity <= 0f)
+                continue;
 
-            if (l != null && l.intensity > 0f)
+            float dist = Vector2.Distance(transform.position, l.transform.position);
+
+            if (dist < minDist)
             {
-                float dist = Vector2.Distance(transform.position, obj.transform.position);
-
-                
-                if (dist < minDist)
-                {
-                    minDist = dist;
-                    globalTargetLight = l;
-                    globalLightPos = obj.transform.position;
-                    _hasTarget = true;
-                    return StatusFlags.Success;
-                }
+                minDist = dist;
+                bestLight = l;
             }
         }
 
-        if (_hasTarget)
-            Debug.Log("He encontrado una luz: " + globalTargetLight.name);
-        else
-            Debug.Log("No hay luces disponibles.");
+        if (bestLight != null)
+        {
+            Debug.Log("Luz objetivo seleccionada: " + bestLight.gameObject.name);
+            globalTargetLight = bestLight;
+            globalLightPos = bestLight.transform.position;
+            _hasTarget = true;
+            return StatusFlags.Success;
+        }
+
+        _hasTarget = false;
         return StatusFlags.Failure;
     }
+
+
+
 
 
 
@@ -243,28 +246,36 @@ public class SombraAbandono : EnemyBase
             return StatusFlags.Failure;
 
         data.moveSpeed = 2.5f;
-
-        
         direccionHuida = (globalLightPos - (Vector2)transform.position).normalized;
-
-        if (JugadorCerca())
-            return StatusFlags.Failure;
 
         if (!HaLlegadoLuz())
             return StatusFlags.Running;
 
+        // Ha llegado
         return StatusFlags.Success;
     }
 
 
 
-    public void SwitchOffLight()
+
+    public StatusFlags SwitchOffLight()
     {
         if (globalTargetLight != null)
+        {
+            // 1. Establece la intensidad a cero (opcional, pero buena práctica)
             globalTargetLight.intensity = 0f;
 
+            // 2. DESACTIVA EL COMPONENTE Light2D para forzar que permanezca apagado.
+            globalTargetLight.enabled = false;
+
+            // Opcional: Si quieres desactivar el GameObject completo:
+            // globalTargetLight.gameObject.SetActive(false); 
+        }
+        
         ClearLightTarget();
+        return StatusFlags.Success;
     }
+
 
 
 
