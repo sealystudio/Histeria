@@ -215,6 +215,8 @@ MonoBehaviour:
   knockbackForce: {x: 2, y: 2}
   flashDuration: 0.15
   data: {fileID: 11400000, guid: 349d203abcf925441866a6ef14f54996, type: 2}
+  other: {fileID: 0}
+  otraSombra: {fileID: 0}
   globalTargetLight: {fileID: 0}
   globalLightPos: {x: 0, y: 0}
   dieSound: {fileID: 8300000, guid: f717b4e5197eee343abddbfe00998e06, type: 3}
@@ -275,7 +277,7 @@ MonoBehaviour:
         - 16c07d23-5417-4ce1-9b45-3251c1109bcc
       - name: jugador_cerca
         id: 515d86c0-0595-4f3c-9ec0-f5107bfddbcf
-        position: {x: -836, y: 209.6}
+        position: {x: -804, y: 242}
         node:
           rid: 8180354703411904527
         references:
@@ -367,7 +369,7 @@ MonoBehaviour:
         parentIds:
         - ac9eff8e-1533-4502-868f-19db683326a5
         childIds:
-        - f1df3f4d-66ac-4ed6-9bfb-5a59dce2f11d
+        - a178f71b-08bf-4ccc-8945-652c919f6aa9
       - name: luces_secuencia
         id: f88b0594-79c2-4295-80ac-529c8ed16da6
         position: {x: -125.6, y: 188}
@@ -383,7 +385,7 @@ MonoBehaviour:
         - 99ffbabe-6785-44e1-8eea-62ffbd08e47b
       - name: Idle
         id: 8d0bb3f1-7103-4486-adc0-31ea47a3ba9b
-        position: {x: -499.2, y: 475.99997}
+        position: {x: -482, y: 492}
         node:
           rid: 8180354703411904609
         references:
@@ -491,15 +493,15 @@ MonoBehaviour:
         parentIds:
         - 51ebe2d8-0bff-4820-a7bd-01118f9a691e
         childIds: []
-      - name: Prueba
-        id: f1df3f4d-66ac-4ed6-9bfb-5a59dce2f11d
-        position: {x: -620, y: 365}
+      - name: 
+        id: a178f71b-08bf-4ccc-8945-652c919f6aa9
+        position: {x: -604, y: 348}
         node:
-          rid: 5876995628673531983
+          rid: 5876995665114693699
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 5876995665114693700
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -509,8 +511,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 5876995628673531972
       type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -637,9 +637,13 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
-    - rid: 5876995628673531983
+    - rid: 5876995665114693699
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
+    - rid: 5876995665114693700
+      type: {class: DebugLogAction, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+      data:
+        message: Hola aqui estoy
     - rid: 8180354703411904524
       type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 

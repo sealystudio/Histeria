@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using BehaviourAPI.Core;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -26,11 +27,12 @@ public class SombraAbandono : EnemyBase
 {
     public SombraAbandonoData data;
 
-
+    public Transform other;
+    public Transform otraSombra;
 
     Vector2 direccionHuida;
 
-    LightTarget? target;
+    LightTarget target;
     private bool _hasTarget;
 
     public Light2D globalTargetLight;
@@ -84,20 +86,20 @@ public class SombraAbandono : EnemyBase
 
     private void Update()
     {
-        if (data == null || isDead) return; // no flotamos si está muerto
 
-        // Flotado si está en idle
-        if (isIdle)
+        Vector3 dir = direccionHuida;
+
+        if (float.IsNaN(dir.x) || float.IsNaN(dir.y) ||
+            float.IsInfinity(dir.x) || float.IsInfinity(dir.y))
         {
-            float yOffset = Mathf.Sin(Time.time * floatFrequency) * floatAmplitude;
-            transform.position = idleStartPos + new Vector3(0f, yOffset, 0f);
+            Debug.LogWarning("Dirección corrupta detectada, regenerando…");
+
+            dir = Random.insideUnitCircle.normalized;
+            direccionHuida = dir;
         }
-        else if (direccionHuida != Vector2.zero)
-        {
-            //rb.MovePosition(rb.position + data.moveSpeed* direccionHuida * Time.fixedDeltaTime);
-            transform.Translate(direccionHuida * data.moveSpeed * Time.time, Space.World);
-            //transform.Translate(Vector3.up * Mathf.Sin(Time.time * data.moveSpeed) * Time.deltaTime);
-        }
+
+
+        transform.Translate(dir * data.moveSpeed * Time.deltaTime * 0.1f);
 
     }
 
@@ -124,24 +126,7 @@ public class SombraAbandono : EnemyBase
         if (player != null)
             playerAttack = player.GetComponent<PlayerAttack>();
     }
-    private void OnEnable()
-    {
-        if (playerAttack != null)
-            playerAttack.OnFlashlightChanged += HandleFlashlightChanged;
-        else
-            Debug.LogWarning("[SombraAbandono] playerAttack está null en OnEnable()");
-    }
-    private void OnDisable()
-    {
-        if (playerAttack != null)
-            playerAttack.OnFlashlightChanged -= HandleFlashlightChanged;
-    }
-
-    private void HandleFlashlightChanged(bool hasFlashlight)
-    {
-        _playerFlashlight = hasFlashlight;
-
-    }
+   
     public bool PlayerHasFlashLight()
     {
 
@@ -161,9 +146,10 @@ public class SombraAbandono : EnemyBase
 
     }
 
-    public bool OtraSombraHuyendo(GameObject otraSombra)
+    public bool OtraSombraHuyendo()
     {
         SombraAbandono sombraHuye;
+
         if (otraSombra == null) 
             return false;
 
@@ -199,6 +185,7 @@ public class SombraAbandono : EnemyBase
 
     public bool JugadorCerca()
     {
+        Debug.Log("Funciona JugadorCerca");
         return Vector2.Distance(transform.position, player.transform.position) < detectionRange;
     }
 
@@ -215,18 +202,17 @@ public class SombraAbandono : EnemyBase
         return _hasTarget;
 
     }
-    public bool HaLlegadoLuz(LightTarget? destino)
+    public bool HaLlegadoLuz()
     {
 
-        return Vector2.Distance(transform.position, destino.Value.position) < 0.2f;
+        return Vector2.Distance(transform.position, target.position) < 0.2f;
     }
-    LightTarget? SeekLight()
+    public void SeekLight()
     {
         
-        Light2D closestLight = null;
-        Vector2 closestPos = Vector2.zero;
-        float minDist = 0;
 
+        float minDist = 0;
+        
         foreach (GameObject obj in lights)
         {
             Light2D l = obj.GetComponent<Light2D>();
@@ -236,49 +222,48 @@ public class SombraAbandono : EnemyBase
                 if (dist < minDist && dist <= detectionRange)
                 {
                     minDist = dist;
-                    closestLight = l;
-                    closestPos = obj.transform.position;
+                    target.light2D = l;
+                    target.position = obj.transform.position;
+                    _hasTarget = true;
+                    //closestLight = l;
+                    //closestPos = obj.transform.position;
                 }
             }
         }
 
-        if (closestLight != null) 
-            return new LightTarget(closestLight, closestPos);
-
-        return null;
-        
     }
 
 
-    public void MoveToLight()
+    public StatusFlags MoveToLight()
     {
 
-        target = SeekLight();
-
-        if (!target.HasValue)
-        return;
 
        
-        globalTargetLight = target.Value.light2D;
-        globalLightPos = target.Value.position;
+        globalTargetLight = target.light2D;
+        globalLightPos = target.position;
 
         data.moveSpeed = 2.5f;
 
         Vector2 dir = (Vector2)transform.position - globalLightPos;
         direccionHuida = dir;
+
+        while (!HaLlegadoLuz()) {
+            if (JugadorCerca()) { 
+                return StatusFlags.Failure;
+            }
+            return StatusFlags.Running;
+        }
+        if (HaLlegadoLuz()) {
+            return StatusFlags.Success;
+        }
+        else { return StatusFlags.Failure; }
+            
     }
 
     public void SwitchOffLight()
     {
 
-        if (!target.HasValue)
-            return;
-
-
-        LightTarget light = target.Value;
-
-
-        light.light2D.intensity = 0f;
+        target.light2D.intensity = 0f;
 
     }
 
@@ -291,37 +276,50 @@ public class SombraAbandono : EnemyBase
         direccionHuida = dir;
     }
 
-    public void HuirSombra(GameObject other)
+    public StatusFlags HuirSombra()
     {
         data.moveSpeed = 5f;
 
-        
-        bool above = transform.position.y > other.transform.position.y;
+        if (direccionHuida == Vector2.zero)
+            direccionHuida = Random.insideUnitCircle.normalized;
 
-        
+        bool above = transform.position.y > other.position.y;
+
         Vector2 perp = new Vector2(-direccionHuida.y, direccionHuida.x);
 
-       
         if (!above)
             perp = -perp;
 
-        
         float t = Random.Range(0.1f, 0.9f);
         Vector2 newDir = Vector2.Lerp(direccionHuida.normalized, perp.normalized, t).normalized;
 
+        // Si por lo que sea vuelve a ser cero:
+        if (newDir == Vector2.zero)
+            newDir = Random.insideUnitCircle.normalized;
+
         direccionHuida = newDir;
+
+        if (OtraSombraHuyendo())
+            return StatusFlags.Running;
+
+        return StatusFlags.Failure;
     }
 
 
-    public void PerseguirJugador()
+    public StatusFlags PerseguirJugador()
     {
+        data.moveSpeed = 2f;
 
-        data.moveSpeed = 5f;
-
-        Vector2 dir =  player.transform.position - transform.position ;
+        Vector2 dir = player.transform.position - transform.position;
 
         direccionHuida = dir;
+        while (JugadorCerca() && PlayerHasFlashLight()) { 
+            return StatusFlags.Running;
+        }
 
+        return StatusFlags.Failure;
+        
+            
     }
 
 
@@ -333,7 +331,7 @@ public class SombraAbandono : EnemyBase
 
         if (rb != null)
         {
-            rb.velocity = Vector2.zero;        // <-- Detiene la velocidad
+            rb.linearVelocity = Vector2.zero;        // <-- Detiene la velocidad
             rb.angularVelocity = 0f;           // <-- Limpia rotación (opcional)
         }
 
