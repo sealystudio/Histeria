@@ -215,8 +215,8 @@ MonoBehaviour:
   knockbackForce: {x: 2, y: 2}
   flashDuration: 0.15
   data: {fileID: 11400000, guid: 349d203abcf925441866a6ef14f54996, type: 2}
-  other: {fileID: 0}
-  otraSombra: {fileID: 0}
+  other: {fileID: 794242103339176358}
+  otraSombra: {fileID: 794242103339176358}
   globalTargetLight: {fileID: 0}
   globalLightPos: {x: 0, y: 0}
   dieSound: {fileID: 8300000, guid: f717b4e5197eee343abddbfe00998e06, type: 3}
@@ -266,7 +266,7 @@ MonoBehaviour:
         - 97fd34cd-64bb-46a5-b84f-0a0058bea6d8
       - name: jug_cerca
         id: 535f9634-cb58-4726-86a3-3851f5171080
-        position: {x: -391.46005, y: 125.6375}
+        position: {x: -377, y: 134}
         node:
           rid: 5876995672795775050
         references:
@@ -281,7 +281,7 @@ MonoBehaviour:
         - ba3b2670-ec4f-4ef0-9b28-a9eea4743a5d
       - name: jug_no_cerca
         id: 97fd34cd-64bb-46a5-b84f-0a0058bea6d8
-        position: {x: 562, y: 138}
+        position: {x: 585, y: 152}
         node:
           rid: 5876995672795775051
         references:
@@ -309,7 +309,7 @@ MonoBehaviour:
         - 0f1f8a98-87e2-4c70-be06-e25ec3063798
       - name: sel_jug
         id: ba3b2670-ec4f-4ef0-9b28-a9eea4743a5d
-        position: {x: -383, y: 386}
+        position: {x: -376, y: 397}
         node:
           rid: 5876995672795775054
         references: []
@@ -364,7 +364,7 @@ MonoBehaviour:
         - ba3b2670-ec4f-4ef0-9b28-a9eea4743a5d
         childIds:
         - 3d0a1ee3-19e7-45c2-b506-3112af4f2b89
-      - name: 
+      - name: Huir
         id: 7325dfe0-f7bd-4be3-bda0-cb0be2a8bbc5
         position: {x: -616, y: 754}
         node:
@@ -378,7 +378,7 @@ MonoBehaviour:
         parentIds:
         - 3e4ecede-240e-4e88-ae41-e203295d4992
         childIds: []
-      - name: 
+      - name: HuirSombra
         id: 17883e8f-f7b7-4d0c-bac9-d7ec4d1fdc7c
         position: {x: -382, y: 754}
         node:
@@ -392,7 +392,7 @@ MonoBehaviour:
         parentIds:
         - 7543b8e4-bdb0-47bf-a680-76fb0df48707
         childIds: []
-      - name: 
+      - name: PerseguirJugador
         id: 3d0a1ee3-19e7-45c2-b506-3112af4f2b89
         position: {x: -144, y: 756}
         node:
@@ -437,7 +437,7 @@ MonoBehaviour:
         - 6a863306-7769-4e7f-a91e-88a5ff04e1d2
       - name: moverseALuz
         id: 6a863306-7769-4e7f-a91e-88a5ff04e1d2
-        position: {x: 427, y: 933}
+        position: {x: 451, y: 807}
         node:
           rid: 5876995672795775064
         references:
@@ -451,7 +451,7 @@ MonoBehaviour:
         childIds: []
       - name: apagarLuz
         id: d285a87d-ec06-4bec-932f-39bfc23683d9
-        position: {x: 713, y: 604}
+        position: {x: 725, y: 601}
         node:
           rid: 5876995672795775065
         references:

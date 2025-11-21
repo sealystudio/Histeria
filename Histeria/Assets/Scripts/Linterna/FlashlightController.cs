@@ -18,6 +18,7 @@ public class FlashlightController : MonoBehaviour
     public AudioClip onSound;
     public AudioClip offSound;
     private AudioSource audioSource;
+    private PlayerAttack pA;
 
     public void Initialize(CrosshairController targetCrosshair)
     {
@@ -28,9 +29,36 @@ public class FlashlightController : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         luzLinterna = GetComponent<Light2D>();
+
+        //  SOLUCIÓN 1: Buscar y asignar el componente PlayerAttack.
+        // Asumiendo que este script (la linterna) es un hijo o un componente del Jugador,
+        // o si está en el jugador, lo busca en sí mismo:
+        pA = GetComponentInParent<PlayerAttack>();
+
+        // Si la linterna NO es hijo del jugador, busca al jugador por Tag:
+        if (pA == null)
+        {
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+            if (playerObject != null)
+            {
+                pA = playerObject.GetComponent<PlayerAttack>();
+            }
+        }
+
+        if (pA == null)
+        {
+            Debug.LogError("PlayerAttack no encontrado. ¿Está el componente en el jugador y tiene la etiqueta 'Player'?");
+            return; // Detener la ejecución si no se encuentra el PlayerAttack
+        }
+
+
         //luz apagada por defecto
         luzLinterna.enabled = false;
         if (spriteRendererOff) spriteRendererOff.enabled = true;
+
+        //  SOLUCIÓN 2: Usar el método SetFlashlight para activar la variable en PlayerAttack.
+        // Esto activará el checkbox en el Inspector y notificará a los enemigos.
+        pA.SetFlashlight(true);
     }
 
     void Update()

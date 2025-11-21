@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5242683106407526922}
   - component: {fileID: 2202167702225448291}
   - component: {fileID: 560830009091122270}
+  - component: {fileID: 2148024537871710478}
   m_Layer: 0
   m_Name: Linterna_0
   m_TagString: Untagged
@@ -150,7 +151,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 5f2e3b313c06e8b449e8eda5e748fa6f, type: 2}
   itemSound: {fileID: 8300000, guid: b0fddd320e1e96845b3fb06a8491388e, type: 3}
-  dialogoLinterna: {fileID: 8893074750125486884, guid: c5d5a2d45cce0ab4ea32af2093dab394, type: 3}
 --- !u!82 &560830009091122270
 AudioSource:
   m_ObjectHideFlags: 0
@@ -248,3 +248,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2148024537871710478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4563766033848260579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667bb7ca49be1a440adca29e9bf9948b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRendererOff: {fileID: 0}
+  attackRange: 8
+  attackWidth: 1.5
+  attackDamage: 1
+  onSound: {fileID: 8300000, guid: 3a3f91ae1ed830f45bea00652753550e, type: 3}
+  offSound: {fileID: 8300000, guid: 9b9a1473f201b2d42ae70d338dad8bf3, type: 3}

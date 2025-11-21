@@ -199,7 +199,7 @@ public class SombraAbandono : EnemyBase
     public bool HaLlegadoLuz()
     {
 
-        return Vector2.Distance(transform.position, globalLightPos) < 5f;
+        return Vector2.Distance(transform.position, globalLightPos) < 1f;
     }
     public StatusFlags SeekLight()
     {
@@ -376,7 +376,7 @@ public StatusFlags Idle()
         }
 
         if (animator != null)
-            animator.SetTrigger("Idle");
+            animator.SetTrigger("GoIdle");
 
 
         if (JugadorCerca())
