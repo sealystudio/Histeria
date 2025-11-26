@@ -1,0 +1,3770 @@
+fileFormatVersion: 2
+guid: facb5a5ec901b1a44af3ab68bb10d178
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7656108711975429757
+    second: A rundown house_nivel2 - copia_0
+  - first:
+      213: 6805246637626358331
+    second: A rundown house_nivel2 - copia_1
+  - first:
+      213: 2912332228022859606
+    second: A rundown house_nivel2 - copia_2
+  - first:
+      213: -8561204248703197187
+    second: A rundown house_nivel2 - copia_3
+  - first:
+      213: -7016363818299828201
+    second: A rundown house_nivel2 - copia_4
+  - first:
+      213: -2065838948751683130
+    second: A rundown house_nivel2 - copia_5
+  - first:
+      213: -12089574541014690
+    second: A rundown house_nivel2 - copia_6
+  - first:
+      213: -3701655187956847967
+    second: A rundown house_nivel2 - copia_7
+  - first:
+      213: -1028141975275903721
+    second: A rundown house_nivel2 - copia_8
+  - first:
+      213: 1269595778324150752
+    second: A rundown house_nivel2 - copia_9
+  - first:
+      213: -3418814200937409660
+    second: A rundown house_nivel2 - copia_10
+  - first:
+      213: 5407148955800478522
+    second: A rundown house_nivel2 - copia_11
+  - first:
+      213: 3406877244590171368
+    second: A rundown house_nivel2 - copia_12
+  - first:
+      213: 1835171434094169812
+    second: A rundown house_nivel2 - copia_13
+  - first:
+      213: -5154874094059716663
+    second: A rundown house_nivel2 - copia_14
+  - first:
+      213: 5571762382701902608
+    second: A rundown house_nivel2 - copia_15
+  - first:
+      213: 1736933903818208314
+    second: A rundown house_nivel2 - copia_16
+  - first:
+      213: 6701010989895874711
+    second: A rundown house_nivel2 - copia_17
+  - first:
+      213: 3791244814653246738
+    second: A rundown house_nivel2 - copia_18
+  - first:
+      213: 7783890123693332930
+    second: A rundown house_nivel2 - copia_19
+  - first:
+      213: 4123801256441480226
+    second: A rundown house_nivel2 - copia_20
+  - first:
+      213: -3410399399322375446
+    second: A rundown house_nivel2 - copia_21
+  - first:
+      213: 5641708574623653527
+    second: A rundown house_nivel2 - copia_22
+  - first:
+      213: -8072536176244785794
+    second: A rundown house_nivel2 - copia_23
+  - first:
+      213: 1994178083174581513
+    second: A rundown house_nivel2 - copia_24
+  - first:
+      213: 6468913587539719083
+    second: A rundown house_nivel2 - copia_25
+  - first:
+      213: 3446021744392688166
+    second: A rundown house_nivel2 - copia_26
+  - first:
+      213: -8394818675469341245
+    second: A rundown house_nivel2 - copia_27
+  - first:
+      213: 8623932074200244316
+    second: A rundown house_nivel2 - copia_28
+  - first:
+      213: -2624036510345548074
+    second: A rundown house_nivel2 - copia_29
+  - first:
+      213: 1427288928497030769
+    second: A rundown house_nivel2 - copia_30
+  - first:
+      213: 9068811171280763895
+    second: A rundown house_nivel2 - copia_31
+  - first:
+      213: 3727915166397215773
+    second: A rundown house_nivel2 - copia_32
+  - first:
+      213: 5525745500958106076
+    second: A rundown house_nivel2 - copia_33
+  - first:
+      213: -739523010466201823
+    second: A rundown house_nivel2 - copia_34
+  - first:
+      213: -3393102138627978785
+    second: A rundown house_nivel2 - copia_35
+  - first:
+      213: -378788368488604933
+    second: A rundown house_nivel2 - copia_36
+  - first:
+      213: 138698935455331326
+    second: A rundown house_nivel2 - copia_37
+  - first:
+      213: -4398708655742276638
+    second: A rundown house_nivel2 - copia_38
+  - first:
+      213: -233373098192766011
+    second: A rundown house_nivel2 - copia_39
+  - first:
+      213: 9218828194897777449
+    second: A rundown house_nivel2 - copia_40
+  - first:
+      213: 1317426872899603937
+    second: A rundown house_nivel2 - copia_41
+  - first:
+      213: 6931197955693551092
+    second: A rundown house_nivel2 - copia_42
+  - first:
+      213: -7319158054043601854
+    second: A rundown house_nivel2 - copia_43
+  - first:
+      213: 5227390884574106167
+    second: A rundown house_nivel2 - copia_44
+  - first:
+      213: 8614496783699227565
+    second: A rundown house_nivel2 - copia_45
+  - first:
+      213: -8394467673249102904
+    second: A rundown house_nivel2 - copia_46
+  - first:
+      213: -1064268814881063147
+    second: A rundown house_nivel2 - copia_47
+  - first:
+      213: -4150210330504146042
+    second: A rundown house_nivel2 - copia_48
+  - first:
+      213: 3335163194995289592
+    second: A rundown house_nivel2 - copia_49
+  - first:
+      213: -6161784414653720492
+    second: A rundown house_nivel2 - copia_50
+  - first:
+      213: -9146536220212488593
+    second: A rundown house_nivel2 - copia_51
+  - first:
+      213: 4703538652290021486
+    second: A rundown house_nivel2 - copia_52
+  - first:
+      213: -9051318532547365101
+    second: A rundown house_nivel2 - copia_53
+  - first:
+      213: -4896129469002945747
+    second: A rundown house_nivel2 - copia_54
+  - first:
+      213: -61221293569203926
+    second: A rundown house_nivel2 - copia_55
+  - first:
+      213: -4912378236251001381
+    second: A rundown house_nivel2 - copia_56
+  - first:
+      213: -9070644367157981497
+    second: A rundown house_nivel2 - copia_57
+  - first:
+      213: -4870980307403189647
+    second: A rundown house_nivel2 - copia_58
+  - first:
+      213: 1557590399788716164
+    second: A rundown house_nivel2 - copia_59
+  - first:
+      213: -5838047072948165559
+    second: A rundown house_nivel2 - copia_60
+  - first:
+      213: -4835840800639794456
+    second: A rundown house_nivel2 - copia_61
+  - first:
+      213: -7990180970040053856
+    second: A rundown house_nivel2 - copia_62
+  - first:
+      213: -2463576868671737881
+    second: A rundown house_nivel2 - copia_63
+  - first:
+      213: -509709348831571365
+    second: A rundown house_nivel2 - copia_64
+  - first:
+      213: -7137034159186397252
+    second: A rundown house_nivel2 - copia_65
+  - first:
+      213: 1673967570337231434
+    second: A rundown house_nivel2 - copia_66
+  - first:
+      213: -3962957679248165584
+    second: A rundown house_nivel2 - copia_67
+  - first:
+      213: 932632924676768628
+    second: A rundown house_nivel2 - copia_68
+  - first:
+      213: 1697374370798802592
+    second: A rundown house_nivel2 - copia_69
+  - first:
+      213: 7889893656930542094
+    second: A rundown house_nivel2 - copia_70
+  - first:
+      213: 8044328224795990224
+    second: A rundown house_nivel2 - copia_71
+  - first:
+      213: -3852742766898767902
+    second: A rundown house_nivel2 - copia_72
+  - first:
+      213: 3326209056161755221
+    second: A rundown house_nivel2 - copia_73
+  - first:
+      213: 2306308958882026029
+    second: A rundown house_nivel2 - copia_74
+  - first:
+      213: 2090627785444348967
+    second: A rundown house_nivel2 - copia_75
+  - first:
+      213: -1768911609600137236
+    second: A rundown house_nivel2 - copia_76
+  - first:
+      213: -3290488638013670501
+    second: A rundown house_nivel2 - copia_77
+  - first:
+      213: 8561006343781720863
+    second: A rundown house_nivel2 - copia_78
+  - first:
+      213: 7727016180180636400
+    second: A rundown house_nivel2 - copia_79
+  - first:
+      213: 934366318992980629
+    second: A rundown house_nivel2 - copia_80
+  - first:
+      213: 1726202689133948773
+    second: A rundown house_nivel2 - copia_81
+  - first:
+      213: 5031692802233933628
+    second: A rundown house_nivel2 - copia_82
+  - first:
+      213: -2809187452554498357
+    second: A rundown house_nivel2 - copia_83
+  - first:
+      213: 2060581839348120163
+    second: A rundown house_nivel2 - copia_84
+  - first:
+      213: 8578142104226764880
+    second: A rundown house_nivel2 - copia_85
+  - first:
+      213: -5479754740538261466
+    second: A rundown house_nivel2 - copia_86
+  - first:
+      213: -3740673884755425673
+    second: A rundown house_nivel2 - copia_87
+  - first:
+      213: 7059213396168214151
+    second: A rundown house_nivel2 - copia_88
+  - first:
+      213: -3526461520224260413
+    second: A rundown house_nivel2 - copia_89
+  - first:
+      213: 6005502360927881092
+    second: A rundown house_nivel2 - copia_90
+  - first:
+      213: 1045832770423935043
+    second: A rundown house_nivel2 - copia_91
+  - first:
+      213: 6827710420398713745
+    second: A rundown house_nivel2 - copia_92
+  - first:
+      213: 1695733090753254765
+    second: A rundown house_nivel2 - copia_93
+  - first:
+      213: 822742481385095889
+    second: A rundown house_nivel2 - copia_94
+  - first:
+      213: -1524387366389984516
+    second: A rundown house_nivel2 - copia_95
+  - first:
+      213: -955841265954381382
+    second: A rundown house_nivel2 - copia_96
+  - first:
+      213: -697589218285188143
+    second: A rundown house_nivel2 - copia_97
+  - first:
+      213: 842720005558254386
+    second: A rundown house_nivel2 - copia_98
+  - first:
+      213: 450388429277667279
+    second: A rundown house_nivel2 - copia_99
+  - first:
+      213: 8636002685663969202
+    second: A rundown house_nivel2 - copia_100
+  - first:
+      213: 1695902203066148362
+    second: A rundown house_nivel2 - copia_101
+  - first:
+      213: -8159250548796955372
+    second: A rundown house_nivel2 - copia_102
+  - first:
+      213: -2846223230483749541
+    second: A rundown house_nivel2 - copia_103
+  - first:
+      213: 6096011566168782184
+    second: A rundown house_nivel2 - copia_104
+  - first:
+      213: -4009713778104970160
+    second: A rundown house_nivel2 - copia_105
+  - first:
+      213: 237899485735616174
+    second: A rundown house_nivel2 - copia_106
+  - first:
+      213: -5684172237460947761
+    second: A rundown house_nivel2 - copia_107
+  - first:
+      213: -5022678663800162016
+    second: A rundown house_nivel2 - copia_108
+  - first:
+      213: 2561345977205635457
+    second: A rundown house_nivel2 - copia_109
+  - first:
+      213: -7338426755428105504
+    second: A rundown house_nivel2 - copia_110
+  - first:
+      213: 3335657957520271515
+    second: A rundown house_nivel2 - copia_111
+  - first:
+      213: 7240640464509497163
+    second: A rundown house_nivel2 - copia_112
+  - first:
+      213: 1728039149280973582
+    second: A rundown house_nivel2 - copia_113
+  - first:
+      213: -4571604528814538929
+    second: A rundown house_nivel2 - copia_114
+  - first:
+      213: -1393601206223944338
+    second: A rundown house_nivel2 - copia_115
+  - first:
+      213: 3040862655688203380
+    second: A rundown house_nivel2 - copia_116
+  - first:
+      213: 4621023736937287348
+    second: A rundown house_nivel2 - copia_117
+  - first:
+      213: 6447987058803441896
+    second: A rundown house_nivel2 - copia_118
+  - first:
+      213: 5976735521637592695
+    second: A rundown house_nivel2 - copia_119
+  - first:
+      213: -3081973555120557769
+    second: A rundown house_nivel2 - copia_120
+  - first:
+      213: -3299331551007823209
+    second: A rundown house_nivel2 - copia_121
+  - first:
+      213: -5190866334258080485
+    second: A rundown house_nivel2 - copia_122
+  - first:
+      213: -732797096402369782
+    second: A rundown house_nivel2 - copia_123
+  - first:
+      213: -4335896447077136605
+    second: A rundown house_nivel2 - copia_124
+  - first:
+      213: 4304571011202039672
+    second: A rundown house_nivel2 - copia_125
+  - first:
+      213: -6083294225358232615
+    second: A rundown house_nivel2 - copia_126
+  - first:
+      213: -4179564015721069178
+    second: A rundown house_nivel2 - copia_127
+  - first:
+      213: 5130550776421984896
+    second: A rundown house_nivel2 - copia_128
+  - first:
+      213: 649710394238218619
+    second: A rundown house_nivel2 - copia_129
+  - first:
+      213: 3939164122164359017
+    second: A rundown house_nivel2 - copia_130
+  - first:
+      213: -5113415370350959528
+    second: A rundown house_nivel2 - copia_131
+  - first:
+      213: 203347996002244911
+    second: A rundown house_nivel2 - copia_132
+  - first:
+      213: 2146162047618558150
+    second: A rundown house_nivel2 - copia_133
+  - first:
+      213: -8393957119474782791
+    second: A rundown house_nivel2 - copia_134
+  - first:
+      213: -2595142724017708425
+    second: A rundown house_nivel2 - copia_135
+  - first:
+      213: -1799490972599135589
+    second: A rundown house_nivel2 - copia_136
+  - first:
+      213: 3893842697289146093
+    second: A rundown house_nivel2 - copia_137
+  - first:
+      213: -3209005375682974735
+    second: A rundown house_nivel2 - copia_138
+  - first:
+      213: -2456228728815330299
+    second: A rundown house_nivel2 - copia_139
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 457
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3895ee4b0b900c590800000000000000
+      internalID: -7656108711975429757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 457
+        width: 43
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3af3acd2c7117e50800000000000000
+      internalID: 6805246637626358331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_2
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 423
+        width: 18
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 657793f2bbeaa6820800000000000000
+      internalID: 2912332228022859606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_3
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 453
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff1b72581e703980800000000000000
+      internalID: -8561204248703197187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_4
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 442
+        width: 20
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 718d553184ed0ae90800000000000000
+      internalID: -7016363818299828201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_5
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 451
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c15d70eb6aa453e0800000000000000
+      internalID: -2065838948751683130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_6
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 451
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e594ff3989c05dff0800000000000000
+      internalID: -12089574541014690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_7
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 451
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aaa9d0083411acc0800000000000000
+      internalID: -3701655187956847967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_8
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 451
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 715e201225e4bb1f0800000000000000
+      internalID: -1028141975275903721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_9
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 451
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e9b85f32a28e9110800000000000000
+      internalID: 1269595778324150752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_10
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 451
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4839010199eed80d0800000000000000
+      internalID: -3418814200937409660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_11
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 467
+        width: 76
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a33ac16b35d0a0b40800000000000000
+      internalID: 5407148955800478522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_12
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 451
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e4a825bdc8a74f20800000000000000
+      internalID: 3406877244590171368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_13
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 451
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4de802732b6d77910800000000000000
+      internalID: 1835171434094169812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_14
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 426
+        width: 43
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cff4b9b2553678b0800000000000000
+      internalID: -5154874094059716663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_15
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 425
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01bb4d9dd50e25d40800000000000000
+      internalID: 5571762382701902608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_16
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 423
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a34ba6fce24da1810800000000000000
+      internalID: 1736933903818208314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_17
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 387
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7987bb8edf5cefc50800000000000000
+      internalID: 6701010989895874711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_18
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 387
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21dc2f172153d9430800000000000000
+      internalID: 3791244814653246738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_19
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 387
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c99961a3dee50c60800000000000000
+      internalID: 7783890123693332930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_20
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 387
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2240186d46faa3930800000000000000
+      internalID: 4123801256441480226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_21
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 387
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aea2f2db0d3dba0d0800000000000000
+      internalID: -3410399399322375446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_22
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 387
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79ed7bcbe006b4e40800000000000000
+      internalID: 5641708574623653527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_23
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 403
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7d707a2e1798ff80800000000000000
+      internalID: -8072536176244785794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_24
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 403
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9058d7aa66ebcab10800000000000000
+      internalID: 1994178083174581513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_25
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 355
+        width: 60
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba3b00452a236c950800000000000000
+      internalID: 6468913587539719083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_26
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 323
+        width: 118
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6225ccac48ab2df20800000000000000
+      internalID: 3446021744392688166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_27
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 355
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cda5de64ec9f7b80800000000000000
+      internalID: -8394818675469341245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_28
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 388
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c50adc9a78c5ea770800000000000000
+      internalID: 8623932074200244316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_29
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 378
+        width: 20
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dea23352bc859bd0800000000000000
+      internalID: -2624036510345548074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_30
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 291
+        width: 39
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 176d9e6e7bfbec310800000000000000
+      internalID: 1427288928497030769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_31
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 290
+        width: 44
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fbb84f26b3eadd70800000000000000
+      internalID: 9068811171280763895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_32
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 323
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d14b5eda7173cb330800000000000000
+      internalID: 3727915166397215773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_33
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 339
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd122d7a1446fac40800000000000000
+      internalID: 5525745500958106076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_34
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 323
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12f3fe97dbfacb5f0800000000000000
+      internalID: -739523010466201823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_35
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 323
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd90674159749e0d0800000000000000
+      internalID: -3393102138627978785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_36
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 323
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfadf2b5cf54ebaf0800000000000000
+      internalID: -378788368488604933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_37
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 323
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef33a8a62f1cce100800000000000000
+      internalID: 138698935455331326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_38
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 323
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ebab0078c5a4f2c0800000000000000
+      internalID: -4398708655742276638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_39
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 323
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cb76165764e2ccf0800000000000000
+      internalID: -233373098192766011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_40
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 290
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 923dc3a566bdfef70800000000000000
+      internalID: 9218828194897777449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_41
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 307
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ed0cb8c2c0784210800000000000000
+      internalID: 1317426872899603937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_42
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 291
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd170151df803060800000000000000
+      internalID: 6931197955693551092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_43
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 291
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 244bac547802d6a90800000000000000
+      internalID: -7319158054043601854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_44
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 291
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7329729405c6b8840800000000000000
+      internalID: 5227390884574106167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_45
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 291
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da33327ee27dc8770800000000000000
+      internalID: 8614496783699227565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_46
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 291
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c3cc71802cd08b80800000000000000
+      internalID: -8394467673249102904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_47
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 291
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51ffc7fc625fa31f0800000000000000
+      internalID: -1064268814881063147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_48
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 300
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 683d42371bd7766c0800000000000000
+      internalID: -4150210330504146042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_49
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 276
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fda6a16141e84e20800000000000000
+      internalID: 3335163194995289592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_50
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 277
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 458d60ea8b1fc7aa0800000000000000
+      internalID: -6161784414653720492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_51
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 276
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f669df4a4c9f01180800000000000000
+      internalID: -9146536220212488593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_52
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 275
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e68f01ddb73564140800000000000000
+      internalID: 4703538652290021486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_53
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 275
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 317ba9620c1436280800000000000000
+      internalID: -9051318532547365101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_54
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 271
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2be1c150347d0cb0800000000000000
+      internalID: -4896129469002945747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_55
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 271
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a212e10de8f762ff0800000000000000
+      internalID: -61221293569203926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_56
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 271
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdd26e1650ab3dbb0800000000000000
+      internalID: -4912378236251001381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_57
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 271
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ce86a3a1099e1280800000000000000
+      internalID: -9070644367157981497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_58
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 271
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1725f4dc73dc66cb0800000000000000
+      internalID: -4870980307403189647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_59
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 271
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48017f4573cad9510800000000000000
+      internalID: 1557590399788716164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_60
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 226
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9446ae25e171bfea0800000000000000
+      internalID: -5838047072948165559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_61
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 226
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e24687c964a3ecb0800000000000000
+      internalID: -4835840800639794456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_62
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 226
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0af2da5ddbc2d1190800000000000000
+      internalID: -7990180970040053856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_63
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 226
+        width: 50
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7efa3f9f3ed9fcdd0800000000000000
+      internalID: -2463576868671737881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_64
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 226
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b52d23c3c062de8f0800000000000000
+      internalID: -509709348831571365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_65
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 226
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb7bddfee3924fc90800000000000000
+      internalID: -7137034159186397252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_66
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 226
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a42797bd2a02b3710800000000000000
+      internalID: 1673967570337231434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_67
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 260
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 035b184ccfeb009c0800000000000000
+      internalID: -3962957679248165584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_68
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 259
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473413524b061fc00800000000000000
+      internalID: 932632924676768628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_69
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 260
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a690564ff84e8710800000000000000
+      internalID: 1697374370798802592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_70
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 251
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e02e3f08a788e7d60800000000000000
+      internalID: 7889893656930542094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_71
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 251
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d81d9756e133af60800000000000000
+      internalID: 8044328224795990224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_72
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 251
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e71b00cdde488ac0800000000000000
+      internalID: -3852742766898767902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_73
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 251
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55075397381192e20800000000000000
+      internalID: 3326209056161755221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_74
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 251
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d22d67c57c7a10020800000000000000
+      internalID: 2306308958882026029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_75
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 251
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 724d8fce4e6630d10800000000000000
+      internalID: 2090627785444348967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_76
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 245
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce728be53409377e0800000000000000
+      internalID: -1768911609600137236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_77
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 244
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9b7cb97406d552d0800000000000000
+      internalID: -3290488638013670501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 211
+        width: 33
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f13a9f859edcec670800000000000000
+      internalID: 8561006343781720863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_79
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 211
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f2dc51c640eb3b60800000000000000
+      internalID: 7727016180180636400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_80
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 164
+        width: 21
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59a7aa5773987fc00800000000000000
+      internalID: 934366318992980629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_81
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 164
+        width: 21
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f27203334b4f710800000000000000
+      internalID: 1726202689133948773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_82
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 164
+        width: 21
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3f1b00d1f924d540800000000000000
+      internalID: 5031692802233933628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_83
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 162
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bce210745e2c309d0800000000000000
+      internalID: -2809187452554498357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_84
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 162
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a37f4f348a89c10800000000000000
+      internalID: 2060581839348120163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_85
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 162
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 058124b7bceab0770800000000000000
+      internalID: 8578142104226764880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_86
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 162
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62044f1b81004f3b0800000000000000
+      internalID: -5479754740538261466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_87
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 162
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7768296bbe4761cc0800000000000000
+      internalID: -3740673884755425673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_88
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 162
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7860948be2d57f160800000000000000
+      internalID: 7059213396168214151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_89
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 162
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cee2fc6eed7f0fc0800000000000000
+      internalID: -3526461520224260413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_90
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 162
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48740e82494d75350800000000000000
+      internalID: 6005502360927881092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_91
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 163
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 340d4971d5b838e00800000000000000
+      internalID: 1045832770423935043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_92
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 163
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b291dd376e0ce50800000000000000
+      internalID: 6827710420398713745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_93
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 163
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65193cf244788710800000000000000
+      internalID: 1695733090753254765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_94
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 163
+        width: 43
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d205908de7fa6b00800000000000000
+      internalID: 822742481385095889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_95
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 163
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf25b3e44c948dae0800000000000000
+      internalID: -1524387366389984516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_96
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 131
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab12121de6b2cb2f0800000000000000
+      internalID: -955841265954381382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_97
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 131
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1db08fc4d4aa156f0800000000000000
+      internalID: -697589218285188143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_98
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 131
+        width: 33
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23b3a605161f1bb00800000000000000
+      internalID: 842720005558254386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_99
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 106
+        width: 20
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf9a02e3e9104600800000000000000
+      internalID: 450388429277667279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_100
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 100
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bff156efae39d770800000000000000
+      internalID: 8636002685663969202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_101
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 98
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a066f83811e098710800000000000000
+      internalID: 1695902203066148362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_102
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 90
+        width: 18
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 415eb8dfad484ce80800000000000000
+      internalID: -8159250548796955372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_103
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 98
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b552d834d0f2088d0800000000000000
+      internalID: -2846223230483749541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_104
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 98
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 865b92ca832699450800000000000000
+      internalID: 6096011566168782184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_105
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 98
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 054501d2092aa58c0800000000000000
+      internalID: -4009713778104970160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_106
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 98
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaef48362503d4300800000000000000
+      internalID: 237899485735616174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_107
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 69
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fccb0005773cd11b0800000000000000
+      internalID: -5684172237460947761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_108
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 69
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 029f147dd5cdb4ab0800000000000000
+      internalID: -5022678663800162016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_109
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 69
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 189b73e789abb8320800000000000000
+      internalID: 2561345977205635457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_110
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 99
+        width: 35
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e24c702fbba82a90800000000000000
+      internalID: -7338426755428105504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_111
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 99
+        width: 44
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9863324d33aa4e20800000000000000
+      internalID: 3335657957520271515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_112
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 35
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f6861d32ceb7460800000000000000
+      internalID: 7240640464509497163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_113
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 35
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e035cd2637a3bf710800000000000000
+      internalID: 1728039149280973582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_114
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 35
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4f317607e56e80c0800000000000000
+      internalID: -4571604528814538929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_115
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 35
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e654778261fe8ace0800000000000000
+      internalID: -1393601206223944338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_116
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 35
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47cdb036970533a20800000000000000
+      internalID: 3040862655688203380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_117
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 35
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4be8bc20b9c212040800000000000000
+      internalID: 4621023736937287348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_118
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 3
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e08b4c211adb7950800000000000000
+      internalID: 6447987058803441896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_119
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 3
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77eeaa37a41a1f250800000000000000
+      internalID: 5976735521637592695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_120
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 42
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73134ef6161aa35d0800000000000000
+      internalID: -3081973555120557769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_121
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 42
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79aa0f95f6b6632d0800000000000000
+      internalID: -3299331551007823209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_122
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 42
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b155306429656f7b0800000000000000
+      internalID: -5190866334258080485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_123
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 42
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a03cf706ce494d5f0800000000000000
+      internalID: -732797096402369782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_124
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 19
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 327c619672dc3d3c0800000000000000
+      internalID: -4335896447077136605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_125
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 3
+        width: 19
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f34213788ecbb30800000000000000
+      internalID: 4304571011202039672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_126
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 35
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d36659f12cc39ba0800000000000000
+      internalID: -6083294225358232615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_127
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 35
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 685c0f60ca43ff5c0800000000000000
+      internalID: -4179564015721069178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_128
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 3
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08aacb29fb0633740800000000000000
+      internalID: 5130550776421984896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_129
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 3
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b71b277492c340900800000000000000
+      internalID: 649710394238218619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_130
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 3
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96fe19506e8baa630800000000000000
+      internalID: 3939164122164359017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_131
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 3
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 854653d00df7909b0800000000000000
+      internalID: -5113415370350959528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_132
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 3
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f29508bccef62d200800000000000000
+      internalID: 203347996002244911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_133
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 3
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c8aabee203b8cd10800000000000000
+      internalID: 2146162047618558150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_134
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 3
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd28d1197ca28b80800000000000000
+      internalID: -8393957119474782791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_135
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 10
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7722c7131733cfbd0800000000000000
+      internalID: -2595142724017708425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_136
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 10
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b92d4b99e7ce607e0800000000000000
+      internalID: -1799490972599135589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_137
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 10
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dee1b2f7d45b90630800000000000000
+      internalID: 3893842697289146093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_138
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 10
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fbe814ec925773d0800000000000000
+      internalID: -3209005375682974735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_nivel2 - copia_139
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 3
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50c5adb1cf8b9edd0800000000000000
+      internalID: -2456228728815330299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      A rundown house_nivel2 - copia_0: -7656108711975429757
+      A rundown house_nivel2 - copia_1: 6805246637626358331
+      A rundown house_nivel2 - copia_10: -3418814200937409660
+      A rundown house_nivel2 - copia_100: 8636002685663969202
+      A rundown house_nivel2 - copia_101: 1695902203066148362
+      A rundown house_nivel2 - copia_102: -8159250548796955372
+      A rundown house_nivel2 - copia_103: -2846223230483749541
+      A rundown house_nivel2 - copia_104: 6096011566168782184
+      A rundown house_nivel2 - copia_105: -4009713778104970160
+      A rundown house_nivel2 - copia_106: 237899485735616174
+      A rundown house_nivel2 - copia_107: -5684172237460947761
+      A rundown house_nivel2 - copia_108: -5022678663800162016
+      A rundown house_nivel2 - copia_109: 2561345977205635457
+      A rundown house_nivel2 - copia_11: 5407148955800478522
+      A rundown house_nivel2 - copia_110: -7338426755428105504
+      A rundown house_nivel2 - copia_111: 3335657957520271515
+      A rundown house_nivel2 - copia_112: 7240640464509497163
+      A rundown house_nivel2 - copia_113: 1728039149280973582
+      A rundown house_nivel2 - copia_114: -4571604528814538929
+      A rundown house_nivel2 - copia_115: -1393601206223944338
+      A rundown house_nivel2 - copia_116: 3040862655688203380
+      A rundown house_nivel2 - copia_117: 4621023736937287348
+      A rundown house_nivel2 - copia_118: 6447987058803441896
+      A rundown house_nivel2 - copia_119: 5976735521637592695
+      A rundown house_nivel2 - copia_12: 3406877244590171368
+      A rundown house_nivel2 - copia_120: -3081973555120557769
+      A rundown house_nivel2 - copia_121: -3299331551007823209
+      A rundown house_nivel2 - copia_122: -5190866334258080485
+      A rundown house_nivel2 - copia_123: -732797096402369782
+      A rundown house_nivel2 - copia_124: -4335896447077136605
+      A rundown house_nivel2 - copia_125: 4304571011202039672
+      A rundown house_nivel2 - copia_126: -6083294225358232615
+      A rundown house_nivel2 - copia_127: -4179564015721069178
+      A rundown house_nivel2 - copia_128: 5130550776421984896
+      A rundown house_nivel2 - copia_129: 649710394238218619
+      A rundown house_nivel2 - copia_13: 1835171434094169812
+      A rundown house_nivel2 - copia_130: 3939164122164359017
+      A rundown house_nivel2 - copia_131: -5113415370350959528
+      A rundown house_nivel2 - copia_132: 203347996002244911
+      A rundown house_nivel2 - copia_133: 2146162047618558150
+      A rundown house_nivel2 - copia_134: -8393957119474782791
+      A rundown house_nivel2 - copia_135: -2595142724017708425
+      A rundown house_nivel2 - copia_136: -1799490972599135589
+      A rundown house_nivel2 - copia_137: 3893842697289146093
+      A rundown house_nivel2 - copia_138: -3209005375682974735
+      A rundown house_nivel2 - copia_139: -2456228728815330299
+      A rundown house_nivel2 - copia_14: -5154874094059716663
+      A rundown house_nivel2 - copia_15: 5571762382701902608
+      A rundown house_nivel2 - copia_16: 1736933903818208314
+      A rundown house_nivel2 - copia_17: 6701010989895874711
+      A rundown house_nivel2 - copia_18: 3791244814653246738
+      A rundown house_nivel2 - copia_19: 7783890123693332930
+      A rundown house_nivel2 - copia_2: 2912332228022859606
+      A rundown house_nivel2 - copia_20: 4123801256441480226
+      A rundown house_nivel2 - copia_21: -3410399399322375446
+      A rundown house_nivel2 - copia_22: 5641708574623653527
+      A rundown house_nivel2 - copia_23: -8072536176244785794
+      A rundown house_nivel2 - copia_24: 1994178083174581513
+      A rundown house_nivel2 - copia_25: 6468913587539719083
+      A rundown house_nivel2 - copia_26: 3446021744392688166
+      A rundown house_nivel2 - copia_27: -8394818675469341245
+      A rundown house_nivel2 - copia_28: 8623932074200244316
+      A rundown house_nivel2 - copia_29: -2624036510345548074
+      A rundown house_nivel2 - copia_3: -8561204248703197187
+      A rundown house_nivel2 - copia_30: 1427288928497030769
+      A rundown house_nivel2 - copia_31: 9068811171280763895
+      A rundown house_nivel2 - copia_32: 3727915166397215773
+      A rundown house_nivel2 - copia_33: 5525745500958106076
+      A rundown house_nivel2 - copia_34: -739523010466201823
+      A rundown house_nivel2 - copia_35: -3393102138627978785
+      A rundown house_nivel2 - copia_36: -378788368488604933
+      A rundown house_nivel2 - copia_37: 138698935455331326
+      A rundown house_nivel2 - copia_38: -4398708655742276638
+      A rundown house_nivel2 - copia_39: -233373098192766011
+      A rundown house_nivel2 - copia_4: -7016363818299828201
+      A rundown house_nivel2 - copia_40: 9218828194897777449
+      A rundown house_nivel2 - copia_41: 1317426872899603937
+      A rundown house_nivel2 - copia_42: 6931197955693551092
+      A rundown house_nivel2 - copia_43: -7319158054043601854
+      A rundown house_nivel2 - copia_44: 5227390884574106167
+      A rundown house_nivel2 - copia_45: 8614496783699227565
+      A rundown house_nivel2 - copia_46: -8394467673249102904
+      A rundown house_nivel2 - copia_47: -1064268814881063147
+      A rundown house_nivel2 - copia_48: -4150210330504146042
+      A rundown house_nivel2 - copia_49: 3335163194995289592
+      A rundown house_nivel2 - copia_5: -2065838948751683130
+      A rundown house_nivel2 - copia_50: -6161784414653720492
+      A rundown house_nivel2 - copia_51: -9146536220212488593
+      A rundown house_nivel2 - copia_52: 4703538652290021486
+      A rundown house_nivel2 - copia_53: -9051318532547365101
+      A rundown house_nivel2 - copia_54: -4896129469002945747
+      A rundown house_nivel2 - copia_55: -61221293569203926
+      A rundown house_nivel2 - copia_56: -4912378236251001381
+      A rundown house_nivel2 - copia_57: -9070644367157981497
+      A rundown house_nivel2 - copia_58: -4870980307403189647
+      A rundown house_nivel2 - copia_59: 1557590399788716164
+      A rundown house_nivel2 - copia_6: -12089574541014690
+      A rundown house_nivel2 - copia_60: -5838047072948165559
+      A rundown house_nivel2 - copia_61: -4835840800639794456
+      A rundown house_nivel2 - copia_62: -7990180970040053856
+      A rundown house_nivel2 - copia_63: -2463576868671737881
+      A rundown house_nivel2 - copia_64: -509709348831571365
+      A rundown house_nivel2 - copia_65: -7137034159186397252
+      A rundown house_nivel2 - copia_66: 1673967570337231434
+      A rundown house_nivel2 - copia_67: -3962957679248165584
+      A rundown house_nivel2 - copia_68: 932632924676768628
+      A rundown house_nivel2 - copia_69: 1697374370798802592
+      A rundown house_nivel2 - copia_7: -3701655187956847967
+      A rundown house_nivel2 - copia_70: 7889893656930542094
+      A rundown house_nivel2 - copia_71: 8044328224795990224
+      A rundown house_nivel2 - copia_72: -3852742766898767902
+      A rundown house_nivel2 - copia_73: 3326209056161755221
+      A rundown house_nivel2 - copia_74: 2306308958882026029
+      A rundown house_nivel2 - copia_75: 2090627785444348967
+      A rundown house_nivel2 - copia_76: -1768911609600137236
+      A rundown house_nivel2 - copia_77: -3290488638013670501
+      A rundown house_nivel2 - copia_78: 8561006343781720863
+      A rundown house_nivel2 - copia_79: 7727016180180636400
+      A rundown house_nivel2 - copia_8: -1028141975275903721
+      A rundown house_nivel2 - copia_80: 934366318992980629
+      A rundown house_nivel2 - copia_81: 1726202689133948773
+      A rundown house_nivel2 - copia_82: 5031692802233933628
+      A rundown house_nivel2 - copia_83: -2809187452554498357
+      A rundown house_nivel2 - copia_84: 2060581839348120163
+      A rundown house_nivel2 - copia_85: 8578142104226764880
+      A rundown house_nivel2 - copia_86: -5479754740538261466
+      A rundown house_nivel2 - copia_87: -3740673884755425673
+      A rundown house_nivel2 - copia_88: 7059213396168214151
+      A rundown house_nivel2 - copia_89: -3526461520224260413
+      A rundown house_nivel2 - copia_9: 1269595778324150752
+      A rundown house_nivel2 - copia_90: 6005502360927881092
+      A rundown house_nivel2 - copia_91: 1045832770423935043
+      A rundown house_nivel2 - copia_92: 6827710420398713745
+      A rundown house_nivel2 - copia_93: 1695733090753254765
+      A rundown house_nivel2 - copia_94: 822742481385095889
+      A rundown house_nivel2 - copia_95: -1524387366389984516
+      A rundown house_nivel2 - copia_96: -955841265954381382
+      A rundown house_nivel2 - copia_97: -697589218285188143
+      A rundown house_nivel2 - copia_98: 842720005558254386
+      A rundown house_nivel2 - copia_99: 450388429277667279
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

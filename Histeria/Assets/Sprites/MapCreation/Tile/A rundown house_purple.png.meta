@@ -1,0 +1,3770 @@
+fileFormatVersion: 2
+guid: 77893a10e41b43548a1e6ec781008e87
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2009532991102215187
+    second: A rundown house_purple_0
+  - first:
+      213: 3179168458026502382
+    second: A rundown house_purple_1
+  - first:
+      213: -7418097127126937884
+    second: A rundown house_purple_2
+  - first:
+      213: -442400059653322795
+    second: A rundown house_purple_3
+  - first:
+      213: 8229014131533699906
+    second: A rundown house_purple_4
+  - first:
+      213: 5432717559151653792
+    second: A rundown house_purple_5
+  - first:
+      213: 7384251151771007585
+    second: A rundown house_purple_6
+  - first:
+      213: 3630998992383045596
+    second: A rundown house_purple_7
+  - first:
+      213: -2520278741271522296
+    second: A rundown house_purple_8
+  - first:
+      213: -7980391689865298843
+    second: A rundown house_purple_9
+  - first:
+      213: -5690733850014243602
+    second: A rundown house_purple_10
+  - first:
+      213: -8581352287222836573
+    second: A rundown house_purple_11
+  - first:
+      213: 8572078998421067311
+    second: A rundown house_purple_12
+  - first:
+      213: 3381850658701769586
+    second: A rundown house_purple_13
+  - first:
+      213: -8099661937665308790
+    second: A rundown house_purple_14
+  - first:
+      213: 163009610014440508
+    second: A rundown house_purple_15
+  - first:
+      213: 8445974198541190443
+    second: A rundown house_purple_16
+  - first:
+      213: 4083757203963520399
+    second: A rundown house_purple_17
+  - first:
+      213: 6867466943275947751
+    second: A rundown house_purple_18
+  - first:
+      213: -6038988249686011522
+    second: A rundown house_purple_19
+  - first:
+      213: -6834358428175286001
+    second: A rundown house_purple_20
+  - first:
+      213: 2773776081837530290
+    second: A rundown house_purple_21
+  - first:
+      213: 4830729452259159569
+    second: A rundown house_purple_22
+  - first:
+      213: -6685079187622491742
+    second: A rundown house_purple_23
+  - first:
+      213: -7340241368008594757
+    second: A rundown house_purple_24
+  - first:
+      213: 6106149981842445415
+    second: A rundown house_purple_25
+  - first:
+      213: 8642626414954100822
+    second: A rundown house_purple_26
+  - first:
+      213: -3663021459564671318
+    second: A rundown house_purple_27
+  - first:
+      213: -1348429478351173996
+    second: A rundown house_purple_28
+  - first:
+      213: -8061506323431306874
+    second: A rundown house_purple_29
+  - first:
+      213: 4058446006954069852
+    second: A rundown house_purple_30
+  - first:
+      213: -3341409708469964208
+    second: A rundown house_purple_31
+  - first:
+      213: 6390960066662784170
+    second: A rundown house_purple_32
+  - first:
+      213: 8365169399676387358
+    second: A rundown house_purple_33
+  - first:
+      213: -189306934276941238
+    second: A rundown house_purple_34
+  - first:
+      213: 4565313163681225921
+    second: A rundown house_purple_35
+  - first:
+      213: -3875262155796205524
+    second: A rundown house_purple_36
+  - first:
+      213: 3438225264852157935
+    second: A rundown house_purple_37
+  - first:
+      213: -5311197105143151531
+    second: A rundown house_purple_38
+  - first:
+      213: 8618566484554740837
+    second: A rundown house_purple_39
+  - first:
+      213: -8233823974562425100
+    second: A rundown house_purple_40
+  - first:
+      213: 8176189211728019817
+    second: A rundown house_purple_41
+  - first:
+      213: 2138047353655270885
+    second: A rundown house_purple_42
+  - first:
+      213: 5945094488317553724
+    second: A rundown house_purple_43
+  - first:
+      213: 7695379293229840243
+    second: A rundown house_purple_44
+  - first:
+      213: 1053132590274396899
+    second: A rundown house_purple_45
+  - first:
+      213: -6479060198064242854
+    second: A rundown house_purple_46
+  - first:
+      213: -4826592196128251125
+    second: A rundown house_purple_47
+  - first:
+      213: -5409051374854274106
+    second: A rundown house_purple_48
+  - first:
+      213: 7030390476742782647
+    second: A rundown house_purple_49
+  - first:
+      213: -6879475098418150282
+    second: A rundown house_purple_50
+  - first:
+      213: -5757631585312409529
+    second: A rundown house_purple_51
+  - first:
+      213: -4261997195298910824
+    second: A rundown house_purple_52
+  - first:
+      213: -2819219443933707746
+    second: A rundown house_purple_53
+  - first:
+      213: -8728424684225339586
+    second: A rundown house_purple_54
+  - first:
+      213: 6427754705732535035
+    second: A rundown house_purple_55
+  - first:
+      213: -9196891542274374857
+    second: A rundown house_purple_56
+  - first:
+      213: 2179433397949860002
+    second: A rundown house_purple_57
+  - first:
+      213: 5290708276182749625
+    second: A rundown house_purple_58
+  - first:
+      213: -6112341103653215109
+    second: A rundown house_purple_59
+  - first:
+      213: 5524830250229532164
+    second: A rundown house_purple_60
+  - first:
+      213: 860231235847444409
+    second: A rundown house_purple_61
+  - first:
+      213: 1473387816269403463
+    second: A rundown house_purple_62
+  - first:
+      213: -3361528826693770569
+    second: A rundown house_purple_63
+  - first:
+      213: -120601322483524827
+    second: A rundown house_purple_64
+  - first:
+      213: -186216609820626798
+    second: A rundown house_purple_65
+  - first:
+      213: 1683969219823155524
+    second: A rundown house_purple_66
+  - first:
+      213: 3426812301651169534
+    second: A rundown house_purple_67
+  - first:
+      213: -6721071072530668760
+    second: A rundown house_purple_68
+  - first:
+      213: -6087894316601903752
+    second: A rundown house_purple_69
+  - first:
+      213: -5976527269529968526
+    second: A rundown house_purple_70
+  - first:
+      213: -110028376606792031
+    second: A rundown house_purple_71
+  - first:
+      213: -181021013715695640
+    second: A rundown house_purple_72
+  - first:
+      213: 2830030261866694606
+    second: A rundown house_purple_73
+  - first:
+      213: 3058743213262266012
+    second: A rundown house_purple_74
+  - first:
+      213: 5037317332785581222
+    second: A rundown house_purple_75
+  - first:
+      213: 3537532797852392408
+    second: A rundown house_purple_76
+  - first:
+      213: -8888333196169257536
+    second: A rundown house_purple_77
+  - first:
+      213: 3698606648834091353
+    second: A rundown house_purple_78
+  - first:
+      213: 9067967384988942338
+    second: A rundown house_purple_79
+  - first:
+      213: 4468637966920022812
+    second: A rundown house_purple_80
+  - first:
+      213: -8059952674084064680
+    second: A rundown house_purple_81
+  - first:
+      213: 3633020077962111584
+    second: A rundown house_purple_82
+  - first:
+      213: -7171576786494475601
+    second: A rundown house_purple_83
+  - first:
+      213: -2501987020452827343
+    second: A rundown house_purple_84
+  - first:
+      213: 1733257214279639710
+    second: A rundown house_purple_85
+  - first:
+      213: 4133599588497568914
+    second: A rundown house_purple_86
+  - first:
+      213: 8602313375536347262
+    second: A rundown house_purple_87
+  - first:
+      213: 7812896357852922091
+    second: A rundown house_purple_88
+  - first:
+      213: -8979922269437600897
+    second: A rundown house_purple_89
+  - first:
+      213: 6050744952593981690
+    second: A rundown house_purple_90
+  - first:
+      213: 8918835481140066749
+    second: A rundown house_purple_91
+  - first:
+      213: 7535115947357223792
+    second: A rundown house_purple_92
+  - first:
+      213: 829368141294568117
+    second: A rundown house_purple_93
+  - first:
+      213: -4821587934679368080
+    second: A rundown house_purple_94
+  - first:
+      213: 2532279430792615507
+    second: A rundown house_purple_95
+  - first:
+      213: -2288067686929531155
+    second: A rundown house_purple_96
+  - first:
+      213: -5445834974224290713
+    second: A rundown house_purple_97
+  - first:
+      213: 866595548068103733
+    second: A rundown house_purple_98
+  - first:
+      213: -3457969719949640309
+    second: A rundown house_purple_99
+  - first:
+      213: -8710836428208511453
+    second: A rundown house_purple_100
+  - first:
+      213: 5898719010485473759
+    second: A rundown house_purple_101
+  - first:
+      213: -2763297673277527272
+    second: A rundown house_purple_102
+  - first:
+      213: -8983170240579633549
+    second: A rundown house_purple_103
+  - first:
+      213: -2537911866198689719
+    second: A rundown house_purple_104
+  - first:
+      213: -1516323021533652436
+    second: A rundown house_purple_105
+  - first:
+      213: 5699789655379750918
+    second: A rundown house_purple_106
+  - first:
+      213: -1809752968079657564
+    second: A rundown house_purple_107
+  - first:
+      213: 2660711023024582347
+    second: A rundown house_purple_108
+  - first:
+      213: 5281092987835786484
+    second: A rundown house_purple_109
+  - first:
+      213: 25865335105174093
+    second: A rundown house_purple_110
+  - first:
+      213: -7448170064714125103
+    second: A rundown house_purple_111
+  - first:
+      213: 513891873418145410
+    second: A rundown house_purple_112
+  - first:
+      213: -869994484997563912
+    second: A rundown house_purple_113
+  - first:
+      213: 4832956958155670821
+    second: A rundown house_purple_114
+  - first:
+      213: -5358563723695521834
+    second: A rundown house_purple_115
+  - first:
+      213: 8163294865765589315
+    second: A rundown house_purple_116
+  - first:
+      213: -4176114599548825893
+    second: A rundown house_purple_117
+  - first:
+      213: -7501196200602507200
+    second: A rundown house_purple_118
+  - first:
+      213: 2740962898722765319
+    second: A rundown house_purple_119
+  - first:
+      213: -4179868411889088438
+    second: A rundown house_purple_120
+  - first:
+      213: 7335202385739088212
+    second: A rundown house_purple_121
+  - first:
+      213: -1138188950761393792
+    second: A rundown house_purple_122
+  - first:
+      213: -5781688154740150550
+    second: A rundown house_purple_123
+  - first:
+      213: 7729827761209833560
+    second: A rundown house_purple_124
+  - first:
+      213: 8586715920430749168
+    second: A rundown house_purple_125
+  - first:
+      213: -7184203577073396827
+    second: A rundown house_purple_126
+  - first:
+      213: -1368597945420581620
+    second: A rundown house_purple_127
+  - first:
+      213: 1566216201342238424
+    second: A rundown house_purple_128
+  - first:
+      213: -1785546221314936085
+    second: A rundown house_purple_129
+  - first:
+      213: -8815031224099578996
+    second: A rundown house_purple_130
+  - first:
+      213: -7814756560348941583
+    second: A rundown house_purple_131
+  - first:
+      213: -5155468604546795481
+    second: A rundown house_purple_132
+  - first:
+      213: -4726826098577448340
+    second: A rundown house_purple_133
+  - first:
+      213: 1898381863045334718
+    second: A rundown house_purple_134
+  - first:
+      213: 5710449618637861953
+    second: A rundown house_purple_135
+  - first:
+      213: 458379240781015690
+    second: A rundown house_purple_136
+  - first:
+      213: -1075502178523982760
+    second: A rundown house_purple_137
+  - first:
+      213: 2817282252138875587
+    second: A rundown house_purple_138
+  - first:
+      213: -2459321198034031070
+    second: A rundown house_purple_139
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: A rundown house_purple_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 457
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3146313cb9b43eb10800000000000000
+      internalID: 2009532991102215187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 457
+        width: 43
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee8cbcd5edcae1c20800000000000000
+      internalID: 3179168458026502382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_2
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 423
+        width: 18
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eec04437ff9d0990800000000000000
+      internalID: -7418097127126937884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_3
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 453
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d780cb5d774cd9f0800000000000000
+      internalID: -442400059653322795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_4
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 442
+        width: 20
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24b5cb1e0c4533270800000000000000
+      internalID: 8229014131533699906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_5
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 451
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3f24616d3e46b40800000000000000
+      internalID: 5432717559151653792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_6
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 451
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16a74919c412a7660800000000000000
+      internalID: 7384251151771007585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_7
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 451
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdfeac08856e36230800000000000000
+      internalID: 3630998992383045596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_8
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 451
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 804da8b76db260dd0800000000000000
+      internalID: -2520278741271522296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_9
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 451
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c791d3a04ff3190800000000000000
+      internalID: -7980391689865298843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_10
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 451
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee42c96d6b37601b0800000000000000
+      internalID: -5690733850014243602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_11
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 467
+        width: 76
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a2d89b8f89e8e880800000000000000
+      internalID: -8581352287222836573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_12
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 451
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f265977ae6426f670800000000000000
+      internalID: 8572078998421067311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_13
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 451
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27bf65b914fbeee20800000000000000
+      internalID: 3381850658701769586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_14
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 426
+        width: 43
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8705bca168389f80800000000000000
+      internalID: -8099661937665308790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_15
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 425
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3cb2eb6060234200800000000000000
+      internalID: 163009610014440508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_16
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 423
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b25892ee8c0263570800000000000000
+      internalID: 8445974198541190443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_17
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 387
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8520335a8b6ca830800000000000000
+      internalID: 4083757203963520399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_18
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 387
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e653bcacc42e4f50800000000000000
+      internalID: 6867466943275947751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_19
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 387
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7115bece24313ca0800000000000000
+      internalID: -6038988249686011522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_20
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 387
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f014ae4383b7721a0800000000000000
+      internalID: -6834358428175286001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_21
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 387
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bc966c76ae6e7620800000000000000
+      internalID: 2773776081837530290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_22
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 387
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11eacefa7d23a0340800000000000000
+      internalID: 4830729452259159569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_23
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 403
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a9876ed5e3d933a0800000000000000
+      internalID: -6685079187622491742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_24
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 403
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bba6836bd59322a90800000000000000
+      internalID: -7340241368008594757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_25
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 355
+        width: 60
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7641af48e076db450800000000000000
+      internalID: 6106149981842445415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_26
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 323
+        width: 118
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6583fbd0fe6c0f770800000000000000
+      internalID: 8642626414954100822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_27
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 355
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaec30ad3655a2dc0800000000000000
+      internalID: -3663021459564671318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_28
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 388
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4968632a88a694de0800000000000000
+      internalID: -1348429478351173996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_29
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 378
+        width: 20
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689cf45e5b6cf1090800000000000000
+      internalID: -8061506323431306874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_30
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 291
+        width: 39
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f8998042f725830800000000000000
+      internalID: 4058446006954069852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_31
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 290
+        width: 44
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0523b9dd29de0a1d0800000000000000
+      internalID: -3341409708469964208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_32
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 323
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aac5423e15041b850800000000000000
+      internalID: 6390960066662784170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_33
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 339
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e10cda99f3d071470800000000000000
+      internalID: 8365169399676387358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_34
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 323
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4a97e4a8527f5df0800000000000000
+      internalID: -189306934276941238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_35
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 323
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cc52a162204b5f30800000000000000
+      internalID: 4565313163681225921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_36
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 323
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c20b040f99d483ac0800000000000000
+      internalID: -3875262155796205524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_37
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 323
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe5494179a707bf20800000000000000
+      internalID: 3438225264852157935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_38
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 323
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5540cdf6f56da46b0800000000000000
+      internalID: -5311197105143151531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_39
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 323
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 564f8f8fd8c4b9770800000000000000
+      internalID: 8618566484554740837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_40
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 290
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f69c1548b49bbd80800000000000000
+      internalID: -8233823974562425100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_41
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 307
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9610e6dc4c8a77170800000000000000
+      internalID: 8176189211728019817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_42
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 291
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed16938dbedbad10800000000000000
+      internalID: 2138047353655270885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_43
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 291
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3cec4c40f7318250800000000000000
+      internalID: 5945094488317553724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_44
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 291
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3777cd002ba7bca60800000000000000
+      internalID: 7695379293229840243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_45
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 291
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e241b8d28a7d9e00800000000000000
+      internalID: 1053132590274396899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_46
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 291
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5f3200d311c516a0800000000000000
+      internalID: -6479060198064242854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_47
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 291
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b036a1258ff740db0800000000000000
+      internalID: -4826592196128251125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_48
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 300
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c309f5de603fe4b0800000000000000
+      internalID: -5409051374854274106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_49
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 276
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7beea86d3e6f09160800000000000000
+      internalID: 7030390476742782647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_50
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 277
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67404a5d8d13780a0800000000000000
+      internalID: -6879475098418150282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_51
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 276
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74872e11498c810b0800000000000000
+      internalID: -5757631585312409529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_52
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 275
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89d4f74c1285ad4c0800000000000000
+      internalID: -4261997195298910824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_53
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 275
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1205744ade10e8d0800000000000000
+      internalID: -2819219443933707746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_54
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 271
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f5fffaef76ed680800000000000000
+      internalID: -8728424684225339586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_55
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 271
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf2888269d8f33950800000000000000
+      internalID: 6427754705732535035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_56
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 271
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73301f89ed31e5080800000000000000
+      internalID: -9196891542274374857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_57
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 271
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a88c68d027ee3e10800000000000000
+      internalID: 2179433397949860002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_58
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 271
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b19714552f5c6940800000000000000
+      internalID: 5290708276182749625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_59
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 271
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b742bba962a9c2ba0800000000000000
+      internalID: -6112341103653215109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_60
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 226
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 406834d37d32cac40800000000000000
+      internalID: 5524830250229532164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_61
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 226
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b7d16550c720fb00800000000000000
+      internalID: 860231235847444409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_62
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 226
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 745502d9966827410800000000000000
+      internalID: 1473387816269403463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_63
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 226
+        width: 50
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b2aeae97537951d0800000000000000
+      internalID: -3361528826693770569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_64
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 226
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52b5de57cb9835ef0800000000000000
+      internalID: -120601322483524827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_65
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 226
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2903d50eafc6a6df0800000000000000
+      internalID: -186216609820626798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_66
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 226
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44930485519ae5710800000000000000
+      internalID: 1683969219823155524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_67
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 260
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef05bdfd1ab7e8f20800000000000000
+      internalID: 3426812301651169534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_68
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 259
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 823e7a32875f9b2a0800000000000000
+      internalID: -6721071072530668760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_69
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 260
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 875f2d4cf54738ba0800000000000000
+      internalID: -6087894316601903752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_70
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 251
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2702b350d1c1f0da0800000000000000
+      internalID: -5976527269529968526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_71
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 251
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a6a32146c9197ef0800000000000000
+      internalID: -110028376606792031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_72
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 251
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e7489cd852ec7df0800000000000000
+      internalID: -181021013715695640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_73
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 251
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec78b2e6789464720800000000000000
+      internalID: 2830030261866694606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_74
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 251
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e52ad1fb6d27a20800000000000000
+      internalID: 3058743213262266012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_75
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 251
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ac4a91ec6528e540800000000000000
+      internalID: 5037317332785581222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_76
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 245
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db19454657d71130800000000000000
+      internalID: 3537532797852392408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_77
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 244
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cdd40dec0c46a480800000000000000
+      internalID: -8888333196169257536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 211
+        width: 33
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95967aba627145330800000000000000
+      internalID: 3698606648834091353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_79
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 211
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2000811ea44e7dd70800000000000000
+      internalID: 9067967384988942338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_80
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 164
+        width: 21
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b77181e8ac30e30800000000000000
+      internalID: 4468637966920022812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_81
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 164
+        width: 21
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85272c21fbb452090800000000000000
+      internalID: -8059952674084064680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_82
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 164
+        width: 21
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06a2bc823841b6230800000000000000
+      internalID: 3633020077962111584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_83
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 162
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa23f89c8e0797c90800000000000000
+      internalID: -7171576786494475601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_84
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 162
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13f654d9f08274dd0800000000000000
+      internalID: -2501987020452827343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_85
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 162
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e926581d044cd0810800000000000000
+      internalID: 1733257214279639710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_86
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 162
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 294391cccee7d5930800000000000000
+      internalID: 4133599588497568914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_87
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 162
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e787f63207e816770800000000000000
+      internalID: 8602313375536347262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_88
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 162
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be044ccc7dbfc6c60800000000000000
+      internalID: 7812896357852922091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_89
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 162
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7b5d8b0648e06380800000000000000
+      internalID: -8979922269437600897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_90
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 162
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af02ad5e97098f350800000000000000
+      internalID: 6050744952593981690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_91
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 163
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db9f087bd9116cb70800000000000000
+      internalID: 8918835481140066749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_92
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 163
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07bbb97080c129860800000000000000
+      internalID: 7535115947357223792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_93
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 163
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b283e92ee1828b00800000000000000
+      internalID: 829368141294568117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_94
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 163
+        width: 43
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07e702cb157461db0800000000000000
+      internalID: -4821587934679368080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_95
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 163
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3561c68c9b6742320800000000000000
+      internalID: 2532279430792615507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_96
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 131
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deef38abf862f30e0800000000000000
+      internalID: -2288067686929531155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_97
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 131
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c66f7b1f18c64b0800000000000000
+      internalID: -5445834974224290713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_98
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 131
+        width: 33
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 536c88e3f04c60c00800000000000000
+      internalID: 866595548068103733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_99
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 106
+        width: 20
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8d385e5cd2d200d0800000000000000
+      internalID: -3457969719949640309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_100
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 100
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3266918ab64ec1780800000000000000
+      internalID: -8710836428208511453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_101
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 98
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd194d1ffa57cd150800000000000000
+      internalID: 5898719010485473759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_102
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 90
+        width: 18
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b21af186bc6a9d0800000000000000
+      internalID: -2763297673277527272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_103
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 98
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37ef365d24e555380800000000000000
+      internalID: -8983170240579633549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_104
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 98
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9487af7aa9687ccd0800000000000000
+      internalID: -2537911866198689719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_105
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 98
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2a5db8ee30f4fae0800000000000000
+      internalID: -1516323021533652436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_106
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 98
+        width: 23
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6003b572e78b91f40800000000000000
+      internalID: 5699789655379750918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_107
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 69
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a53766934772e6e0800000000000000
+      internalID: -1809752968079657564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_108
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 69
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcea851149ebce420800000000000000
+      internalID: 2660711023024582347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_109
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 69
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f422cd87163a4940800000000000000
+      internalID: 5281092987835786484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_110
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 99
+        width: 35
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4ab0fe9264eb5000800000000000000
+      internalID: 25865335105174093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_111
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 99
+        width: 44
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d0340ac9c8c2a890800000000000000
+      internalID: -7448170064714125103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_112
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 35
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28e6c08afe5b12700800000000000000
+      internalID: 513891873418145410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_113
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 35
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f9db2510a82de3f0800000000000000
+      internalID: -869994484997563912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_114
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 35
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5250f915fbc121340800000000000000
+      internalID: 4832956958155670821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_115
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 35
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df75d62fae82a5b0800000000000000
+      internalID: -5358563723695521834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_116
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 35
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3416abeed69d94170800000000000000
+      internalID: 8163294865765589315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_117
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 35
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdec190d5e57b06c0800000000000000
+      internalID: -4176114599548825893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_118
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 3
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 048e3907cc566e790800000000000000
+      internalID: -7501196200602507200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_119
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 3
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70a35e0fb3bd90620800000000000000
+      internalID: 2740962898722765319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_120
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 42
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a48897543df1ef5c0800000000000000
+      internalID: -4179868411889088438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_121
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 42
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 451839dc4bfdbc560800000000000000
+      internalID: 7335202385739088212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_122
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 42
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 081b79efd275430f0800000000000000
+      internalID: -1138188950761393792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_123
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 42
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aee21a6814153cfa0800000000000000
+      internalID: -5781688154740150550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_124
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 19
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8587dd9f46dd54b60800000000000000
+      internalID: 7729827761209833560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_125
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 3
+        width: 19
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f55770a2a42a2770800000000000000
+      internalID: 8586715920430749168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_126
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 35
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a3137209e49c4c90800000000000000
+      internalID: -7184203577073396827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_127
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 35
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0570e67b63c10de0800000000000000
+      internalID: -1368597945420581620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_128
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 3
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de377246515cb510800000000000000
+      internalID: 1566216201342238424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_129
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 3
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be27b740c277837e0800000000000000
+      internalID: -1785546221314936085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_130
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 3
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8b51934ec7baa580800000000000000
+      internalID: -8815031224099578996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_131
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 3
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f27f3e00586c8390800000000000000
+      internalID: -7814756560348941583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_132
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 3
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7283f477e981478b0800000000000000
+      internalID: -5155468604546795481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_133
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 3
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62ee3705b0f66eb0800000000000000
+      internalID: -4726826098577448340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_134
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 3
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb68cd21f38685a10800000000000000
+      internalID: 1898381863045334718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_135
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 10
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 144bca24ca79f3f40800000000000000
+      internalID: 5710449618637861953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_136
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 10
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8a6a2bad7d7c5600800000000000000
+      internalID: 458379240781015690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_137
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 10
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8545be5877c0311f0800000000000000
+      internalID: -1075502178523982760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_138
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 10
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca00ce184ff81720800000000000000
+      internalID: 2817282252138875587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A rundown house_purple_139
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 3
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ee792866cbeddd0800000000000000
+      internalID: -2459321198034031070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      A rundown house_purple_0: 2009532991102215187
+      A rundown house_purple_1: 3179168458026502382
+      A rundown house_purple_10: -5690733850014243602
+      A rundown house_purple_100: -8710836428208511453
+      A rundown house_purple_101: 5898719010485473759
+      A rundown house_purple_102: -2763297673277527272
+      A rundown house_purple_103: -8983170240579633549
+      A rundown house_purple_104: -2537911866198689719
+      A rundown house_purple_105: -1516323021533652436
+      A rundown house_purple_106: 5699789655379750918
+      A rundown house_purple_107: -1809752968079657564
+      A rundown house_purple_108: 2660711023024582347
+      A rundown house_purple_109: 5281092987835786484
+      A rundown house_purple_11: -8581352287222836573
+      A rundown house_purple_110: 25865335105174093
+      A rundown house_purple_111: -7448170064714125103
+      A rundown house_purple_112: 513891873418145410
+      A rundown house_purple_113: -869994484997563912
+      A rundown house_purple_114: 4832956958155670821
+      A rundown house_purple_115: -5358563723695521834
+      A rundown house_purple_116: 8163294865765589315
+      A rundown house_purple_117: -4176114599548825893
+      A rundown house_purple_118: -7501196200602507200
+      A rundown house_purple_119: 2740962898722765319
+      A rundown house_purple_12: 8572078998421067311
+      A rundown house_purple_120: -4179868411889088438
+      A rundown house_purple_121: 7335202385739088212
+      A rundown house_purple_122: -1138188950761393792
+      A rundown house_purple_123: -5781688154740150550
+      A rundown house_purple_124: 7729827761209833560
+      A rundown house_purple_125: 8586715920430749168
+      A rundown house_purple_126: -7184203577073396827
+      A rundown house_purple_127: -1368597945420581620
+      A rundown house_purple_128: 1566216201342238424
+      A rundown house_purple_129: -1785546221314936085
+      A rundown house_purple_13: 3381850658701769586
+      A rundown house_purple_130: -8815031224099578996
+      A rundown house_purple_131: -7814756560348941583
+      A rundown house_purple_132: -5155468604546795481
+      A rundown house_purple_133: -4726826098577448340
+      A rundown house_purple_134: 1898381863045334718
+      A rundown house_purple_135: 5710449618637861953
+      A rundown house_purple_136: 458379240781015690
+      A rundown house_purple_137: -1075502178523982760
+      A rundown house_purple_138: 2817282252138875587
+      A rundown house_purple_139: -2459321198034031070
+      A rundown house_purple_14: -8099661937665308790
+      A rundown house_purple_15: 163009610014440508
+      A rundown house_purple_16: 8445974198541190443
+      A rundown house_purple_17: 4083757203963520399
+      A rundown house_purple_18: 6867466943275947751
+      A rundown house_purple_19: -6038988249686011522
+      A rundown house_purple_2: -7418097127126937884
+      A rundown house_purple_20: -6834358428175286001
+      A rundown house_purple_21: 2773776081837530290
+      A rundown house_purple_22: 4830729452259159569
+      A rundown house_purple_23: -6685079187622491742
+      A rundown house_purple_24: -7340241368008594757
+      A rundown house_purple_25: 6106149981842445415
+      A rundown house_purple_26: 8642626414954100822
+      A rundown house_purple_27: -3663021459564671318
+      A rundown house_purple_28: -1348429478351173996
+      A rundown house_purple_29: -8061506323431306874
+      A rundown house_purple_3: -442400059653322795
+      A rundown house_purple_30: 4058446006954069852
+      A rundown house_purple_31: -3341409708469964208
+      A rundown house_purple_32: 6390960066662784170
+      A rundown house_purple_33: 8365169399676387358
+      A rundown house_purple_34: -189306934276941238
+      A rundown house_purple_35: 4565313163681225921
+      A rundown house_purple_36: -3875262155796205524
+      A rundown house_purple_37: 3438225264852157935
+      A rundown house_purple_38: -5311197105143151531
+      A rundown house_purple_39: 8618566484554740837
+      A rundown house_purple_4: 8229014131533699906
+      A rundown house_purple_40: -8233823974562425100
+      A rundown house_purple_41: 8176189211728019817
+      A rundown house_purple_42: 2138047353655270885
+      A rundown house_purple_43: 5945094488317553724
+      A rundown house_purple_44: 7695379293229840243
+      A rundown house_purple_45: 1053132590274396899
+      A rundown house_purple_46: -6479060198064242854
+      A rundown house_purple_47: -4826592196128251125
+      A rundown house_purple_48: -5409051374854274106
+      A rundown house_purple_49: 7030390476742782647
+      A rundown house_purple_5: 5432717559151653792
+      A rundown house_purple_50: -6879475098418150282
+      A rundown house_purple_51: -5757631585312409529
+      A rundown house_purple_52: -4261997195298910824
+      A rundown house_purple_53: -2819219443933707746
+      A rundown house_purple_54: -8728424684225339586
+      A rundown house_purple_55: 6427754705732535035
+      A rundown house_purple_56: -9196891542274374857
+      A rundown house_purple_57: 2179433397949860002
+      A rundown house_purple_58: 5290708276182749625
+      A rundown house_purple_59: -6112341103653215109
+      A rundown house_purple_6: 7384251151771007585
+      A rundown house_purple_60: 5524830250229532164
+      A rundown house_purple_61: 860231235847444409
+      A rundown house_purple_62: 1473387816269403463
+      A rundown house_purple_63: -3361528826693770569
+      A rundown house_purple_64: -120601322483524827
+      A rundown house_purple_65: -186216609820626798
+      A rundown house_purple_66: 1683969219823155524
+      A rundown house_purple_67: 3426812301651169534
+      A rundown house_purple_68: -6721071072530668760
+      A rundown house_purple_69: -6087894316601903752
+      A rundown house_purple_7: 3630998992383045596
+      A rundown house_purple_70: -5976527269529968526
+      A rundown house_purple_71: -110028376606792031
+      A rundown house_purple_72: -181021013715695640
+      A rundown house_purple_73: 2830030261866694606
+      A rundown house_purple_74: 3058743213262266012
+      A rundown house_purple_75: 5037317332785581222
+      A rundown house_purple_76: 3537532797852392408
+      A rundown house_purple_77: -8888333196169257536
+      A rundown house_purple_78: 3698606648834091353
+      A rundown house_purple_79: 9067967384988942338
+      A rundown house_purple_8: -2520278741271522296
+      A rundown house_purple_80: 4468637966920022812
+      A rundown house_purple_81: -8059952674084064680
+      A rundown house_purple_82: 3633020077962111584
+      A rundown house_purple_83: -7171576786494475601
+      A rundown house_purple_84: -2501987020452827343
+      A rundown house_purple_85: 1733257214279639710
+      A rundown house_purple_86: 4133599588497568914
+      A rundown house_purple_87: 8602313375536347262
+      A rundown house_purple_88: 7812896357852922091
+      A rundown house_purple_89: -8979922269437600897
+      A rundown house_purple_9: -7980391689865298843
+      A rundown house_purple_90: 6050744952593981690
+      A rundown house_purple_91: 8918835481140066749
+      A rundown house_purple_92: 7535115947357223792
+      A rundown house_purple_93: 829368141294568117
+      A rundown house_purple_94: -4821587934679368080
+      A rundown house_purple_95: 2532279430792615507
+      A rundown house_purple_96: -2288067686929531155
+      A rundown house_purple_97: -5445834974224290713
+      A rundown house_purple_98: 866595548068103733
+      A rundown house_purple_99: -3457969719949640309
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
