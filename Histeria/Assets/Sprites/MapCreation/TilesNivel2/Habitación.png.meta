@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 29f45eb2b44079b409a6950f0d197988
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3767624376263054193
+    second: "Habitaci\xF3n_0"
+  - first:
+      213: 4099392874903623921
+    second: "Habitaci\xF3n_1"
+  - first:
+      213: -65263976140259684
+    second: "Habitaci\xF3n_2"
+  - first:
+      213: 7665365975043385786
+    second: "Habitaci\xF3n_3"
+  - first:
+      213: -6904478079883077679
+    second: "Habitaci\xF3n_4"
+  - first:
+      213: 774577915747327767
+    second: "Habitaci\xF3n_5"
+  - first:
+      213: 8829821372488018973
+    second: "Habitaci\xF3n_6"
+  - first:
+      213: -7088405685780526428
+    second: "Habitaci\xF3n_7"
+  - first:
+      213: 1542674091563741309
+    second: "Habitaci\xF3n_8"
+  - first:
+      213: -7602987528375135073
+    second: "Habitaci\xF3n_9"
+  - first:
+      213: -8400677333882761410
+    second: "Habitaci\xF3n_10"
+  - first:
+      213: 4433691554678203562
+    second: "Habitaci\xF3n_11"
+  - first:
+      213: -1442395254188934891
+    second: "Habitaci\xF3n_12"
+  - first:
+      213: -2318088127220877052
+    second: "Habitaci\xF3n_13"
+  - first:
+      213: -2609718166685583699
+    second: "Habitaci\xF3n_14"
+  - first:
+      213: 6759038351891873391
+    second: "Habitaci\xF3n_15"
+  - first:
+      213: -5226210203462989362
+    second: "Habitaci\xF3n_16"
+  - first:
+      213: 8924420454001632672
+    second: "Habitaci\xF3n_17"
+  - first:
+      213: 3975054351681763344
+    second: "Habitaci\xF3n_18"
+  - first:
+      213: 6207965623875171833
+    second: "Habitaci\xF3n_19"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_0"
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 672
+        width: 307
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8cecbd6795b6bbc0800000000000000
+      internalID: -3767624376263054193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_1"
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 672
+        width: 248
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f8d567a918f3e830800000000000000
+      internalID: 4099392874903623921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_2"
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 547
+        width: 254
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9eb78d62c2281ff0800000000000000
+      internalID: -65263976140259684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_3"
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 599
+        width: 160
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab9a3dfcdb9d06a60800000000000000
+      internalID: 7665365975043385786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_4"
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 578
+        width: 114
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d7191194cd5e20a0800000000000000
+      internalID: -6904478079883077679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_5"
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 368
+        width: 219
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71f5bfea28adfba00800000000000000
+      internalID: 774577915747327767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_6"
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 394
+        width: 198
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1cec4181c3d98a70800000000000000
+      internalID: 8829821372488018973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_7"
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 172
+        width: 346
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa4133b59ce0ad90800000000000000
+      internalID: -7088405685780526428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_8"
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 250
+        width: 274
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d70fadfa9eda86510800000000000000
+      internalID: 1542674091563741309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_9"
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 157
+        width: 141
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9499731023cc7690800000000000000
+      internalID: -7602987528375135073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_10"
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 157
+        width: 117
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f0e39397cca6b80800000000000000
+      internalID: -8400677333882761410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_11"
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 155
+        width: 163
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa46e307af2a78d30800000000000000
+      internalID: 4433691554678203562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_12"
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 57
+        width: 106
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 519fb5098259bfbe0800000000000000
+      internalID: -1442395254188934891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_13"
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 52
+        width: 115
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 409f2fa412f74dfd0800000000000000
+      internalID: -2318088127220877052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_14"
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 52
+        width: 160
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da672de772b68cbd0800000000000000
+      internalID: -2609718166685583699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_15"
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 42
+        width: 122
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6eb1c3f19deccd50800000000000000
+      internalID: 6759038351891873391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_16"
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 46
+        width: 103
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec901157285c877b0800000000000000
+      internalID: -5226210203462989362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_17"
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 46
+        width: 80
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a56ffa8e19e9db70800000000000000
+      internalID: 8924420454001632672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_18"
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 46
+        width: 84
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 018bcd24fda3a2730800000000000000
+      internalID: 3975054351681763344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Habitaci\xF3n_19"
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 46
+        width: 88
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f57aecf7df172650800000000000000
+      internalID: 6207965623875171833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "Habitaci\xF3n_0": -3767624376263054193
+      "Habitaci\xF3n_1": 4099392874903623921
+      "Habitaci\xF3n_10": -8400677333882761410
+      "Habitaci\xF3n_11": 4433691554678203562
+      "Habitaci\xF3n_12": -1442395254188934891
+      "Habitaci\xF3n_13": -2318088127220877052
+      "Habitaci\xF3n_14": -2609718166685583699
+      "Habitaci\xF3n_15": 6759038351891873391
+      "Habitaci\xF3n_16": -5226210203462989362
+      "Habitaci\xF3n_17": 8924420454001632672
+      "Habitaci\xF3n_18": 3975054351681763344
+      "Habitaci\xF3n_19": 6207965623875171833
+      "Habitaci\xF3n_2": -65263976140259684
+      "Habitaci\xF3n_3": 7665365975043385786
+      "Habitaci\xF3n_4": -6904478079883077679
+      "Habitaci\xF3n_5": 774577915747327767
+      "Habitaci\xF3n_6": 8829821372488018973
+      "Habitaci\xF3n_7": -7088405685780526428
+      "Habitaci\xF3n_8": 1542674091563741309
+      "Habitaci\xF3n_9": -7602987528375135073
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
