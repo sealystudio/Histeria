@@ -23,7 +23,7 @@ TagManager:
   - Background
   - Lagrimas
   - Walls
-  - 
+  - MInimapa
   - 
   - 
   - 
@@ -49,6 +49,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: minimapaBack
+    uniqueID: 489314169
+    locked: 0
+  - name: minimapaFront
+    uniqueID: 1048881409
     locked: 0
   - name: Background
     uniqueID: 1776815793
