@@ -7,6 +7,7 @@ public class MostrarCartel : MonoBehaviour
     public Canvas cartelCanvas2;
     public Canvas cartelCanvas3;
     public Canvas cartelCanvas4;
+    public Canvas cartelCanvas5;
 
     [Header("Selecciona qué cartel mostrar")]
     public int canvasSelected = 1; // 1,2,3 o 4
@@ -19,7 +20,9 @@ public class MostrarCartel : MonoBehaviour
         cartelCanvas2.enabled = false;
         cartelCanvas3.enabled = false;
         cartelCanvas4.enabled = false;
+        cartelCanvas4.enabled = false;
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -49,6 +52,7 @@ public class MostrarCartel : MonoBehaviour
             case 2: cartelCanvas2.enabled = true; break;
             case 3: cartelCanvas3.enabled = true; break;
             case 4: cartelCanvas4.enabled = true; break;
+            case 5: cartelCanvas5.enabled = true; break;
 
             default:
                 Debug.LogWarning("canvasSelected no válido (usa 1–4).");
@@ -62,5 +66,6 @@ public class MostrarCartel : MonoBehaviour
         cartelCanvas2.enabled = false;
         cartelCanvas3.enabled = false;
         cartelCanvas4.enabled = false;
+        cartelCanvas5.enabled = false;
     }
 }

@@ -411,6 +411,8 @@ public StatusFlags Idle()
         if (!alreadyCounted && lm != null)
         {
             lm.numeroDeSombras--;
+            DungeonPopulator dp = GameObject.FindGameObjectWithTag("Rooms").GetComponent<DungeonPopulator>();
+            dp.enemyNumber--;
             alreadyCounted = true;
         }
 

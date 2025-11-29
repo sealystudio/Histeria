@@ -26,7 +26,16 @@ MonoBehaviour:
     m_path: Assets/Scenes/SampleScene.unity
   - m_enabled: 1
     m_path: Assets/Scenes/CreditosScene.unity
-  m_ScriptingDefines: []
+  - m_enabled: 1
+    m_path: Assets/Scenes/Nivel2.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/Sample2Scene.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/NIvel3.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/TutorialScene.unity
+  m_ScriptingDefines:
+  - 
   m_PlayerSettingsYaml:
     m_Settings:
     - line: '| PlayerSettings:'

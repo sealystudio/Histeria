@@ -68,6 +68,7 @@ public class LevelManager : MonoBehaviour
         numeroDeSombras = enemigos.Length;
 
         contadorInicializado = true;
+        
 
         Debug.Log("[LevelManager] Enemigos iniciales contabilizados: " + numeroDeSombras);
     }

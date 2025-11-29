@@ -1,6 +1,10 @@
-using UnityEngine;
-using System.Collections;
 using System;
+using System.Collections;
+using UnityEditor.SearchService;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using static UnityEditor.Progress;
+using Scene = UnityEngine.SceneManagement.Scene;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
@@ -153,11 +157,10 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(DoPunch());
         }
 
-        if (Input.GetMouseButtonDown(1) && puedeDisparar && (playerEquipment == null && !playerEquipment.IsEquipped))
+        if (Input.GetMouseButtonDown(1) && puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
         {
             StartCoroutine(DoLagrimas());
         }
-
 
 
 
@@ -166,7 +169,23 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log($"RawInput: {moveInput}, SmoothInput: {smoothInput}, Rigidbody Velocity: {smoothInput * moveSpeed}");
         }
     }
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log(scene.name);
+        if (scene.name == "Nivel2")
+        {
+            puedeDisparar = true;
+        }
+    }
 
 
     void FixedUpdate()

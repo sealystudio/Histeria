@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8eafd339c95ab94988857872cee5bda, type: 3}
+  m_Name: EliCorruptaData
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  moveSpeed: 2
+  damage: 1
+  detectionRange: 10
+  attackRange: 3
+  lagrimaPrefab: {fileID: 1198046803155164575, guid: 900788e29f5d4134c9333533b8eb4390, type: 3}
+  hitEffect: {fileID: 9001277055254424903, guid: f391d5f2972f21647b0fa72323c9d3ab, type: 3}
+  dieEffect: {fileID: 7637743871170729387, guid: b12d6a4fcc0d83447ac4bb3e3cb56d38, type: 3}

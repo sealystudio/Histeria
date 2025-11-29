@@ -149,6 +149,7 @@ public class Inventory : MonoBehaviour
         if (item.triggersLevelChange)
         {
             Debug.Log("[Inventory] El ítem usado activa cambio de escena → " + item.nextSceneName);
+           
             LevelManager.instance.LoadScene(item.nextSceneName);
         }
 

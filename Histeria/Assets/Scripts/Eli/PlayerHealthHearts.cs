@@ -31,16 +31,16 @@ public class PlayerHealthHearts : MonoBehaviour
 
     private void Update()
     {
-        if (dialogoLinterna == null) return;
         if (currentHealth == 0)
         {
             Die();
         }
+        if (dialogoLinterna == null) return;
     }
 
     public void TakeDamage(int amount = 1)
     {
-        if (!primerCorazon)
+        if (!primerCorazon && dialogoLinterna != null)
         {
             Time.timeScale = 0f;
 

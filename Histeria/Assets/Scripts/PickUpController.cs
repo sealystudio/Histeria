@@ -48,8 +48,12 @@ public class PickUpController : MonoBehaviour
         Inventory inventory = player.GetComponent<Inventory>();
         if (inventory == null) return;
 
-        bool added = inventory.AddItem(itemData);
+        GameObject dp = GameObject.FindGameObjectWithTag("Rooms");
+        if (dp == null) return;
 
+        bool added = inventory.AddItem(itemData);
+        dp.GetComponent<DungeonPopulator>().numObj--;
+        
 
 
         if (added)

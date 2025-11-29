@@ -82,7 +82,6 @@ public abstract class EnemyBase : MonoBehaviour
             animator.SetTrigger("Hit");
 
        
-
         // parpadeo visual
         if (spriteRenderer != null)
             StartCoroutine(FlashCoroutine());
@@ -94,7 +93,6 @@ public abstract class EnemyBase : MonoBehaviour
         if (animator != null)
             animator.SetTrigger("Die");
 
-       
 
         Destroy(gameObject, 0.5f); //Destruir el gameobject
     }

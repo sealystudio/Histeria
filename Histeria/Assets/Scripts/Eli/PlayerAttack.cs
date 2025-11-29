@@ -74,13 +74,23 @@ public class PlayerAttack : MonoBehaviour
 
         // inicializamos el script de la lágrima con la dirección
         LagrimasAttack la = tear.GetComponent<LagrimasAttack>();
-        if (la != null)
-            la.Initialize(dir);
+        if (la != null) la.Initialize(dir, LagrimasAttack.Team.Player);
+
 
 
         // opcional: rotar el sprite según la dirección
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         tear.transform.rotation = Quaternion.Euler(0, 0, angle) * lagrima.transform.rotation;
+
+        // Notificar a las Eli corruptas
+        Debug.Log($"Notificando clones. Dir={dir}");
+        EliCorrupta[] clones = UnityEngine.Object.FindObjectsByType<EliCorrupta>(FindObjectsSortMode.None);
+        foreach (var clone in clones)
+        {
+            Debug.Log($"Clone: {clone.name} puedeDisparar={clone.PuedeDispararDebug()}");
+            clone.DispararEspejo(dir);
+        }
+
 
     }
 

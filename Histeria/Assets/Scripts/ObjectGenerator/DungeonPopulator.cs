@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DungeonPopulator : MonoBehaviour
@@ -8,15 +9,17 @@ public class DungeonPopulator : MonoBehaviour
     [Header("Configuración de Objetos")]
     [Tooltip("La lista de prefabs de objetos (llaves, pociones, etc.) que DEBEN aparecer en este nivel.")]
     public GameObject[] objectsToSpawn;
-
+    public TextMeshProUGUI contadorObjetos;
     [Header("Configuración de Enemigos")]
     [Tooltip("La lista de prefabs de enemigos que pueden aparecer en este nivel.")]
     public GameObject[] enemiesToSpawn;
+    public TextMeshProUGUI contadorEnemigos;
 
     [Header("Configuración Interna")]
     [Tooltip("Delay (en segundos) para esperar a que el mapa se termine de generar antes de poblar.")]
     public float populationDelay = 1.0f;
     public int enemyNumber = 15;
+    public int numObj;
     // Listas separadas para los distintos tipos de spawn
     [HideInInspector] public List<Transform> objectSpawnPoints = new List<Transform>();
     [HideInInspector] public List<Transform> enemySpawnPoints = new List<Transform>();
@@ -32,6 +35,13 @@ public class DungeonPopulator : MonoBehaviour
     void Start()
     {
         Invoke("PopulateDungeon", populationDelay);
+        numObj = objectsToSpawn.Length;
+    }
+    void Update()
+    {
+        // Actualizar los textos en cada frame
+        contadorObjetos.text = numObj.ToString();
+        contadorEnemigos.text = enemyNumber.ToString();
     }
 
     void PopulateDungeon()
