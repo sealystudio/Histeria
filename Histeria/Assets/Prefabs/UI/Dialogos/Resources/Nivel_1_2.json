@@ -1,0 +1,29 @@
+{
+  "scene": "Nivel 1 - Daño",
+  "lines": [
+    {
+      "speaker": "Eli",
+      "text": "¿Por… por qué quieres hacerme daño?"
+    },
+    {
+      "speaker": "Sombra",
+      "text": "... - Permanece en silencio.-"
+    },
+    {
+      "speaker": "Eli",
+      "text": "¿Me oyes, cómo puedo salir de aquí?"
+    },
+    {
+      "speaker": "Sombra",
+      "text": "Estás sola, Eli, siempre lo has estado."
+    },
+    {
+      "speaker": "Eli",
+      "text": "¿Hola? - empieza a agobiarse - ¿Puedes oírme?"
+    },
+    {
+      "speaker": "Sombra",
+      "text": "Estás sola Eli, y así morirás."
+    }
+  ]
+}
