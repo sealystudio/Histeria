@@ -62,6 +62,12 @@ TagManager:
   - name: Front
     uniqueID: 1125471947
     locked: 0
+  - name: LaberintoBack
+    uniqueID: 472206769
+    locked: 0
+  - name: LaberintoFront
+    uniqueID: 422336901
+    locked: 0
   - name: Front2
     uniqueID: 2174748623
     locked: 0
