@@ -48,14 +48,9 @@ public class PickUpController : MonoBehaviour
         Inventory inventory = player.GetComponent<Inventory>();
         if (inventory == null) return;
 
-        GameObject dp = GameObject.FindGameObjectWithTag("Rooms");
-        if (dp == null) return;
-
         bool added = inventory.AddItem(itemData);
-        dp.GetComponent<DungeonPopulator>().numObj--;
         
-
-
+       
         if (added)
         {
             // reproducir el sonido sin que se corte
@@ -64,8 +59,17 @@ public class PickUpController : MonoBehaviour
 
             uiManager.RefreshInventoryUI();
             uiManager.SetPickUpText($"Se ha añadido {itemData.itemName} al inventario");
-
             Destroy(gameObject); // se destruye el ítem después de reproducir el sonido
+            
+            GameObject dp = GameObject.FindGameObjectWithTag("Rooms");
+            if (dp == null) return;
+
+            if(dp.GetComponent<DungeonPopulator>().numObj > 0)
+            {
+                dp.GetComponent<DungeonPopulator>().numObj--;
+                
+            }
+            
         }
         else
         {

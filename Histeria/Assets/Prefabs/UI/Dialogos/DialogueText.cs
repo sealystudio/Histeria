@@ -23,7 +23,7 @@ public class DialogueData
 public class DialogueText : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
-    public float textSpeed = 0.1f;
+    public float textSpeed = 0.025f;
     private int index;
     private DialogueData dialogueData;
     public UnityEngine.UI.Image CharacterPortrait;
@@ -103,8 +103,9 @@ public class DialogueText : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             string fullLine = dialogueData.lines[index].showSpeaker
-                ? $"{dialogueData.lines[index].speaker.ToUpper()}: {dialogueData.lines[index].text}"
+                ? $"{dialogueData.lines[index].speaker}: {dialogueData.lines[index].text}" 
                 : dialogueData.lines[index].text;
+
 
             if (dialogueText.text == fullLine)
                 NextLine();
@@ -193,8 +194,9 @@ public class DialogueText : MonoBehaviour
 
         // Retrato
         string portraitName = string.IsNullOrEmpty(dialogueData.lines[index].portrait)
-            ? dialogueData.lines[index].speaker.ToLower()
-            : dialogueData.lines[index].portrait.ToLower();
+            ? dialogueData.lines[index].speaker 
+            : dialogueData.lines[index].portrait;
+
 
         Sprite portrait = Resources.Load<Sprite>($"Characters/{portraitName}");
         if (portrait != null)
@@ -210,7 +212,7 @@ public class DialogueText : MonoBehaviour
         foreach (char letter in fullLine.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(textSpeed);
+            yield return new WaitForSecondsRealtime(textSpeed);
         }
     }
 

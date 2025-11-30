@@ -14,13 +14,14 @@ public class MostrarCartel : MonoBehaviour
 
     private bool isPlayerNearby = false;
 
+    
     void Start()
     {
         cartelCanvas1.enabled = false;
         cartelCanvas2.enabled = false;
         cartelCanvas3.enabled = false;
         cartelCanvas4.enabled = false;
-        cartelCanvas4.enabled = false;
+        cartelCanvas5.enabled = false;
     }
 
 

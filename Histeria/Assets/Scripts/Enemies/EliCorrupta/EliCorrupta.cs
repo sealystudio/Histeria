@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class EliCorrupta : EnemyBase
@@ -24,7 +24,7 @@ public class EliCorrupta : EnemyBase
         damage = data.damage;
         detectionRange = data.detectionRange;
         attackRange = data.attackRange;
-        // Buscar din�micamente al jugador en la escena
+        // Buscar dinámicamente al jugador en la escena
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -38,21 +38,34 @@ public class EliCorrupta : EnemyBase
 
         float distancia = Vector2.Distance(transform.position, eliNormal.position);
 
+
         // --- Movimiento hacia Eli ---
         if (distancia < detectionRange && distancia > attackRange)
         {
             Vector2 dir = (eliNormal.position - transform.position).normalized;
             rb.linearVelocity = dir * moveSpeed;
-           
+
         }
         else
         {
             rb.linearVelocity = Vector2.zero;
 
         }
+
+        // 🔹 Girar en el eje X según la posición del jugador
+        if (eliNormal.position.x > transform.position.x)
+        {
+            // Eli está a la derecha → mirar a la derecha
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (eliNormal.position.x < transform.position.x)
+        {
+            // Eli está a la izquierda → mirar a la izquierda
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
-    // --- M�todo p�blico para disparo espejo ---
+    // --- Método público para disparo espejo ---
     public void DispararEspejo(Vector3 direccionOriginal)
     {
         if (!puedeDisparar || data.lagrimaPrefab == null || eliNormal == null) return;
