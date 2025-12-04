@@ -2,9 +2,9 @@
   "scene": "Nivel 1 - Cierre",
   "lines": [
     { "speaker": "Eli", "text": "Es el colgante que me regaló mamá, bueno… al menos una parte de él." },
-    { "speaker": "Subconsciente (en off)", "text": "Encuentra todos los fragmentos del colgante Eli, haz las paces contigo misma." },
+    { "speaker": "Subconsciente", "text": "Encuentra todos los fragmentos del colgante Eli, haz las paces contigo misma." },
     { "speaker": "Eli", "text": "¿Otra vez tú? ¿Dónde debo buscar?" },
-    { "speaker": "Subconsciente (en off)", "text": "Busca en tu interior, recorre tu mente." },
+    { "speaker": "Subconsciente", "text": "Busca en tu interior, recorre tu mente." },
     { "speaker": "Eli", "text": "Busca en tu interior, recorre tu mente…" }
   ]
 }
