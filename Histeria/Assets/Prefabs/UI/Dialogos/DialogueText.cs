@@ -41,35 +41,6 @@ public class DialogueText : MonoBehaviour
 
 
 
-    public void InitDialogue(string jsonName)
-    {
-        nombreJSON = jsonName;
-
-        if (!gameObject.activeSelf)
-            gameObject.SetActive(true); 
-
-        if (dialogueText == null)
-        {
-            Debug.LogError("TMP text no asignado en DialogueText!");
-            return;
-        }
-
-        playerMovement = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerMovement>();
-        if (playerMovement != null)
-        {
-            playerMovement.canMove = false;
-            playerMovement.puedeDisparar = false;
-        }
-
-        abrirDialogo = true;
-        gameObject.SetActive(true);
-
-        LoadDialogue(nombreJSON);
-        StartDialogue();
-    }
-
-
-
 
     void Start()
     {
@@ -78,14 +49,20 @@ public class DialogueText : MonoBehaviour
         if (string.IsNullOrEmpty(nombreJSON))
             return;
 
-        luzAmbiente.intensity = 0;
+        if (luzAmbiente != null)
+            luzAmbiente.intensity = 0; 
+        
         abrirDialogo = true;
 
-        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        if (playerMovement != null)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
-            playerMovement.canMove = false;
-            playerMovement.puedeDisparar = false;
+            playerMovement = player.GetComponent<PlayerMovement>();
+            if (playerMovement != null)
+            {
+                playerMovement.canMove = false;
+                playerMovement.puedeDisparar = false;
+            }
         }
 
         LoadDialogue(nombreJSON);
@@ -116,6 +93,44 @@ public class DialogueText : MonoBehaviour
             }
         }
     }
+
+
+
+    public void InitDialogue(string jsonName)
+    {
+        nombreJSON = jsonName;
+
+        if (!gameObject.activeSelf)
+            gameObject.SetActive(true);
+
+        if (dialogueText == null)
+        {
+            Debug.LogError("TMP text no asignado en DialogueText!");
+            return;
+        }
+
+        // Congelar el juego
+        Time.timeScale = 0f;
+
+        // Bloquear player
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerMovement = player.GetComponent<PlayerMovement>();
+            if (playerMovement != null)
+            {
+                playerMovement.canMove = false;
+                playerMovement.puedeDisparar = false;
+            }
+        }
+
+        abrirDialogo = true;
+        gameObject.SetActive(true);
+
+        LoadDialogue(nombreJSON);
+        StartDialogue();
+    }
+
 
 
 
@@ -229,21 +244,26 @@ public class DialogueText : MonoBehaviour
         else
         {
             abrirDialogo = false;
-            luzAmbiente.intensity = 0.35f;
 
-            gameObject.SetActive(false);
+            // Restaurar tiempo
+            Time.timeScale = 1f;
 
-
+            // Rehabilitar movimiento del player
             if (playerMovement != null)
             {
                 playerMovement.canMove = true;
-                Time.timeScale = 1f;
-
+                playerMovement.puedeDisparar = true;
             }
 
+            // Restaurar luz ambiente si quieres
+            if (luzAmbiente != null)
+                luzAmbiente.intensity = 0.35f;
+
+            gameObject.SetActive(false);
 
             if (CharacterPortrait != null)
                 CharacterPortrait.enabled = false;
         }
+
     }
 }

@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 7427037145683176818}
   - component: {fileID: 4688052118759696786}
   - component: {fileID: 1833389720230822322}
+  - component: {fileID: -7642098986408749451}
   m_Layer: 0
   m_Name: Collar
   m_TagString: Untagged
@@ -165,7 +166,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 546018529
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -5172918413599513391, guid: b0b03253f1ab42f4ca8d33ad3531501a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -335,3 +336,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-7642098986408749451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3394067301948519984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc523877230b78e43a1e2892d931aaf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePrefab: {fileID: 8893074750125486884, guid: 05274279f4d2f004fb152540736c8fdb, type: 3}
+  soloUnaVez: 1
+  soloPrimerEnemigo: 0

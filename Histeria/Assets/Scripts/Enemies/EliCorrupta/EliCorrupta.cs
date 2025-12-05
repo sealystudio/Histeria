@@ -108,6 +108,8 @@ public class EliCorrupta : EnemyBase
 
     protected override void Die()
     {
+        LevelManager.instance.EnemyMuerto();
+
         if (animator != null)
             animator.SetTrigger("Die");
 

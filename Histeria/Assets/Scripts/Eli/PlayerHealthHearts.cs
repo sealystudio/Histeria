@@ -16,14 +16,12 @@ public class PlayerHealthHearts : MonoBehaviour
     public int currentHealth = 3;
 
     public GameObject deathCanvas;
-    public GameObject dialogoLinterna;
 
     private bool primerCorazon = false;
+    public GameObject dialogoSombra;
 
     private void Start()
     {
-        if (dialogoLinterna != null)
-            dialogoLinterna.SetActive(false);
 
         if (deathCanvas != null)
             deathCanvas.SetActive(false);
@@ -35,19 +33,18 @@ public class PlayerHealthHearts : MonoBehaviour
         {
             Die();
         }
-        if (dialogoLinterna == null) return;
     }
+
+   
 
     public void TakeDamage(int amount = 1)
     {
-        if (!primerCorazon && dialogoLinterna != null)
+        // Activar diálogo de la sombra al perder el primer corazón
+        if (!primerCorazon && dialogoSombra != null)
         {
             Time.timeScale = 0f;
 
-            // Activar canvas de diálogo
-            dialogoLinterna.SetActive(true);
-
-            // Bloquear movimiento YA aquí
+            // Bloquear movimiento
             PlayerMovement pm = GetComponent<PlayerMovement>();
             if (pm != null)
             {
@@ -55,24 +52,27 @@ public class PlayerHealthHearts : MonoBehaviour
                 pm.puedeDisparar = false;
             }
 
-            DialogueText dt = dialogoLinterna.GetComponentInChildren<DialogueText>();
+            primerCorazon = true;
+
+            // Instanciar y activar el diálogo de la sombra
+            GameObject instance = Instantiate(dialogoSombra);
+            instance.SetActive(true);
+
+            DialogueText dt = dialogoSombra.GetComponentInChildren<DialogueText>();
             if (dt != null)
             {
-                dt.InitDialogue("Nivel_1_prov");
+                dt.InitDialogue(dt.nombreJSON); // usa el JSON que tiene el prefab
             }
-
-            primerCorazon = true;
         }
 
         currentHealth = Mathf.Max(currentHealth - amount, 0);
         UpdateHearts();
 
-        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if (sr != null)
-        {
             StartCoroutine(DamageFlash(sr));
-        }
     }
+
 
 
     private IEnumerator DamageFlash(SpriteRenderer sr)

@@ -8,9 +8,6 @@ using UnityEngine.UIElements;
 using static UnityEditor.PlayerSettings;
 
 
-
-
-
 public class SombraAbandono : EnemyBase
 {
     public SombraAbandonoData data;
@@ -78,22 +75,58 @@ public class SombraAbandono : EnemyBase
 
     private void Update()
     {
-       
-        if (direccionHuida == Vector2.zero ||
-            float.IsNaN(direccionHuida.x) || float.IsNaN(direccionHuida.y))
+        if (player == null || playerAttack == null) return;
+
+        // Obtenemos la dirección del crosshair
+        CrosshairController cross = player.GetComponentInChildren<CrosshairController>();
+        Vector2 dirJugadorACross = cross != null ? cross.dir.normalized : Vector2.right;
+
+        Vector2 dirJugadorASombra = (Vector2)(transform.position - player.transform.position);
+        float distancia = dirJugadorASombra.magnitude;
+
+        // Si el crosshair apunta a la sombra y está dentro del rango
+        bool apuntado = Vector2.Angle(dirJugadorACross, dirJugadorASombra) < 30f && distancia < detectionRange;
+
+        if (apuntado)
         {
-            direccionHuida = Random.insideUnitCircle.normalized;
+            // Huir del jugador
+            _estoyHuyendo = true;
+            direccionHuida = dirJugadorASombra.normalized;
+        }
+        else
+        {
+            _estoyHuyendo = false;
+
+            // Si no está apuntado, perseguir jugador si está cerca
+            if (JugadorCerca())
+                direccionHuida = (player.transform.position - transform.position).normalized;
+            else
+                IdleFloating();
         }
 
-        
+        // Aplicar movimiento con Rigidbody2D
         if (rb != null)
+            rb.velocity = direccionHuida * data.moveSpeed;
+    }
+
+
+    // Función para flotado idle visual
+    private void IdleFloating()
+    {
+        if (!isIdle)
         {
-            rb.linearVelocity = direccionHuida.normalized * data.moveSpeed;
+            idleStartPos = transform.position;
+            isIdle = true;
         }
 
-        if (playerAttack != null)
-            _playerFlashlight = playerAttack._hasFlashlight;
+        float yOffset = Mathf.Sin(Time.time * floatFrequency) * floatAmplitude;
+        Vector3 newPos = idleStartPos + new Vector3(0, yOffset, 0);
+        transform.position = newPos;
+
+        if (animator != null)
+            animator.SetTrigger("GoIdle");
     }
+
 
 
     //solo se le puede matar con la linterna, por eso dara igual que le pegues
@@ -410,7 +443,7 @@ public StatusFlags Idle()
 
         if (!alreadyCounted && lm != null)
         {
-            lm.numeroDeSombras--;
+            LevelManager.instance.EnemyMuerto();
             DungeonPopulator dp = GameObject.FindGameObjectWithTag("Rooms").GetComponent<DungeonPopulator>();
             dp.enemyNumber--;
             alreadyCounted = true;
