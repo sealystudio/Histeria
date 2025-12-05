@@ -106,7 +106,7 @@ public class SombraAbandono : EnemyBase
 
         // Aplicar movimiento con Rigidbody2D
         if (rb != null)
-            rb.velocity = direccionHuida * data.moveSpeed;
+            rb.linearVelocity = direccionHuida * data.moveSpeed;
     }
 
 

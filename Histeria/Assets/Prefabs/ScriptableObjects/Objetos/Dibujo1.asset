@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0333879417dad34d9857aeb6456558b, type: 3}
+  m_Name: Dibujo1
+  m_EditorClassIdentifier: 
+  itemName: Dibujo1
+  description: 
+  icon: {fileID: 2857268611285488632, guid: abbb6ab5f9eb29549a8a8f4868314d67, type: 3}
+  itemType: 1
+  consumableData:
+    healAmount: 0
+  storyData:
+    narrationClip: {fileID: 0}
+  equipableData:
+    equipPrefab: {fileID: 0}
+  triggersLevelChange: 0
+  nextSceneName: 
