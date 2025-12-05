@@ -5,12 +5,10 @@
     { "speaker": "Eli corrupta", "text": "Todo esto es culpa tuya Eli, estamos así por tu culpa." },
     { "speaker": "Eli", "text": "¿Qué? ¿Qué eres? Eres idéntica a mí pero, pareces muerta en vida." },
     { "speaker": "Eli corrupta", "text": "Todo esto es culpa tuya Eli, estamos así por tu culpa." },
-    { "speaker": "Subconsciente (en off)", "text": "Bueno en parte tiene razón, todo esto es culpa tuya. Ellas son un reflejo de tu estado mental actual. Te tocará hacer algo al respecto." },
-    { "speaker": "Furia", "text": "¡EEEELIII! ¡Voy a acabar contigo!" },
+    { "speaker": "Subconsciente", "text": "Bueno en parte tiene razón, todo esto es culpa tuya. Ellas son un reflejo de tu estado mental actual. Te tocará hacer algo al respecto." },
     { "speaker": "Eli", "text": "¡Dios qué es eso! No me hagas daño por favor." },
-    { "speaker": "Subconsciente (en off)", "text": "De nada te servirá llorar niña. Si no quieres morir haz algo al respecto." },
+    { "speaker": "Subconsciente", "text": "De nada te servirá llorar niña. Si no quieres morir haz algo al respecto." },
     { "speaker": "Eli", "text": "Sólo quiero irme…" },
     { "speaker": "Eli corrupta", "text": "No te mereces salir de aquí." },
-    { "speaker": "Furia", "text": "¡Muere!" }
   ]
 }

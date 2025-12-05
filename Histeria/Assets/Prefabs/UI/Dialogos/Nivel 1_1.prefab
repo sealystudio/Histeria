@@ -304,7 +304,7 @@ MonoBehaviour:
   textSpeed: 0.1
   CharacterPortrait: {fileID: 497777114780417758}
   autoStart: 1
-  nombreJSON: Nivel_2_1
+  nombreJSON: Nivel_1_1
   hudCanvas: {fileID: 9166439009364903911}
   luzAmbiente: {fileID: 0}
 --- !u!1 &8893074750125486884
