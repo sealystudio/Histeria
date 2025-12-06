@@ -3,8 +3,8 @@ guid: 63589a6c72043774db587881bad20fd4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5883852253288472949
-    second: Eli corrupta_0
+      213: 8168622315036669320
+    second: Eli Corrupta_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Eli corrupta_0
+      name: Eli Corrupta_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 43
-        width: 965
-        height: 1135
+        x: 1
+        y: 3
+        width: 110
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 571242c4374a7a150800000000000000
-      internalID: 5883852253288472949
+      spriteID: 885f61067b6cc5170800000000000000
+      internalID: 8168622315036669320
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Eli corrupta_0: 5883852253288472949
+      Eli Corrupta_0: 8168622315036669320
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
