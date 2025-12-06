@@ -146,34 +146,141 @@ h2 {
     color: #6c3984;
 }
 
-.slider-section {
-    padding: 40px 0;
-    text-align: top center;
-}
+/* --- CLASES DEL SLIDER --- */
 
 .slider {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 20px;
-    cursor: grab;
+    width: 100%; 
+    overflow: hidden; 
+    cursor: grab; 
+    white-space: nowrap; 
 }
 
-.slider:active {
-    cursor: grabbing;
+.slider-track { 
+    display: flex;
+    transition: transform 0.3s ease;
 }
 
 .slide {
-    min-width: 80%;
-    height: 200px;
-    background: #111;
-    border-radius: 20px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    color: white;
-    scroll-snap-align: center;
+    height: 100vh;
+    min-height: 600px;
+    width: 100vw;
     flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.slider-section {
+    width: 100%;
+}
+
+.slide-bg-eli {
+    background-image: url("img/fondoNivel1.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Superposición oscura */
+.slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+
+/* Contenedor del contenido (Texto y Imágenes) */
+.slide-layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* Distribuye el espacio entre los dos lados y bordes */
+    justify-content: space-around; 
+    position: relative;
+    z-index: 2;
+    padding: 0 5%; /* Espacio horizontal en los bordes */
+}
+
+/* Lado Izquierdo (Texto) */
+.slide-left {
+    width: 45%; /* Menos del 50% para crear espacio central */
+    color: white;
+    text-align: center;
+    /* Eliminado el margin-right: 2cm; */
+}
+
+/* Lado Derecho (Imágenes) */
+.slide-right {
+    width: 45%; /* Menos del 50% para crear espacio central */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Distribuye las imágenes equitativamente dentro del espacio vertical */
+    justify-content: space-evenly; 
+    gap: 5rem;
+    height: 100%
+}
+
+/* Texto dentro del Slide */
+.slide-left h2 {
+    font-size: 7rem;
+    margin-bottom: 0.5rem;
+}
+
+.slide-left p {
+    font-size: 2rem;
+    line-height: 1.4;
+    white-space: normal;
+}
+
+/* 🖼️ IMÁGENES DENTRO DEL SLIDER (CLASE CORREGIDA) */
+.eli {
+    max-width: 500px;
+    /* CLAVE: Controla el tamaño vertical. 
+       Ajusta este porcentaje (40%) para hacerlas más grandes o más pequeñas. */
+    height: 40%; 
+    object-fit: contain;
+}
+
+/* --- RESPONSIVE PARA MÓVIL (CORREGIDO) --- */
+@media (max-width: 768px) {
+    /* El layout pasa a ser vertical en móvil */
+    .slide-layout {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow-y: auto; /* Permite el scroll si el contenido es alto */
+    }
+
+    /* Los lados ocupan todo el ancho y se ajusta la altura */
+    .slide-left, .slide-right {
+        width: 90%; 
+        padding: 20px 0; 
+        height: auto; 
+    }
+    
+    .slide-right {
+        gap: 2rem; /* Reducida la separación de las imágenes en móvil */
+    }
+
+    /* Ajuste de tamaño de texto para móvil */
+    .slide-left h2 {
+        font-size: 3rem;
+    }
+
+    .slide-left p {
+        font-size: 1.2rem;
+    }
+    
+    /* Imágenes más pequeñas en móvil */
+    .eli {
+        max-width: 100%; 
+        height: auto; 
+        max-height: 25vh; /* Se mantiene un límite de altura opcional */
+    }
 }
