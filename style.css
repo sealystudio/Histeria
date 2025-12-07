@@ -1,0 +1,415 @@
+/* FUENTES */
+@font-face {
+    font-family: 'Pixellari';
+    src: url('fonts/Pixellari.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Upheaval';
+    src: url('fonts/upheavtt.ttf') format('truetype');
+}
+
+/* ESTILO GENERAL */
+body {
+    font-family: 'Pixellari', sans-serif;
+    color: #ffffff;
+    background: url('img/FondoPixel2.jpg') repeat;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+section p {
+    max-width: 1100px;
+}
+
+/* NAVBAR */
+.w3-bar .w3-bar-item {
+    font-size: 1.5rem;
+    padding: 12px 20px;
+}
+
+.pixellari {
+    font-family: 'Pixellari', sans-serif;
+}
+
+.upheaval {
+    font-family: 'Upheaval', sans-serif;
+}
+
+/* HERO */
+.hero-image {
+    font-family: 'Upheaval', sans-serif;
+    background: url('img/BannerWeb.png') center/cover no-repeat;
+    height: 70vh;
+    position: relative;
+}
+
+.hero-overlay {
+    background: rgba(0,0,0,0.55);
+    position: absolute;
+    inset: 0;
+}
+
+/* RESPONSIVE HERO (MÓVIL) */
+@media (max-width: 768px) {
+    .hero-image {
+        background-size: contain;
+        background-position: top center;
+        background-repeat: no-repeat;
+        height: 45vh;
+    }
+    .hero-overlay {
+        background: rgba(0,0,0,0.4);
+    }
+}
+
+/* SECCIONES */
+#studio { background: rgba(108, 57, 132, 0.9); }
+#project { background: rgba(22, 0, 33, 0.9); }
+#historia { background: rgba(108, 57, 132, 0.9); }
+#contact { background: rgba(22, 0, 33, 0.9); }
+
+/* CONTACTO */
+#contact p {
+    line-height: 1.2;
+    margin: 5px 0;
+}
+
+/* IMÁGENES */
+.project-img {
+    width: 50%;
+    border-radius: 6px;
+    display: block;
+    margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+    .project-img {
+        width: 90%;
+    }
+}
+
+/* TITULOS */
+h2 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* EQUIPO */
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+    max-width: 1100px;
+}
+
+.team-card {
+    width: 180px;
+    background: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.team-card h3 {
+    font-family: 'Pixellari', sans-serif;
+    margin: 5px 0;
+    font-size: 1.2rem;
+    color: #6c3984;
+}
+
+.team-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    color: #6c3984;
+}
+
+/* --- CLASES DEL SLIDER --- */
+
+.slider {
+    width: 100%; 
+    overflow: hidden; 
+    cursor: grab; 
+    white-space: nowrap; 
+}
+
+.slider-track { 
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.slide {
+    height: 100vh;
+    min-height: 600px;
+    width: 100vw;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.slider-section {
+    width: 100%;
+}
+
+.slide-bg-eli-1 {
+    background-image: url("img/FondoMenu.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.slide-bg-eli-2 {
+    background-image: url("img/FondoMenu2.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Superposición oscura */
+.slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+
+/* Contenedor del contenido (Texto y Imágenes) */
+.slide-layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* Distribuye el espacio entre los dos lados y bordes */
+    justify-content: space-around; 
+    position: relative;
+    z-index: 2;
+    padding: 0 5%; /* Espacio horizontal en los bordes */
+}
+
+/* Lado Izquierdo (Texto) */
+.slide-left {
+    width: 45%; /* Menos del 50% para crear espacio central */
+    color: white;
+    text-align: center;
+    /* Eliminado el margin-right: 2cm; */
+}
+
+/* Lado Derecho (Imágenes) */
+.slide-right {
+    width: 45%; /* Menos del 50% para crear espacio central */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Distribuye las imágenes equitativamente dentro del espacio vertical */
+    justify-content: space-evenly; 
+    gap: 5rem;
+    height: 100%
+}
+
+/* Texto dentro del Slide */
+.slide-left h2 {
+    font-size: 7rem;
+    margin-bottom: 0.5rem;
+}
+
+.slide-left p {
+    font-size: 2rem;
+    line-height: 1.4;
+    white-space: normal;
+}
+
+.eli {
+    max-width: 500px;
+    /* CLAVE: Controla el tamaño vertical. 
+       Ajusta este porcentaje (40%) para hacerlas más grandes o más pequeñas. */
+    height: 40%; 
+    object-fit: contain;
+}
+
+/* Contenedor del Carrusel */
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative; /* Necesario para posicionar las flechas */
+    margin: auto;
+}
+
+.carousel-slides {
+    height: 100vh;
+    min-height: 600px;
+    position: relative; 
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Esconde los slides por defecto */
+.my-slide {
+    display: none; 
+    text-align: center;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.my-slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+
+.nivel-1-bg {
+    background-image: url("img/fondoNivel1.png");
+}
+
+.nivel-2-bg {
+    background-image: url("img/fondoNivel2.png");
+}
+
+.nivel-3-bg {
+    background-image: url("img/fondoNivel3.png");
+}
+
+.my-slide h3 {
+    font-family: upheaval;
+    color: white; 
+    z-index: 2; 
+    position: relative;
+    margin: 0px 0;
+    font-size: 8rem;
+
+}
+
+.my-slide p {
+    position: absolute !important;
+    top: 30%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    z-index: 5;
+    font-size: 3rem;
+}
+
+.my-slide .p2 {
+    top: 50%;
+    width: 50%;
+    font-size: 2rem;
+}
+
+.my-slide img{
+    top: 50%;
+    position: relative;
+    z-index: 5;
+}
+
+/* Estilo para las flechas (Botones de navegación) */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* Centrado verticalmente */
+    width: auto;
+    padding: 16px;
+    margin-top: -22px; /* Ajuste para centrar */
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5); /* Semitransparente oscuro */
+    z-index: 10;
+}
+
+/* Posiciona el botón "Siguiente" a la derecha */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Cambia el color al pasar el ratón */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* --- RESPONSIVE PARA MÓVIL (CORREGIDO) --- */
+@media (max-width: 768px) {
+    /* El layout pasa a ser vertical en móvil */
+    .slide-layout {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow-y: auto; /* Permite el scroll si el contenido es alto */
+    }
+
+    /* Los lados ocupan todo el ancho y se ajusta la altura */
+    .slide-left, .slide-right {
+        width: 90%; 
+        padding: 20px 0; 
+        height: auto; 
+    }
+    
+    .slide-right {
+        gap: 2rem; /* Reducida la separación de las imágenes en móvil */
+    }
+
+    /* Ajuste de tamaño de texto para móvil */
+    .slide-left h2 {
+        font-size: 3rem;
+    }
+
+    .slide-left p {
+        font-size: 1.2rem;
+    }
+    
+    /* Imágenes más pequeñas en móvil */
+    .eli {
+        max-width: 100%; 
+        height: auto; 
+        max-height: 25vh; /* Se mantiene un límite de altura opcional */
+    }
+}

@@ -7,152 +7,7 @@
         <link rel="icon" type="image/png" href="img/LogoRedes2.png" />
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" />
-
-        <style>
-            @font-face {
-                font-family: 'Pixellari';
-                src: url('fonts/Pixellari.ttf') format('truetype');
-                font-weight: normal;
-                font-style: normal;
-            }
-
-            @font-face {
-                font-family: 'Upheaval';
-                src: url('fonts/upheavtt.ttf') format('truetype');
-                font-weight: normal;
-                font-style: normal;
-            }
-
-            section {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            section p {
-                max-width: 1100px;
-            }
-
-            body {
-                font-family: 'Pixellari', sans-serif;
-                color: #ffffff;
-                background: url('img/FondoPixel2.jpg') repeat;
-            }
-
-            .w3-bar .w3-bar-item {
-                font-size: 1.5rem;
-                padding: 12px 20px;
-            }
-
-            .pixellari {
-                font-family: 'Pixellari', sans-serif;
-            }
-
-            .upheaval {
-                font-family: 'Upheaval', sans-serif;
-            }
-
-            /*INICIO*/
-            .hero-image { 
-                font-family: 'Upheaval', sans-serif;
-                background: url('img/BannerWeb.png') center/cover no-repeat; 
-                height: 70vh;
-                position: relative;
-            }
-            .hero-overlay {      
-                background: rgba(0,0,0,0.55);
-                position: absolute;
-                top: 0; left: 0;
-                width: 100%; height: 100%;
-            }
-            .hero-text {
-                position: absolute;
-                top: 50%; left: 50%;
-                transform: translate(-50%, -50%);
-                color: #fff;
-                text-align: center;
-            }
-
-            /*SECCIONES*/
-            #studio {
-                background: rgba(108, 57, 132, 0.9);
-                color: #ffffff;
-            }
-
-            #project {
-                background:rgba(22, 0, 33, 0.9);
-                color: #ffffff;
-            }
-
-            #contact {
-                background: rgba(108, 57, 132, 0.9);
-                color: #ffffff;
-            }
-
-            #contact p {
-                line-height: 1.2;
-                margin: 5px 0;
-            }
-
-            /*IMÁGENES*/
-            .project-img {
-                width: 100%;
-                border-radius: 6px;
-            }
-
-            h2 {
-                font-weight: 700;
-                margin-bottom: 20px;
-            }
-
-            .team-container {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 30px;
-                margin-top: 30px;
-                max-width: 1100px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .team-card {
-                width: 180px;
-                background: #ffffff;
-                border-radius: 10px;
-                text-align: center;
-                padding: 15px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                transition: transform 0.3s;
-            }
-
-            .team-card:hover {
-                transform: translateY(-5px);
-            }
-
-            .team-card img {
-                width: 100%;
-                height: 180px;
-                object-fit: cover;
-                border-radius: 10px;
-                margin-bottom: 10px;
-            }
-
-            .team-card h3 {
-                font-family: 'Pixellari', sans-serif;
-                margin: 5px 0;
-                font-size: 1.2rem;
-                color:#6c3984
-            }
-
-            .team-card p {
-                margin: 0;
-                font-size: 0.9rem;
-                opacity: 0.7;
-                color:#6c3984
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
@@ -181,7 +36,7 @@
         <div class="team-container">
 
                 <div class="team-card">
-                    <img src="img/Mario.jpeg" alt="Mario">
+                    <img src="img/Mario.png" alt="Mario">
                     <h3>Mario Martín Escribano</h3>
                     <p>Diseño y desarrollo</p>
                 </div>
@@ -232,6 +87,85 @@
         </div>
         </section>
 
+        <section id="historia" class="w3-padding-64">
+        <div class="w3-content" style="max-width:1100px;">
+            <h2 class="w3-xxxlarge upheaval">La historia</h2>
+            <p class="w3-large">
+            En Histeria controlas a Eli, una joven que en su 18 cumpleaños vive un momento que marcará su vida para siempre.
+            Deberás entrar en la mente de Eli y ayudarla a recuperar el control de sus emociones haciendo frente a sus miedos.
+            </p>
+        </section>
+        <section id="historia2" class="slider-section">
+                <div class="slider"> 
+                    <div class="slider-track"> 
+                        <div class="slide slide-bg-eli-1">
+                            <div class="slide-layout">
+                                <div class="slide-left">
+                                    <h2 class="upheaval">Eli</h2>
+                                    <p>Eli necesitará tu ayuda para poder vencer sus miedos e inseguridades y conseguir arreglar su interior y salir más reforzada que nunca.</p>
+                                </div>
+                                <div class="slide-right">
+                                    <img class="eli" src="img/Eli.png" alt="Eli">
+                                    <img class="eli" src="img/EliAnimate.png" alt="Eli animada">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide slide-bg-eli-2">
+                            <div class="slide-layout">
+                                <div class="slide-left">
+                                    <h2 class="upheaval">MECÁNICAS</h2>
+                                    <p>Ayúdate con los movimientos que Eli aprende a lo largo del viaje para vencer a las oscuridades que habitan en cada nivel de su mente.</p>
+                                </div>
+                                <div class="slide-right">
+                                    <img class="eli" src="img/Eli.png" alt="Eli">
+                                    <img class="eli" src="img/EliAnimate.png" alt="Eli animada">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NIVELES -->
+         <section id="otra-seccion">            
+            <div class="carousel-container">
+                
+                <div class="carousel-slides">
+                    
+                    <div class="my-slide fade nivel-1-bg">
+                        <h3>NIVEL 1</h3>
+                        <p>El abandono</p>
+                        <p class="p2">Explora la casa de Eli, investiga sobre su pasado y haz frente al mayor miedo
+                            de Eli, la soledad. ¡Busca la luz hacia un nuevo comienzo!
+                        </p>
+                        <img src="img/EliAnimate.png" alt="Sombra animada">
+                    </div>
+                    
+                    <div class="my-slide fade nivel-2-bg">
+                        <h3>NIVEL 2</h3>
+                        <p>La culpa</p>
+                        <p class="p2"> Hazle frente al sentimiento de culpa investigando su habitación. Descubre más acerca de sus
+                            conflictos y su familia para entender que no todo se resuelve cargando con el peso de la culpa.
+                        </p>
+                    </div>
+
+                    <div class="my-slide fade nivel-3-bg">
+                        <h3>NIVEL 3</h3>
+                        <p>La ansiedad</p>
+                        <p class="p2"> Date prisa en salir del laberinto que ocupa la mente de Eli. Busca la verdad y descubre qué
+                            se necesita para hacer frente a la presión. Busca la calma entre la tormenta y solo así saldrás.
+                        </p>
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+            </div>
+        </section>
+
         <!-- CONTACTO -->
         <section id="contact" class="w3-container w3-padding-64">
             <h2 class="w3-xxxlarge upheaval">Contacto</h2>
@@ -268,6 +202,85 @@
         <footer class="w3-center w3-black w3-padding-32">
             <p>© 2025 Sealy Studio — Todos los derechos reservados</p>
         </footer>
+    
+        <!--SLIDES-->
+        <script>
+            const slider = document.querySelector('.slider');
+            const track = document.querySelector('.slider-track');
+
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            let index = 0;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                startX = e.pageX;
+                scrollLeft = index * slider.clientWidth;
+                track.style.transition = "none"; 
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                track.style.transition = "transform 0.3s ease";
+
+                const moved = startX - event.pageX;
+
+                if (moved > 50 && index < track.children.length - 1) {
+                    index++;
+                } else if (moved < -50 && index > 0) {
+                    index--;
+                }
+
+                track.style.transform = `translateX(-${index * 100}%)`;
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+
+                const walk = e.pageX - startX;
+                track.style.transform = `translateX(${-(index * slider.clientWidth) + walk}px)`;
+            });
+        </script>
+
+        <!--CARRUSEL-->
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Función para avanzar/retroceder
+            function plusSlides(n) {
+            showSlides(slideIndex += n);
+            }
+
+            function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("my-slide");
+            
+            // Si llegamos al final, volvemos al principio
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            
+            // Si retrocedemos desde el principio, vamos al final
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            
+            // Oculta todos los slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            // Muestra solo el slide actual
+            slides[slideIndex - 1].style.display = "block";
+            }
+        </script>
 
     </body>
 </html>
