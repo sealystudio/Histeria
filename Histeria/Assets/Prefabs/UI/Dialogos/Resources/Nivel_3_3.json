@@ -1,0 +1,15 @@
+{
+  "scene": "Nivel 3 - Fantasma 1",
+  "lines": [
+    { "speaker": "Fantasma 1", "text": "Hoola Eli; qué, ¿cómo llevas lo de ir como pollo sin cabeza por ahí?" },
+    { "speaker": "Eli", "text": "Vamos hombre, otro gracioso. ¿Tú también quieres verme morir aquí o qué?" },
+    { "speaker": "Fantasma 1", "text": "Sería curioso cuanto menos, pero te ayudaré." },
+    { "speaker": "Eli", "text": "Entonces… ¿Puedes hacerme salir de aquí?" },
+    { "speaker": "Fantasma 1", "text": "Ehhh no, no puedo." },
+    { "speaker": "Eli", "text": "¿Entonces?" },
+    { "speaker": "Fantasma 1", "text": "Si estás buscando recuerdos de tu infancia creo haber visto tu antigua pelota por aquí cerca. Sigue el camino hacia arriba y debería estar allí." },
+    { "speaker": "Eli", "text": "Está bien, pero como me engañes te juro que…" },
+    { "speaker": "Fantasma 1", "text": "Ey ey relaja va en serio, aunque además, estoy muerto y no podrías dañarme." },
+    { "speaker": "Eli", "text": "Tranquilo, tengo mis métodos. Más te vale que no me mientas." }
+  ]
+}

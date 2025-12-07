@@ -1,0 +1,11 @@
+{
+  "scene": "Nivel 3 - Fantasma 3",
+  "lines": [
+    { "speaker": "Fantasma 3", "text": "¿Estás muy perdida?" },
+    { "speaker": "Eli", "text": "La verdad que un poco." },
+    { "speaker": "Fantasma 3", "text": "Bueno confío en que conseguirá salir de aquí." },
+    { "speaker": "Eli", "text": "Yo también, pero esta niebla va a acabar por asfixiarme." },
+    { "speaker": "Fantasma 3", "text": "Ahora que habla de asfixiarte, quizás aquí cerca encuentres un par de cosas que te recuerden a tu infancia y el asma que tenías." },
+    { "speaker": "Eli", "text": "Espero que me sirva para poder salir de aquí." }
+  ]
+}
