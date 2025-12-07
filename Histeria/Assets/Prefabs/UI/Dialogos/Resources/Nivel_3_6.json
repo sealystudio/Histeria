@@ -1,0 +1,14 @@
+{
+  "scene": "Nivel 3 - Reencuentro",
+  "lines": [
+    { "speaker": "Fantasma Anciano", "text": "¿Me traes tu infancia Eli?" },
+    { "speaker": "Eli", "text": "Esto es lo único que he encontrado…" },
+    { "speaker": "Fantasma Anciano", "text": "¿Y qué sientes ahora mismo?" },
+    { "speaker": "Eli", "text": "Siento… Nostalgia. Eran algunos de mis juguetes favoritos, y luego algo que siempre necesité." },
+    { "speaker": "Fantasma Anciano", "text": "Entonces creo que esto también te pertenece." },
+    { "speaker": "Eli", "text": "Otro fragmento del colgante. ¿Lo tuviste tú todo este tiempo? ¿Por qué no me lo diste al verme?" },
+    { "speaker": "Fantasma Anciano", "text": "Porque quería que te reencontraras con tu niña interior Eli" },
+    { "speaker": "Eli", "text": "Gracias por todo." },
+    { "speaker": "Fantasma Anciano", "text": "Buena suerte en lo que está por venir." }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "scene": "Nivel 4 - Antes del combate",
+  "lines": [
+    { "speaker": "Histeria", "text": "Al fin llegas, te he estado esperando." },
+    { "speaker": "Eli", "text": "He venido a acabar contigo y salir de aquí." },
+    { "speaker": "Histeria", "text": "¿Acabar conmigo? Eli vivo dentro de tí, soy parte de ti, no puedes vencerme. Represento todos tus miedos, traumas, emociones negativas. Soy todo lo malo que vive en tí, no tienes escapatoria." },
+    { "speaker": "Eli", "text": "Eso está por ver, he luchado mucho para llegar hasta aquí y pienso derrotarte." },
+    { "speaker": "Histeria", "text": "Puedes intentarlo, si es que eres capaz…" }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "scene": "Nivel 3 - Fantasma 2",
+  "lines": [
+    { "speaker": "Fantasma 2", "text": "Hola Eli, ¿cómo te va?." },
+    { "speaker": "Eli", "text": "¿Has visto algo que pueda serme de ayuda?." },
+    { "speaker": "Fantasma 2", "text": "Puede ser. ¿Te acuerdas de aquel cubo de Rubik que te regalaron con 14 años?." },
+    { "speaker": "Eli", "text": "Sí lo recuerdo, pero pensé que mi madre lo tiró cuando se rompió." },
+    { "speaker": "Fantasma 2", "text": "Creo haberlo visto en una de estas calles, poco más puedo decirte." },
+    { "speaker": "Eli", "text": "Muchas gracias, de verdad." },
+    { "speaker": "Fantasma 2", "text": "El tiempo apremia Eli, sal de aquí y arréglalo todo." }
+  ]
+}

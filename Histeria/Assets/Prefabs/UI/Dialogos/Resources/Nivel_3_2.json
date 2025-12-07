@@ -1,0 +1,18 @@
+{
+  "scene": "Nivel 3 - Fantasma Anciano",
+  "lines": [
+    { "speaker": "Fantasma Anciano", "text": "Saludos Eli, ¿qué te trae por aquí?" },
+    { "speaker": "Eli", "text": "Holaa… Ehh estoy tratando de encontrar la salida pero no sé adónde ir." },
+    { "speaker": "Fantasma Anciano", "text": "Pobrecita, te has perdido querida, qué pena." },
+    { "speaker": "Eli", "text": "¿Podrías ayudarme a salir de aquí por favor?" },
+    { "speaker": "Fantasma Anciano", "text": "Sí, podría, pero no quiero." },
+    { "speaker": "Eli", "text": "¿Perdón?" },
+    { "speaker": "Fantasma Anciano", "text": "Es divertido verte correr de un lado a otro sin saber dónde ir." },
+    { "speaker": "Eli", "text": "Mira no tengo tiempo para juegos, si no me vas a ayudar piérdete." },
+    { "speaker": "Fantasma Anciano", "text": "Perdida estás tú querida, pero si quieres mi ayuda entrégame tu infancia." },
+    { "speaker": "Eli", "text": "¿Mi infancia?" },
+    { "speaker": "Fantasma Anciano", "text": "Sí, has oído bien. Seguro que encuentras algo que pueda servirme." },
+    { "speaker": "Eli", "text": "No te entiendo pero vale, lo intentaré." },
+    { "speaker": "Fantasma Anciano", "text": "Quizás te encuentres más como yo por ahí. Y otra cosa te digo, el tiempo es vida y a tí no te queda mucho, ten cuidado con respirar mucho tiempo esta niebla o acabarás como nosotros." }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "scene": "Nivel 4 -Inicio",
+  "lines": [
+    { "speaker": "Eli", "text": "Este pasillo es de lo más extraño, ¿adónde me llevará?" },
+    { "speaker": "Subconsciente", "text": "Estamos en lo más profundo de tu mente, Eli." },
+    { "speaker": "Eli", "text": "Así que una vez salga de aquí seré libre, ¿no?" },
+    { "speaker": "Subconsciente", "text": "No creas que será fácil. Como bien te he dicho, al estar en el fondo de tu consciencia, es también donde tus emociones son más fuertes, y donde más peligroso se vuelve todo. Si quieres salir deberás acabar con lo que te encuentres más adelante." },
+    { "speaker": "Eli", "text": "Llegados aquí no pienso rendirme." },
+    { "speaker": "Subconsciente", "text": "Espero que así sea, pero harías bien en tener miedo." }
+  ]
+}

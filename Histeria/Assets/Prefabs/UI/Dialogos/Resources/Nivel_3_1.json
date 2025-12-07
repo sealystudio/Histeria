@@ -1,0 +1,11 @@
+{
+  "scene": "Nivel 3 - Inicio",
+  "lines": [
+    { "speaker": "Eli", "text": "¿Dónde estoy ahora? Con esta niebla no veo nada. Parece que hay varios caminos a mi alrededor, como si fuera un laberinto." },
+    { "speaker": "Subconsciente", "text": "Buena suerte saliendo de aquí, esta vez estás sola." },
+    { "speaker": "Eli", "text": "¿Estás de coña? No veo nada y no sé a dónde ir." },
+    { "speaker": "Subconsciente", "text": "Tú sabrás, encuentra el camino para salir de aquí. Eso sí, más vale que te des prisa, no sé por qué me da que esta niebla acabará contigo si la respiras mucho rato." },
+    { "speaker": "Eli", "text": "¿Hay algo aquí dentro que no quiera matarme?" },
+    { "speaker": "Subconsciente", "text": "Todo esto son reflejos de tu mente y tus recuerdos. En fin Eli, nos vemos en la salida." }
+  ]
+}
