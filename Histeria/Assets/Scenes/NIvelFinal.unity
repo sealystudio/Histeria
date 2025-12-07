@@ -455,8 +455,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0
-    height: 0
+    width: 1
+    height: 0.99726033
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -4519,6 +4519,105 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &859285775 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1654246085970201947, guid: bfc233f3829f5ee4c8b905a7fe789911, type: 3}
+  m_PrefabInstance: {fileID: 925875818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &859285778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859285775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5721053bd12c6d44b151f9dafd0340a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowAmount: 0.5
+--- !u!114 &859285779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859285775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3cd56859d650a44b223b91ba58f05d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowZonePrefab: {fileID: 6280786593680865271, guid: 67ebaee3eeb293e4ea95438ae37c97a5, type: 3}
+--- !u!114 &859285780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859285775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d43150ac656cef4daed5c564cbb9991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1971715843}
+--- !u!114 &859285781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859285775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ca8e294a4522f47bd65d374a4462f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 1000
+  currentHP: 0
+  phase: 0
+  actions: {fileID: 859285782}
+  world: {fileID: 859285779}
+  perception: {fileID: 859285780}
+--- !u!114 &859285782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859285775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e681e474f7db74192b20a19127a464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 2
+  minionPrefab: {fileID: 7841130041481084924, guid: f70ca4a5c2ee2f941acb372e986ebe5e, type: 3}
+--- !u!136 &859285783
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859285775}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5.625
+  m_Height: 5.25
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &925875818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4529,7 +4628,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1654246085970201947, guid: bfc233f3829f5ee4c8b905a7fe789911, type: 3}
       propertyPath: m_Name
-      value: idle_0
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 6542179538549523117, guid: bfc233f3829f5ee4c8b905a7fe789911, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4585,7 +4684,25 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6542179538549523117, guid: bfc233f3829f5ee4c8b905a7fe789911, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1389401345}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1654246085970201947, guid: bfc233f3829f5ee4c8b905a7fe789911, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 859285782}
+    - targetCorrespondingSourceObject: {fileID: 1654246085970201947, guid: bfc233f3829f5ee4c8b905a7fe789911, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 859285781}
+    - targetCorrespondingSourceObject: {fileID: 1654246085970201947, guid: bfc233f3829f5ee4c8b905a7fe789911, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 859285780}
+    - targetCorrespondingSourceObject: {fileID: 1654246085970201947, guid: bfc233f3829f5ee4c8b905a7fe789911, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 859285779}
+    - targetCorrespondingSourceObject: {fileID: 1654246085970201947, guid: bfc233f3829f5ee4c8b905a7fe789911, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 859285778}
+    - targetCorrespondingSourceObject: {fileID: 1654246085970201947, guid: bfc233f3829f5ee4c8b905a7fe789911, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 859285783}
   m_SourcePrefab: {fileID: 100100000, guid: bfc233f3829f5ee4c8b905a7fe789911, type: 3}
 --- !u!1 &1029660608
 GameObject:
@@ -17952,7 +18069,7 @@ MonoBehaviour:
   emptyHeart: {fileID: 2100592875457711318, guid: ac7739dc53f053b4a8a8550056518ec3, type: 3}
   currentHealth: 3
   deathCanvas: {fileID: 22085959}
-  dialogoLinterna: {fileID: 0}
+  dialogoSombra: {fileID: 0}
 --- !u!114 &1971715847
 MonoBehaviour:
   m_ObjectHideFlags: 0
