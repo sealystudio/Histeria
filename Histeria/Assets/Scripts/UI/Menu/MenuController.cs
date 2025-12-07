@@ -19,8 +19,8 @@ public class MenuController : MonoBehaviour
         Application.Quit(); //salir del juego
     }
 
-//    public void BackToMenu()
-//    {
-//        SceneManager.LoadScene("MenuScene");
-//    }
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
 }

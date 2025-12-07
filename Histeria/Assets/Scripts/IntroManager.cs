@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class IntroManager : MonoBehaviour
 {
+    public static bool yaMostroIntro = false;
+
+
     [Header("UI Elements")]
     public CanvasGroup logoEmpresa;    // CanvasGroup del logo de la empresa
     public CanvasGroup textoDialogo;   // CanvasGroup del texto
@@ -45,7 +48,44 @@ public class IntroManager : MonoBehaviour
 
     void Start()
     {
-        // Inicializamos UI invisible
+        if (yaMostroIntro)
+        {
+            MostrarMenuDirecto();
+        }
+        else
+        {
+            // solo si NO ha mostrado intro:
+            InicializarUIInvisible();
+            StartCoroutine(SecuenciaIntro());
+            yaMostroIntro = true;
+        }
+
+    }
+
+    void MostrarMenuDirecto()
+    {
+        botonJugar.SetActive(true);
+        botonContinuar.SetActive(false);
+        botonCreditos.SetActive(true);
+        botonSalir.SetActive(true);
+
+        jugar.alpha = 1f;
+        creditos.alpha = 1f;
+        salir.alpha = 1f;
+        fondo.alpha = 1f; 
+        logoHisteria.alpha = 1f;
+        logoPeque.alpha = 1f;
+
+        RectTransform logoRT = logoHisteria.GetComponent<RectTransform>();
+        RectTransform targetRT = logoFinalPos;
+
+        logoRT.anchoredPosition = targetRT.anchoredPosition;
+        logoRT.sizeDelta = targetRT.sizeDelta;
+
+    }
+
+    void InicializarUIInvisible()
+    {
         logoEmpresa.alpha = 0f;
         textoDialogo.alpha = 0f;
         logoHisteria.alpha = 0f;
@@ -63,8 +103,6 @@ public class IntroManager : MonoBehaviour
             botonCreditos.SetActive(false);
         if (botonSalir != null)
             botonSalir.SetActive(false);
-
-        StartCoroutine(SecuenciaIntro());
     }
 
     IEnumerator SecuenciaIntro()
@@ -105,9 +143,11 @@ public class IntroManager : MonoBehaviour
 
         // 6️ Fade out del texto
         yield return StartCoroutine(FadeCanvasGroup(textoDialogo, 1f, 0f, fadeDuration));
-
         if (musicaFondo != null)
+        {
             musicaFondo.Play();
+            DontDestroyOnLoad(musicaFondo.gameObject);
+        }
 
         // 8️ Fade in del logo Histeria
         yield return StartCoroutine(FadeCanvasGroup(logoHisteria, 0f, 1f, fadeDuration));
@@ -216,7 +256,7 @@ public class IntroManager : MonoBehaviour
         StartCoroutine(MoverYRedimensionarLogo(logoHist, logoFinalPos, 3f));
         yield return new WaitForSeconds(3f);
 
-        StartCoroutine(FadeCanvasGroup(continuar, 1f, 0f, 2f));
+        StartCoroutine(FadeCanvasGroup(continuar, 1f, 0f, 1f));
         botonContinuar.SetActive(false);
 
         StartCoroutine(FadeCanvasGroup(jugar, 0f, 1f, 2f));
