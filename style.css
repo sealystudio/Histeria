@@ -246,6 +246,129 @@ h2 {
     object-fit: contain;
 }
 
+/* Contenedor del Carrusel */
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative; /* Necesario para posicionar las flechas */
+    margin: auto;
+}
+
+.carousel-slides {
+    height: 100vh;
+    min-height: 600px;
+    position: relative; 
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Esconde los slides por defecto */
+.my-slide {
+    display: none; 
+    text-align: center;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.nivel-1-bg {
+    background-image: url("img/fondoNivel1.png");
+}
+
+.nivel-2-bg {
+    background-image: url("img/fondoNivel1.png");
+}
+
+.nivel-3-bg {
+    background-image: url("img/fondoNivel1.png");
+}
+
+.my-slide h3 {
+    font-family: upheaval;
+    color: white; 
+    z-index: 2; 
+    position: relative;
+    margin: 0px 0;
+    font-size: 8rem;
+
+}
+
+.my-slide p {
+    position: absolute !important;
+    top: 30%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    z-index: 5;
+    font-size: 3rem;
+}
+
+.my-slide .p2 {
+    top: 50%;
+    width: 50%;
+    font-size: 2rem;
+}
+
+.my-slide img{
+    top: 50%;
+    position: relative;
+    z-index: 5;
+}
+
+/* Estilo para las flechas (Botones de navegación) */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* Centrado verticalmente */
+    width: auto;
+    padding: 16px;
+    margin-top: -22px; /* Ajuste para centrar */
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5); /* Semitransparente oscuro */
+    z-index: 10;
+}
+
+/* Posiciona el botón "Siguiente" a la derecha */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Cambia el color al pasar el ratón */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Opcional: Efecto de desvanecimiento (fade) */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
 /* --- RESPONSIVE PARA MÓVIL (CORREGIDO) --- */
 @media (max-width: 768px) {
     /* El layout pasa a ser vertical en móvil */

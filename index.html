@@ -95,7 +95,7 @@
             Deberás entrar en la mente de Eli y ayudarla a recuperar el control de sus emociones haciendo frente a sus miedos.
             </p>
         </section>
-        <section id="niveles" class="slider-section">
+        <section id="historia2" class="slider-section">
                 <div class="slider"> 
                     <div class="slider-track"> 
                         <div class="slide slide-bg-eli">
@@ -125,6 +125,38 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- NIVELES -->
+         <section id="otra-seccion">            
+            <div class="carousel-container">
+                
+                <div class="carousel-slides">
+                    
+                    <div class="my-slide fade nivel-1-bg">
+                        <h3>NIVEL 1</h3>
+                        <p>El abandono</p>
+                        <p class="p2">Explora la casa de Eli, investiga sobre su pasado y haz frente al mayor miedo
+                            de Eli, la soledad. ¡Busca la luz hacia un nuevo comienzo!
+                        </p>
+                        <img src="img/EliAnimate.png" alt="Sombra animada">
+                    </div>
+                    
+                    <div class="my-slide fade nivel-2-bg">
+                        <h3>NIVEL 2</h3>
+                        <p>La culpa</p>
+                    </div>
+
+                    <div class="my-slide fade nivel-3-bg">
+                        <h3>NIVEL 3</h3>
+                        <p>La ansiedad</p>
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
             </div>
         </section>
 
@@ -165,6 +197,7 @@
             <p>© 2025 Sealy Studio — Todos los derechos reservados</p>
         </footer>
     
+        <!--SLIDES-->
         <script>
             const slider = document.querySelector('.slider');
             const track = document.querySelector('.slider-track');
@@ -207,6 +240,40 @@
                 const walk = e.pageX - startX;
                 track.style.transform = `translateX(${-(index * slider.clientWidth) + walk}px)`;
             });
+        </script>
+
+        <!--CARRUSEL-->
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Función para avanzar/retroceder
+            function plusSlides(n) {
+            showSlides(slideIndex += n);
+            }
+
+            function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("my-slide");
+            
+            // Si llegamos al final, volvemos al principio
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            
+            // Si retrocedemos desde el principio, vamos al final
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            
+            // Oculta todos los slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            // Muestra solo el slide actual
+            slides[slideIndex - 1].style.display = "block";
+            }
         </script>
 
     </body>
