@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 23abc3b6d62f1e24dbe11b0c582a039c
+guid: a8008f8b5a56251409aa2e81514f2916
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -103,10 +103,10 @@ TextureImporter:
       name: Histeria_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 13
-        width: 122
-        height: 107
+        x: 30
+        y: 15
+        width: 146
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
