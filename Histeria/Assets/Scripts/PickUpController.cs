@@ -32,13 +32,20 @@ public class PickUpController : MonoBehaviour
 
     void Update()
     {
-        // si esta cerca y pulsa F:
-        if (isPlayerNearby && Input.GetKeyDown(KeyCode.F))
+        bool pickupKey;
+
+#if UNITY_ANDROID || UNITY_IOS
+        pickupKey = PlayerInputBridge.PickupPressed;
+#else
+        pickupKey = Input.GetKeyDown(KeyCode.F);
+#endif
+
+        if (isPlayerNearby && pickupKey)
         {
             PickUp();
-
         }
     }
+
 
     void PickUp()
     {
