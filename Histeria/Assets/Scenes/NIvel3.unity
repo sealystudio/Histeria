@@ -465,19 +465,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7595817822089428849, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: m_Size.x
-      value: 0.67
+      value: 0.3094681
       objectReference: {fileID: 0}
     - target: {fileID: 7595817822089428849, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: m_Size.y
-      value: 0.79
+      value: 0.41256905
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595817822089428849, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7595817822089428849, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: m_Offset.x
-      value: -0.0060925484
+      value: 0.06714019
       objectReference: {fileID: 0}
     - target: {fileID: 7595817822089428849, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: m_Offset.y
-      value: -0.024371147
+      value: -0.04408741
       objectReference: {fileID: 0}
     - target: {fileID: 9054580742944166746, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: m_SortingLayer
@@ -513,6 +517,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3906850852819965559, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 39408979}
+    - targetCorrespondingSourceObject: {fileID: 3906850852819965559, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 39408989}
   m_SourcePrefab: {fileID: 100100000, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
 --- !u!4 &39408976 stripped
 Transform:
@@ -580,6 +587,42 @@ MonoBehaviour:
   nextSceneName: 
   inventoryCanvas: {fileID: 695355072}
   hudCanvas: {fileID: 1075123255}
+--- !u!58 &39408989
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39408978}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.057234555, y: 0}
+  m_Radius: 0.25465822
 --- !u!1 &40979862
 GameObject:
   m_ObjectHideFlags: 0
@@ -23672,9 +23715,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.003076923
+    y: 0.002608242
     width: 1
-    height: 0.9959384
+    height: 0.9961398
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34

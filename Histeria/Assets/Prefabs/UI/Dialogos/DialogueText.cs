@@ -63,7 +63,6 @@ public class DialogueText : MonoBehaviour
             if (playerMovement != null)
             {
                 playerMovement.canMove = false;
-                playerMovement.puedeDisparar = false;
             }
         }
 

@@ -4603,7 +4603,7 @@ MonoBehaviour:
   - {fileID: 5537925331262944303, guid: 7a754c433cf6bfe47b95ff636307f51f, type: 3}
   contadorEnemigos: {fileID: 1890644536}
   populationDelay: 1
-  enemyNumber: 10
+  enemyNumber: 15
   numObj: 0
   objectSpawnPoints: []
   enemySpawnPoints: []
