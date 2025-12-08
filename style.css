@@ -187,6 +187,13 @@ h2 {
     background-repeat: no-repeat;
 }
 
+.slide-bg-eli-3 {
+    background-image: url("img/FondoCorazon.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
 /* Superposición oscura */
 .slide::before {
     content: "";
@@ -195,7 +202,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.7); 
     z-index: 1; 
 }
 
