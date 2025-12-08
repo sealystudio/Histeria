@@ -10,6 +10,12 @@
 }
 
 /* ESTILO GENERAL */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita scroll lateral indeseado */
+}
+
 body {
     font-family: 'Pixellari', sans-serif;
     color: #ffffff;
@@ -21,25 +27,28 @@ section {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
 }
 
 section p {
     max-width: 1100px;
+    padding: 0 20px; /* Margen de seguridad para texto en móvil */
 }
 
 /* NAVBAR */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los botones bajen si no caben */
+}
+
 .w3-bar .w3-bar-item {
-    font-size: 1.5rem;
-    padding: 12px 20px;
+    font-size: 1.2rem; /* Un poco más pequeño para que quepan más */
+    padding: 12px 15px;
 }
 
-.pixellari {
-    font-family: 'Pixellari', sans-serif;
-}
-
-.upheaval {
-    font-family: 'Upheaval', sans-serif;
-}
+.pixellari { font-family: 'Pixellari', sans-serif; }
+.upheaval { font-family: 'Upheaval', sans-serif; }
 
 /* HERO */
 .hero-image {
@@ -47,6 +56,7 @@ section p {
     background: url('img/BannerWeb.png') center/cover no-repeat;
     height: 70vh;
     position: relative;
+    width: 100%;
 }
 
 .hero-overlay {
@@ -55,20 +65,7 @@ section p {
     inset: 0;
 }
 
-/* RESPONSIVE HERO (MÓVIL) */
-@media (max-width: 768px) {
-    .hero-image {
-        background-size: contain;
-        background-position: top center;
-        background-repeat: no-repeat;
-        height: 45vh;
-    }
-    .hero-overlay {
-        background: rgba(0,0,0,0.4);
-    }
-}
-
-/* SECCIONES */
+/* SECCIONES FONDO */
 #studio { background: rgba(108, 57, 132, 0.9); }
 #project { background: rgba(22, 0, 33, 0.9); }
 #historia { background: rgba(108, 57, 132, 0.9); }
@@ -77,7 +74,8 @@ section p {
 /* CONTACTO */
 #contact p {
     line-height: 1.2;
-    margin: 5px 0;
+    margin: 10px 0;
+    word-wrap: break-word; /* Evita que emails largos rompan el móvil */
 }
 
 /* IMÁGENES */
@@ -86,12 +84,6 @@ section p {
     border-radius: 6px;
     display: block;
     margin: 20px auto;
-}
-
-@media (max-width: 768px) {
-    .project-img {
-        width: 90%;
-    }
 }
 
 /* TITULOS */
@@ -108,6 +100,7 @@ h2 {
     gap: 30px;
     margin-top: 30px;
     max-width: 1100px;
+    padding-bottom: 30px;
 }
 
 .team-card {
@@ -120,9 +113,7 @@ h2 {
     transition: transform 0.3s;
 }
 
-.team-card:hover {
-    transform: translateY(-5px);
-}
+.team-card:hover { transform: translateY(-5px); }
 
 .team-card img {
     width: 100%;
@@ -146,8 +137,7 @@ h2 {
     color: #6c3984;
 }
 
-/* --- CLASES DEL SLIDER --- */
-
+/* --- SLIDER (Sección Historia 2) --- */
 .slider {
     width: 100%; 
     overflow: hidden; 
@@ -169,254 +159,231 @@ h2 {
     z-index: 1;
 }
 
-.slider-section {
-    width: 100%;
-}
+.slide-bg-eli-1 { background-image: url("img/FondoMenu.png"); background-size: cover; background-position: center; }
+.slide-bg-eli-2 { background-image: url("img/FondoMenu2.png"); background-size: cover; background-position: center; }
+.slide-bg-eli-3 { background-image: url("img/FondoCorazon.png"); background-size: cover; background-position: center; }
 
-.slide-bg-eli-1 {
-    background-image: url("img/FondoMenu.png");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-.slide-bg-eli-2 {
-    background-image: url("img/FondoMenu2.png");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-.slide-bg-eli-3 {
-    background-image: url("img/FondoCorazon.png");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-/* Superposición oscura */
 .slide::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     background-color: rgba(0, 0, 0, 0.7); 
     z-index: 1; 
 }
 
-/* Contenedor del contenido (Texto y Imágenes) */
 .slide-layout {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    /* Distribuye el espacio entre los dos lados y bordes */
     justify-content: space-around; 
     position: relative;
     z-index: 2;
-    padding: 0 5%; /* Espacio horizontal en los bordes */
+    padding: 0 5%;
+    white-space: normal; /* Importante para que el texto haga salto de línea */
 }
 
-/* Lado Izquierdo (Texto) */
-.slide-left {
-    width: 45%; /* Menos del 50% para crear espacio central */
-    color: white;
-    text-align: center;
-    /* Eliminado el margin-right: 2cm; */
-}
+.slide-left { width: 45%; color: white; text-align: center; }
+.slide-right { width: 45%; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly; height: 100%; }
 
-/* Lado Derecho (Imágenes) */
-.slide-right {
-    width: 45%; /* Menos del 50% para crear espacio central */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Distribuye las imágenes equitativamente dentro del espacio vertical */
-    justify-content: space-evenly; 
-    gap: 5rem;
-    height: 100%
-}
+.slide-left h2 { font-size: 6rem; margin-bottom: 0.5rem; }
+.slide-left p { font-size: 2rem; line-height: 1.4; }
+.eli { max-width: 500px; height: 40%; object-fit: contain; }
 
-/* Texto dentro del Slide */
-.slide-left h2 {
-    font-size: 7rem;
-    margin-bottom: 0.5rem;
-}
-
-.slide-left p {
-    font-size: 2rem;
-    line-height: 1.4;
-    white-space: normal;
-}
-
-.eli {
-    max-width: 500px;
-    /* CLAVE: Controla el tamaño vertical. 
-       Ajusta este porcentaje (40%) para hacerlas más grandes o más pequeñas. */
-    height: 40%; 
-    object-fit: contain;
-}
-
-/* Contenedor del Carrusel */
+/* --- CARRUSEL NIVELES --- */
 .carousel-container {
     width: 100%;
-    height: 100%;
-    position: relative; /* Necesario para posicionar las flechas */
+    height: 100vh;
+    position: relative;
     margin: auto;
 }
 
 .carousel-slides {
-    height: 100vh;
-    min-height: 600px;
-    position: relative; 
-    overflow: hidden;
+    height: 100%;
     width: 100%;
+    position: relative; 
 }
 
-/* Esconde los slides por defecto */
 .my-slide {
     display: none; 
     text-align: center;
-    padding: 0;
     height: 100%;
+    /* Flexbox es mejor que absolute para centrar */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Hack para mantener el display:none/block de JS pero usar flex cuando es block */
+.my-slide[style*="block"] {
+    display: flex !important;
 }
 
 .my-slide::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Un poco más oscuro para legibilidad */
     z-index: 1; 
 }
 
-.nivel-1-bg {
-    background-image: url("img/fondoNivel1.png");
-}
+.nivel-1-bg { background-image: url("img/fondoNivel1.png"); }
+.nivel-2-bg { background-image: url("img/fondoNivel2.png"); }
+.nivel-3-bg { background-image: url("img/fondoNivel3.png"); }
 
-.nivel-2-bg {
-    background-image: url("img/fondoNivel2.png");
-}
-
-.nivel-3-bg {
-    background-image: url("img/fondoNivel3.png");
-}
-
+/* Elementos dentro del Nivel - Versión Desktop */
 .my-slide h3 {
     font-family: upheaval;
     color: white; 
     z-index: 2; 
-    position: relative;
-    margin: 0px 0;
-    font-size: 8rem;
-
+    font-size: 6rem;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
+/* El problema original: position absolute. 
+   Vamos a usar flujo normal (static/relative) para que sea responsive por defecto */
 .my-slide p {
-    position: absolute !important;
-    top: 30%;
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    
-    width: 100%;
-    text-align: center;
-    margin: 0;
+    position: relative; /* Cambiado de absolute a relative */
+    width: 80%;
+    max-width: 900px;
     z-index: 5;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px #000;
 }
 
 .my-slide .p2 {
-    top: 50%;
-    width: 50%;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    width: 60%;
 }
 
-.my-slide img{
-    top: 50%;
-    position: relative;
+.my-slide img {
+    margin-top: 30px;
+    max-height: 200px;
     z-index: 5;
+    position: relative;
 }
 
-/* Estilo para las flechas (Botones de navegación) */
+/* Flechas navegación */
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 50%; /* Centrado verticalmente */
+    top: 50%;
     width: auto;
     padding: 16px;
-    margin-top: -22px; /* Ajuste para centrar */
+    margin-top: -22px;
     color: white;
     font-weight: bold;
     font-size: 20px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-    background-color: rgba(0,0,0,0.5); /* Semitransparente oscuro */
+    background-color: rgba(0,0,0,0.5);
     z-index: 10;
 }
+.next { right: 0; border-radius: 3px 0 0 3px; }
+.prev { left: 0; border-radius: 3px 0 0 3px; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
 
-/* Posiciona el botón "Siguiente" a la derecha */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE MÓVIL)
+   ========================================= */
 
-.prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-/* Cambia el color al pasar el ratón */
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-
-/* --- RESPONSIVE PARA MÓVIL (CORREGIDO) --- */
 @media (max-width: 768px) {
-    /* El layout pasa a ser vertical en móvil */
+    
+    /* Navbar compacta */
+    .w3-bar .w3-bar-item {
+        font-size: 0.9rem;
+        padding: 10px 8px;
+        flex-grow: 1; /* Ocupan el espacio disponible */
+        text-align: center;
+    }
+
+    /* Hero más pequeño */
+    .hero-image {
+        height: 50vh;
+        background-position: center top;
+    }
+
+    /* Textos generales más pequeños */
+    .w3-xxxlarge { font-size: 2.5rem !important; }
+    .w3-large { font-size: 1.1rem !important; text-align: justify; }
+    
+    /* Histeria img */
+    .project-img { width: 90%; }
+
+    /* Contacto */
+    #contact .w3-xxlarge { font-size: 1.2rem !important; }
+
+    /* --- SLIDER (EL JUEGO) MOVIL --- */
     .slide-layout {
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        padding: 20px;
         text-align: center;
-        overflow-y: auto; /* Permite el scroll si el contenido es alto */
     }
 
-    /* Los lados ocupan todo el ancho y se ajusta la altura */
     .slide-left, .slide-right {
-        width: 90%; 
-        padding: 20px 0; 
-        height: auto; 
+        width: 100%;
+        height: auto;
     }
+
+    .slide-left h2 { font-size: 3rem; margin-top: 20px; }
+    .slide-left p { font-size: 1.2rem; }
     
     .slide-right {
-        gap: 2rem; /* Reducida la separación de las imágenes en móvil */
-    }
-
-    /* Ajuste de tamaño de texto para móvil */
-    .slide-left h2 {
-        font-size: 3rem;
-    }
-
-    .slide-left p {
-        font-size: 1.2rem;
+        flex-direction: row; /* Imágenes una al lado de la otra en móvil */
+        margin-top: 20px;
     }
     
-    /* Imágenes más pequeñas en móvil */
-    .eli {
-        max-width: 100%; 
-        height: auto; 
-        max-height: 25vh; /* Se mantiene un límite de altura opcional */
+    .eli { height: auto; width: 45%; max-height: 200px; }
+
+    /* --- NIVELES (CARRUSEL) MOVIL --- */
+    /* Aquí estaba el mayor problema de superposición */
+    
+    .carousel-container, .carousel-slides {
+        height: auto;
+        min-height: 100vh; /* Permite que crezca si el texto es largo */
+    }
+
+    .my-slide {
+        padding: 60px 20px; /* Espacio para no chocar con el navbar */
+        justify-content: flex-start; /* Empieza arriba */
+        padding-top: 100px;
+    }
+
+    .my-slide h3 {
+        font-size: 3.5rem; /* Reducir de 8rem a 3.5rem */
+    }
+
+    .my-slide p {
+        width: 100%;
+        font-size: 1.5rem;
+        position: static !important; /* Anula cualquier absolute heredado */
+        transform: none !important;
+        margin: 10px 0;
+    }
+
+    .my-slide .p2 {
+        font-size: 1.1rem;
+        width: 100%;
+    }
+
+    .my-slide img {
+        margin-top: 20px;
+        width: 40%;
+        max-height: 150px;
+    }
+    
+    /* Flechas más grandes para tocar con el dedo */
+    .prev, .next {
+        padding: 20px;
+        background-color: rgba(0,0,0,0.8);
     }
 }
