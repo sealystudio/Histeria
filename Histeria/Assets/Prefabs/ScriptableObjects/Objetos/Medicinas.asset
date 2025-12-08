@@ -19,7 +19,7 @@ MonoBehaviour:
   consumableData:
     healAmount: 0
   storyData:
-    narrationClip: {fileID: 0}
+    narrationClip: {fileID: 8300000, guid: 5f04b2388fcc9ee40a7a1a9267503ded, type: 3}
   equipableData:
     equipPrefab: {fileID: 0}
   triggersLevelChange: 0
