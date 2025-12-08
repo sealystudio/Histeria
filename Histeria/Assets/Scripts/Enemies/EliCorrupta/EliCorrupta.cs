@@ -14,6 +14,7 @@ public class EliCorrupta : EnemyBase
     public float lagrimasCooldown = 0.5f;
 
     public bool PuedeDispararDebug() => puedeDisparar;
+    private bool alreadyCounted = false;
 
     void Start()
     {
@@ -106,9 +107,14 @@ public class EliCorrupta : EnemyBase
     }
 
 
+
     protected override void Die()
     {
-        LevelManager.instance.EnemyMuerto();
+        if (!alreadyCounted)
+        {
+            LevelManager.instance.EnemyMuerto();
+            alreadyCounted = true;
+        }
 
         if (animator != null)
             animator.SetTrigger("Die");
@@ -117,18 +123,6 @@ public class EliCorrupta : EnemyBase
             Instantiate(data.dieEffect, transform.position, Quaternion.identity);
 
         base.Die();
-        
-        
-        /*if (dieSound != null)
-            AudioSource.PlayClipAtPoint(dieSound, transform.position, 0.8f);
-
-       
-
-        if (!alreadyCounted && lm != null)
-        {
-            lm.numeroDeSombras--;
-            alreadyCounted = true;
-        }*/
-
     }
+
 }

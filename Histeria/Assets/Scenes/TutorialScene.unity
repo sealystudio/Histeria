@@ -17999,6 +17999,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 468230180009666646, guid: ff1669850ad1ed14cb06c7a2eab2d185, type: 3}
+      propertyPath: autoStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 468230180009666646, guid: ff1669850ad1ed14cb06c7a2eab2d185, type: 3}
       propertyPath: luzAmbiente
       value: 
       objectReference: {fileID: 1890918774}
@@ -18333,9 +18337,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0031152647
-    width: 1
-    height: 0.9961371
+    y: 0.48615384
+    width: 0.46193773
+    height: 0.46006155
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34

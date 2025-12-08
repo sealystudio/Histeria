@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: 3972918158902773534}
   - component: {fileID: 5740095599532383992}
   - component: {fileID: 7173362368923641822}
-  - component: {fileID: 2294056345605558910}
   m_Layer: 3
   m_Name: SombraAbandono
   m_TagString: Enemy
@@ -239,7 +238,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.037650228}
+  m_Offset: {x: -0.0061341524, y: 0.013117075}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -249,7 +248,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.3200002, y: 1.3705366}
+  m_Size: {x: 1.2709334, y: 1.2601371}
   m_EdgeRadius: 0
 --- !u!50 &2845522870822125194
 Rigidbody2D:
@@ -1530,49 +1529,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.4
   followDistance: 8
---- !u!61 &2294056345605558910
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6653928382663917490}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.0017111301, y: 0.054763675}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.625, y: 1.5625}
-    newSize: {x: 1.625, y: 1.5625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.8891125, y: 0.2687075}
-  m_EdgeRadius: 0

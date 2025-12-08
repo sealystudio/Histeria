@@ -7,18 +7,12 @@ public class DialogueCaller : MonoBehaviour
 
     private bool usado = false;
 
-    public bool soloPrimerEnemigo = false;
-    public static bool dialogoSombraActivado = false;
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Player")) return;
         if (usado && soloUnaVez) return;
-        if (soloPrimerEnemigo && dialogoSombraActivado) return;
 
         usado = true;
-        if (soloPrimerEnemigo) dialogoSombraActivado = true;
         if (dialoguePrefab == null)
         {
             Debug.LogError("No se asignó diálogo en " + gameObject.name);

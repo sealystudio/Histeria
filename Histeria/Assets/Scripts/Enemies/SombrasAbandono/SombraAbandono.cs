@@ -75,21 +75,27 @@ public class SombraAbandono : EnemyBase
 
     private void Update()
     {
-        if (player == null || playerAttack == null) return;
+        if (player == null || playerAttack == null)
+            return;
 
-        // Obtenemos la dirección del crosshair
+        if (Time.timeScale == 0f)
+        {
+            if (rb != null)
+                rb.linearVelocity = Vector2.zero;
+
+            return;
+        }
+
         CrosshairController cross = player.GetComponentInChildren<CrosshairController>();
         Vector2 dirJugadorACross = cross != null ? cross.dir.normalized : Vector2.right;
 
         Vector2 dirJugadorASombra = (Vector2)(transform.position - player.transform.position);
         float distancia = dirJugadorASombra.magnitude;
 
-        // Si el crosshair apunta a la sombra y está dentro del rango
         bool apuntado = Vector2.Angle(dirJugadorACross, dirJugadorASombra) < 30f && distancia < detectionRange;
 
         if (apuntado)
         {
-            // Huir del jugador
             _estoyHuyendo = true;
             direccionHuida = dirJugadorASombra.normalized;
         }
@@ -97,21 +103,32 @@ public class SombraAbandono : EnemyBase
         {
             _estoyHuyendo = false;
 
-            // Si no está apuntado, perseguir jugador si está cerca
             if (JugadorCerca())
                 direccionHuida = (player.transform.position - transform.position).normalized;
             else
-                IdleFloating();
+                isIdle = true; // solo activar la bandera, la física va en FixedUpdate
+
         }
 
-        // Aplicar movimiento con Rigidbody2D
         if (rb != null)
             rb.linearVelocity = direccionHuida * data.moveSpeed;
     }
 
+    private void FixedUpdate()
+    {
+        if (Time.timeScale == 0f)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
 
-    // Función para flotado idle visual
-    private void IdleFloating()
+        // Idle solo cuando no hay jugador cerca y no está huyendo
+        if (!_estoyHuyendo && !JugadorCerca())
+        {
+            IdleFloatingPhysics();
+        }
+    }
+    private void IdleFloatingPhysics()
     {
         if (!isIdle)
         {
@@ -120,12 +137,18 @@ public class SombraAbandono : EnemyBase
         }
 
         float yOffset = Mathf.Sin(Time.time * floatFrequency) * floatAmplitude;
+
         Vector3 newPos = idleStartPos + new Vector3(0, yOffset, 0);
-        transform.position = newPos;
+
+        rb.MovePosition(newPos);
 
         if (animator != null)
             animator.SetTrigger("GoIdle");
     }
+
+
+
+  
 
 
 

@@ -2035,9 +2035,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0020920502
-    width: 0.99999994
-    height: 0.9958159
+    y: 0.003076923
+    width: 1
+    height: 0.9959384
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -6700,6 +6700,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 468230180009666646, guid: 9cd95648e9f7e984abf7895f462ba8ce, type: 3}
+      propertyPath: autoStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 468230180009666646, guid: 9cd95648e9f7e984abf7895f462ba8ce, type: 3}
+      propertyPath: luzAmbiente
+      value: 
+      objectReference: {fileID: 1910554526}
     - target: {fileID: 8893074750125486884, guid: 9cd95648e9f7e984abf7895f462ba8ce, type: 3}
       propertyPath: m_Name
       value: Nivel 1_1

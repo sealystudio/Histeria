@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4dfb241090c30504c944a0de64bb15c0
+guid: 3d9af38524be10a44be35536a677ed5e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7440089183755220498
-    second: Subconsciente_0
+      213: 7427457620268181355
+    second: lagrima_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Subconsciente_0
+      name: lagrima_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 0
-        width: 114
-        height: 129
+        x: 49
+        y: 39
+        width: 62
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee94b018e4e7fb890800000000000000
-      internalID: -7440089183755220498
+      spriteID: b676a507a51a31760800000000000000
+      internalID: 7427457620268181355
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Subconsciente_0: -7440089183755220498
+      lagrima_0: 7427457620268181355
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

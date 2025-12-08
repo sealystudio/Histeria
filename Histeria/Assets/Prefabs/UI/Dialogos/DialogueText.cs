@@ -49,6 +49,8 @@ public class DialogueText : MonoBehaviour
         if (string.IsNullOrEmpty(nombreJSON))
             return;
 
+        Time.timeScale = 0f;
+
         if (luzAmbiente != null)
             luzAmbiente.intensity = 0; 
         
@@ -217,6 +219,7 @@ public class DialogueText : MonoBehaviour
         if (portrait != null)
         {
             CharacterPortrait.sprite = portrait;
+            CharacterPortrait.SetNativeSize();
             CharacterPortrait.enabled = true;
         }
         else
@@ -252,7 +255,6 @@ public class DialogueText : MonoBehaviour
             if (playerMovement != null)
             {
                 playerMovement.canMove = true;
-                playerMovement.puedeDisparar = true;
             }
 
             // Restaurar luz ambiente si quieres
