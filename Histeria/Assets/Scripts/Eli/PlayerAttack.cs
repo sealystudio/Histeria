@@ -46,24 +46,19 @@ public class PlayerAttack : MonoBehaviour
 
         foreach (var hit in hits)
         {
-            // 1. ComprobaciÛn de Sombra (lo que ya tenÌas)
             SombraAbandono sombra = hit.GetComponent<SombraAbandono>();
             if (sombra != null)
             {
                 // sombra.TakeDamageFromLight(1); 
             }
 
-            // 2. NUEVO: ComprobaciÛn del Boss
             BossController boss = hit.GetComponent<BossController>();
 
-            // Si el script est· en el objeto padre pero golpeamos el collider de un hijo,
-            // probamos a buscar en el padre por si acaso:
             if (boss == null) boss = hit.GetComponentInParent<BossController>();
 
             if (boss != null)
             {
-                boss.TakeDamage(punchDamage); // Le restamos vida
-                Debug.Log("°PUM! PuÒetazo al Boss. Vida restante: " + boss.currentHP);
+                boss.TakeDamage(punchDamage);
             }
 
             MinionAI minion = hit.GetComponent<MinionAI>();
@@ -84,20 +79,15 @@ public class PlayerAttack : MonoBehaviour
         Vector3 dir = (target - transform.position).normalized;
 
 
-
-        // instanciamos la l√°grima en la posici√≥n de Eli
         GameObject tear = Instantiate(lagrima, new Vector3(transform.position.x, transform.position.y, 0f), Quaternion.identity);
 
         Debug.Log("L√°grima instanciada en " + transform.position);
 
 
-        // inicializamos el script de la l√°grima con la direcci√≥n
         LagrimasAttack la = tear.GetComponent<LagrimasAttack>();
         if (la != null) la.Initialize(dir, LagrimasAttack.Team.Player);
 
 
-
-        // opcional: rotar el sprite seg√∫n la direcci√≥n
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         tear.transform.rotation = Quaternion.Euler(0, 0, angle) * lagrima.transform.rotation;
 
