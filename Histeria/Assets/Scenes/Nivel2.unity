@@ -3835,9 +3835,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0028985508
-    width: 1
-    height: 0.99501455
+    y: 0.48615384
+    width: 0.46193773
+    height: 0.46006155
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -4592,7 +4592,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsToSpawn:
-  - {fileID: 7638846088084033093, guid: b4e5ee6bb61316e41a406cc9c63b4cb5, type: 3}
+  - {fileID: 7638846088084033093, guid: df6e493bab0395f4da8570708009892e, type: 3}
+  - {fileID: 7638846088084033093, guid: 3599400881fa3ed4e872bc0f0afe4503, type: 3}
+  - {fileID: 7638846088084033093, guid: 03a7b42d6f5c24d458476fd8ec53b84d, type: 3}
+  - {fileID: 7638846088084033093, guid: ccd199c4c4805b0458bf97820e42e700, type: 3}
+  - {fileID: 7638846088084033093, guid: d5aaa1df3a34c0e42a247771d29e5b71, type: 3}
+  - {fileID: 7638846088084033093, guid: e30ccf9cec366f94d9adcb50a422ac94, type: 3}
+  - {fileID: 7638846088084033093, guid: e885cf735bc912d4bbd6d4f40035f06f, type: 3}
   - {fileID: 3268063015829470887, guid: 7280c3d245c29934dbf6969caf61a820, type: 3}
   - {fileID: 3268063015829470887, guid: 7280c3d245c29934dbf6969caf61a820, type: 3}
   - {fileID: 3268063015829470887, guid: 7280c3d245c29934dbf6969caf61a820, type: 3}

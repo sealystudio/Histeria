@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8eafd339c95ab94988857872cee5bda, type: 3}
   m_Name: EliCorruptaData
   m_EditorClassIdentifier: 
-  maxHealth: 50
-  moveSpeed: 2
+  maxHealth: 3
+  moveSpeed: 1
   damage: 1
   detectionRange: 10
   attackRange: 3
