@@ -100,6 +100,10 @@ public class PlayerMovement : MonoBehaviour
         playerEquipment = GetComponent<PlayerEquipment>();
     }
 
+#if UNITY_ANDROID || UNITY_IOS
+public MobileJoystickReader mobileInput;
+#endif
+
     void Update()
     {
 
@@ -120,10 +124,44 @@ public class PlayerMovement : MonoBehaviour
         // block de movimeinto en el dash y bloqueo de movimiento en dialogos
         if (isDashing || !canMove) return;
 
-        // movieminto base
+#if UNITY_ANDROID || UNITY_IOS
+// --- MOVIMIENTO MÓVIL ---
+if (mobileInput != null)
+{
+    moveInput = mobileInput.MoveInput;
+
+    if (mobileInput.DashPressed && canDash && moveInput.magnitude > 0.1f)
+        StartCoroutine(DoDash());
+
+    if (mobileInput.AttackPressed && canPunch && (playerEquipment == null || !playerEquipment.IsEquipped))
+        StartCoroutine(DoPunch());
+
+    if (mobileInput.ShootPressed && puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
+        StartCoroutine(DoLagrimas());
+}
+else
+{
+    moveInput = Vector2.zero;
+}
+#else
+        // --- PC MOVEMENT ---
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
         moveInput = new Vector2(moveX, moveY).normalized;
+
+        // DASH
+        if (Input.GetKeyDown(KeyCode.Space) && canDash && moveInput.magnitude > 0.1f)
+            StartCoroutine(DoDash());
+
+        // PUÑO
+        if (Input.GetMouseButtonDown(0) && canPunch && (playerEquipment == null || !playerEquipment.IsEquipped))
+            StartCoroutine(DoPunch());
+
+        // LÁGRIMAS
+        if (Input.GetMouseButtonDown(1) && puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
+            StartCoroutine(DoLagrimas());
+#endif
+
 
         smoothInput = Vector2.SmoothDamp(smoothInput, moveInput, ref inputVelocity, smoothTime);
 

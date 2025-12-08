@@ -44,7 +44,15 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        bool inventoryKey;
+
+#if UNITY_ANDROID || UNITY_IOS
+        inventoryKey = PlayerInputBridge.InventoryPressed;
+#else
+        inventoryKey = Input.GetKeyDown(KeyCode.E);
+#endif
+
+        if (inventoryKey)
         {
             bool abrir = !inventoryCanvas.enabled;
             PlayerMovement pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
@@ -65,10 +73,10 @@ public class Inventory : MonoBehaviour
                 Cursor.visible = false;
                 pm.canPunch = true;
                 hudCanvas.enabled = true;
-                
             }
         }
     }
+
 
     public bool AddItem(InventoryItem newItem)
     {
