@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 433851905028143093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.49, y: 6.34, z: 0}
+  m_LocalPosition: {x: -9.34, y: 7.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -151,7 +151,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6875, y: 2.25}
+    oldSize: {x: 1.375, y: 4.5}
     newSize: {x: 0.6875, y: 2.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc523877230b78e43a1e2892d931aaf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePrefab: {fileID: 0}
+  dialoguePrefab: {fileID: 8893074750125486884, guid: 1f2cf9821de373b47a99d9a197087a58, type: 3}
   soloUnaVez: 1
   soloPrimerEnemigo: 0
 --- !u!1 &7551078021879021136
