@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GOLPE_BOSS
+  m_Name: pegar_boss
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -22,25 +22,25 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 1508112962, guid: 616ee7a6959788b448b83c445e50c43d, type: 3}
-    - time: 0.16666667
+    - time: 0.083333336
       value: {fileID: 731000019, guid: 616ee7a6959788b448b83c445e50c43d, type: 3}
-    - time: 0.33333334
+    - time: 0.16666667
       value: {fileID: 1865770050, guid: 616ee7a6959788b448b83c445e50c43d, type: 3}
-    - time: 0.5
+    - time: 0.25
       value: {fileID: 1758173747, guid: 616ee7a6959788b448b83c445e50c43d, type: 3}
-    - time: 0.6666667
+    - time: 0.33333334
       value: {fileID: 1429276954, guid: 616ee7a6959788b448b83c445e50c43d, type: 3}
-    - time: 0.8333333
+    - time: 0.41666666
       value: {fileID: 1199604803, guid: 616ee7a6959788b448b83c445e50c43d, type: 3}
-    - time: 1
+    - time: 0.5
       value: {fileID: 1653467039, guid: 616ee7a6959788b448b83c445e50c43d, type: 3}
-    - time: 1.1666666
+    - time: 0.5833333
       value: {fileID: 1285585513, guid: 616ee7a6959788b448b83c445e50c43d, type: 3}
-    - time: 1.3333334
+    - time: 0.6666667
       value: {fileID: 683058944, guid: 616ee7a6959788b448b83c445e50c43d, type: 3}
-    - time: 1.5
+    - time: 0.75
       value: {fileID: -333441373, guid: 616ee7a6959788b448b83c445e50c43d, type: 3}
-    - time: 1.6666666
+    - time: 0.8333333
       value: {fileID: 1820587410, guid: 616ee7a6959788b448b83c445e50c43d, type: 3}
     attribute: m_Sprite
     path: 
@@ -80,7 +80,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.75
+    m_StopTime: 0.9166666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

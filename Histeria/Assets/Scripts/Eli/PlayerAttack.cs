@@ -41,16 +41,35 @@ public class PlayerAttack : MonoBehaviour
 
         Vector3 attackPos = transform.position;
 
-
-        // Detecta enemigos cercanos en rango
+        // Detecta todo lo que esté en el rango del puño
         Collider2D[] hits = Physics2D.OverlapCircleAll(attackPos, punchRange);
+
         foreach (var hit in hits)
         {
+            // 1. Comprobación de Sombra (lo que ya tenías)
             SombraAbandono sombra = hit.GetComponent<SombraAbandono>();
             if (sombra != null)
             {
-                //las sombras no reciben daño del puño
-                //sombra.TakeDamageFromLight(1); // placeholder daÃ±o
+                // sombra.TakeDamageFromLight(1); 
+            }
+
+            // 2. NUEVO: Comprobación del Boss
+            BossController boss = hit.GetComponent<BossController>();
+
+            // Si el script está en el objeto padre pero golpeamos el collider de un hijo,
+            // probamos a buscar en el padre por si acaso:
+            if (boss == null) boss = hit.GetComponentInParent<BossController>();
+
+            if (boss != null)
+            {
+                boss.TakeDamage(punchDamage); // Le restamos vida
+                Debug.Log("¡PUM! Puñetazo al Boss. Vida restante: " + boss.currentHP);
+            }
+
+            MinionAI minion = hit.GetComponent<MinionAI>();
+            if (minion != null)
+            {
+                minion.TakeDamage(punchDamage);
             }
         }
     }
