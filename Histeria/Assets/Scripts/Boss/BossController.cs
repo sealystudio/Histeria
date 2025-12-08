@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public enum BossPhase { Oleada, Histeria, PreAutoDestruccion, Autodestruccion }
 
@@ -13,8 +14,8 @@ public class BossController : MonoBehaviour
     public float moveSpeed = 2.0f;
 
     [Header("Distancias")]
-    public float meleeStopDistance = 2.5f;   // Distancia para pegar puñetazo (Fase 1)
-    public float shootingStopDistance = 5.5f;// Distancia para disparar (Fase 2) - ¡MÁS LEJOS!
+    public float meleeStopDistance = 2.5f;
+    public float shootingStopDistance = 5.5f;
     public float detectionRange = 15f;
 
     [Header("Fases")]
@@ -26,10 +27,15 @@ public class BossController : MonoBehaviour
     public BossPerception perception;
     public Animator animator;
 
-    private float autoDestructionTimer = 15f;
+    [Header("Configuración Final")]
+    public float secondsToSurvive = 15f; // Tiempo que el jugador debe aguantar sin disparar
+
     private float timeWithoutDamage = 0f;
     private bool isDead = false;
     private bool isFacingRight = true;
+
+    // Para controlar que la secuencia de muerte solo empiece una vez
+    private bool deathSequenceStarted = false;
 
     void Start()
     {
@@ -53,33 +59,61 @@ public class BossController : MonoBehaviour
     {
         if (isDead) return;
 
-        EvaluatePhase();
+        // Solo evaluamos cambio de fase si NO estamos ya en la fase final de autodestrucción
+        if (phase != BossPhase.Autodestruccion)
+        {
+            EvaluatePhase();
+        }
+
         RunPhaseBehaviour();
         UpdateAnimatorSpeed();
     }
 
     public void TakeDamage(float dmg)
     {
-        if (phase == BossPhase.PreAutoDestruccion) return;
+        // --- AQUÍ ESTÁ LA LÓGICA DE LA FASE FINAL ---
+        if (phase == BossPhase.PreAutoDestruccion)
+        {
+            // 1. NO bajamos vida (es invencible)
+
+            // 2. CASTIGO: Si el jugador le pega, reiniciamos el contador a 0
+            timeWithoutDamage = 0f;
+
+            Debug.Log("¡NO DISPARES! Has reiniciado el contador de autodestrucción.");
+            return;
+        }
+
+        // Si ya está muriendo, ignoramos todo
+        if (phase == BossPhase.Autodestruccion) return;
+
+        // Daño normal en el resto de fases
         currentHP -= dmg;
-        timeWithoutDamage = 0f;
     }
 
     void EvaluatePhase()
     {
+        // Si ya estamos en Pre-Autodestrucción, no volvemos atrás
+        if (phase == BossPhase.PreAutoDestruccion) return;
+
         float hpPercent = currentHP / maxHP * 100;
 
         if (testHysteriaMode && hpPercent > 50) return;
 
-        if (hpPercent > 50) phase = BossPhase.Oleada;
-        if (hpPercent <= 50 && hpPercent >= 10) phase = BossPhase.Histeria;
-        if (hpPercent < 10) phase = BossPhase.PreAutoDestruccion;
+        if (hpPercent > 50)
+            phase = BossPhase.Oleada;
+        else if (hpPercent <= 50 && hpPercent >= 10)
+            phase = BossPhase.Histeria;
+        else if (hpPercent < 10)
+            phase = BossPhase.PreAutoDestruccion;
     }
 
     void UpdateAnimatorSpeed()
     {
         if (animator == null) return;
-        animator.speed = (phase == BossPhase.Histeria) ? 1.5f : 1f;
+
+        // En Pre-Autodestrucción puede vibrar o ir rápido, tú decides. 
+        // Aquí lo dejo normal o rápido según gustes.
+        animator.speed = (phase == BossPhase.Histeria || phase == BossPhase.PreAutoDestruccion) ? 1.5f : 1f;
     }
 
     void RunPhaseBehaviour()
@@ -88,64 +122,107 @@ public class BossController : MonoBehaviour
 
         switch (phase)
         {
-            // --- FASE 1: ATAQUE CUERPO A CUERPO ---
             case BossPhase.Oleada:
-                if (perception.player != null)
-                {
-                    float dist = Vector3.Distance(transform.position, perception.player.position);
-
-                    // Se mueve si está lejos, pero para cerca (2.5m)
-                    if (dist < detectionRange && dist > meleeStopDistance)
-                    {
-                        MoveTowardsPlayer();
-                        isWalking = true;
-                    }
-                    // Si está cerca (2.5m) -> PUÑETAZO
-                    else if (dist <= meleeStopDistance)
-                    {
-                        FacePlayer();
-                        actions.BasicAttack(); //
-                    }
-                    actions.TrySpawnMinionEvery10Sec();
-                }
+                RunOleadaLogic(ref isWalking);
                 break;
 
-            // --- FASE 2: ATAQUE A DISTANCIA ---
             case BossPhase.Histeria:
-                if (perception.player != null)
-                {
-                    float dist = Vector3.Distance(transform.position, perception.player.position);
-
-                    // Se mueve, pero para mucho antes (5.5m)
-                    if (dist > shootingStopDistance)
-                    {
-                        MoveTowardsPlayer();
-                        isWalking = true;
-                    }
-                    // Si llega a la distancia de disparo (5.5m) -> DISPARA PROYECTILES
-                    else
-                    {
-                        FacePlayer();
-                        actions.SpecialAttack(); // Dispara el cono, NO pega el puño
-                        world.DropHazard();
-                    }
-                }
+                RunHisteriaLogic(ref isWalking);
                 break;
 
             case BossPhase.PreAutoDestruccion:
+                // En esta fase, el Boss sigue atacando (para poner nervioso al jugador)
+                // Pero es invencible y cuenta el tiempo.
+                RunHisteriaLogic(ref isWalking);
                 HandleAutoDestructionCountdown();
                 break;
 
             case BossPhase.Autodestruccion:
-                if (!isDead)
-                {
-                    actions.Explode();
-                    isDead = true;
-                }
+                // Aquí ya no hace nada en el Update, la Corutina 'DieSequence' tiene el control
+                isWalking = false; // Aseguramos que se quede quieto
                 break;
         }
 
         if (animator != null) animator.SetBool("IsWalking", isWalking);
+    }
+
+    // He separado las lógicas para tener el código más limpio
+    void RunOleadaLogic(ref bool isWalking)
+    {
+        if (perception.player != null)
+        {
+            float dist = Vector3.Distance(transform.position, perception.player.position);
+            if (dist < detectionRange && dist > meleeStopDistance)
+            {
+                MoveTowardsPlayer();
+                isWalking = true;
+            }
+            else if (dist <= meleeStopDistance)
+            {
+                FacePlayer();
+                actions.BasicAttack();
+            }
+            actions.TrySpawnMinionEvery10Sec();
+        }
+    }
+
+    void RunHisteriaLogic(ref bool isWalking)
+    {
+        if (perception.player != null)
+        {
+            float dist = Vector3.Distance(transform.position, perception.player.position);
+            if (dist > shootingStopDistance)
+            {
+                MoveTowardsPlayer();
+                isWalking = true;
+            }
+            else
+            {
+                FacePlayer();
+                actions.SpecialAttack();
+                world.DropHazard();
+            }
+        }
+    }
+
+    void HandleAutoDestructionCountdown()
+    {
+        // Sumamos tiempo si nadie le ha pegado en este frame
+        timeWithoutDamage += Time.deltaTime;
+
+        // Si aguantamos 15 segundos...
+        if (timeWithoutDamage >= secondsToSurvive)
+        {
+            phase = BossPhase.Autodestruccion;
+
+            if (!deathSequenceStarted)
+            {
+                StartCoroutine(DieSequence());
+            }
+        }
+    }
+
+    // --- NUEVA CORUTINA DE MUERTE ---
+    IEnumerator DieSequence()
+    {
+        deathSequenceStarted = true;
+        isDead = true; // Esto detiene el Update normal
+
+        Debug.Log("Fase Final completada. Iniciando muerte...");
+
+        // 1. Forzamos estado IDLE
+        if (animator != null)
+        {
+            animator.SetBool("IsWalking", false);
+            animator.ResetTrigger("Attack"); // Cancelamos cualquier ataque pendiente
+            animator.Play("Idle_boss");
+        }
+
+        // 2. Esperamos 2 segundos quietos
+        yield return new WaitForSeconds(2f);
+
+        // 3. EXPLOSIÓN FINAL
+        actions.Explode();
     }
 
     void MoveTowardsPlayer()
@@ -168,11 +245,5 @@ public class BossController : MonoBehaviour
         Vector3 newScale = transform.localScale;
         newScale.x *= -1;
         transform.localScale = newScale;
-    }
-
-    void HandleAutoDestructionCountdown()
-    {
-        timeWithoutDamage += Time.deltaTime;
-        if (timeWithoutDamage >= autoDestructionTimer) phase = BossPhase.Autodestruccion;
     }
 }

@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 5bc362f36cd574e4c810148fdcff518d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2587195458203279371
+    second: ComfyUI_temp_haxez_00003__0
+  - first:
+      213: 1656500084076415617
+    second: ComfyUI_temp_haxez_00003__1
+  - first:
+      213: -6412399413145736708
+    second: ComfyUI_temp_haxez_00003__2
+  - first:
+      213: -3155030673429428444
+    second: ComfyUI_temp_haxez_00003__3
+  - first:
+      213: -5677036553957331973
+    second: ComfyUI_temp_haxez_00003__4
+  - first:
+      213: 2617810200899086843
+    second: ComfyUI_temp_haxez_00003__5
+  - first:
+      213: -2519155159457556142
+    second: ComfyUI_temp_haxez_00003__6
+  - first:
+      213: -1240399375906107826
+    second: ComfyUI_temp_haxez_00003__7
+  - first:
+      213: -2687335306916267262
+    second: ComfyUI_temp_haxez_00003__8
+  - first:
+      213: 7784906157063758201
+    second: ComfyUI_temp_haxez_00003__9
+  - first:
+      213: -8571907977463840316
+    second: ComfyUI_temp_haxez_00003__10
+  - first:
+      213: 6935572482025682263
+    second: ComfyUI_temp_haxez_00003__11
+  - first:
+      213: -9025317689177502379
+    second: ComfyUI_temp_haxez_00003__12
+  - first:
+      213: 4316756094560771555
+    second: ComfyUI_temp_haxez_00003__13
+  - first:
+      213: -5729734991370965492
+    second: ComfyUI_temp_haxez_00003__14
+  - first:
+      213: -4293267504490385340
+    second: ComfyUI_temp_haxez_00003__15
+  - first:
+      213: 4067256542495280630
+    second: ComfyUI_temp_haxez_00003__16
+  - first:
+      213: 5446087005384078698
+    second: ComfyUI_temp_haxez_00003__17
+  - first:
+      213: -3043883133128278752
+    second: ComfyUI_temp_haxez_00003__18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__0
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 191
+        width: 178
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b00e5bacf8097e320800000000000000
+      internalID: 2587195458203279371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__1
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 223
+        width: 178
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18a87c9cc021df610800000000000000
+      internalID: 1656500084076415617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__2
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 207
+        width: 178
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf9668545b49207a0800000000000000
+      internalID: -6412399413145736708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__3
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 223
+        width: 178
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42707ce81541734d0800000000000000
+      internalID: -3155030673429428444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__4
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 223
+        width: 178
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfb2778155d1731b0800000000000000
+      internalID: -5677036553957331973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__5
+      rect:
+        serializedVersion: 2
+        x: 1663
+        y: 207
+        width: 178
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf9ebf90284545420800000000000000
+      internalID: 2617810200899086843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__6
+      rect:
+        serializedVersion: 2
+        x: 1983
+        y: 207
+        width: 178
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2599072cab92a0dd0800000000000000
+      internalID: -2519155159457556142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__7
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 271
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4e008be65739cee0800000000000000
+      internalID: -1240399375906107826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__8
+      rect:
+        serializedVersion: 2
+        x: 2303
+        y: 207
+        width: 178
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20bf3e6c6caa4bad0800000000000000
+      internalID: -2687335306916267262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__9
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 175
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 971698557ea890c60800000000000000
+      internalID: 7784906157063758201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__10
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 175
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c14ee34c177a0980800000000000000
+      internalID: -8571907977463840316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__11
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 63
+        width: 146
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7557d191d6a104060800000000000000
+      internalID: 6935572482025682263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__12
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 63
+        width: 146
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55d868f3161afb280800000000000000
+      internalID: -9025317689177502379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__13
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 63
+        width: 146
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ed1c4efbc238eb30800000000000000
+      internalID: 4316756094560771555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__14
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 63
+        width: 146
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0e253ef164eb70b0800000000000000
+      internalID: -5729734991370965492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__15
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 63
+        width: 146
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4407f1d83ff3b64c0800000000000000
+      internalID: -4293267504490385340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__16
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 63
+        width: 146
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fd80d1b64cc17830800000000000000
+      internalID: 4067256542495280630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__17
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 63
+        width: 146
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a65f9cbd643649b40800000000000000
+      internalID: 5446087005384078698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComfyUI_temp_haxez_00003__18
+      rect:
+        serializedVersion: 2
+        x: 2319
+        y: 63
+        width: 146
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02df518ea64f1c5d0800000000000000
+      internalID: -3043883133128278752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ComfyUI_temp_haxez_00003__0: 2587195458203279371
+      ComfyUI_temp_haxez_00003__1: 1656500084076415617
+      ComfyUI_temp_haxez_00003__10: -8571907977463840316
+      ComfyUI_temp_haxez_00003__11: 6935572482025682263
+      ComfyUI_temp_haxez_00003__12: -9025317689177502379
+      ComfyUI_temp_haxez_00003__13: 4316756094560771555
+      ComfyUI_temp_haxez_00003__14: -5729734991370965492
+      ComfyUI_temp_haxez_00003__15: -4293267504490385340
+      ComfyUI_temp_haxez_00003__16: 4067256542495280630
+      ComfyUI_temp_haxez_00003__17: 5446087005384078698
+      ComfyUI_temp_haxez_00003__18: -3043883133128278752
+      ComfyUI_temp_haxez_00003__2: -6412399413145736708
+      ComfyUI_temp_haxez_00003__3: -3155030673429428444
+      ComfyUI_temp_haxez_00003__4: -5677036553957331973
+      ComfyUI_temp_haxez_00003__5: 2617810200899086843
+      ComfyUI_temp_haxez_00003__6: -2519155159457556142
+      ComfyUI_temp_haxez_00003__7: -1240399375906107826
+      ComfyUI_temp_haxez_00003__8: -2687335306916267262
+      ComfyUI_temp_haxez_00003__9: 7784906157063758201
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
