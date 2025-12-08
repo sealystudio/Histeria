@@ -106,10 +106,10 @@ TextureImporter:
       name: Fantasma 2_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 38
-        width: 44
-        height: 94
+        x: 18
+        y: 49
+        width: 59
+        height: 127
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: Fantasma 2_1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 10
-        width: 37
-        height: 17
+        x: 22
+        y: 13
+        width: 50
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
