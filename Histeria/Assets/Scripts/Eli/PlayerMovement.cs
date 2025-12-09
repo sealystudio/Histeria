@@ -1,10 +1,8 @@
 using System;
 using System.Collections;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems; // <--- IMPRESCINDIBLE PARA CORREGIR EL CLICK
-using static UnityEditor.Progress;
 using Scene = UnityEngine.SceneManagement.Scene;
 
 [RequireComponent(typeof(Rigidbody2D))]
