@@ -106,6 +106,8 @@ MonoBehaviour:
   speed: 10
   lifeTime: 2
   damage: 1
+  hitSound: {fileID: 8300000, guid: b3c852d992dac114aaba3779d88b6a24, type: 3}
+  hitVolume: 1
   team: 0
 --- !u!50 &1893315960134459850
 Rigidbody2D:

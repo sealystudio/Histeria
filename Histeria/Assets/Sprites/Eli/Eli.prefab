@@ -588,6 +588,8 @@ MonoBehaviour:
   punchDamage: 1
   punchRange: 1
   lagrima: {fileID: 1198046803155164575, guid: 900788e29f5d4134c9333533b8eb4390, type: 3}
+  tearSound: {fileID: 8300000, guid: 8a311e799dc25e94da0e73ff298246d2, type: 3}
+  tearVolume: 0.61
   _hasFlashlight: 0
 --- !u!82 &7226142167659855441
 AudioSource:
