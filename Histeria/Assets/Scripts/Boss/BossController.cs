@@ -38,6 +38,12 @@ public class BossController : MonoBehaviour
     // Para controlar que la secuencia de muerte solo empiece una vez
     private bool deathSequenceStarted = false;
 
+    [Header("Diálogo opcional")]
+    public GameObject dialogoFinalBoss; // prefab del diálogo, opcional
+    public GameObject dialogoMuerteBoss;     // se muestra al iniciar DieSequence
+    public GameObject objetoAlCerrar;
+    private bool dialogoMostrado = false;
+
     void Start()
     {
         if (animator == null) animator = GetComponent<Animator>();
@@ -101,12 +107,48 @@ public class BossController : MonoBehaviour
         if (testHysteriaMode && hpPercent > 50) return;
 
         if (hpPercent > 50)
+        {
             phase = BossPhase.Oleada;
+
+        }
         else if (hpPercent <= 50 && hpPercent >= 10)
+        {
             phase = BossPhase.Histeria;
+
+        }
         else if (hpPercent < 10)
+        {
             phase = BossPhase.PreAutoDestruccion;
+
+            if (!dialogoMostrado && dialogoFinalBoss != null)
+            {
+                Time.timeScale = 0f;
+
+                // Bloquear movimiento del jugador
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if (player != null)
+                {
+                    PlayerMovement pm = player.GetComponent<PlayerMovement>();
+                    if (pm != null)
+                    {
+                        pm.canMove = false;
+                    }
+                }
+
+                GameObject instance = Instantiate(dialogoFinalBoss);
+                instance.SetActive(true);
+
+                DialogueText dt = instance.GetComponentInChildren<DialogueText>();
+                if (dt != null)
+                {
+                    dt.InitDialogue(dt.nombreJSON);
+                }
+
+                dialogoMostrado = true;
+            }
+        }
     }
+
 
     void UpdateAnimatorSpeed()
     {
@@ -199,6 +241,32 @@ public class BossController : MonoBehaviour
             if (!deathSequenceStarted)
             {
                 StartCoroutine(DieSequence());
+
+
+                if (dialogoMuerteBoss != null)
+                {
+                    Time.timeScale = 0f;
+
+                    GameObject player = GameObject.FindGameObjectWithTag("Player");
+                    if (player != null)
+                    {
+                        PlayerMovement pm = player.GetComponent<PlayerMovement>();
+                        if (pm != null)
+                        {
+                            pm.canMove = false;
+                        }
+                    }
+
+                    GameObject instance = Instantiate(dialogoMuerteBoss);
+                    instance.SetActive(true);
+
+                    DialogueText dt = instance.GetComponentInChildren<DialogueText>();
+                    if (dt != null)
+                    {
+                        dt.InitDialogue(dt.nombreJSON);
+                        dt.objetoAlCerrar = objetoAlCerrar;
+                    }
+                }
             }
         }
     }
@@ -224,6 +292,8 @@ public class BossController : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         actions.Explode();
+
+       
     }
 
     void MoveTowardsPlayer()
