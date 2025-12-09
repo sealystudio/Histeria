@@ -555,15 +555,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 0.0027855153
-    width: 1
-    height: 0.9952089
-=======
-    y: 0.0021691974
-    width: 1
-    height: 0.9960955
->>>>>>> Javi_Gold
+    y: 0.51904017
+    width: 0.36510265
+    height: 0.36369327
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -5064,7 +5058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ad23796c8a48e48ac47f8a2678ce5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: 0.095
+  volume: 0.3
   bossMusic: {fileID: 8300000, guid: 2fb3101558506e7428a6316b5d85aa71, type: 3}
 --- !u!82 &954220928
 AudioSource:
@@ -17690,14 +17684,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1102341962}
     - target: {fileID: 4037189673966534863, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
-      propertyPath: tearSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 8a311e799dc25e94da0e73ff298246d2, type: 3}
-    - target: {fileID: 4037189673966534863, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
-      propertyPath: tearVolume
-      value: 0.696
-      objectReference: {fileID: 0}
-    - target: {fileID: 4037189673966534863, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: flashPrefab
       value: 
       objectReference: {fileID: 6280786593680865271, guid: 67ebaee3eeb293e4ea95438ae37c97a5, type: 3}
@@ -17747,7 +17733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5610813372568682834, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6905787
+      value: -0.83
       objectReference: {fileID: 0}
     - target: {fileID: 5610813372568682834, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17779,10 +17765,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5610813372568682834, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7226142167659855441, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
-      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9054580742944166746, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
@@ -18124,7 +18106,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9454131f7420d224e938e746346ad4bf, type: 3}
   stepVolume: 0.436
   smashSound: {fileID: 8300000, guid: 2bce78970156f4e4cb3466553502c764, type: 3}
-  smashVolume: 0.362
+  smashVolume: 0.552
 --- !u!82 &7457079641217972214
 AudioSource:
   m_ObjectHideFlags: 0
