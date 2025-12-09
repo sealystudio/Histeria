@@ -23,7 +23,7 @@ public class DialogueData
 public class DialogueText : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
-    public float textSpeed = 0.025f;
+    private float textSpeed = 0.025f;
     private int index;
     private DialogueData dialogueData;
     public UnityEngine.UI.Image CharacterPortrait;
