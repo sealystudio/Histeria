@@ -7,7 +7,6 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
 using static UnityEditor.PlayerSettings;
 
-
 public class SombraAbandono : EnemyBase
 {
     public SombraAbandonoData data;
@@ -16,8 +15,6 @@ public class SombraAbandono : EnemyBase
     public Transform otraSombra;
 
     Vector2 direccionHuida;
-
-  
 
     public Light2D globalTargetLight;
     public Vector2 globalLightPos;
@@ -37,14 +34,13 @@ public class SombraAbandono : EnemyBase
 
     private bool isIdle = false;
     private Vector3 idleStartPos;
-    private float floatAmplitude = 0.2f; // altura del flotado
-    private float floatFrequency = 1f;   // velocidad del flotado
-
+    private float floatAmplitude = 0.2f;
+    private float floatFrequency = 1f;
 
     private AudioSource audioSource;
-    public AudioClip dieSound;           // sonido al recibir daño
+    public AudioClip dieSound;
 
-    private LevelManager lm; 
+    private LevelManager lm;
     private bool alreadyCounted = false;
 
     Rigidbody2D rb;
@@ -55,7 +51,6 @@ public class SombraAbandono : EnemyBase
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
-            // si no tiene audioSource, se lo añadimos
             audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.playOnAwake = false;
         }
@@ -64,13 +59,16 @@ public class SombraAbandono : EnemyBase
 
         player = GameObject.FindGameObjectWithTag("Player");
 
-        playerAttack = player.GetComponent<PlayerAttack>();
+        if (player != null)
+        {
+            playerAttack = player.GetComponent<PlayerAttack>();
+            _playerFlashlight = playerAttack._hasFlashlight;
+        }
 
-
-        _playerFlashlight = playerAttack._hasFlashlight;
+        // CORRECCIÓN: Inicializamos idleStartPos al principio para evitar saltos al 0,0
+        idleStartPos = transform.position;
 
         lights = FindObjectsOfType<Light2D>();
-        Debug.Log("Luces encontradas: " + lights.Length);
     }
 
     private void Update()
@@ -80,9 +78,7 @@ public class SombraAbandono : EnemyBase
 
         if (Time.timeScale == 0f)
         {
-            if (rb != null)
-                rb.linearVelocity = Vector2.zero;
-
+            if (rb != null) rb.linearVelocity = Vector2.zero;
             return;
         }
 
@@ -97,6 +93,7 @@ public class SombraAbandono : EnemyBase
         if (apuntado)
         {
             _estoyHuyendo = true;
+            isIdle = false; 
             direccionHuida = dirJugadorASombra.normalized;
         }
         else
@@ -104,37 +101,43 @@ public class SombraAbandono : EnemyBase
             _estoyHuyendo = false;
 
             if (JugadorCerca())
+            {
+                isIdle = false;
                 direccionHuida = (player.transform.position - transform.position).normalized;
+            }
             else
-                isIdle = true; // solo activar la bandera, la física va en FixedUpdate
+            {
 
+                if (!isIdle)
+                {
+
+                    idleStartPos = transform.position;
+                    isIdle = true;
+
+                    if (rb != null) rb.linearVelocity = Vector2.zero;
+                }
+
+                direccionHuida = Vector2.zero;
+            }
         }
 
-        if (rb != null)
+        if (rb != null && !isIdle)
             rb.linearVelocity = direccionHuida * data.moveSpeed;
     }
 
     private void FixedUpdate()
     {
-        if (Time.timeScale == 0f)
-        {
-            rb.linearVelocity = Vector2.zero;
-            return;
-        }
+        if (Time.timeScale == 0f) return;
 
-        // Idle solo cuando no hay jugador cerca y no está huyendo
-        if (!_estoyHuyendo && !JugadorCerca())
+
+        if (isIdle)
         {
             IdleFloatingPhysics();
         }
     }
+
     private void IdleFloatingPhysics()
     {
-        if (!isIdle)
-        {
-            idleStartPos = transform.position;
-            isIdle = true;
-        }
 
         float yOffset = Mathf.Sin(Time.time * floatFrequency) * floatAmplitude;
 
@@ -147,130 +150,55 @@ public class SombraAbandono : EnemyBase
     }
 
 
-
-  
-
-
-
-    //solo se le puede matar con la linterna, por eso dara igual que le pegues
-
     public void TakeDamageFromLight(int amount)
     {
         TakeDamage(amount, Vector2.zero);
-
         if (data != null && data.hitEffect != null)
         {
             GameObject effect = Instantiate(data.hitEffect, transform.position, Quaternion.identity);
-            effect.transform.position = transform.position; // fuerza que esté en el enemigo
+            effect.transform.position = transform.position;
         }
-
     }
-
-    //Para FSM y BT
 
     private void Awake()
     {
-       rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
             playerAttack = player.GetComponent<PlayerAttack>();
     }
-   
-    public bool PlayerHasFlashLight()
-    {
 
-        return _playerFlashlight;
-    }
-
-    public bool PlayerHasNoFlashLight()
-    {
-
-        return !_playerFlashlight;
-    }
-
-    public bool EstoyHuyendo()
-    {
-
-        return _estoyHuyendo;
-
-    }
+    public bool PlayerHasFlashLight() => _playerFlashlight;
+    public bool PlayerHasNoFlashLight() => !_playerFlashlight;
+    public bool EstoyHuyendo() => _estoyHuyendo;
 
     public bool OtraSombraHuyendo()
     {
-        SombraAbandono sombraHuye;
+        if (otraSombra == null) return false;
+        SombraAbandono sombraHuye = otraSombra.GetComponent<SombraAbandono>();
+        if (sombraHuye == null) sombraHuye = otraSombra.GetComponentInParent<SombraAbandono>();
 
-        if (otraSombra == null) 
-            return false;
+        if (Vector2.Distance(transform.position, otraSombra.transform.position) < detectionRange)
+            return sombraHuye != null && sombraHuye.EstoyHuyendo();
 
-        if (otraSombra.GetComponent<SombraAbandono>() != null) { 
-            
-            return false;
-
-        }
-        else
-        {
-
-          sombraHuye = otraSombra.GetComponentInParent<SombraAbandono>();
-
-        }
-
-
-        if(Vector2.Distance(transform.position , otraSombra.transform.position) < detectionRange) {
-
-
-         return sombraHuye.EstoyHuyendo();
-
-        }
-        else
-        {
-
-            return false;
-        }
-
-
-        
-
+        return false;
     }
 
-    public bool JugadorCerca()
-    {
+    public bool JugadorCerca() => Vector2.Distance(transform.position, player.transform.position) < detectionRange;
+    public bool JugadorNoCerca() => Vector2.Distance(transform.position, player.transform.position) > detectionRange;
+    public bool TengoLuz() => _hasTarget;
+    public bool HaLlegadoLuz() => Vector2.Distance(transform.position, globalLightPos) < 1f;
 
-        return Vector2.Distance(transform.position, player.transform.position) < detectionRange;
-    }
-
-    public bool JugadorNoCerca()
-    {
-
-        return Vector2.Distance(transform.position, player.transform.position) > detectionRange;
-    }
-
-
-
-    public bool TengoLuz()
-    {
-
-        return _hasTarget;
-
-    }
-    public bool HaLlegadoLuz()
-    {
-
-        return Vector2.Distance(transform.position, globalLightPos) < 1f;
-    }
     public StatusFlags SeekLight()
     {
         lights = FindObjectsOfType<Light2D>();
-
         float minDist = Mathf.Infinity;
         Light2D bestLight = null;
 
         foreach (Light2D l in lights)
         {
-            if (l == null || l.intensity <= 0f)
-                continue;
-
+            if (l == null || l.intensity <= 0f) continue;
             float dist = Vector2.Distance(transform.position, l.transform.position);
-
             if (dist < minDist)
             {
                 minDist = dist;
@@ -280,7 +208,6 @@ public class SombraAbandono : EnemyBase
 
         if (bestLight != null)
         {
-            Debug.Log("Luz objetivo seleccionada: " + bestLight.gameObject.name);
             globalTargetLight = bestLight;
             globalLightPos = bestLight.transform.position;
             _hasTarget = true;
@@ -291,49 +218,25 @@ public class SombraAbandono : EnemyBase
         return StatusFlags.Failure;
     }
 
-
-
-
-
-
     public StatusFlags MoveToLight()
     {
-        if (!(_hasTarget && globalTargetLight != null))
-            return StatusFlags.Failure;
-
+        if (!(_hasTarget && globalTargetLight != null)) return StatusFlags.Failure;
         data.moveSpeed = 2.5f;
         direccionHuida = (globalLightPos - (Vector2)transform.position).normalized;
-
-        if (!HaLlegadoLuz())
-            return StatusFlags.Running;
-
-        // Ha llegado
+        if (!HaLlegadoLuz()) return StatusFlags.Running;
         return StatusFlags.Success;
     }
-
-
-
 
     public StatusFlags SwitchOffLight()
     {
         if (globalTargetLight != null)
         {
-            // 1. Establece la intensidad a cero (opcional, pero buena práctica)
             globalTargetLight.intensity = 0f;
-
-            // 2. DESACTIVA EL COMPONENTE Light2D para forzar que permanezca apagado.
             globalTargetLight.enabled = false;
-
-            // Opcional: Si quieres desactivar el GameObject completo:
-            // globalTargetLight.gameObject.SetActive(false); 
         }
-        
         ClearLightTarget();
         return StatusFlags.Success;
     }
-
-
-
 
     void ClearLightTarget()
     {
@@ -343,136 +246,82 @@ public class SombraAbandono : EnemyBase
 
     public StatusFlags Huir()
     {
-
-         data.moveSpeed = 2.5f;
-
-        Vector2 dir = transform.position - player.transform.position ;
-        direccionHuida = dir;
-
-        if (JugadorCerca() && PlayerHasFlashLight())
-            return StatusFlags.Running;
-
-        if (JugadorNoCerca())
-            return StatusFlags.Failure;
-
+        data.moveSpeed = 2.5f;
+        direccionHuida = (transform.position - player.transform.position); // Corrección vector
+        if (JugadorCerca() && PlayerHasFlashLight()) return StatusFlags.Running;
+        if (JugadorNoCerca()) return StatusFlags.Failure;
         return StatusFlags.Success;
     }
 
     public StatusFlags HuirSombra()
     {
         data.moveSpeed = 5f;
-
-        if (direccionHuida == Vector2.zero)
-            direccionHuida = Random.insideUnitCircle.normalized;
+        if (direccionHuida == Vector2.zero) direccionHuida = Random.insideUnitCircle.normalized;
 
         bool above = transform.position.y > other.position.y;
-
         Vector2 perp = new Vector2(-direccionHuida.y, direccionHuida.x);
-
-        if (!above)
-            perp = -perp;
+        if (!above) perp = -perp;
 
         float t = Random.Range(0.1f, 0.9f);
         Vector2 newDir = Vector2.Lerp(direccionHuida.normalized, perp.normalized, t).normalized;
-
-       
-        if (newDir == Vector2.zero)
-            newDir = Random.insideUnitCircle.normalized;
-
+        if (newDir == Vector2.zero) newDir = Random.insideUnitCircle.normalized;
         direccionHuida = newDir;
 
-        if (OtraSombraHuyendo())
-            return StatusFlags.Running;
-
+        if (OtraSombraHuyendo()) return StatusFlags.Running;
         return StatusFlags.Failure;
     }
-
 
     public StatusFlags PerseguirJugador()
     {
         data.moveSpeed = 2f;
-
-        
         direccionHuida = (player.transform.position - transform.position).normalized;
-
-        
-        if (JugadorCerca() && !PlayerHasFlashLight())
-            return StatusFlags.Running;
-
-        if(!JugadorCerca())
-            return StatusFlags.Failure;
-
-
+        if (JugadorCerca() && !PlayerHasFlashLight()) return StatusFlags.Running;
+        if (!JugadorCerca()) return StatusFlags.Failure;
         return StatusFlags.Success;
     }
 
-
-
-
-public StatusFlags Idle()
+    public StatusFlags Idle()
     {
-        // Se detiene completamente la sombra
         data.moveSpeed = 0;
         direccionHuida = Vector2.zero;
+        if (rb != null) rb.linearVelocity = Vector2.zero;
 
-        if (rb != null)
-        {
-            rb.linearVelocity = Vector2.zero;        // <-- Detiene la velocidad
-            rb.angularVelocity = 0f;           // <-- Limpia rotación (opcional)
-        }
-
-
-
-
-        // Activamos el flotado (idle behavior visual)
         if (!isIdle)
         {
             idleStartPos = transform.position;
             isIdle = true;
         }
 
-        if (animator != null)
-            animator.SetTrigger("GoIdle");
-
-
-        if (JugadorCerca())
-            return StatusFlags.Failure;
-
-
+        if (animator != null) animator.SetTrigger("GoIdle");
+        if (JugadorCerca()) return StatusFlags.Failure;
 
         return StatusFlags.Success;
     }
 
     protected override void OnHit()
     {
-        if (animator != null)
-            animator.SetTrigger("Hit");
-
-        if (data != null && data.hitEffect != null)
-            Instantiate(data.hitEffect, transform.position, Quaternion.identity);
+        if (animator != null) animator.SetTrigger("Hit");
+        if (data != null && data.hitEffect != null) Instantiate(data.hitEffect, transform.position, Quaternion.identity);
     }
-
 
     protected override void Die()
     {
-        if (animator != null)
-            animator.SetTrigger("Die");
-
-        if (dieSound != null)
-            AudioSource.PlayClipAtPoint(dieSound, transform.position, 0.8f);
-
-        if (data != null && data.dieEffect != null)
-            Instantiate(data.dieEffect, transform.position, Quaternion.identity);
+        if (animator != null) animator.SetTrigger("Die");
+        if (dieSound != null) AudioSource.PlayClipAtPoint(dieSound, transform.position, 0.8f);
+        if (data != null && data.dieEffect != null) Instantiate(data.dieEffect, transform.position, Quaternion.identity);
 
         if (!alreadyCounted && lm != null)
         {
             LevelManager.instance.EnemyMuerto();
-            DungeonPopulator dp = GameObject.FindGameObjectWithTag("Rooms").GetComponent<DungeonPopulator>();
-            dp.enemyNumber--;
+            // Buscar el DungeonPopulator de forma más segura
+            GameObject rooms = GameObject.FindGameObjectWithTag("Rooms");
+            if (rooms != null)
+            {
+                DungeonPopulator dp = rooms.GetComponent<DungeonPopulator>();
+                if (dp != null) dp.RestarEnemigo(); // Usar el método que creamos antes
+            }
             alreadyCounted = true;
         }
-
         base.Die();
     }
-
 }
