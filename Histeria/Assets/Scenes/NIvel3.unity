@@ -6442,6 +6442,53 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.8, y: 0.8}
   m_EdgeRadius: 0
+--- !u!1 &466683373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 466683375}
+  - component: {fileID: 466683374}
+  m_Layer: 0
+  m_Name: Musica
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &466683374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466683373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a3ae58c8fab8304d82af328c83ce4d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.16
+  musicIntro: {fileID: 8300000, guid: 298d482ed3c622347859f6369a3836ac, type: 3}
+  musicLoop: {fileID: 8300000, guid: 601615a28f929ae45966805d1a782ff8, type: 3}
+--- !u!4 &466683375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466683373}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.77132297, y: -0.54732066, z: 0.08918806}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &479480622
 GameObject:
   m_ObjectHideFlags: 0
@@ -23063,9 +23110,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.5216484
-    width: 0.35923752
-    height: 0.3578508
+    y: 0.14066853
+    width: 0.46630093
+    height: 0.46406686
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -61825,3 +61872,4 @@ SceneRoots:
   - {fileID: 1792246623}
   - {fileID: 594578417}
   - {fileID: 1602308761}
+  - {fileID: 466683375}
