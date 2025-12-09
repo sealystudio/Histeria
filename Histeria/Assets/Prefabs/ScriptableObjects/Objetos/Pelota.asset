@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pelota
   m_EditorClassIdentifier: 
   itemName: Pelota
-  description: 
+  description: No la recordaba tan desgastada...
   icon: {fileID: -343897247172049231, guid: 36fecea1b892da74f8638017e0eb2f1b, type: 3}
   itemType: 1
   consumableData:

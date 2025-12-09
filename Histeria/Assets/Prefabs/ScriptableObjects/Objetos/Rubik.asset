@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rubik
   m_EditorClassIdentifier: 
   itemName: Cubo de Rubik
-  description: 
+  description: "\xA1Ala! Mi cubo de rubik,\xBFme acordar\xE9 de hacerlo?"
   icon: {fileID: 1012298121172793838, guid: d1c220e9a73bf804b9ae6bd94a381088, type: 3}
   itemType: 1
   consumableData:

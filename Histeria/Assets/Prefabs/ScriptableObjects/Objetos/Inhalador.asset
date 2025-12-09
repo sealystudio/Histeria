@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Inhalador
   m_EditorClassIdentifier: 
   itemName: Inhalador
-  description: 
+  description: "Aqu\xED estaba, lo hab\xEDa vuelto a perder. \xBFCu\xE1ntos m\xE1s
+    me encontrar\xE9?"
   icon: {fileID: 6919963696017728776, guid: b5c3df592bf9b0446b89ca7e77efacce, type: 3}
   itemType: 1
   consumableData:

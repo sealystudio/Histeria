@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dibujo2
   m_EditorClassIdentifier: 
   itemName: Dibujo2
-  description: 
+  description: "Esta era su habitaci\xF3n, bueno nuestra habitaci\xF3n."
   icon: {fileID: 4722205564188894045, guid: dd1e79fdd777e464799c286b0a99a29b, type: 3}
   itemType: 1
   consumableData:
