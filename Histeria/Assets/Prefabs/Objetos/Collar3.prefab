@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f21a34393838094583ffece6fa94cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 8adc02eaeb510da4d8d860c4ffae1498, type: 2}
+  itemData: {fileID: 11400000, guid: 9579d740428dadd46a500e8cdbe7157f, type: 2}
   itemSound: {fileID: 8300000, guid: b0fddd320e1e96845b3fb06a8491388e, type: 3}
 --- !u!61 &4688052118759696786
 BoxCollider2D:

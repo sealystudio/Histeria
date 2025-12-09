@@ -65,6 +65,7 @@ public class VideoManager : MonoBehaviour
     {
         continueButton.gameObject.SetActive(true);
         buttonActive = true;
+        Cursor.visible = true;
 
         continueButton.onClick.RemoveAllListeners();
         continueButton.onClick.AddListener(OnButtonClicked);
@@ -72,6 +73,7 @@ public class VideoManager : MonoBehaviour
 
     void OnButtonClicked()
     {
+        Cursor.visible = false;
         int currentIndex = SceneManager.GetActiveScene().buildIndex;
         if (currentIndex + 1 < SceneManager.sceneCountInBuildSettings)
         {
