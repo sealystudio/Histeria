@@ -570,7 +570,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5475d1423aa2dec41a5cbf5f3d13d3e1, type: 3}
   - {fileID: 8300000, guid: 7ca48113233bcaa4c840ba06ff54e2e0, type: 3}
   grassFootstepSounds: []
-  footstepVolume: 0.327
+  footstepVolume: 0.442
   dashSound: {fileID: 8300000, guid: ab23c81f411a5ad4194419d10315ac1c, type: 3}
   dashVolume: 0.7
   mobileInput: {fileID: 0}
