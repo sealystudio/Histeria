@@ -59,7 +59,7 @@ public class BossHealthBar : MonoBehaviour
             }
         }
 
-        if (boss.currentHP <= 0)
+        if (boss.currentHP <= 7.5f)
         {
             canvasGroup.alpha = 0f;
         }
