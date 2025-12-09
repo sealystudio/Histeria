@@ -136,16 +136,14 @@ public class Inventory : MonoBehaviour
             case ItemType.Narrativo:
                 if (item.storyData != null && item.storyData.narrationClip != null)
                 {
-                    GameObject tempAudioObj = new GameObject("TempNarrationAudio");
-                    AudioSource tempSource = tempAudioObj.AddComponent<AudioSource>();
-                    tempSource.clip = item.storyData.narrationClip;
-                    tempSource.playOnAwake = false;
-                    tempSource.spatialBlend = 0f; // 2D
-                    tempSource.volume = 1f;
-                    tempSource.Play();
-
-                    // Destruye el objeto una vez terminado el clip
-                    GameObject.Destroy(tempAudioObj, tempSource.clip.length);
+                    if (NarrativeManager.instance != null)
+                    {
+                        NarrativeManager.instance.ReproducirNarrativa(item.storyData.narrationClip);
+                    }
+                    else
+                    {
+                        Debug.LogWarning("¡Falta el NarrativeManager en la escena!");
+                    }
                 }
                 break;
 
