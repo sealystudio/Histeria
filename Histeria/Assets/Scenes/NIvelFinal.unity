@@ -555,9 +555,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.002608242
+    y: 0.0027855153
     width: 1
-    height: 0.9961398
+    height: 0.9952089
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -6014,7 +6014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ad23796c8a48e48ac47f8a2678ce5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: 0.3
+  volume: 0.095
   bossMusic: {fileID: 8300000, guid: 2fb3101558506e7428a6316b5d85aa71, type: 3}
 --- !u!82 &954220928
 AudioSource:
@@ -20337,7 +20337,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9454131f7420d224e938e746346ad4bf, type: 3}
   stepVolume: 0.436
   smashSound: {fileID: 8300000, guid: 2bce78970156f4e4cb3466553502c764, type: 3}
-  smashVolume: 0.552
+  smashVolume: 0.362
 --- !u!82 &7457079641217972214
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 0111d2e13def55244b10af465c8711e0
+guid: 061a96aa17180b4439c89b46a69f14d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1274077819577551020
-    second: Fantasma 2_0
-  - first:
-      213: 6136747332163126677
-    second: Fantasma 2_1
+      213: -4264131222823925702
+    second: Fantasma 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fantasma 2_0
+      name: Fantasma 1_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 49
-        width: 59
-        height: 127
+        x: 1
+        y: 0
+        width: 13
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45730e339f0915ee0800000000000000
-      internalID: -1274077819577551020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fantasma 2_1
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 13
-        width: 50
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 595c8e94f2b1a2550800000000000000
-      internalID: 6136747332163126677
+      spriteID: a388de3ce33c2d4c0800000000000000
+      internalID: -4264131222823925702
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fantasma 2_0: -1274077819577551020
-      Fantasma 2_1: 6136747332163126677
+      Fantasma 1_0: -4264131222823925702
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
