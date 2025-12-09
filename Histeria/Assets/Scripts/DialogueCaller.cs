@@ -7,6 +7,9 @@ public class DialogueCaller : MonoBehaviour
 
     private bool usado = false;
 
+    [Header("Objeto que aparece al cerrar (opcional)")]
+    public GameObject objetoAlCerrar; // este sí es de la escena
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Player")) return;
@@ -28,6 +31,7 @@ public class DialogueCaller : MonoBehaviour
         if (dt != null)
         {
             dt.InitDialogue(dt.nombreJSON);
+            dt.objetoAlCerrar = objetoAlCerrar;
         }
     }
 }

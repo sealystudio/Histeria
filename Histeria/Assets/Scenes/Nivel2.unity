@@ -1419,7 +1419,7 @@ PrefabInstance:
     - target: {fileID: 3077688138084939893, guid: de461acdea7e2f34e9d1c218b1fe3370, type: 3}
       propertyPath: playerInventory
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1712316808}
     - target: {fileID: 4146791508209097170, guid: de461acdea7e2f34e9d1c218b1fe3370, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2050,6 +2050,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8893074750125486884, guid: 81d3450fef92249459ccebddb1b0f966, type: 3}
     - target: {fileID: 1658239834712821598, guid: 44d259b01eda9bb4695c06eff10bfd1a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658239834712821598, guid: 44d259b01eda9bb4695c06eff10bfd1a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658239834712821598, guid: 44d259b01eda9bb4695c06eff10bfd1a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658239834712821598, guid: 44d259b01eda9bb4695c06eff10bfd1a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2669,9 +2681,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0021691974
+    y: 0.002608242
     width: 1
-    height: 0.9960955
+    height: 0.9961398
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -3378,7 +3390,7 @@ MonoBehaviour:
   - {fileID: 5537925331262944303, guid: 7a754c433cf6bfe47b95ff636307f51f, type: 3}
   contadorEnemigos: {fileID: 1890644536}
   populationDelay: 1
-  enemyNumber: 15
+  enemyNumber: 1
   numObj: 0
   objectSpawnPoints: []
   enemySpawnPoints: []

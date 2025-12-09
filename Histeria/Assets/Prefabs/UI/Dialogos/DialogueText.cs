@@ -40,6 +40,8 @@ public class DialogueText : MonoBehaviour
     public Light2D luzAmbiente;
 
 
+    [Header("Acción al cerrar")]
+    public GameObject objetoAlCerrar; // opcional, se activa al terminar el diálogo
 
 
     void Start()
@@ -264,6 +266,11 @@ public class DialogueText : MonoBehaviour
 
             if (CharacterPortrait != null)
                 CharacterPortrait.enabled = false;
+
+            if (objetoAlCerrar != null)
+            {
+                objetoAlCerrar.SetActive(true);
+            }
         }
 
     }

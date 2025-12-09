@@ -44,6 +44,25 @@ public class DungeonPopulator : MonoBehaviour
         contadorEnemigos.text = enemyNumber.ToString();
     }
 
+    public void RestarEnemigo()
+    {
+        enemyNumber--;
+        if (enemyNumber < 0) enemyNumber = 0; // Evitar números negativos
+
+        ActualizarTextoEnemigos();
+    }
+
+    void ActualizarTextoObjetos()
+    {
+        if (contadorObjetos != null) contadorObjetos.text = numObj.ToString();
+    }
+
+    void ActualizarTextoEnemigos()
+    {
+        if (contadorEnemigos != null)
+            contadorEnemigos.text = enemyNumber.ToString();
+    }
+
     void PopulateDungeon()
     {
         if (isPopulated) return;
