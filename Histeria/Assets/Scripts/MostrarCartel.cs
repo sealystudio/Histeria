@@ -14,16 +14,25 @@ public class MostrarCartel : MonoBehaviour
 
     private bool isPlayerNearby = false;
 
-    
+
+
     void Start()
     {
-        cartelCanvas1.enabled = false;
-        cartelCanvas2.enabled = false;
-        cartelCanvas3.enabled = false;
-        cartelCanvas4.enabled = false;
-        cartelCanvas5.enabled = false;
+        if (cartelCanvas1 != null) cartelCanvas1.enabled = false;
+        if (cartelCanvas2 != null) cartelCanvas2.enabled = false;
+        if (cartelCanvas3 != null) cartelCanvas3.enabled = false;
+        if (cartelCanvas4 != null) cartelCanvas4.enabled = false;
+        if (cartelCanvas5 != null) cartelCanvas5.enabled = false;
     }
 
+    void OcultarTodos()
+    {
+        if (cartelCanvas1 != null) cartelCanvas1.enabled = false;
+        if (cartelCanvas2 != null) cartelCanvas2.enabled = false;
+        if (cartelCanvas3 != null) cartelCanvas3.enabled = false;
+        if (cartelCanvas4 != null) cartelCanvas4.enabled = false;
+        if (cartelCanvas5 != null) cartelCanvas5.enabled = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -49,24 +58,15 @@ public class MostrarCartel : MonoBehaviour
 
         switch (canvasSelected)
         {
-            case 1: cartelCanvas1.enabled = true; break;
-            case 2: cartelCanvas2.enabled = true; break;
-            case 3: cartelCanvas3.enabled = true; break;
-            case 4: cartelCanvas4.enabled = true; break;
-            case 5: cartelCanvas5.enabled = true; break;
-
+            case 1: if (cartelCanvas1 != null) cartelCanvas1.enabled = true; break;
+            case 2: if (cartelCanvas2 != null) cartelCanvas2.enabled = true; break;
+            case 3: if (cartelCanvas3 != null) cartelCanvas3.enabled = true; break;
+            case 4: if (cartelCanvas4 != null) cartelCanvas4.enabled = true; break;
+            case 5: if (cartelCanvas5 != null) cartelCanvas5.enabled = true; break;
             default:
-                Debug.LogWarning("canvasSelected no válido (usa 1–4).");
+                Debug.LogWarning("canvasSelected no válido (usa 1–5).");
                 break;
         }
     }
-
-    void OcultarTodos()
-    {
-        cartelCanvas1.enabled = false;
-        cartelCanvas2.enabled = false;
-        cartelCanvas3.enabled = false;
-        cartelCanvas4.enabled = false;
-        cartelCanvas5.enabled = false;
-    }
+    
 }

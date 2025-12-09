@@ -7,18 +7,20 @@ public class DungeonPopulator : MonoBehaviour
     public static DungeonPopulator instance;
 
     [Header("Configuración de Objetos")]
+    [Tooltip("La lista de prefabs de objetos (llaves, pociones, etc.) que DEBEN aparecer en este nivel.")]
     public GameObject[] objectsToSpawn;
     public TextMeshProUGUI contadorObjetos;
-
     [Header("Configuración de Enemigos")]
+    [Tooltip("La lista de prefabs de enemigos que pueden aparecer en este nivel.")]
     public GameObject[] enemiesToSpawn;
-    public TextMeshProUGUI contadorEnemigos; // La UI se queda aquí
+    public TextMeshProUGUI contadorEnemigos;
 
     [Header("Configuración Interna")]
+    [Tooltip("Delay (en segundos) para esperar a que el mapa se termine de generar antes de poblar.")]
     public float populationDelay = 1.0f;
-    public int enemyNumber = 15; // Este número irá bajando
+    public int enemyNumber = 15;
     public int numObj;
-
+    // Listas separadas para los distintos tipos de spawn
     [HideInInspector] public List<Transform> objectSpawnPoints = new List<Transform>();
     [HideInInspector] public List<Transform> enemySpawnPoints = new List<Transform>();
 
@@ -34,21 +36,14 @@ public class DungeonPopulator : MonoBehaviour
     {
         Invoke("PopulateDungeon", populationDelay);
         numObj = objectsToSpawn.Length;
-
-        // Actualizamos los textos al inicio
-        ActualizarTextoObjetos();
-        ActualizarTextoEnemigos();
     }
-
     void Update()
     {
-        // Solo actualizamos objetos si es necesario, pero NO sobrescribimos enemigos aquí
-        // para evitar el bug de que el número no baje.
-        if (contadorObjetos != null)
-            contadorObjetos.text = numObj.ToString();
+        // Actualizar los textos en cada frame
+        contadorObjetos.text = numObj.ToString();
+        contadorEnemigos.text = enemyNumber.ToString();
     }
 
-    // --- FUNCIÓN NUEVA: LLAMAR CUANDO UN ENEMIGO MUERE ---
     public void RestarEnemigo()
     {
         enemyNumber--;
@@ -67,25 +62,28 @@ public class DungeonPopulator : MonoBehaviour
         if (contadorEnemigos != null)
             contadorEnemigos.text = enemyNumber.ToString();
     }
-    // -----------------------------------------------------
 
     void PopulateDungeon()
     {
         if (isPopulated) return;
         isPopulated = true;
 
+        // Spawnear objetos
         SpawnFromList(objectsToSpawn, objectSpawnPoints);
-        SpawnEnemies(enemyNumber);
 
-        // Aseguramos que el texto esté bien tras spawnear
-        ActualizarTextoEnemigos();
+        // Spawnear enemigos
+        SpawnEnemies(enemyNumber);
     }
 
     void SpawnEnemies(int quantity)
     {
         for (int i = 0; i < quantity; i++)
         {
-            if (enemySpawnPoints.Count == 0) return;
+            if (enemySpawnPoints.Count == 0)
+            {
+                Debug.LogWarning("No quedan spawn points para enemigos.");
+                return;
+            }
 
             int randIndex = Random.Range(0, enemySpawnPoints.Count);
             int randEnemy = Random.Range(0, enemiesToSpawn.Length);
@@ -98,11 +96,16 @@ public class DungeonPopulator : MonoBehaviour
         }
     }
 
+
     private void SpawnFromList(GameObject[] prefabs, List<Transform> spawnPoints)
     {
         foreach (GameObject prefab in prefabs)
         {
-            if (spawnPoints.Count == 0) break;
+            if (spawnPoints.Count == 0)
+            {
+                Debug.LogWarning("¡No quedan Spawn Points! No se pudo generar: " + prefab.name);
+                break;
+            }
 
             int randIndex = Random.Range(0, spawnPoints.Count);
             Transform spawnPoint = spawnPoints[randIndex];
@@ -111,6 +114,7 @@ public class DungeonPopulator : MonoBehaviour
             spawnPoints.RemoveAt(randIndex);
         }
 
+        // Destruir los spawn points que no se usaron
         foreach (Transform point in spawnPoints)
         {
             Destroy(point.gameObject);
