@@ -375,6 +375,38 @@ PrefabInstance:
       propertyPath: 'footstepSounds.Array.data[5]'
       value: 
       objectReference: {fileID: 8300000, guid: 7ca48113233bcaa4c840ba06ff54e2e0, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: grassFootstepSounds.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: 'grassFootstepSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: c46a6fe7902176c43b34efd2dfdd1eb6, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: 'grassFootstepSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 61f24172bc5ac634dbe57148ab9b0214, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: 'grassFootstepSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 0115e3a461c7c2f45be46b58e97adeac, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: 'grassFootstepSounds.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: f689483e4c599294892c38a3c12bb7d4, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: 'grassFootstepSounds.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d680d730d610954cbb45d4c401afca4, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: 'grassFootstepSounds.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 228b374b246945b4385551861715d476, type: 3}
+    - target: {fileID: 4029321851287820816, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: 'grassFootstepSounds.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 33bd749a22982a349bd2c5df2184a4ef, type: 3}
     - target: {fileID: 4037189673966534863, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: crosshair
       value: 
@@ -23617,9 +23649,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.48615384
-    width: 0.46193773
-    height: 0.46006155
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34

@@ -18812,6 +18812,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1102341962}
     - target: {fileID: 4037189673966534863, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: tearSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a311e799dc25e94da0e73ff298246d2, type: 3}
+    - target: {fileID: 4037189673966534863, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: tearVolume
+      value: 0.696
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037189673966534863, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: flashPrefab
       value: 
       objectReference: {fileID: 6280786593680865271, guid: 67ebaee3eeb293e4ea95438ae37c97a5, type: 3}
@@ -18893,6 +18901,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5610813372568682834, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7226142167659855441, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9054580742944166746, guid: 83f050e998685d54d8cfedce55fb04f5, type: 3}

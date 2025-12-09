@@ -18,10 +18,18 @@ public class PlayerAttack : MonoBehaviour
     [Header("Lagrimas")]
     public GameObject lagrima;
 
+    [Header("Audio Disparo")]
+    public AudioClip tearSound; 
+    [Range(0f, 1f)] public float tearVolume = 0.5f;
+    private AudioSource audioSource;
+
     [Header("Tengo Linterna?")]
     public bool _hasFlashlight;
     public  event Action<bool> OnFlashlightChanged;
-
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void SetFlashlight(bool value)
     {
         if (_hasFlashlight == value) return; // No notificar si no cambió
@@ -80,6 +88,14 @@ public class PlayerAttack : MonoBehaviour
 
 
         GameObject tear = Instantiate(lagrima, new Vector3(transform.position.x, transform.position.y, 0f), Quaternion.identity);
+
+        if (audioSource != null && tearSound != null)
+        {
+            
+            audioSource.pitch = UnityEngine.Random.Range(0.85f, 1.15f);
+
+            audioSource.PlayOneShot(tearSound, tearVolume);
+        }
 
         Debug.Log("LÃ¡grima instanciada en " + transform.position);
 

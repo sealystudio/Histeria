@@ -67,9 +67,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("Sonido")]
     [Tooltip("Añade aquí todos los clips de audio de pasos que tengas")]
     public AudioClip[] footstepSounds;
+    [Tooltip("Sonidos de pasos para el Nivel 3 (Hierba)")]
+    public AudioClip[] grassFootstepSounds;
+
     [Tooltip("Qué tan fuerte deben sonar los pasos (0.0 = silencio, 1.0 = volumen máximo)")]
     [Range(0f, 1f)]
     public float footstepVolume = 0.2f;
+
+
 
     [Tooltip("Clip de audio para el Dash")]
     public AudioClip dashSound;
@@ -107,12 +112,11 @@ public class PlayerMovement : MonoBehaviour
         
         //DEBUG DISTANCIA (Lo probaba para ELI , comentarlo si os molesta , era para comprobar distancias a ojo)
 
-
         Debug.DrawRay(transform.position, Vector2.right * 4.5f , Color.red);
         Debug.DrawRay(transform.position, Vector2.down * 4.5f, Color.red);
         Debug.DrawRay(transform.position, Vector2.up * 4.5f, Color.red);
         Debug.DrawRay(transform.position, Vector2.left * 4.5f, Color.red);
-
+         
         Debug.DrawRay(transform.position, Vector2.right * 3, Color.red);
 
 
@@ -292,16 +296,23 @@ public class PlayerMovement : MonoBehaviour
     public void PlayFootstepSound()
     {
 
-        if (footstepSounds == null || footstepSounds.Length == 0)
+        AudioClip[] soundPool = footstepSounds;
+
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == "NIvel3" && grassFootstepSounds != null && grassFootstepSounds.Length > 0)
+        {
+            soundPool = grassFootstepSounds;
+        }
+
+        if (soundPool == null || soundPool.Length == 0)
         {
             return;
         }
 
-        // clip aleatorio
-        int randIndex = UnityEngine.Random.Range(0, footstepSounds.Length);
-        AudioClip clipToPlay = footstepSounds[randIndex];
+        int randIndex = UnityEngine.Random.Range(0, soundPool.Length);
+        AudioClip clipToPlay = soundPool[randIndex];
 
-        // volumen
         if (clipToPlay != null)
         {
             audioSource.PlayOneShot(clipToPlay, footstepVolume);
