@@ -301,12 +301,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 7000504550809511552}
-  textSpeed: 0.1
   CharacterPortrait: {fileID: 497777114780417758}
-  autoStart: 1
+  autoStart: 0
   nombreJSON: Nivel_1_2
   hudCanvas: {fileID: 9166439009364903911}
   luzAmbiente: {fileID: 0}
+  objetoAlCerrar: {fileID: 0}
 --- !u!1 &8893074750125486884
 GameObject:
   m_ObjectHideFlags: 0

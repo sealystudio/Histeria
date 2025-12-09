@@ -91,11 +91,6 @@ public class LevelManager : MonoBehaviour
 
         Debug.Log("[LevelManager] Enemigo muerto. Restantes: " + numeroDeEnemigos);
 
-        if (DungeonPopulator.instance != null)
-        {
-            DungeonPopulator.instance.RestarEnemigo(); //
-        }
-
         if (numeroDeEnemigos <= 0 && !objetoAparecido)
         {
             DropObject();

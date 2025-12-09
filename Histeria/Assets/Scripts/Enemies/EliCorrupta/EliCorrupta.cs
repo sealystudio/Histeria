@@ -116,7 +116,16 @@ public class EliCorrupta : EnemyBase
         if (data != null && data.dieEffect != null)
             Instantiate(data.dieEffect, transform.position, Quaternion.identity);
 
-        LevelManager.instance.EnemyMuerto();
+        if (!alreadyCounted)
+        {
+            if (LevelManager.instance != null)
+                LevelManager.instance.EnemyMuerto();
+
+            if (DungeonPopulator.instance != null)
+                DungeonPopulator.instance.RestarEnemigo();
+
+            alreadyCounted = true;
+        }
 
         base.Die();
     }
