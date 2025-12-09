@@ -110,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsPaused) return;
 
-<<<<<<< HEAD
+
         Debug.DrawRay(transform.position, Vector2.right * 4.5f , Color.red);
         Debug.DrawRay(transform.position, Vector2.down * 4.5f, Color.red);
         Debug.DrawRay(transform.position, Vector2.up * 4.5f, Color.red);
@@ -121,11 +121,6 @@ public class PlayerMovement : MonoBehaviour
 
 
         // block de movimeinto en el dash y bloqueo de movimiento en dialogos
-=======
-      
-
-        // Bloqueo de movimiento
->>>>>>> Javi_Gold
         if (isDashing || !canMove) return;
 
         // 1. REINICIAMOS LAS VARIABLES TEMPORALES CADA FRAME
@@ -349,7 +344,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (footstepSounds == null || footstepSounds.Length == 0) return;
 
-<<<<<<< HEAD
         AudioClip[] soundPool = footstepSounds;
 
         string currentScene = SceneManager.GetActiveScene().name;
@@ -367,13 +361,8 @@ public class PlayerMovement : MonoBehaviour
         int randIndex = UnityEngine.Random.Range(0, soundPool.Length);
         AudioClip clipToPlay = soundPool[randIndex];
 
-=======
-        // Clip aleatorio
-        int randIndex = UnityEngine.Random.Range(0, footstepSounds.Length);
-        AudioClip clipToPlay = footstepSounds[randIndex];
-
         // Volumen
->>>>>>> Javi_Gold
+
         if (clipToPlay != null)
         {
             audioSource.PlayOneShot(clipToPlay, footstepVolume);
