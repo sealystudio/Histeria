@@ -555,9 +555,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.5216484
-    width: 0.35923752
-    height: 0.3578508
+    y: 0.0020876827
+    width: 1
+    height: 0.99607515
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -18047,9 +18047,13 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 742633503963039722, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
+      propertyPath: slowAmount
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 2535453767182266790, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
       propertyPath: maxHP
-      value: 25
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 2535453767182266790, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
       propertyPath: phase
@@ -18061,7 +18065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2535453767182266790, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
       propertyPath: moveSpeed
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2535453767182266790, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
       propertyPath: testHysteriaMode
@@ -18074,7 +18078,7 @@ PrefabInstance:
     - target: {fileID: 3355700159375257988, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
       propertyPath: slowZonePrefab
       value: 
-      objectReference: {fileID: 7638846088084033093, guid: d6cbc90c2e428ea479432f47b1748af1, type: 3}
+      objectReference: {fileID: 6886490576030291271, guid: 92d2052e01035664cba5688882fa4a36, type: 3}
     - target: {fileID: 3942754418231029316, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
       propertyPath: m_Name
       value: BOSS
@@ -18143,6 +18147,10 @@ PrefabInstance:
       propertyPath: minionPrefab
       value: 
       objectReference: {fileID: 7081510197742227921, guid: e69d0cc192f10104db1020838617bf2b, type: 3}
+    - target: {fileID: 8710179906739605714, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
+      propertyPath: attackCooldown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710179906739605714, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
       propertyPath: projectilePrefab
       value: 
