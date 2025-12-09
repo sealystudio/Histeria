@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class MobileUIManager : MonoBehaviour
 {
-    public GameObject mobileControls;
+    public GameObject canvasMobile;
 
     void Start()
     {
 #if UNITY_ANDROID || UNITY_IOS
-        mobileControls.SetActive(true);
+        canvasMobile.SetActive(true);
 #else
-        mobileControls.SetActive(false);
+        canvasMobile.SetActive(false);
 #endif
     }
 }

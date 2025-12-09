@@ -46,19 +46,26 @@ public class Inventory : MonoBehaviour
     {
         if (canOpenInventory)
         {
-            bool inventoryKey;
+            bool inventoryKey = false;
 
-#if UNITY_ANDROID || UNITY_IOS
-        inventoryKey = PlayerInputBridge.InventoryPressed;
+#if UNITY_ANDROID || UNITY_IOS || UNITY_EDITOR
+            // Leemos el botón del bridge móvil
+            inventoryKey = MobileInputBridge.InventoryPressed;
 #else
+            // Leemos la tecla E del teclado
             inventoryKey = Input.GetKeyDown(KeyCode.E);
 #endif
 
-
             if (inventoryKey)
             {
+                // ¡IMPORTANTE! Apagamos el botón inmediatamente para que no se repita
+                MobileInputBridge.InventoryPressed = false;
+
                 bool abrir = !inventoryCanvas.enabled;
+
+                // Buscamos al jugador (asegúrate de que tu Player tenga el tag "Player")
                 PlayerMovement pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+
                 inventoryCanvas.enabled = abrir;
                 isInventoryOpen = abrir;
 
@@ -67,19 +74,18 @@ public class Inventory : MonoBehaviour
                     Time.timeScale = 0f;
                     Cursor.visible = true;
                     inventoryCanvas.GetComponent<InventoryUI>().RefreshUI();
-                    pm.canPunch = false;
+                    if (pm != null) pm.canPunch = false; // Evitamos null check por seguridad
                     hudCanvas.enabled = false;
                 }
                 else
                 {
                     Time.timeScale = 1f;
                     Cursor.visible = false;
-                    pm.canPunch = true;
+                    if (pm != null) pm.canPunch = true;
                     hudCanvas.enabled = true;
                 }
             }
         }
-      
     }
 
 
