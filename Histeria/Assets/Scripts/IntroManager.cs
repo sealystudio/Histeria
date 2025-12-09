@@ -20,6 +20,7 @@ public class IntroManager : MonoBehaviour
     public CanvasGroup salir;   // CanvasGroup del boton salir
     public CanvasGroup logoPeque;   // CanvasGroup del logo de Sealy Studio
     public CanvasGroup fondo;   // CanvasGroup del logo de Sealy Studio
+    public CanvasGroup DLC;   // CanvasGroup del logo de Sealy Studio
     [SerializeField] private GameObject botonContinuar;
     [SerializeField] private GameObject botonJugar;
     [SerializeField] private GameObject botonCreditos;
@@ -48,6 +49,12 @@ public class IntroManager : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetInt("Nivel1_Desbloqueado", 0);
+        PlayerPrefs.SetInt("Nivel2_Desbloqueado", 0);
+        PlayerPrefs.SetInt("Nivel3_Desbloqueado", 0);
+        PlayerPrefs.SetInt("NivelFinal_Desbloqueado", 0);
+        PlayerPrefs.Save();
+
         if (yaMostroIntro)
         {
             MostrarMenuDirecto();
@@ -73,6 +80,7 @@ public class IntroManager : MonoBehaviour
         creditos.alpha = 1f;
         salir.alpha = 1f;
         fondo.alpha = 1f; 
+        DLC.alpha = 1f; 
         logoHisteria.alpha = 1f;
         logoPeque.alpha = 1f;
 
@@ -94,6 +102,8 @@ public class IntroManager : MonoBehaviour
         salir.alpha = 0f;
         logoPeque.alpha = 0f;
         fondo.alpha = 0f;
+        DLC.alpha = 0f;
+
 
         if (botonContinuar != null)
             botonContinuar.SetActive(false);
@@ -263,6 +273,7 @@ public class IntroManager : MonoBehaviour
         StartCoroutine(FadeCanvasGroup(creditos, 0f, 1f, 2f));
         StartCoroutine(FadeCanvasGroup(salir, 0f, 1f, 2f));
         StartCoroutine(FadeCanvasGroup(logoPeque, 0f, 1f, 2f));
+        StartCoroutine(FadeCanvasGroup(DLC, 0f, 1f, 2f));
 
         if (botonJugar != null)
             botonJugar.SetActive(true);
