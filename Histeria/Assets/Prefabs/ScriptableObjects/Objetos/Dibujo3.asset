@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dibujo3
   m_EditorClassIdentifier: 
   itemName: Dibujo3
-  description: 
+  description: "El monstruo, cuanto m\xE1s lo veo m\xE1s miedo me da."
   icon: {fileID: -1142125425380094492, guid: 3607322b24e599248a6e83df6f524d63, type: 3}
   itemType: 1
   consumableData:

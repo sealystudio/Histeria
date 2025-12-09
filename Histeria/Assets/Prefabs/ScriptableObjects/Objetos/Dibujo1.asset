@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dibujo1
   m_EditorClassIdentifier: 
   itemName: Dibujo1
-  description: 
+  description: "Ojal\xE1 volver al sal\xF3n de Riley a jugar con ella..."
   icon: {fileID: 2857268611285488632, guid: abbb6ab5f9eb29549a8a8f4868314d67, type: 3}
   itemType: 1
   consumableData:

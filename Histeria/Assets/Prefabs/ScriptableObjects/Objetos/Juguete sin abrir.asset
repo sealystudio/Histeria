@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Juguete sin abrir
   m_EditorClassIdentifier: 
   itemName: Juguete sin abrir
-  description: 
+  description: Nunca lo llegue a abrir...
   icon: {fileID: -2203634156012345140, guid: b7d72525e6a99a54ea3579b0476374ab, type: 3}
   itemType: 1
   consumableData:

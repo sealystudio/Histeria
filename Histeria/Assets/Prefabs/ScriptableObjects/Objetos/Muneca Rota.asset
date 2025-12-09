@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Muneca Rota
   m_EditorClassIdentifier: 
   itemName: Muneca Rota
-  description: 
+  description: "Era la \xFAnica muneca que me compro mi padre."
   icon: {fileID: 6312683666038220385, guid: ef80d8b7ba32a5c4ba535f09c34ff245, type: 3}
   itemType: 1
   consumableData:

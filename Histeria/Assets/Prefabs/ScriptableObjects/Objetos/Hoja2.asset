@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hoja2
   m_EditorClassIdentifier: 
   itemName: Hoja2
-  description: 
+  description: "Hoja de mi diario el d\xEDa de mi trece cumpleanos."
   icon: {fileID: 4335789612916040810, guid: 57481544aa3ed0242ae6a2e7ad6ab5e7, type: 3}
   itemType: 1
   consumableData:

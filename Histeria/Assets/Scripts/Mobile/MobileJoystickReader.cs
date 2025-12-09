@@ -7,7 +7,8 @@ public class MobileJoystickReader : MonoBehaviour
 
     void Update()
     {
-        if (Application.isMobilePlatform)
+        
+        if (Application.isMobilePlatform || Application.isEditor)
         {
             MobileInputBridge.MoveJoystick = joystickLeft.GetInput();
             MobileInputBridge.LookJoystick = joystickRight.GetInput();
