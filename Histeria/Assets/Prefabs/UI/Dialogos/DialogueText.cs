@@ -210,7 +210,6 @@ public class DialogueText : MonoBehaviour
             ? $"{dialogueData.lines[index].speaker}: {dialogueData.lines[index].text}"
             : dialogueData.lines[index].text;
 
-        // --- BLOQUE DEL RETRATO MODIFICADO ---
         string portraitName = string.IsNullOrEmpty(dialogueData.lines[index].portrait)
             ? dialogueData.lines[index].speaker
             : dialogueData.lines[index].portrait;
@@ -223,8 +222,6 @@ public class DialogueText : MonoBehaviour
 
             CharacterPortrait.preserveAspect = true;
 
-            // No queremos cambiar el tamaño del cuadro, queremos que la imagen se adapte al cuadro.
-            // CharacterPortrait.SetNativeSize(); 
 
             CharacterPortrait.enabled = true;
         }
@@ -232,7 +229,6 @@ public class DialogueText : MonoBehaviour
         {
             CharacterPortrait.enabled = false;
         }
-
 
         foreach (char letter in fullLine.ToCharArray())
         {
