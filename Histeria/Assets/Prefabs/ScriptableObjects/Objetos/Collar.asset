@@ -24,4 +24,4 @@ MonoBehaviour:
   equipableData:
     equipPrefab: {fileID: 0}
   triggersLevelChange: 1
-  nextSceneName: Nivel2
+  nextSceneName: TransicionNivel1

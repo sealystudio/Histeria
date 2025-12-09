@@ -23,17 +23,27 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/MenuScene.unity
   - m_enabled: 1
+    m_path: Assets/Scenes/CreditosScene.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/TutorialScene.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/TransicionTutorial.unity
+  - m_enabled: 1
     m_path: Assets/Scenes/SampleScene.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/CreditosScene.unity
+    m_path: Assets/Scenes/TransicionNivel1.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Nivel2.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/Sample2Scene.unity
+    m_path: Assets/Scenes/TransicionNivel2.unity
   - m_enabled: 1
     m_path: Assets/Scenes/NIvel3.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/TutorialScene.unity
+    m_path: Assets/Scenes/TransicionNivel3.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/NIvelFinal.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/TransicionNivel4.unity
   m_ScriptingDefines:
   - 
   m_PlayerSettingsYaml:
@@ -740,6 +750,8 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 8279373581745389643
       type: {class: WebGLPlatformSettings, ns: UnityEditor.WebGL, asm: UnityEditor.WebGL.Extensions}
       data:
