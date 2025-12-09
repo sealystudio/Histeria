@@ -3,7 +3,8 @@ using UnityEngine;
 public class EnemyFollow : MonoBehaviour
 {
     public float speed = 3f;
-    public float followDistance = 15f; // Distancia a la que el enemigo empieza a seguir
+    public float followDistance = 15f;
+
     Transform player;
     Rigidbody2D rb;
 
@@ -14,42 +15,31 @@ public class EnemyFollow : MonoBehaviour
 
         if (player == null)
             Debug.LogError("NO SE ENCONTRÓ PLAYER.");
-        else
-            Debug.Log("Enemigo encontró a Eli correctamente.");
     }
 
     void FixedUpdate()
     {
-        if (player == null) return;
+        if (Time.timeScale == 0f)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
 
-        // Calcula la distancia entre el enemigo y el jugador
+        if (player == null)
+            return;
+
         float distance = Vector2.Distance(transform.position, player.position);
 
-        // Solo seguir si está dentro de followDistance
         if (distance <= followDistance)
         {
             Vector2 dir = (player.position - transform.position).normalized;
 
-            if (rb != null)
-            {
-                rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
-            }
-            else
-            {
-                transform.Translate(dir * speed * Time.deltaTime);
-            }
+            rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
 
-            // 🔹 Girar en el eje X según la posición del jugador
-            if (player.position.x > transform.position.x)
-            {
-                // Eli está a la derecha → mirar a la derecha
-                transform.localScale = new Vector3(1, 1, 1);
-            }
-            else if (player.position.x < transform.position.x)
-            {
-                // Eli está a la izquierda → mirar a la izquierda
-                transform.localScale = new Vector3(-1, 1, 1);
-            }
+            // giro visual
+            transform.localScale = player.position.x > transform.position.x
+                ? new Vector3(1, 1, 1)
+                : new Vector3(-1, 1, 1);
         }
     }
 }

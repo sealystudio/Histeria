@@ -1,0 +1,53 @@
+{
+  "scene": "Nivel 4 - Final",
+  "lines": [
+    {
+      "speaker": "Subconsciente",
+      "text": "Se acabó Eli, lo lograste."
+    },
+    {
+      "speaker": "Eli",
+      "text": "Por fin…El último de los fragmentos del colgante. Sólo quiero salir de aquí…"
+    },
+    {
+      "speaker": "Subconsciente",
+      "text": "A partir de aquí Eli me despido. Siempre viviré dentro de tí."
+    },
+    {
+      "speaker": "Eli",
+      "text": "Gracias por haberme guiado y acompañado. Quizás no me ayudaras siempre que te lo pedí, pero eso me hizo valerme más por mí misma para seguir adelante."
+    },
+    {
+      "speaker": "Voz misteriosa",
+      "text": "Bien hecho Eli, siempre supe que serías capaz de salir adelante."
+    },
+    {
+      "speaker": "Eli",
+      "text": "¿Quién eres? Tu voz… Me resulta familiar. ¿Mamá, eres tú?"
+    },
+    {
+      "speaker": "Mamá",
+      "text": "Hola cariño, ya acabó todo."
+    },
+    {
+      "speaker": "Eli",
+      "text": "¡Mamá por qué te fuiste! Te echo tanto de menos."
+    },
+    {
+      "speaker": "Mamá",
+      "text": "Tuve que hacerlo Eli, no podía seguir cuidando de tí como te merecías. Quiero que vivas una vida plena sin preocupaciones."
+    },
+    {
+      "speaker": "Eli",
+      "text": "Me siento muy sola mamá, sólo quiero estar contigo."
+    },
+    {
+      "speaker": "Mamá",
+      "text": "Siempre que conserves este colgante estaré contigo hija mía, sé fuerte. Te quiero mucho Eli, feliz vida."
+    },
+    {
+      "speaker": "Eli",
+      "text": "Yo también te quiero mucho mamá, de aquí al cielo."
+    }
+  ]
+}

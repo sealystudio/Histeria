@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 66b32b3a59fbd4840a811d6a7b5130c7
+guid: bbd414718ff1a5945b792d11f361d8b8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3524435637398925298
-    second: Fantasma 3_0
-  - first:
-      213: -5866915654027989924
-    second: Fantasma 3_1
+      213: -4264131222823925702
+    second: Fantasma 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -99,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fantasma 3_0
+      name: Fantasma 1_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 38
-        width: 44
-        height: 94
+        x: 1
+        y: 0
+        width: 13
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e001c170670b61fc0800000000000000
-      internalID: -3524435637398925298
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fantasma 3_1
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 10
-        width: 37
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c5cab720c47849ea0800000000000000
-      internalID: -5866915654027989924
+      spriteID: a388de3ce33c2d4c0800000000000000
+      internalID: -4264131222823925702
       vertices: []
       indices: 
       edges: []
@@ -160,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fantasma 3_0: -3524435637398925298
-      Fantasma 3_1: -5866915654027989924
+      Fantasma 1_0: -4264131222823925702
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

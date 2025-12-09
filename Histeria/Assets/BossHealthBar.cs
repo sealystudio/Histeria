@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(CanvasGroup))] // Obliga a que haya un CanvasGroup
+[RequireComponent(typeof(CanvasGroup))]
+[RequireComponent(typeof(AudioSource))]
 public class BossHealthBar : MonoBehaviour
 {
     [Header("Referencias")]
@@ -9,13 +10,22 @@ public class BossHealthBar : MonoBehaviour
     public Slider slider;
     private CanvasGroup canvasGroup;
 
-    private bool isBossActive = false; 
+    [Header("Configuración")]
+    public float appearDistance = 25f; // ¡AQUÍ ESTÁ LA CLAVE! Pon un número mayor que 15
+
+    [Header("Audio")]
+    public AudioClip appearSound;
+    [Range(0f, 1f)] public float volume = 1f;
+    private AudioSource audioSource;
+
+    private bool isBossActive = false;
 
     void Start()
     {
         if (slider == null) slider = GetComponent<Slider>();
         if (boss == null) boss = FindObjectOfType<BossController>();
         canvasGroup = GetComponent<CanvasGroup>();
+        audioSource = GetComponent<AudioSource>();
 
         if (boss != null && slider != null)
         {
@@ -25,7 +35,7 @@ public class BossHealthBar : MonoBehaviour
 
         if (canvasGroup != null)
         {
-            canvasGroup.alpha = 0f; // Invisible
+            canvasGroup.alpha = 0f;
         }
     }
 
@@ -41,7 +51,8 @@ public class BossHealthBar : MonoBehaviour
             {
                 float distance = Vector3.Distance(boss.transform.position, boss.perception.player.position);
 
-                if (distance <= boss.detectionRange)
+                // AHORA USAMOS TU DISTANCIA PERSONALIZADA, NO LA DEL BOSS
+                if (distance <= appearDistance)
                 {
                     ShowHealthBar();
                 }
@@ -57,6 +68,12 @@ public class BossHealthBar : MonoBehaviour
     void ShowHealthBar()
     {
         isBossActive = true;
-        canvasGroup.alpha = 1f; 
+        canvasGroup.alpha = 1f;
+
+        if (appearSound != null && audioSource != null)
+        {
+            audioSource.pitch = 1f; // Aseguramos tono normal
+            audioSource.PlayOneShot(appearSound, volume);
+        }
     }
 }

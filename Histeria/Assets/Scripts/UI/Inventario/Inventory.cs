@@ -15,12 +15,12 @@ public class Inventory : MonoBehaviour
     public Canvas inventoryCanvas;
     public Canvas hudCanvas;
     public static bool isInventoryOpen = false;
+    public static bool canOpenInventory = true;
 
     private PlayerHealthHearts playerHealth;
     private PlayerEquipment playerEquipment;
 
     private AudioSource audioSource;
-
 
     [System.Serializable]
     public class ItemSlot
@@ -44,31 +44,44 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (canOpenInventory)
         {
-            bool abrir = !inventoryCanvas.enabled;
-            PlayerMovement pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-            inventoryCanvas.enabled = abrir;
-            isInventoryOpen = abrir;
+            bool inventoryKey;
 
-            if (abrir)
+#if UNITY_ANDROID || UNITY_IOS
+        inventoryKey = PlayerInputBridge.InventoryPressed;
+#else
+            inventoryKey = Input.GetKeyDown(KeyCode.E);
+#endif
+
+
+            if (inventoryKey)
             {
-                Time.timeScale = 0f;
-                Cursor.visible = true;
-                inventoryCanvas.GetComponent<InventoryUI>().RefreshUI();
-                pm.canPunch = false;
-                hudCanvas.enabled = false;
-            }
-            else
-            {
-                Time.timeScale = 1f;
-                Cursor.visible = false;
-                pm.canPunch = true;
-                hudCanvas.enabled = true;
-                
+                bool abrir = !inventoryCanvas.enabled;
+                PlayerMovement pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+                inventoryCanvas.enabled = abrir;
+                isInventoryOpen = abrir;
+
+                if (abrir)
+                {
+                    Time.timeScale = 0f;
+                    Cursor.visible = true;
+                    inventoryCanvas.GetComponent<InventoryUI>().RefreshUI();
+                    pm.canPunch = false;
+                    hudCanvas.enabled = false;
+                }
+                else
+                {
+                    Time.timeScale = 1f;
+                    Cursor.visible = false;
+                    pm.canPunch = true;
+                    hudCanvas.enabled = true;
+                }
             }
         }
+      
     }
+
 
     public bool AddItem(InventoryItem newItem)
     {
@@ -149,7 +162,24 @@ public class Inventory : MonoBehaviour
         if (item.triggersLevelChange)
         {
             Debug.Log("[Inventory] El ítem usado activa cambio de escena → " + item.nextSceneName);
-           
+
+            // 🔓 DESBLOQUEAR NIVEL SEGÚN LA ESCENA QUE VAS A CARGAR
+            if (item.nextSceneName == "SampleScene")      // Nivel 1
+                PlayerPrefs.SetInt("Nivel1_Desbloqueado", 1);
+
+            if (item.nextSceneName == "Nivel2")           // Nivel 2
+                PlayerPrefs.SetInt("Nivel2_Desbloqueado", 1);
+
+            if (item.nextSceneName == "Nivel3")           // Nivel 3
+                PlayerPrefs.SetInt("Nivel3_Desbloqueado", 1);
+
+            if (item.nextSceneName == "NivelFinal")       // Nivel Final
+                PlayerPrefs.SetInt("NivelFinal_Desbloqueado", 1);
+
+            // Guardar cambios
+            PlayerPrefs.Save();
+
+            // Cargar escena
             LevelManager.instance.LoadScene(item.nextSceneName);
         }
 

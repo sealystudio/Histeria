@@ -26,6 +26,7 @@ public class BossController : MonoBehaviour
     public BossWorldInteraction world;
     public BossPerception perception;
     public Animator animator;
+    public BossMusicManager musicManager;
 
     [Header("Configuración Final")]
     public float secondsToSurvive = 15f; // Tiempo que el jugador debe aguantar sin disparar
@@ -202,26 +203,26 @@ public class BossController : MonoBehaviour
         }
     }
 
-    // --- NUEVA CORUTINA DE MUERTE ---
     IEnumerator DieSequence()
     {
         deathSequenceStarted = true;
-        isDead = true; // Esto detiene el Update normal
+        isDead = true;
 
         Debug.Log("Fase Final completada. Iniciando muerte...");
 
-        // 1. Forzamos estado IDLE
+
         if (animator != null)
         {
             animator.SetBool("IsWalking", false);
-            animator.ResetTrigger("Attack"); // Cancelamos cualquier ataque pendiente
-            animator.Play("Idle_boss");
+            animator.ResetTrigger("Attack");
+            animator.Play("IdleBoss");
+
+            yield return null;
+            animator.speed = 0f;
         }
 
-        // 2. Esperamos 2 segundos quietos
         yield return new WaitForSeconds(2f);
 
-        // 3. EXPLOSIÓN FINAL
         actions.Explode();
     }
 

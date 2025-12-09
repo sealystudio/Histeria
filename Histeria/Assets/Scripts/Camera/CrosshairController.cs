@@ -1,45 +1,43 @@
 using UnityEngine;
-using static UnityEngine.InputSystem.UI.VirtualMouseInput;
 
 public class CrosshairController : MonoBehaviour
 {
     [Header("Ajustes")]
-    public float distanceLimit = 5f; 
+    public float distanceLimit = 5f;
     public Transform player;
 
     [Header("Vectores")]
-    private Vector3 mousePos;
     public Vector3 dir;
-
-
 
     void Start()
     {
         Cursor.visible = false;
-
     }
-
 
     void Update()
     {
-       
         if (player == null) return;
 
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0f;
+        Vector2 aimInput;
 
-        dir = mousePos - player.position;
-        dir.z = 0f;
+#if UNITY_ANDROID || UNITY_IOS
+            // Entrada del joystick derecho móvil
+            aimInput = PlayerInputBridge.AimInput;
+#else
+        // Entrada del mouse en PC
+        Vector3 mousePos3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos = new Vector2(mousePos3D.x, mousePos3D.y);
+        aimInput = mousePos - (Vector2)player.position;
+#endif
 
-        if (dir.magnitude > distanceLimit) 
-        {
+        // Convertimos a Vector3 para la posición del crosshair
+        dir = new Vector3(aimInput.x, aimInput.y, 0f);
+
+        // Limitar la distancia máxima desde el jugador
+        if (dir.magnitude > distanceLimit)
             dir = dir.normalized * distanceLimit;
-        }
-            
 
+        // Posicionamos el crosshair
         transform.position = player.position + dir;
-
-       
-
     }
 }

@@ -137,10 +137,10 @@ TextureImporter:
       name: ghost_2_22x40_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 19
-        height: 35
+        x: 0
+        y: 0
+        width: 22
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,10 +159,10 @@ TextureImporter:
       name: ghost_2_22x40_1
       rect:
         serializedVersion: 2
-        x: 23
-        y: 12
-        width: 20
-        height: 23
+        x: 22
+        y: 0
+        width: 22
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: ghost_2_22x40_2
       rect:
         serializedVersion: 2
-        x: 28
-        y: 1
-        width: 37
-        height: 34
+        x: 44
+        y: 0
+        width: 22
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: ghost_2_22x40_3
       rect:
         serializedVersion: 2
-        x: 68
-        y: 1
-        width: 19
-        height: 35
+        x: 66
+        y: 0
+        width: 22
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: ghost_2_22x40_4
       rect:
         serializedVersion: 2
-        x: 90
-        y: 1
-        width: 19
-        height: 35
+        x: 88
+        y: 0
+        width: 22
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: ghost_2_22x40_5
       rect:
         serializedVersion: 2
-        x: 112
-        y: 1
-        width: 19
-        height: 35
+        x: 110
+        y: 0
+        width: 22
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,10 +269,10 @@ TextureImporter:
       name: ghost_2_22x40_6
       rect:
         serializedVersion: 2
-        x: 134
-        y: 1
-        width: 19
-        height: 35
+        x: 132
+        y: 0
+        width: 22
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,10 +291,10 @@ TextureImporter:
       name: ghost_2_22x40_7
       rect:
         serializedVersion: 2
-        x: 155
-        y: 1
-        width: 20
-        height: 35
+        x: 154
+        y: 0
+        width: 22
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b133031a36b075c46ad842e06f7bdafb
     internalID: 0
     vertices: []
     indices: 
