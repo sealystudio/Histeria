@@ -20,7 +20,7 @@ public class CrosshairController : MonoBehaviour
 
         Vector2 aimInput;
 
-#if UNITY_ANDROID || UNITY_IOS || UNITY_EDITOR
+#if UNITY_ANDROID || UNITY_IOS// || UNITY_EDITOR
             // Entrada del joystick derecho móvil
             aimInput = MobileInputBridge.LookJoystick;
 #else

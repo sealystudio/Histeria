@@ -105,80 +105,74 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsPaused) return;
 
-        // DEBUG VISUAL
-        if (showDebug)
-        {
-            Debug.DrawRay(transform.position, Vector2.right * 4.5f, Color.red);
-            Debug.DrawRay(transform.position, Vector2.down * 4.5f, Color.red);
-            Debug.DrawRay(transform.position, Vector2.up * 4.5f, Color.red);
-            Debug.DrawRay(transform.position, Vector2.left * 4.5f, Color.red);
-        }
+      
 
-        // Bloqueo de movimiento en dash y diálogos
+        // Bloqueo de movimiento
         if (isDashing || !canMove) return;
 
+        // 1. REINICIAMOS LAS VARIABLES TEMPORALES CADA FRAME
+        Vector2 inputMovil = Vector2.zero;
+        Vector2 inputTeclado = Vector2.zero;
+
         // ========================================================================
-        //                          LÓGICA MÓVIL / EDITOR
+        //                          LÓGICA MÓVIL
         // ========================================================================
 #if UNITY_ANDROID || UNITY_IOS || UNITY_EDITOR
+        inputMovil = MobileInputBridge.MoveJoystick;
 
-        // 1. Leemos el movimiento del Joystick
-        moveInput = MobileInputBridge.MoveJoystick;
-
-        // 2. DASH (Móvil)
+        // Botones Móviles
         if (MobileInputBridge.DashPressed)
         {
-            MobileInputBridge.DashPressed = false; // Apagamos botón inmediatamente
-
-            if (canDash && moveInput.magnitude > 0.1f)
+            MobileInputBridge.DashPressed = false;
+            if (canDash && inputMovil.magnitude > 0.1f)
             {
                 if (dashSound != null) audioSource.PlayOneShot(dashSound, dashVolume);
                 StartCoroutine(DoDash());
             }
         }
-
-        // 3. MELEE (Móvil)
         if (MobileInputBridge.MeleePressed)
         {
-            MobileInputBridge.MeleePressed = false; // Apagamos botón inmediatamente
-
-            if (canPunch && (playerEquipment == null || !playerEquipment.IsEquipped))
-            {
-                StartCoroutine(DoPunch());
-            }
+            MobileInputBridge.MeleePressed = false;
+            if (canPunch && (playerEquipment == null || !playerEquipment.IsEquipped)) StartCoroutine(DoPunch());
         }
-
-        // 4. RANGED (Móvil)
         if (MobileInputBridge.RangedPressed)
         {
-            MobileInputBridge.RangedPressed = false; // Apagamos botón inmediatamente
-
-            if (puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
-            {
-                StartCoroutine(DoLagrimas());
-            }
+            MobileInputBridge.RangedPressed = false;
+            if (puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped)) StartCoroutine(DoLagrimas());
         }
 #endif
 
         // ========================================================================
-        //                            LÓGICA PC
+        //                          LÓGICA PC (TECLADO)
+        // ========================================================================
+        // Leemos el teclado SIEMPRE (para que detecte cuando sueltas la tecla)
+        // Usamos GetAxisRaw para respuesta inmediata
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+        inputTeclado = new Vector2(h, v).normalized;
+
+        // ========================================================================
+        //                          MEZCLA DE INPUTS
         // ========================================================================
 
-        // Esta comprobación evita que el click del ratón cuente si estás tocando un botón de la UI
-        bool tocandoUI = EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
-
-#if !UNITY_ANDROID && !UNITY_IOS
-        // Si NO estamos en una build móvil (es decir, estamos en PC), leemos teclado y ratón
-
-        // Si no hay input móvil (joystick quieto), leemos teclado para que puedas probar con ambas cosas en el editor
-        if (moveInput.magnitude < 0.1f)
+        // Si el joystick móvil se está usando, tiene prioridad. Si no, usa el teclado.
+        if (inputMovil.magnitude > 0.1f)
         {
-            float moveX = Input.GetAxisRaw("Horizontal");
-            float moveY = Input.GetAxisRaw("Vertical");
-            moveInput = new Vector2(moveX, moveY).normalized;
+            moveInput = inputMovil;
+        }
+        else
+        {
+            moveInput = inputTeclado;
         }
 
-        // SOLO permitimos ataques de ratón si NO estamos tocando la interfaz (botones)
+        // ========================================================================
+        //                          ATAQUES CON RATÓN
+        // ========================================================================
+        // Detectar si el ratón está tocando botones (UI)
+        bool tocandoUI = EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
+
+        // Solo atacamos con ratón si NO estamos en móvil real y NO estamos tocando UI
+#if !UNITY_ANDROID && !UNITY_IOS
         if (!tocandoUI)
         {
             // DASH (Espacio)
@@ -187,14 +181,12 @@ public class PlayerMovement : MonoBehaviour
                 if (dashSound != null) audioSource.PlayOneShot(dashSound, dashVolume);
                 StartCoroutine(DoDash());
             }
-
-            // PUÑO (Click Izquierdo)
+            // PUÑO (Click Izq)
             if (Input.GetMouseButtonDown(0) && canPunch && (playerEquipment == null || !playerEquipment.IsEquipped))
             {
                 StartCoroutine(DoPunch());
             }
-
-            // LÁGRIMAS (Click Derecho)
+            // DISPARO (Click Der)
             if (Input.GetMouseButtonDown(1) && puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
             {
                 StartCoroutine(DoLagrimas());
@@ -203,26 +195,16 @@ public class PlayerMovement : MonoBehaviour
 #endif
 
         // ========================================================================
-        //                       PROCESAMIENTO FÍSICO Y VISUAL
+        //                       PROCESAMIENTO FÍSICO
         // ========================================================================
-
         smoothInput = Vector2.SmoothDamp(smoothInput, moveInput, ref inputVelocity, smoothTime);
-
-        // Animación
         anim.SetFloat("Speed", moveInput.magnitude);
 
-        // Guardar última dirección
         if (moveInput.sqrMagnitude > 0.01f)
             lastMoveDir = moveInput;
 
-        // Flipper (voltear sprite según a dónde mire el crosshair)
         if (smoothInput.x != 0 && crosshair != null)
             sr.flipX = crosshair.dir.x < 0;
-
-        if (showDebug)
-        {
-            Debug.Log($"RawInput: {moveInput}, SmoothInput: {smoothInput}");
-        }
     }
 
     void OnEnable()

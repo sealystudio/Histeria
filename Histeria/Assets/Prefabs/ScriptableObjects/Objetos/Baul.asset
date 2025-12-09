@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Baul
   m_EditorClassIdentifier: 
   itemName: Baul
-  description: 
+  description: "En este ba\xFAl guard\xE9 tantos recuerdos..."
   icon: {fileID: 5406750541167317340, guid: 1d88e58e9baaea8449f6f3e515d9cfdd, type: 3}
   itemType: 1
   consumableData:

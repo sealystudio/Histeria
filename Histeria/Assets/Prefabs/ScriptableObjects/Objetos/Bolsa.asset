@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bolsa
   m_EditorClassIdentifier: 
   itemName: Bolsa
-  description: 
+  description: Mi amiga la bolsa...
   icon: {fileID: -3285905963128410467, guid: 276b83b107a88dd4198dc1c6165b39a0, type: 3}
   itemType: 1
   consumableData:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Medicinas
   m_EditorClassIdentifier: 
   itemName: Medicinas
-  description: 
+  description: Los caramelos de la paz...
   icon: {fileID: 9112212891065125553, guid: dbe6387cf34539a409c75818c90f0772, type: 3}
   itemType: 1
   consumableData:

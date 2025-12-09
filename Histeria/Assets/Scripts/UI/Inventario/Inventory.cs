@@ -29,6 +29,8 @@ public class Inventory : MonoBehaviour
         public int quantity;
     }
 
+
+    
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -48,7 +50,7 @@ public class Inventory : MonoBehaviour
         {
             bool inventoryKey = false;
 
-#if UNITY_ANDROID || UNITY_IOS || UNITY_EDITOR
+#if UNITY_ANDROID || UNITY_IOS //|| UNITY_EDITOR
             // Leemos el botón del bridge móvil
             inventoryKey = MobileInputBridge.InventoryPressed;
 #else
