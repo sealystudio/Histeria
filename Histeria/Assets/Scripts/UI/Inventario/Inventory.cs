@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 {
@@ -164,30 +165,22 @@ public class Inventory : MonoBehaviour
         // Refrescar UI
         inventoryCanvas.GetComponent<InventoryUI>().RefreshUI();
 
-        // NUEVO: cambiar de escena si el item lo requiere
         if (item.triggersLevelChange)
         {
             Debug.Log("[Inventory] El ítem usado activa cambio de escena → " + item.nextSceneName);
 
-            // 🔓 DESBLOQUEAR NIVEL SEGÚN LA ESCENA QUE VAS A CARGAR
-            if (item.nextSceneName == "SampleScene")      // Nivel 1
-                PlayerPrefs.SetInt("Nivel1_Desbloqueado", 1);
-
-            if (item.nextSceneName == "Nivel2")           // Nivel 2
-                PlayerPrefs.SetInt("Nivel2_Desbloqueado", 1);
-
-            if (item.nextSceneName == "Nivel3")           // Nivel 3
-                PlayerPrefs.SetInt("Nivel3_Desbloqueado", 1);
-
-            if (item.nextSceneName == "NivelFinal")       // Nivel Final
-                PlayerPrefs.SetInt("NivelFinal_Desbloqueado", 1);
-
-            // Guardar cambios
-            PlayerPrefs.Save();
-
-            // Cargar escena
+            // Cargar la escena intermedia
             LevelManager.instance.LoadScene(item.nextSceneName);
+
+            // 🔓 Desbloquear el siguiente nivel según índice
+            int currentIndex = SceneManager.GetSceneByName(item.nextSceneName).buildIndex;
+            int nextIndex = currentIndex + 1;
+
+            // Guardar desbloqueo con una clave genérica
+            PlayerPrefs.SetInt("Nivel" + nextIndex + "_Desbloqueado", 1);
+            PlayerPrefs.Save();
         }
+
 
         // Cerrar inventario
         CloseInventory();
