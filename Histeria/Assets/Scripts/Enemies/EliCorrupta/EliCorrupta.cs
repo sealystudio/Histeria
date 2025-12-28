@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using BehaviourAPI.Core;
 
 public class EliCorrupta : EnemyBase
 {
     [Header("Datos")]
     public EliCorruptaData data;
     private Transform eliNormal;   // referencia al jugador
-
     private Rigidbody2D rb;
 
     [Header("Ataque espejo")]
@@ -19,8 +19,8 @@ public class EliCorrupta : EnemyBase
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        InitializeStats(data.maxHealth);
+        rb = GetComponent<Rigidbody2D>();   
+        InitializeStats(data.maxHealth , 7f, this.GetComponent<Rigidbody2D>());
         puedeDisparar = true;
         moveSpeed = data.moveSpeed;
         damage = data.damage;
@@ -38,22 +38,19 @@ public class EliCorrupta : EnemyBase
     {
         if (isDead || eliNormal == null) return;
 
-        float distancia = Vector2.Distance(transform.position, eliNormal.position);
+        float distancia = DistanciaJugador();
 
 
         // --- Movimiento hacia Eli ---
+      
         if (distancia < detectionRange && distancia > attackRange)
         {
             Vector2 dir = (eliNormal.position - transform.position).normalized;
             rb.linearVelocity = dir * moveSpeed;
 
         }
-        else
-        {
-            rb.linearVelocity = Vector2.zero;
-
-        }
-
+      
+    
         // 🔹 Girar en el eje X según la posición del jugador
         if (eliNormal.position.x > transform.position.x)
         {
@@ -68,9 +65,11 @@ public class EliCorrupta : EnemyBase
     }
 
     // --- Método público para disparo espejo ---
-    public void DispararEspejo(Vector3 direccionOriginal)
+    public void DispararEspejo() // HAY QUE QUITAR EL ARGUMENTO
     {
         if (!puedeDisparar || data.lagrimaPrefab == null || eliNormal == null) return;
+
+        Vector3 direccionOriginal = (eliNormal.position - transform.position).normalized;
 
         // comprobar distancia al jugador
         float distancia = Vector2.Distance(transform.position, eliNormal.position);
@@ -89,13 +88,40 @@ public class EliCorrupta : EnemyBase
         StartCoroutine(CooldownDisparo());
     }
 
+    public void CargarAtaqueArea()
+    {
+        animator.SetTrigger("LoadingArea");
+        rb.linearVelocity = Vector2.zero;
+        StartCoroutine(returnCharging());
+    }
 
+    public IEnumerator returnCharging()
+    {
+        yield return new WaitForSeconds(5f);
+        animator.SetTrigger("finished");
+    }
 
     private IEnumerator CooldownDisparo()
     {
         puedeDisparar = false;
         yield return new WaitForSeconds(lagrimasCooldown);
         puedeDisparar = true;
+    }
+
+
+    public void DamageArea()
+    {
+        if (eliNormal == null) return;
+
+        float distancia = DistanciaJugador();
+        if (distancia <= 4.5f)
+        {
+            PlayerHealthHearts ph = eliNormal.GetComponent<PlayerHealthHearts>();
+            if (ph != null)
+            {
+                ph.TakeDamage();
+            }
+        }
     }
 
     protected override void OnHit()
@@ -115,10 +141,34 @@ public class EliCorrupta : EnemyBase
         return Vector2.Distance(transform.position, eliNormal.position);    
     }
 
-    private int VidaActual()
+
+    public void Idle()
+    {
+        rb.linearVelocity = Vector2.zero;
+    }
+    public int VidaActual()
     {
         return currentHealth;
     }   
+
+    public StatusFlags MovimientoCorrupto()
+    {
+        float distancia = DistanciaJugador();
+
+
+        // --- Movimiento hacia Eli ---
+        if (distancia < detectionRange && distancia > attackRange)
+        {
+            Vector2 dir = (eliNormal.position - transform.position).normalized;
+            rb.linearVelocity = dir * moveSpeed;
+            return StatusFlags.Success;
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+            return StatusFlags.Failure;
+        }
+    }
 
     protected override void Die()
     {

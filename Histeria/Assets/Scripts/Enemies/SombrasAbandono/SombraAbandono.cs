@@ -23,7 +23,7 @@ public class SombraAbandono : EnemyBase
     private Light2D[] lights;
 
     bool _playerFlashlight;
-    float detectionRange = 10f;
+    
 
     public static List<SombraAbandono> todasLasSombras = new List<SombraAbandono>();
 
@@ -52,7 +52,7 @@ public class SombraAbandono : EnemyBase
             audioSource.playOnAwake = false;
         }
         if (data != null)
-            InitializeStats(data.maxHealth);
+            InitializeStats(data.maxHealth , 10f , this.GetComponent<Rigidbody2D>());
 
         player = GameObject.FindGameObjectWithTag("Player");
 

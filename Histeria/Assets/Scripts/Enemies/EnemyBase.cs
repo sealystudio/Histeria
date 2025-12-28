@@ -46,10 +46,12 @@ public abstract class EnemyBase : MonoBehaviour
         }
     }
 
-    public virtual void InitializeStats(int health)
+    public virtual void InitializeStats(int health , float dT , Rigidbody2D rigid)
     {
         maxHealth = health;
         currentHealth = maxHealth;
+        detectionRange = dT;
+        rb = rigid;
     }
 
     //que ocurre cuando recibe daño (pierde vida)
