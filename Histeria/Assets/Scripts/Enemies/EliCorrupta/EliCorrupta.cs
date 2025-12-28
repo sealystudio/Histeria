@@ -108,6 +108,18 @@ public class EliCorrupta : EnemyBase
     }
 
 
+    // Para el sistema de utilidad , distancia respecto al jugador
+    private float DistanciaJugador()
+    {
+        if (eliNormal == null) return Mathf.Infinity;
+        return Vector2.Distance(transform.position, eliNormal.position);    
+    }
+
+    private int VidaActual()
+    {
+        return currentHealth;
+    }   
+
     protected override void Die()
     {
         if (animator != null)
