@@ -35,8 +35,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8751070801667264612}
   - {fileID: 5912632711319987380}
+  - {fileID: 8751070801667264612}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8275383234977526413
@@ -242,7 +242,7 @@ MonoBehaviour:
       nodes:
       - name: Distancia Juagdor
         id: f63d6584-1919-451c-9d0a-e9f49404a09c
-        position: {x: 515.2, y: 190.4}
+        position: {x: 504, y: 259.19998}
         node:
           rid: 3735656270429421652
         references:
@@ -252,11 +252,13 @@ MonoBehaviour:
           fieldType: System.Func`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
             PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral,
             PublicKeyToken=b77a5c561934e089
-        parentIds: []
+        parentIds:
+        - 883348f7-c8db-4195-8d3f-57b000a2b400
+        - e090d4f7-ceb1-4e6e-98fc-6485a55cb6b0
         childIds: []
       - name: Vida
         id: 62a47dc4-a3c0-4f97-a1bb-72356e0e59ad
-        position: {x: 507.2, y: 471.19998}
+        position: {x: 575.2, y: 756.80005}
         node:
           rid: 3735656270429421654
         references:
@@ -266,24 +268,26 @@ MonoBehaviour:
           fieldType: System.Func`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
             PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral,
             PublicKeyToken=b77a5c561934e089
-        parentIds: []
+        parentIds:
+        - 5b2a774a-2feb-48c9-94e8-684db086d3a2
         childIds: []
       - name: Idle
         id: 5ed1ca91-3405-4290-92fb-18c4b62a9e63
-        position: {x: 1380.8, y: 147.20001}
+        position: {x: 1696.8, y: 140.79999}
         node:
           rid: 3735656270429421657
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 3735656317097869399
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds: []
-        childIds: []
+        childIds:
+        - e090d4f7-ceb1-4e6e-98fc-6485a55cb6b0
       - name: DisparoEspejo
         id: 9b083ca1-f9d4-45bf-af66-7afdc6fab108
-        position: {x: 1396.8, y: 364.8}
+        position: {x: 1710.4, y: 421.6}
         node:
           rid: 3735656270429421658
         references:
@@ -293,26 +297,68 @@ MonoBehaviour:
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds: []
-        childIds: []
+        childIds:
+        - 883348f7-c8db-4195-8d3f-57b000a2b400
       - name: AreaDamage
         id: 1505b8fb-0025-4e55-80a2-0e669dd6fd58
-        position: {x: 1396.8, y: 604}
+        position: {x: 1740.8, y: 690.4}
         node:
           rid: 3735656275603882068
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 3735656317097869393
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds: []
-        childIds: []
+        childIds:
+        - 4100fb16-72c5-401a-8dc9-0330631d6402
+      - name: Suma ponderada
+        id: 4100fb16-72c5-401a-8dc9-0330631d6402
+        position: {x: 1396.8, y: 698.4}
+        node:
+          rid: 3735656317097869388
+        references: []
+        parentIds:
+        - 1505b8fb-0025-4e55-80a2-0e669dd6fd58
+        childIds:
+        - 883348f7-c8db-4195-8d3f-57b000a2b400
+        - 5b2a774a-2feb-48c9-94e8-684db086d3a2
+      - name: Distancia - Idle
+        id: e090d4f7-ceb1-4e6e-98fc-6485a55cb6b0
+        position: {x: 928.8, y: 124.799995}
+        node:
+          rid: 3735656317097869394
+        references: []
+        parentIds:
+        - 5ed1ca91-3405-4290-92fb-18c4b62a9e63
+        childIds:
+        - f63d6584-1919-451c-9d0a-e9f49404a09c
+      - name: Distancia - Ataque
+        id: 883348f7-c8db-4195-8d3f-57b000a2b400
+        position: {x: 923.2, y: 405.6}
+        node:
+          rid: 3735656317097869395
+        references: []
+        parentIds:
+        - 9b083ca1-f9d4-45bf-af66-7afdc6fab108
+        - 4100fb16-72c5-401a-8dc9-0330631d6402
+        childIds:
+        - f63d6584-1919-451c-9d0a-e9f49404a09c
+      - name: vida_a_1
+        id: 5b2a774a-2feb-48c9-94e8-684db086d3a2
+        position: {x: 986.4, y: 756.80005}
+        node:
+          rid: 3735656317097869396
+        references: []
+        parentIds:
+        - 4100fb16-72c5-401a-8dc9-0330631d6402
+        childIds:
+        - 62a47dc4-a3c0-4f97-a1bb-72356e0e59ad
     pushPerceptions: []
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 3735656270429421651
       type: {class: UtilitySystem, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
       data:
@@ -360,6 +406,43 @@ MonoBehaviour:
       data:
         PullingEnabled: 1
         FinishSystemOnComplete: 0
+    - rid: 3735656317097869388
+      type: {class: WeightedFusionFactor, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        Weights:
+        - 0.5
+        - 0.5
+    - rid: 3735656317097869393
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: EliCorrupta
+          methodName: CargarAtaqueArea
+    - rid: 3735656317097869394
+      type: {class: LinearCurveFactor, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        Slope: -1
+        YIntercept: 1
+    - rid: 3735656317097869395
+      type: {class: LinearCurveFactor, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        Slope: 1
+        YIntercept: 0
+    - rid: 3735656317097869396
+      type: {class: SigmoidCurveFactor, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        GrownRate: -100000
+        Midpoint: 0.34
+    - rid: 3735656317097869399
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: EliCorrupta
+          methodName: Idle
 --- !u!1 &6044984798678404715
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +557,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 14.37856}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5725431805286734497}

@@ -113,7 +113,7 @@ public class PlayerAttack : MonoBehaviour
         foreach (var clone in clones)
         {
             Debug.Log($"Clone: {clone.name} puedeDisparar={clone.PuedeDispararDebug()}");
-            clone.DispararEspejo();
+            clone.DispararEspejo(dir);
         }
 
 

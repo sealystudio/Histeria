@@ -65,11 +65,11 @@ public class EliCorrupta : EnemyBase
     }
 
     // --- Método público para disparo espejo ---
-    public void DispararEspejo() // HAY QUE QUITAR EL ARGUMENTO
+    public void DispararEspejo(Vector3 direccionOriginal) // HAY QUE QUITAR EL ARGUMENTO
     {
         if (!puedeDisparar || data.lagrimaPrefab == null || eliNormal == null) return;
 
-        Vector3 direccionOriginal = (eliNormal.position - transform.position).normalized;
+        //Vector3 direccionOriginal = (eliNormal.position - transform.position).normalized;
 
         // comprobar distancia al jugador
         float distancia = Vector2.Distance(transform.position, eliNormal.position);
