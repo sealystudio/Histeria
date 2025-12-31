@@ -58,7 +58,7 @@ public class PlayerHealthHearts : MonoBehaviour
             GameObject instance = Instantiate(dialogoSombra);
             instance.SetActive(true);
 
-            DialogueText dt = dialogoSombra.GetComponentInChildren<DialogueText>();
+            DialogueText dt = instance.GetComponentInChildren<DialogueText>();
             if (dt != null)
             {
                 dt.InitDialogue(dt.nombreJSON); // usa el JSON que tiene el prefab
