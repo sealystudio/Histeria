@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems; // <--- IMPRESCINDIBLE PARA CORREGIR EL CLICK
-
-using static UnityEditor.Progress;
+using UnityEngine.EventSystems; // <--- MANTENIDO: IMPRESCINDIBLE PARA CORREGIR EL CLICK
 using Scene = UnityEngine.SceneManagement.Scene;
+
+// NOTA: He quitado "using static UnityEditor.Progress" de la otra rama
+// porque suele dar errores al compilar el juego final (Build).
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
@@ -32,8 +33,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject dashWindPrefab;
     public Vector2 dashWindOffset = new Vector2(-0.2f, 0f);
     public float dashWindScale = 0.06f;
-
-
 
     [Header("Ataque")]
     //Punch
@@ -75,8 +74,6 @@ public class PlayerMovement : MonoBehaviour
     [Range(0f, 1f)]
     public float footstepVolume = 0.2f;
 
-
-
     [Tooltip("Clip de audio para el Dash")]
     public AudioClip dashSound;
     [Tooltip("Volumen del sonido de Dash (0.0 a 1.0)")]
@@ -94,7 +91,6 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
 
-
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
 
@@ -107,27 +103,22 @@ public class PlayerMovement : MonoBehaviour
     }
 
 #if UNITY_ANDROID || UNITY_IOS
-public MobileJoystickReader mobileInput;
+    // He priorizado la lógica de MobileInputBridge de tu HEAD, 
+    // pero si necesitas la variable antigua descoméntala:
+    // public MobileJoystickReader mobileInput; 
 #endif
 
     void Update()
     {
-
         if (IsPaused) return;
 
-
-        if (IsPaused) return;
-        
-        //DEBUG DISTANCIA (Lo probaba para ELI , comentarlo si os molesta , era para comprobar distancias a ojo)
-
-        Debug.DrawRay(transform.position, Vector2.right * 4.5f , Color.red);
+        // --- DEBUG DE SERGIO (MANTENIDO POR UTILIDAD) ---
+        Debug.DrawRay(transform.position, Vector2.right * 4.5f, Color.red);
         Debug.DrawRay(transform.position, Vector2.down * 4.5f, Color.red);
         Debug.DrawRay(transform.position, Vector2.up * 4.5f, Color.red);
         Debug.DrawRay(transform.position, Vector2.left * 4.5f, Color.red);
-         
         Debug.DrawRay(transform.position, Vector2.right * 3, Color.red);
-
-
+        // -----------------------------------------------
 
         if (isDashing || !canMove) return;
 
@@ -139,6 +130,7 @@ public MobileJoystickReader mobileInput;
         //                          LÓGICA MÓVIL
         // ========================================================================
 #if UNITY_ANDROID || UNITY_IOS || UNITY_EDITOR
+        // Usamos la lógica de HEAD que parece más completa con MobileInputBridge
         inputMovil = MobileInputBridge.MoveJoystick;
 
         // Botones Móviles
@@ -166,8 +158,6 @@ public MobileJoystickReader mobileInput;
         // ========================================================================
         //                          LÓGICA PC (TECLADO)
         // ========================================================================
-        // Leemos el teclado SIEMPRE (para que detecte cuando sueltas la tecla)
-        // Usamos GetAxisRaw para respuesta inmediata
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
         inputTeclado = new Vector2(h, v).normalized;
@@ -189,7 +179,7 @@ public MobileJoystickReader mobileInput;
         // ========================================================================
         //                          ATAQUES CON RATÓN
         // ========================================================================
-        // Detectar si el ratón está tocando botones (UI)
+        // Detectar si el ratón está tocando botones (UI) <--- ESTA ES LA CLAVE DEL CONFLICTO
         bool tocandoUI = EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
 
         // Solo atacamos con ratón si NO estamos en móvil real y NO estamos tocando UI
@@ -216,7 +206,7 @@ public MobileJoystickReader mobileInput;
 #endif
 
         // ========================================================================
-        //                       PROCESAMIENTO FÍSICO
+        //                         PROCESAMIENTO FÍSICO
         // ========================================================================
         smoothInput = Vector2.SmoothDamp(smoothInput, moveInput, ref inputVelocity, smoothTime);
         anim.SetFloat("Speed", moveInput.magnitude);
@@ -227,94 +217,12 @@ public MobileJoystickReader mobileInput;
         if (smoothInput.x != 0 && crosshair != null)
             sr.flipX = crosshair.dir.x < 0;
 
-
-        // block de movimeinto en el dash y bloqueo de movimiento en dialogos
-        if (isDashing || !canMove) return;
-
-#if UNITY_ANDROID || UNITY_IOS
-// --- MOVIMIENTO MÓVIL ---
-if (mobileInput != null)
-{
-    moveInput = mobileInput.MoveInput;
-
-    if (mobileInput.DashPressed && canDash && moveInput.magnitude > 0.1f)
-        StartCoroutine(DoDash());
-
-    if (mobileInput.AttackPressed && canPunch && (playerEquipment == null || !playerEquipment.IsEquipped))
-        StartCoroutine(DoPunch());
-
-    if (mobileInput.ShootPressed && puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
-        StartCoroutine(DoLagrimas());
-}
-else
-{
-    moveInput = Vector2.zero;
-}
-#else
-        // --- PC MOVEMENT ---
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-        moveInput = new Vector2(moveX, moveY).normalized;
-
-        // DASH
-        if (Input.GetKeyDown(KeyCode.Space) && canDash && moveInput.magnitude > 0.1f)
-            StartCoroutine(DoDash());
-
-        // PUÑO
-        if (Input.GetMouseButtonDown(0) && canPunch && (playerEquipment == null || !playerEquipment.IsEquipped))
-            StartCoroutine(DoPunch());
-
-        // LÁGRIMAS
-        if (Input.GetMouseButtonDown(1) && puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
-            StartCoroutine(DoLagrimas());
-#endif
-
-
-        smoothInput = Vector2.SmoothDamp(smoothInput, moveInput, ref inputVelocity, smoothTime);
-
-        // valor para los valores de animacion
-        anim.SetFloat("Speed", moveInput.magnitude);
-
-        // direccion
-        if (moveInput.sqrMagnitude > 0.01f)
-            lastMoveDir = moveInput;
-
-        // flipper
-        if (smoothInput.x != 0)
-            sr.flipX = crosshair.dir.x < 0;
-
-
-
-        // dash
-        if (Input.GetKeyDown(KeyCode.Space) && canDash && moveInput.magnitude > 0.1f)
-        {
-            if (dashSound != null)
-            {
-                audioSource.PlayOneShot(dashSound, dashVolume);
-            }
-            StartCoroutine(DoDash());
-        }
-
-        // ataques
-        //puño
-        if (Input.GetMouseButtonDown(0) && canPunch && (playerEquipment == null || !playerEquipment.IsEquipped))
-        {
-            StartCoroutine(DoPunch());
-        }
-
-        if (Input.GetMouseButtonDown(1) && puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
-        {
-            StartCoroutine(DoLagrimas());
-        }
-
-
-
         if (showDebug)
         {
             Debug.Log($"RawInput: {moveInput}, SmoothInput: {smoothInput}, Rigidbody Velocity: {smoothInput * moveSpeed}");
         }
-
     }
+
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -324,6 +232,7 @@ else
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log(scene.name);
@@ -332,7 +241,6 @@ else
             puedeDisparar = true;
         }
     }
-
 
     void FixedUpdate()
     {
@@ -349,16 +257,16 @@ else
 
         anim.SetTrigger("Dash");
 
-        // sapwnear humo en el dash
+        // spawnear humo en el dash
         if (dashSmokePrefab != null)
         {
             Vector3 spawnPos = transform.position + (Vector3)dashSmokeOffset;
             GameObject smoke = Instantiate(dashSmokePrefab, spawnPos, Quaternion.identity);
-            smoke.transform.localScale = Vector3.one * 0.5f; // porque el humo es 32x32
+            smoke.transform.localScale = Vector3.one * 0.5f;
             Destroy(smoke, 0.5f);
         }
 
-        // el viento que no usamos pero lo edjo por si acaso
+        // el viento 
         if (dashWindPrefab != null && enableDashWind)
         {
             Vector3 moveDir3D = new Vector3(lastMoveDir.x, lastMoveDir.y, 0f);
@@ -367,11 +275,11 @@ else
 
             GameObject wind = Instantiate(dashWindPrefab, spawnPos, Quaternion.identity);
             wind.transform.localScale = new Vector3(
-                  wind.transform.localScale.x,
-                 -Mathf.Abs(wind.transform.localScale.y),  // invertir el eje Y
-                 wind.transform.localScale.z
+                 wind.transform.localScale.x,
+                -Mathf.Abs(wind.transform.localScale.y),  // invertir el eje Y
+                wind.transform.localScale.z
             );
-            wind.transform.localPosition += new Vector3(-lastMoveDir.x * 0.8f, 0, 0); // para que este un poco detrás
+            wind.transform.localPosition += new Vector3(-lastMoveDir.x * 0.8f, 0, 0);
 
             wind.transform.localScale = Vector3.one * dashWindScale;
 
@@ -397,7 +305,6 @@ else
         canDash = true;
     }
 
-
     IEnumerator DoPunch()
     {
         canPunch = false;
@@ -418,7 +325,6 @@ else
         canPunch = true;
 
         attack.Punch();
-
     }
 
     IEnumerator DoLagrimas()
@@ -437,9 +343,7 @@ else
 
     public void PlayFootstepSound()
     {
-
         AudioClip[] soundPool = footstepSounds;
-
         string currentScene = SceneManager.GetActiveScene().name;
 
         if (currentScene == "NIvel3" && grassFootstepSounds != null && grassFootstepSounds.Length > 0)
@@ -455,6 +359,7 @@ else
         int randIndex = UnityEngine.Random.Range(0, soundPool.Length);
         AudioClip clipToPlay = soundPool[randIndex];
 
+        // Volumen
         if (clipToPlay != null)
         {
             audioSource.PlayOneShot(clipToPlay, footstepVolume);

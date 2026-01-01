@@ -13,6 +13,8 @@ TagManager:
   - Key
   - Enemy
   - Light
+  - BOSS
+  - Boss
   layers:
   - Default
   - TransparentFX

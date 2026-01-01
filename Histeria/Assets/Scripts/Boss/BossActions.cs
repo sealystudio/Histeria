@@ -1,13 +1,14 @@
 using UnityEngine;
 using System.Collections;
+// Si tu API usa un namespace especÃ­fico para StatusFlag, aÃ±Ã¡delo aquÃ­ o usa el enum propio
+// using BehaviourAPI; 
 
 public class BossActions : MonoBehaviour
 {
-    [Header("Configuración Ataque Básico")]
-    public float attackCooldown = 2f;
-    public int damageAmount = 1;      // Faltaba esta variable
-    public float attackRange = 3.5f;  // Faltaba esta variable
-    public float damageDelay = 0.5f;  // Faltaba esta variable
+    [Header("ConfiguraciÃ³n Ataque BÃ¡sico")]
+    public int damageAmount = 1;
+    public float attackRange = 3.5f;
+    public float damageDelay = 0.5f;
 
     [Header("Ataque Cono (Fase 2)")]
     public GameObject projectilePrefab;
@@ -18,14 +19,15 @@ public class BossActions : MonoBehaviour
     public Animator animator;
     public GameObject minionPrefab;
 
-    private float lastAttack = 0f;
-    private float spawnTimer = 0f;
     private Transform playerTransform;
 
-    private void Start()
+    // --- ESTADO PARA LA API ---
+    // Esta variable le dice a la IA si el Boss sigue haciendo la animaciÃ³n
+    public bool IsBusy { get; private set; } = false;
+
+    private void Awake()
     {
         if (animator == null) animator = GetComponent<Animator>();
-
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null) playerTransform = playerObj.transform;
     }
@@ -35,102 +37,102 @@ public class BossActions : MonoBehaviour
         if (animator != null) animator.SetTrigger("Attack");
     }
 
-    // --- ATAQUE BÁSICO (Cuerpo a cuerpo) ---
-    public void BasicAttack()
+    // --- MÃ‰TODOS DE EJECUCIÃ“N ---
+    // Ahora comprueban si ya estÃ¡ ocupado para no "tartamudear"
+
+    public void ExecuteBasicAttack()
     {
-        if (Time.time - lastAttack > attackCooldown)
-        {
-            lastAttack = Time.time;
-            TriggerAnimation();
+        if (IsBusy) return; // Si ya estÃ¡ atacando, no reiniciamos
 
-            // ¡ESTO ES LO QUE FALTABA! Iniciamos la corutina de daño
-            StartCoroutine(DoMeleeDamage());
-
-            Debug.Log("Boss hace ataque básico.");
-        }
+        IsBusy = true; // Â¡Ocupado!
+        TriggerAnimation();
+        StartCoroutine(DoMeleeDamage());
+        Debug.Log("IA: Iniciando Ataque BÃ¡sico");
     }
 
-    // Esta es la función que calcula el golpe físico
+    public void ExecuteSpecialAttack()
+    {
+        if (IsBusy) return;
+
+        IsBusy = true;
+        TriggerAnimation();
+        StartCoroutine(ShootConeAttack());
+        Debug.Log("IA: Iniciando Ataque Cono");
+    }
+
+    public void ExecuteSpawnMinion()
+    {
+        if (IsBusy) return;
+
+        IsBusy = true;
+        TriggerAnimation();
+        StartCoroutine(SpawnMinionRoutine()); // Lo metemos en corutina para gestionar el tiempo
+        Debug.Log("IA: Spawneando Minion");
+    }
+
+    public void ExecuteExplosion()
+    {
+        Destroy(gameObject);
+    }
+
+    // --- CORUTINAS (Gestionan el tiempo y liberan el estado) ---
+
     IEnumerator DoMeleeDamage()
     {
-        // Esperamos a que baje el brazo
+        // Esperamos el tiempo del golpe
         yield return new WaitForSeconds(damageDelay);
 
-        // Detectamos si el jugador está cerca
+        // LÃ³gica de daÃ±o
         Collider2D[] objectsHit = Physics2D.OverlapCircleAll(transform.position, attackRange);
         foreach (Collider2D hit in objectsHit)
         {
             if (hit.CompareTag("Player"))
             {
-                PlayerHealthHearts playerHealth = hit.GetComponent<PlayerHealthHearts>();
-                if (playerHealth != null)
-                {
-                    playerHealth.TakeDamage(damageAmount); //
-                }
-                break; // Solo dañamos una vez
+                var playerHealth = hit.GetComponent<PlayerHealthHearts>();
+                if (playerHealth != null) playerHealth.TakeDamage(damageAmount);
+                break;
             }
         }
-    }
 
-    // --- ATAQUE ESPECIAL (Cono de balas) ---
-    public void SpecialAttack()
-    {
-        if (Time.time - lastAttack > attackCooldown * 0.8f)
-        {
-            lastAttack = Time.time;
-            TriggerAnimation();
-            StartCoroutine(ShootConeAttack());
-            Debug.Log("Boss dispara en CONO.");
-        }
+        // Esperamos un poco mÃ¡s para terminar la animaciÃ³n (opcional, ajusta segÃºn tu animaciÃ³n)
+        yield return new WaitForSeconds(0.5f);
+
+        IsBusy = false; // Â¡LIBRE! La IA ya puede mandar otra orden
     }
 
     IEnumerator ShootConeAttack()
     {
         yield return new WaitForSeconds(shootDelay);
 
-        if (playerTransform == null) yield break;
-
-        Vector3 directionToPlayer = (playerTransform.position - transform.position).normalized;
-        float[] angles = { -coneAngle, 0f, coneAngle };
-
-        foreach (float angle in angles)
+        if (playerTransform != null)
         {
-            Quaternion rotation = Quaternion.Euler(0, 0, angle);
-            Vector3 finalDirection = rotation * directionToPlayer;
+            Vector3 directionToPlayer = (playerTransform.position - transform.position).normalized;
+            float[] angles = { -coneAngle, 0f, coneAngle };
 
-            // Asegúrate de que projectilePrefab está asignado en el Inspector
-            if (projectilePrefab != null)
+            foreach (float angle in angles)
             {
-                GameObject proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-                BossProjectile script = proj.GetComponent<BossProjectile>();
-                if (script != null)
+                Quaternion rotation = Quaternion.Euler(0, 0, angle);
+                Vector3 finalDirection = rotation * directionToPlayer;
+
+                if (projectilePrefab != null)
                 {
-                    script.Initialize(finalDirection);
+                    GameObject proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                    BossProjectile script = proj.GetComponent<BossProjectile>();
+                    if (script != null) script.Initialize(finalDirection);
                 }
             }
         }
+
+        yield return new WaitForSeconds(0.5f); // Tiempo de recuperaciÃ³n
+        IsBusy = false;
     }
 
-    public void TrySpawnMinionEvery10Sec()
+    IEnumerator SpawnMinionRoutine()
     {
-        spawnTimer += Time.deltaTime;
-        if (spawnTimer >= 10f)
-        {
-            TriggerAnimation();
-            Instantiate(minionPrefab, transform.position + Vector3.right * 2f, Quaternion.identity);
-            spawnTimer = 0f;
-        }
-    }
-
-    public void Explode()
-    {
-        Destroy(gameObject);
-    }
-
-    // Dibujo para ver el rango en el editor
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        // Simulamos que tarda un poco en invocar
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(minionPrefab, transform.position + Vector3.right * 2f, Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
+        IsBusy = false;
     }
 }

@@ -3,16 +3,11 @@ using UnityEngine;
 public class BossWorldInteraction : MonoBehaviour
 {
     public GameObject slowZonePrefab;
-    private float dropCooldown = 5f;
-    private float lastDrop = 0f;
 
+    // Ya no decidimos aquí el cooldown, solo ejecutamos
     public void DropHazard()
     {
-        if (Time.time - lastDrop > dropCooldown)
-        {
-            Instantiate(slowZonePrefab, transform.position, Quaternion.identity);
-            Debug.Log("Marca que ralentiza al jugador colocada.");
-            lastDrop = Time.time;
-        }
+        Instantiate(slowZonePrefab, transform.position, Quaternion.identity);
+        Debug.Log("IA: Marca ralentizante colocada.");
     }
 }

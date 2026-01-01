@@ -1,15 +1,10 @@
-
 using System;
 using UnityEngine;
-
-using UnityEngine;
-
 
 public class PlayerAttack : MonoBehaviour
 {
     [Header("UI")]
     public CrosshairController crosshair; // referencia al crosshair
-
 
     [Header("Punch")]
     public int punchDamage = 1;
@@ -19,17 +14,19 @@ public class PlayerAttack : MonoBehaviour
     public GameObject lagrima;
 
     [Header("Audio Disparo")]
-    public AudioClip tearSound; 
+    public AudioClip tearSound;
     [Range(0f, 1f)] public float tearVolume = 0.5f;
     private AudioSource audioSource;
 
     [Header("Tengo Linterna?")]
     public bool _hasFlashlight;
-    public  event Action<bool> OnFlashlightChanged;
+    public event Action<bool> OnFlashlightChanged;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
+
     public void SetFlashlight(bool value)
     {
         if (_hasFlashlight == value) return; // No notificar si no cambió
@@ -41,7 +38,6 @@ public class PlayerAttack : MonoBehaviour
     {
         return _hasFlashlight;
     }
-
 
     public void Punch()
     {
@@ -60,14 +56,15 @@ public class PlayerAttack : MonoBehaviour
                 // sombra.TakeDamageFromLight(1); 
             }
 
-            BossController boss = hit.GetComponent<BossController>();
+            BossContext boss = hit.GetComponent<BossContext>();
 
-            if (boss == null) boss = hit.GetComponentInParent<BossController>();
+            if (boss == null) boss = hit.GetComponentInParent<BossContext>();
 
             if (boss != null)
             {
                 boss.TakeDamage(punchDamage);
             }
+            // -----------------------------
 
             MinionAI minion = hit.GetComponent<MinionAI>();
             if (minion != null)
@@ -77,7 +74,6 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-
     public void DispararLagrimas()
     {
         if (crosshair == null || lagrima == null) return;
@@ -86,38 +82,29 @@ public class PlayerAttack : MonoBehaviour
         target.z = 0f;
         Vector3 dir = (target - transform.position).normalized;
 
-
         GameObject tear = Instantiate(lagrima, new Vector3(transform.position.x, transform.position.y, 0f), Quaternion.identity);
 
         if (audioSource != null && tearSound != null)
         {
-            
             audioSource.pitch = UnityEngine.Random.Range(0.85f, 1.15f);
-
             audioSource.PlayOneShot(tearSound, tearVolume);
         }
 
-        Debug.Log("LÃ¡grima instanciada en " + transform.position);
-
+        Debug.Log("Lágrima instanciada en " + transform.position);
 
         LagrimasAttack la = tear.GetComponent<LagrimasAttack>();
         if (la != null) la.Initialize(dir, LagrimasAttack.Team.Player);
-
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         tear.transform.rotation = Quaternion.Euler(0, 0, angle) * lagrima.transform.rotation;
 
         // Notificar a las Eli corruptas
-        Debug.Log($"Notificando clones. Dir={dir}");
+        // Debug.Log($"Notificando clones. Dir={dir}");
         EliCorrupta[] clones = UnityEngine.Object.FindObjectsByType<EliCorrupta>(FindObjectsSortMode.None);
         foreach (var clone in clones)
         {
-            Debug.Log($"Clone: {clone.name} puedeDisparar={clone.PuedeDispararDebug()}");
+            // Debug.Log($"Clone: {clone.name} puedeDisparar={clone.PuedeDispararDebug()}");
             clone.DispararEspejo(dir);
         }
-
-
     }
-
-   
 }
