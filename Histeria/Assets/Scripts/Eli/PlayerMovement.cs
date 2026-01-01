@@ -2,7 +2,11 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+<<<<<<< HEAD
 using UnityEngine.EventSystems; // <--- IMPRESCINDIBLE PARA CORREGIR EL CLICK
+=======
+using static UnityEditor.Progress;
+>>>>>>> origin/Sergio
 using Scene = UnityEngine.SceneManagement.Scene;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -30,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject dashWindPrefab;
     public Vector2 dashWindOffset = new Vector2(-0.2f, 0f);
     public float dashWindScale = 0.06f;
+
+
 
     [Header("Ataque")]
     //Punch
@@ -84,15 +90,12 @@ public class PlayerMovement : MonoBehaviour
 
     private AudioSource audioSource;
 
-#if UNITY_ANDROID || UNITY_IOS || UNITY_EDITOR
-    public MobileJoystickReader mobileInput;
-#endif
-
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+
 
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
@@ -101,12 +104,25 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
 
         attack = GetComponent<PlayerAttack>();
+
         playerEquipment = GetComponent<PlayerEquipment>();
     }
 
+#if UNITY_ANDROID || UNITY_IOS
+public MobileJoystickReader mobileInput;
+#endif
+
     void Update()
     {
+<<<<<<< HEAD
         if (IsPaused) return;
+=======
+
+        if (IsPaused) return;
+        
+        //DEBUG DISTANCIA (Lo probaba para ELI , comentarlo si os molesta , era para comprobar distancias a ojo)
+
+>>>>>>> origin/Sergio
         Debug.DrawRay(transform.position, Vector2.right * 4.5f , Color.red);
         Debug.DrawRay(transform.position, Vector2.down * 4.5f, Color.red);
         Debug.DrawRay(transform.position, Vector2.up * 4.5f, Color.red);
@@ -115,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawRay(transform.position, Vector2.right * 3, Color.red);
 
 
+<<<<<<< HEAD
         if (isDashing || !canMove) return;
 
         // 1. REINICIAMOS LAS VARIABLES TEMPORALES CADA FRAME
@@ -212,8 +229,95 @@ public class PlayerMovement : MonoBehaviour
 
         if (smoothInput.x != 0 && crosshair != null)
             sr.flipX = crosshair.dir.x < 0;
-    }
+=======
 
+        // block de movimeinto en el dash y bloqueo de movimiento en dialogos
+        if (isDashing || !canMove) return;
+
+#if UNITY_ANDROID || UNITY_IOS
+// --- MOVIMIENTO MÓVIL ---
+if (mobileInput != null)
+{
+    moveInput = mobileInput.MoveInput;
+
+    if (mobileInput.DashPressed && canDash && moveInput.magnitude > 0.1f)
+        StartCoroutine(DoDash());
+
+    if (mobileInput.AttackPressed && canPunch && (playerEquipment == null || !playerEquipment.IsEquipped))
+        StartCoroutine(DoPunch());
+
+    if (mobileInput.ShootPressed && puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
+        StartCoroutine(DoLagrimas());
+}
+else
+{
+    moveInput = Vector2.zero;
+}
+#else
+        // --- PC MOVEMENT ---
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+        moveInput = new Vector2(moveX, moveY).normalized;
+
+        // DASH
+        if (Input.GetKeyDown(KeyCode.Space) && canDash && moveInput.magnitude > 0.1f)
+            StartCoroutine(DoDash());
+
+        // PUÑO
+        if (Input.GetMouseButtonDown(0) && canPunch && (playerEquipment == null || !playerEquipment.IsEquipped))
+            StartCoroutine(DoPunch());
+
+        // LÁGRIMAS
+        if (Input.GetMouseButtonDown(1) && puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
+            StartCoroutine(DoLagrimas());
+#endif
+
+
+        smoothInput = Vector2.SmoothDamp(smoothInput, moveInput, ref inputVelocity, smoothTime);
+
+        // valor para los valores de animacion
+        anim.SetFloat("Speed", moveInput.magnitude);
+
+        // direccion
+        if (moveInput.sqrMagnitude > 0.01f)
+            lastMoveDir = moveInput;
+
+        // flipper
+        if (smoothInput.x != 0)
+            sr.flipX = crosshair.dir.x < 0;
+
+
+
+        // dash
+        if (Input.GetKeyDown(KeyCode.Space) && canDash && moveInput.magnitude > 0.1f)
+        {
+            if (dashSound != null)
+            {
+                audioSource.PlayOneShot(dashSound, dashVolume);
+            }
+            StartCoroutine(DoDash());
+        }
+
+        // ataques
+        //puño
+        if (Input.GetMouseButtonDown(0) && canPunch && (playerEquipment == null || !playerEquipment.IsEquipped))
+        {
+            StartCoroutine(DoPunch());
+        }
+
+        if (Input.GetMouseButtonDown(1) && puedeDisparar && (playerEquipment == null || !playerEquipment.IsEquipped))
+        {
+            StartCoroutine(DoLagrimas());
+        }
+
+
+
+        if (showDebug)
+        {
+            Debug.Log($"RawInput: {moveInput}, SmoothInput: {smoothInput}, Rigidbody Velocity: {smoothInput * moveSpeed}");
+        }
+>>>>>>> origin/Sergio
+    }
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -223,7 +327,6 @@ public class PlayerMovement : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log(scene.name);
@@ -232,6 +335,7 @@ public class PlayerMovement : MonoBehaviour
             puedeDisparar = true;
         }
     }
+
 
     void FixedUpdate()
     {
@@ -248,16 +352,16 @@ public class PlayerMovement : MonoBehaviour
 
         anim.SetTrigger("Dash");
 
-        // Spawnear humo en el dash
+        // sapwnear humo en el dash
         if (dashSmokePrefab != null)
         {
             Vector3 spawnPos = transform.position + (Vector3)dashSmokeOffset;
             GameObject smoke = Instantiate(dashSmokePrefab, spawnPos, Quaternion.identity);
-            smoke.transform.localScale = Vector3.one * 0.5f;
+            smoke.transform.localScale = Vector3.one * 0.5f; // porque el humo es 32x32
             Destroy(smoke, 0.5f);
         }
 
-        // Spawnear viento
+        // el viento que no usamos pero lo edjo por si acaso
         if (dashWindPrefab != null && enableDashWind)
         {
             Vector3 moveDir3D = new Vector3(lastMoveDir.x, lastMoveDir.y, 0f);
@@ -265,14 +369,12 @@ public class PlayerMovement : MonoBehaviour
             Vector3 spawnPos = transform.position + windOffset;
 
             GameObject wind = Instantiate(dashWindPrefab, spawnPos, Quaternion.identity);
-
-            // Lógica de escala del viento
             wind.transform.localScale = new Vector3(
-                 wind.transform.localScale.x,
-                 -Mathf.Abs(wind.transform.localScale.y),
+                  wind.transform.localScale.x,
+                 -Mathf.Abs(wind.transform.localScale.y),  // invertir el eje Y
                  wind.transform.localScale.z
             );
-            wind.transform.localPosition += new Vector3(-lastMoveDir.x * 0.8f, 0, 0);
+            wind.transform.localPosition += new Vector3(-lastMoveDir.x * 0.8f, 0, 0); // para que este un poco detrás
 
             wind.transform.localScale = Vector3.one * dashWindScale;
 
@@ -280,6 +382,7 @@ public class PlayerMovement : MonoBehaviour
                 wind.transform.localScale = new Vector3(-dashWindScale, dashWindScale, 1);
 
             wind.transform.SetParent(transform);
+
             Destroy(wind, 0.6f);
         }
 
@@ -297,6 +400,7 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
     }
 
+
     IEnumerator DoPunch()
     {
         canPunch = false;
@@ -313,11 +417,11 @@ public class PlayerMovement : MonoBehaviour
 
         isPunching = false;
 
-        // Ejecutar lógica de daño
-        if (attack != null) attack.Punch();
-
         yield return new WaitForSeconds(punchCooldown);
         canPunch = true;
+
+        attack.Punch();
+
     }
 
     IEnumerator DoLagrimas()
@@ -325,7 +429,7 @@ public class PlayerMovement : MonoBehaviour
         puedeDisparar = false;
         estaDisparando = true;
 
-        if (attack != null) attack.DispararLagrimas();
+        attack.DispararLagrimas();
 
         yield return new WaitForSeconds(0.1f);
         estaDisparando = false;
@@ -336,7 +440,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void PlayFootstepSound()
     {
-        if (footstepSounds == null || footstepSounds.Length == 0) return;
 
         AudioClip[] soundPool = footstepSounds;
 
@@ -355,8 +458,11 @@ public class PlayerMovement : MonoBehaviour
         int randIndex = UnityEngine.Random.Range(0, soundPool.Length);
         AudioClip clipToPlay = soundPool[randIndex];
 
+<<<<<<< HEAD
 
         // Volumen
+=======
+>>>>>>> origin/Sergio
         if (clipToPlay != null)
         {
             audioSource.PlayOneShot(clipToPlay, footstepVolume);
