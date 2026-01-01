@@ -1,78 +1,85 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(CanvasGroup))]
-[RequireComponent(typeof(AudioSource))]
 public class BossHealthBar : MonoBehaviour
 {
     [Header("Referencias")]
-    public BossController boss;
+    public BossContext bossContext; // ANTES: BossController
     public Slider slider;
     private CanvasGroup canvasGroup;
 
     [Header("Configuración")]
-    public float appearDistance = 25f; // ¡AQUÍ ESTÁ LA CLAVE! Pon un número mayor que 15
+    public float appearDistance = 25f; // Distancia para que aparezca la barra
 
     [Header("Audio")]
     public AudioClip appearSound;
     [Range(0f, 1f)] public float volume = 1f;
     private AudioSource audioSource;
 
-    private bool isBossActive = false;
+    private bool isBarActive = false;
 
     void Start()
     {
         if (slider == null) slider = GetComponent<Slider>();
-        if (boss == null) boss = FindObjectOfType<BossController>();
+
+        // AQUÍ EL CAMBIO: Buscamos el Contexto, no el Controller antiguo
+        if (bossContext == null) bossContext = FindObjectOfType<BossContext>();
+
         canvasGroup = GetComponent<CanvasGroup>();
         audioSource = GetComponent<AudioSource>();
 
-        if (boss != null && slider != null)
+        if (bossContext != null && slider != null)
         {
-            slider.maxValue = boss.maxHP;
-            slider.value = boss.currentHP;
+            slider.maxValue = bossContext.maxHP;
+            slider.value = bossContext.currentHP;
         }
 
-        if (canvasGroup != null)
+        if (canvasGroup == null)
         {
-            canvasGroup.alpha = 0f;
+            // Si no tienes CanvasGroup, intenta añadirlo o busca el componente
+            canvasGroup = gameObject.AddComponent<CanvasGroup>();
         }
+
+        // Empezamos invisibles
+        if (canvasGroup != null) canvasGroup.alpha = 0f;
     }
 
     void Update()
     {
-        if (boss == null || slider == null) return;
+        if (bossContext == null || slider == null) return;
 
-        slider.value = boss.currentHP;
+        // Actualizamos el valor de la vida desde el nuevo sistema
+        slider.value = bossContext.currentHP;
 
-        if (!isBossActive)
+        // Lógica de aparición
+        if (!isBarActive)
         {
-            if (boss.perception.player != null)
+            // Usamos playerTransform que ya está guardado en el contexto
+            if (bossContext.playerTransform != null)
             {
-                float distance = Vector3.Distance(boss.transform.position, boss.perception.player.position);
+                float distance = Vector3.Distance(bossContext.transform.position, bossContext.playerTransform.position);
 
-                // AHORA USAMOS TU DISTANCIA PERSONALIZADA, NO LA DEL BOSS
-                if (distance <= appearDistance)
+                if (distance < appearDistance)
                 {
                     ShowHealthBar();
                 }
             }
         }
 
-        if (boss.currentHP <= 7.5f)
+        // Si muere, ocultamos
+        if (bossContext.currentHP <= 0)
         {
-            canvasGroup.alpha = 0f;
+            if (canvasGroup != null) canvasGroup.alpha = 0f;
         }
     }
 
     void ShowHealthBar()
     {
-        isBossActive = true;
-        canvasGroup.alpha = 1f;
+        isBarActive = true;
+        if (canvasGroup != null) canvasGroup.alpha = 1f;
 
-        if (appearSound != null && audioSource != null)
+        if (audioSource != null && appearSound != null)
         {
-            audioSource.pitch = 1f; // Aseguramos tono normal
             audioSource.PlayOneShot(appearSound, volume);
         }
     }

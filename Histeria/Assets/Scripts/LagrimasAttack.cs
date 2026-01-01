@@ -8,7 +8,7 @@ public class LagrimasAttack : MonoBehaviour
     public int damage = 1;
 
     [Header("Audio Impacto")]
-    public AudioClip hitSound; 
+    public AudioClip hitSound;
     [Range(0f, 1f)] public float hitVolume = 1f;
 
     public enum Team { Player, Corrupta }
@@ -51,23 +51,26 @@ public class LagrimasAttack : MonoBehaviour
             if (enemigo != null)
             {
                 enemigo.TakeDamage(damage, (collision.transform.position - transform.position).normalized);
-                PlayHitSound(); 
+                PlayHitSound();
                 Destroy(gameObject);
                 return;
             }
-            BossController boss = collision.GetComponent<BossController>();
+
+            // Cambiamos BossController por BossContext
+            BossContext boss = collision.GetComponent<BossContext>();
             if (boss != null)
             {
-                boss.TakeDamage(damage);
-                PlayHitSound(); 
+                boss.TakeDamage(damage); // Ahora llamamos al Contexto
+                PlayHitSound();
                 Destroy(gameObject);
                 return;
             }
+            // -----------------------------
+
             SombraAbandono sombra = collision.GetComponent<SombraAbandono>();
             if (sombra != null)
             {
-
-                PlayHitSound(); 
+                PlayHitSound();
                 Destroy(gameObject);
                 return;
             }
@@ -77,7 +80,7 @@ public class LagrimasAttack : MonoBehaviour
             if (minion != null)
             {
                 minion.TakeDamage(damage);
-                PlayHitSound(); 
+                PlayHitSound();
                 Destroy(gameObject);
                 return;
             }
@@ -89,7 +92,7 @@ public class LagrimasAttack : MonoBehaviour
             if (player != null)
             {
                 player.TakeDamage(damage);
-                PlayHitSound(); 
+                PlayHitSound();
                 Destroy(gameObject);
                 return;
             }
@@ -97,7 +100,7 @@ public class LagrimasAttack : MonoBehaviour
 
         if (!collision.isTrigger && !collision.CompareTag("Player"))
         {
-            PlayHitSound(); 
+            PlayHitSound();
             Destroy(gameObject);
         }
     }

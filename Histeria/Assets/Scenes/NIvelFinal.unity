@@ -555,9 +555,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0035385704
-    width: 1
-    height: 0.9947629
+    y: 0.11960785
+    width: 0.705623
+    height: 0.70274514
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -4763,7 +4763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb54f295f372db4d817e6bd4a474445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 7457079641217972205}
+  bossContext: {fileID: 0}
   slider: {fileID: 811882899}
   appearDistance: 20
   appearSound: {fileID: 8300000, guid: 4787b9ff2a06cb549afa9c784a5fb709, type: 3}
@@ -18100,6 +18100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOSS
       objectReference: {fileID: 0}
+    - target: {fileID: 3942754418231029316, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     - target: {fileID: 6407158088825833711, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
       propertyPath: player
       value: 
@@ -18157,6 +18161,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8710179906739605714, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
+      propertyPath: attackRange
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8710179906739605714, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
       propertyPath: damageDelay
       value: 1
       objectReference: {fileID: 0}
@@ -18172,7 +18180,8 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 2581351476202366202, guid: acdd6a7a8c0c6a248b484e7f6826a878, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2535453767182266790, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8524471310679506700, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
@@ -18194,18 +18203,19 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3942754418231029316, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7457079641217972215}
+    - targetCorrespondingSourceObject: {fileID: 3942754418231029316, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7457079641217972217}
+    - targetCorrespondingSourceObject: {fileID: 3942754418231029316, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7457079641217972219}
+    - targetCorrespondingSourceObject: {fileID: 3942754418231029316, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7457079641217972218}
+    - targetCorrespondingSourceObject: {fileID: 3942754418231029316, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7457079641217972227}
   m_SourcePrefab: {fileID: 100100000, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
---- !u!114 &7457079641217972205 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2535453767182266790, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
-  m_PrefabInstance: {fileID: 7457079641217972204}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1477840708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60ca8e294a4522f47bd65d374a4462f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7457079641217972212 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8524471310679506700, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
@@ -18388,6 +18398,655 @@ MonoBehaviour:
   dialoguePrefab: {fileID: 8893074750125486884, guid: 9568fb9bf5d07d54d863409dbfe17551, type: 3}
   soloUnaVez: 1
   objetoAlCerrar: {fileID: 0}
+--- !u!114 &7457079641217972217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477840708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bfd6b16a277ef48a7b7cb2bfa5aebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 10
+  currentHP: 0
+  isInvulnerable: 0
+  timeSinceLastDamage: 0
+  actions: {fileID: 7457079641217972223}
+  worldInteraction: {fileID: 7457079641217972221}
+  playerTransform: {fileID: 1971715843}
+  animator: {fileID: 7457079641217972225}
+  moveSpeed: 2
+--- !u!114 &7457079641217972218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477840708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2848c16c19f438a4f93073086e825b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  context: {fileID: 0}
+  actions: {fileID: 0}
+  moveSpeed: 2
+--- !u!114 &7457079641217972219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477840708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeOnLoop: 0
+  interruptOptions: 0
+  _eventHandler:
+    debugStatusChanges: 0
+    identifier: 
+  data:
+    graphs:
+    - name: Boss_Logic_Main
+      id: 787552b7-4345-4321-b0e2-32188aa53cd4
+      graph:
+        rid: 150214217909665870
+      nodes:
+      - name: Fase_Oleada
+        id: f7cdae3a-6344-4847-9f68-5c02d4c41ad9
+        position: {x: -415, y: 359}
+        node:
+          rid: 150214217909665872
+        references:
+        - fieldName: Action
+          value:
+            rid: 150214217909665901
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds: []
+        childIds:
+        - f9000b26-92eb-47dd-bdb1-2ee519847da8
+      - name: Fase_Histeria
+        id: dec4cf32-13ec-4cce-a885-bf263887c705
+        position: {x: 161, y: 347}
+        node:
+          rid: 150214217909665873
+        references:
+        - fieldName: Action
+          value:
+            rid: 150214217909665916
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - f9000b26-92eb-47dd-bdb1-2ee519847da8
+        childIds:
+        - fbf1cf83-b624-4327-9da6-39de12787475
+      - name: Fase_Survival
+        id: 288cdd1c-9586-4a2e-b056-22ef0e84c4b5
+        position: {x: 782, y: 345}
+        node:
+          rid: 150214217909665874
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - fbf1cf83-b624-4327-9da6-39de12787475
+        childIds: []
+      - name: T_Fase_Oleada
+        id: f9000b26-92eb-47dd-bdb1-2ee519847da8
+        position: {x: -99, y: 363}
+        node:
+          rid: 150214217909665883
+        references:
+        - fieldName: Perception
+          value:
+            rid: 150214217909665884
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - f7cdae3a-6344-4847-9f68-5c02d4c41ad9
+        childIds:
+        - dec4cf32-13ec-4cce-a885-bf263887c705
+      - name: T_Fase_Histeria
+        id: fbf1cf83-b624-4327-9da6-39de12787475
+        position: {x: 463, y: 337}
+        node:
+          rid: 150214217909665885
+        references:
+        - fieldName: Perception
+          value:
+            rid: 150214217909665886
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - dec4cf32-13ec-4cce-a885-bf263887c705
+        childIds:
+        - 288cdd1c-9586-4a2e-b056-22ef0e84c4b5
+    - name: BT_Oleada
+      id: 5c10c5f8-19c4-45a8-8e2a-82cf0e108263
+      graph:
+        rid: 150214217909665887
+      nodes:
+      - name: 
+        id: 007577f6-6fc0-474b-801d-7569ded65be4
+        position: {x: -103, y: 255}
+        node:
+          rid: 150214217909665889
+        references: []
+        parentIds: []
+        childIds:
+        - 74d4ddc4-0a8c-47e0-9bcf-7b7bc5e51a67
+        - 39bfaebe-f2c3-4be9-93d0-712aec244e55
+      - name: 
+        id: 74d4ddc4-0a8c-47e0-9bcf-7b7bc5e51a67
+        position: {x: -411, y: 437}
+        node:
+          rid: 150214217909665890
+        references: []
+        parentIds:
+        - 007577f6-6fc0-474b-801d-7569ded65be4
+        childIds:
+        - 4632c426-c8c4-4c2e-9cd8-2e1f59a35a3d
+      - name: condicion_cerca
+        id: 4632c426-c8c4-4c2e-9cd8-2e1f59a35a3d
+        position: {x: -526, y: 608}
+        node:
+          rid: 150214217909665894
+        references:
+        - fieldName: Perception
+          value:
+            rid: 150214217909665896
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 74d4ddc4-0a8c-47e0-9bcf-7b7bc5e51a67
+        childIds:
+        - 53c2a9cb-7f1e-4324-a0fb-c5645a4fed05
+      - name: accion_ataque
+        id: 53c2a9cb-7f1e-4324-a0fb-c5645a4fed05
+        position: {x: -510, y: 812}
+        node:
+          rid: 150214217909665895
+        references:
+        - fieldName: Action
+          value:
+            rid: 150214217909665897
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 4632c426-c8c4-4c2e-9cd8-2e1f59a35a3d
+        childIds: []
+      - name: accion_perseguir
+        id: 39bfaebe-f2c3-4be9-93d0-712aec244e55
+        position: {x: 90, y: 462}
+        node:
+          rid: 150214217909665898
+        references:
+        - fieldName: Action
+          value:
+            rid: 150214217909665899
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 007577f6-6fc0-474b-801d-7569ded65be4
+        childIds: []
+    - name: US_Histeria
+      id: 86ca7781-d7fc-45c1-893e-ec0433854f4e
+      graph:
+        rid: 150214217909665902
+      nodes:
+      - name: DistanceToPlayer
+        id: dc6ec185-e540-4046-824f-c5d9d1507795
+        position: {x: -672, y: 593}
+        node:
+          rid: 150214217909665903
+        references:
+        - fieldName: Variable
+          value:
+            rid: 150214217909665904
+          fieldType: System.Func`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        parentIds:
+        - d609ce61-df35-447f-9d09-ba4e7c100448
+        - e46e82b2-ea02-4458-9dda-63fff0ca7859
+        - 9bad6286-0e84-4822-a957-e463b0fc3536
+        childIds: []
+      - name: Action_DoSpecialAttack
+        id: da9c4542-c5cd-4269-8fe6-4206eedd0f8e
+        position: {x: 357, y: 370}
+        node:
+          rid: 150214217909665905
+        references:
+        - fieldName: Action
+          value:
+            rid: 150214217909665908
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds: []
+        childIds:
+        - d609ce61-df35-447f-9d09-ba4e7c100448
+      - name: Action_DropHazard
+        id: 9531c651-a398-4b31-9351-c98c1766abc4
+        position: {x: 371, y: 600}
+        node:
+          rid: 150214217909665906
+        references:
+        - fieldName: Action
+          value:
+            rid: 150214217909665909
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds: []
+        childIds:
+        - e46e82b2-ea02-4458-9dda-63fff0ca7859
+      - name: Action_ChasePlayer
+        id: eb7a291d-8d4b-4cd5-93ba-cf3380b4b978
+        position: {x: 136, y: 800}
+        node:
+          rid: 150214217909665907
+        references:
+        - fieldName: Action
+          value:
+            rid: 150214217909665910
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds: []
+        childIds:
+        - 9bad6286-0e84-4822-a957-e463b0fc3536
+      - name: 
+        id: d609ce61-df35-447f-9d09-ba4e7c100448
+        position: {x: -254, y: 405}
+        node:
+          rid: 150214217909665911
+        references: []
+        parentIds:
+        - da9c4542-c5cd-4269-8fe6-4206eedd0f8e
+        childIds:
+        - dc6ec185-e540-4046-824f-c5d9d1507795
+      - name: 
+        id: e46e82b2-ea02-4458-9dda-63fff0ca7859
+        position: {x: -226, y: 596}
+        node:
+          rid: 150214217909665913
+        references: []
+        parentIds:
+        - 9531c651-a398-4b31-9351-c98c1766abc4
+        childIds:
+        - dc6ec185-e540-4046-824f-c5d9d1507795
+      - name: 
+        id: 9bad6286-0e84-4822-a957-e463b0fc3536
+        position: {x: -218, y: 794}
+        node:
+          rid: 150214217909665914
+        references: []
+        parentIds:
+        - eb7a291d-8d4b-4cd5-93ba-cf3380b4b978
+        childIds:
+        - dc6ec185-e540-4046-824f-c5d9d1507795
+    pushPerceptions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 150214217909665870
+      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 150214217909665872
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 150214217909665873
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 150214217909665874
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 150214217909665883
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 1
+    - rid: 150214217909665884
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: BossBrain
+          methodName: IsPhaseHisteria
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 150214217909665885
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 1
+    - rid: 150214217909665886
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: BossBrain
+          methodName: IsPhaseSurvival
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 150214217909665887
+      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 150214217909665889
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 150214217909665890
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 150214217909665894
+      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 150214217909665895
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 150214217909665896
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: BossBrain
+          methodName: IsPlayerCloseMelee
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 150214217909665897
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: BossBrain
+          methodName: Action_DoMeleeAttack
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 150214217909665898
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 150214217909665899
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: BossBrain
+          methodName: Action_ChasePlayer
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 150214217909665901
+      type: {class: SubgraphAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        ExecuteOnLoop: 1
+        InterruptOptions: 2
+        subgraphId: 5c10c5f8-19c4-45a8-8e2a-82cf0e108263
+    - rid: 150214217909665902
+      type: {class: UtilitySystem, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        Inertia: 1.3
+    - rid: 150214217909665903
+      type: {class: VariableFactor, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        min: 0
+        max: 12
+    - rid: 150214217909665904
+      type: {class: SerializedContextMethod, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        componentName: BossBrain
+        methodName: GetDistanceToPlayer
+    - rid: 150214217909665905
+      type: {class: UtilityAction, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        FinishSystemOnComplete: 0
+    - rid: 150214217909665906
+      type: {class: UtilityAction, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        FinishSystemOnComplete: 0
+    - rid: 150214217909665907
+      type: {class: UtilityAction, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        FinishSystemOnComplete: 0
+    - rid: 150214217909665908
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: BossBrain
+          methodName: Action_DoSpecialAttack
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 150214217909665909
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: BossBrain
+          methodName: Action_DropHazard
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 150214217909665910
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: BossBrain
+          methodName: Action_ChasePlayer
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 150214217909665911
+      type: {class: LinearCurveFactor, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        Slope: 1.54
+        YIntercept: 0
+    - rid: 150214217909665913
+      type: {class: UnityCurveFactor, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+      data:
+        PullingEnabled: 1
+        curve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0.000002797693
+            value: 1
+            inSlope: -2.9791205
+            outSlope: -2.9791205
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.2577554
+            value: 0.23212396
+            inSlope: -0.9726916
+            outSlope: -0.9726916
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 1
+            outWeight: 0.13060156
+          - serializedVersion: 3
+            time: 0.56145567
+            value: 0.06815347
+            inSlope: -0.16139525
+            outSlope: -0.16139525
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.41505474
+          - serializedVersion: 3
+            time: 0.99998575
+            value: -0.00000058161095
+            inSlope: -0.051948972
+            outSlope: -0.051948972
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.38473377
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 150214217909665914
+      type: {class: LinearCurveFactor, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        Slope: 0
+        YIntercept: 0.3
+    - rid: 150214217909665916
+      type: {class: SubgraphAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        ExecuteOnLoop: 1
+        InterruptOptions: 2
+        subgraphId: 86ca7781-d7fc-45c1-893e-ec0433854f4e
+--- !u!114 &7457079641217972221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3355700159375257988, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
+  m_PrefabInstance: {fileID: 7457079641217972204}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477840708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3cd56859d650a44b223b91ba58f05d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7457079641217972223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8710179906739605714, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
+  m_PrefabInstance: {fileID: 7457079641217972204}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477840708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e681e474f7db74192b20a19127a464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &7457079641217972225 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7989657634116403846, guid: 2e8192b015ef7414387a126d6972900b, type: 3}
+  m_PrefabInstance: {fileID: 7457079641217972204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &7457079641217972227
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477840708}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
