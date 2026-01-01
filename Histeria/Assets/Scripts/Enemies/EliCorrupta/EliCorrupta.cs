@@ -88,6 +88,40 @@ public class EliCorrupta : EnemyBase
         StartCoroutine(CooldownDisparo());
     }
 
+    public void Punch()
+    {
+        if (crosshair == null) return;
+
+        Vector3 attackPos = transform.position;
+
+        // Detecta todo lo que esté en el rango del puño
+        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPos, punchRange);
+
+        foreach (var hit in hits)
+        {
+            SombraAbandono sombra = hit.GetComponent<SombraAbandono>();
+            if (sombra != null)
+            {
+                // sombra.TakeDamageFromLight(1); 
+            }
+
+            BossController boss = hit.GetComponent<BossController>();
+
+            if (boss == null) boss = hit.GetComponentInParent<BossController>();
+
+            if (boss != null)
+            {
+                boss.TakeDamage(punchDamage);
+            }
+
+            MinionAI minion = hit.GetComponent<MinionAI>();
+            if (minion != null)
+            {
+                minion.TakeDamage(punchDamage);
+            }
+        }
+    }
+
     public void CargarAtaqueArea()
     {
         animator.SetTrigger("LoadingArea");
@@ -135,7 +169,7 @@ public class EliCorrupta : EnemyBase
 
 
     // Para el sistema de utilidad , distancia respecto al jugador
-    private float DistanciaJugador()
+    public float DistanciaJugador()
     {
         if (eliNormal == null) return Mathf.Infinity;
         return Vector2.Distance(transform.position, eliNormal.position);    

@@ -2,11 +2,9 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-<<<<<<< HEAD
 using UnityEngine.EventSystems; // <--- IMPRESCINDIBLE PARA CORREGIR EL CLICK
-=======
+
 using static UnityEditor.Progress;
->>>>>>> origin/Sergio
 using Scene = UnityEngine.SceneManagement.Scene;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -114,15 +112,14 @@ public MobileJoystickReader mobileInput;
 
     void Update()
     {
-<<<<<<< HEAD
+
         if (IsPaused) return;
-=======
+
 
         if (IsPaused) return;
         
         //DEBUG DISTANCIA (Lo probaba para ELI , comentarlo si os molesta , era para comprobar distancias a ojo)
 
->>>>>>> origin/Sergio
         Debug.DrawRay(transform.position, Vector2.right * 4.5f , Color.red);
         Debug.DrawRay(transform.position, Vector2.down * 4.5f, Color.red);
         Debug.DrawRay(transform.position, Vector2.up * 4.5f, Color.red);
@@ -131,7 +128,7 @@ public MobileJoystickReader mobileInput;
         Debug.DrawRay(transform.position, Vector2.right * 3, Color.red);
 
 
-<<<<<<< HEAD
+
         if (isDashing || !canMove) return;
 
         // 1. REINICIAMOS LAS VARIABLES TEMPORALES CADA FRAME
@@ -229,7 +226,7 @@ public MobileJoystickReader mobileInput;
 
         if (smoothInput.x != 0 && crosshair != null)
             sr.flipX = crosshair.dir.x < 0;
-=======
+
 
         // block de movimeinto en el dash y bloqueo de movimiento en dialogos
         if (isDashing || !canMove) return;
@@ -316,7 +313,7 @@ else
         {
             Debug.Log($"RawInput: {moveInput}, SmoothInput: {smoothInput}, Rigidbody Velocity: {smoothInput * moveSpeed}");
         }
->>>>>>> origin/Sergio
+
     }
     void OnEnable()
     {
@@ -458,11 +455,6 @@ else
         int randIndex = UnityEngine.Random.Range(0, soundPool.Length);
         AudioClip clipToPlay = soundPool[randIndex];
 
-<<<<<<< HEAD
-
-        // Volumen
-=======
->>>>>>> origin/Sergio
         if (clipToPlay != null)
         {
             audioSource.PlayOneShot(clipToPlay, footstepVolume);

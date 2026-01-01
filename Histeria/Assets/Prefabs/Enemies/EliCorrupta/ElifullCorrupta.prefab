@@ -242,7 +242,7 @@ MonoBehaviour:
       nodes:
       - name: Distancia Juagdor
         id: f63d6584-1919-451c-9d0a-e9f49404a09c
-        position: {x: 504, y: 259.19998}
+        position: {x: 624.8, y: 203.19998}
         node:
           rid: 3735656270429421652
         references:
@@ -258,7 +258,7 @@ MonoBehaviour:
         childIds: []
       - name: Vida
         id: 62a47dc4-a3c0-4f97-a1bb-72356e0e59ad
-        position: {x: 575.2, y: 756.80005}
+        position: {x: 625.6, y: 473.6}
         node:
           rid: 3735656270429421654
         references:
@@ -273,7 +273,7 @@ MonoBehaviour:
         childIds: []
       - name: Idle
         id: 5ed1ca91-3405-4290-92fb-18c4b62a9e63
-        position: {x: 1696.8, y: 140.79999}
+        position: {x: 1571.2, y: 130.4}
         node:
           rid: 3735656270429421657
         references:
@@ -287,7 +287,7 @@ MonoBehaviour:
         - e090d4f7-ceb1-4e6e-98fc-6485a55cb6b0
       - name: DisparoEspejo
         id: 9b083ca1-f9d4-45bf-af66-7afdc6fab108
-        position: {x: 1710.4, y: 421.6}
+        position: {x: 1563.2, y: 288}
         node:
           rid: 3735656270429421658
         references:
@@ -301,7 +301,7 @@ MonoBehaviour:
         - 883348f7-c8db-4195-8d3f-57b000a2b400
       - name: AreaDamage
         id: 1505b8fb-0025-4e55-80a2-0e669dd6fd58
-        position: {x: 1740.8, y: 690.4}
+        position: {x: 1587.2, y: 476.80002}
         node:
           rid: 3735656275603882068
         references:
@@ -315,7 +315,7 @@ MonoBehaviour:
         - 4100fb16-72c5-401a-8dc9-0330631d6402
       - name: Suma ponderada
         id: 4100fb16-72c5-401a-8dc9-0330631d6402
-        position: {x: 1396.8, y: 698.4}
+        position: {x: 1283.2, y: 436}
         node:
           rid: 3735656317097869388
         references: []
@@ -326,7 +326,7 @@ MonoBehaviour:
         - 5b2a774a-2feb-48c9-94e8-684db086d3a2
       - name: Distancia - Idle
         id: e090d4f7-ceb1-4e6e-98fc-6485a55cb6b0
-        position: {x: 928.8, y: 124.799995}
+        position: {x: 952, y: 134.4}
         node:
           rid: 3735656317097869394
         references: []
@@ -336,7 +336,7 @@ MonoBehaviour:
         - f63d6584-1919-451c-9d0a-e9f49404a09c
       - name: Distancia - Ataque
         id: 883348f7-c8db-4195-8d3f-57b000a2b400
-        position: {x: 923.2, y: 405.6}
+        position: {x: 944.8, y: 286.4}
         node:
           rid: 3735656317097869395
         references: []
@@ -347,7 +347,7 @@ MonoBehaviour:
         - f63d6584-1919-451c-9d0a-e9f49404a09c
       - name: vida_a_1
         id: 5b2a774a-2feb-48c9-94e8-684db086d3a2
-        position: {x: 986.4, y: 756.80005}
+        position: {x: 960, y: 465.6}
         node:
           rid: 3735656317097869396
         references: []

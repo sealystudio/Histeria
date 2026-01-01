@@ -539,7 +539,7 @@ MonoBehaviour:
         childIds: []
       - name: apagarLuz
         id: d285a87d-ec06-4bec-932f-39bfc23683d9
-        position: {x: 725, y: 601}
+        position: {x: 741.6, y: 620}
         node:
           rid: 5876995672795775065
         references:
