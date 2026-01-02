@@ -63,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isPunching = false;
     public bool canPunch = true;
     public bool canMove = true;
+    //public bool isMoving = false;
 
     [Header("Sonido")]
     [Tooltip("Añade aquí todos los clips de audio de pasos que tengas")]
@@ -170,6 +171,7 @@ public class PlayerMovement : MonoBehaviour
         if (inputMovil.magnitude > 0.1f)
         {
             moveInput = inputMovil;
+            
         }
         else
         {
@@ -191,6 +193,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (dashSound != null) audioSource.PlayOneShot(dashSound, dashVolume);
                 StartCoroutine(DoDash());
+                EliCorrupta[] clones = UnityEngine.Object.FindObjectsByType<EliCorrupta>(FindObjectsSortMode.None);
+                foreach (var clone in clones)
+                {
+                    clone.StartCoroutine(DoDash());
+                }
+
             }
             // PUÑO (Click Izq)
             if (Input.GetMouseButtonDown(0) && canPunch && (playerEquipment == null || !playerEquipment.IsEquipped))
@@ -248,6 +256,16 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = smoothInput * moveSpeed;
         }
+    }
+
+    public bool IsMoving()
+    {
+        return (rb.linearVelocity.magnitude > 0.1f);
+    }
+
+    public Vector2 getMoveDirection()
+    {
+        return lastMoveDir;
     }
 
     IEnumerator DoDash()

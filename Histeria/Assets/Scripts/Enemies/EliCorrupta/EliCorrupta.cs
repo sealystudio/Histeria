@@ -7,7 +7,21 @@ public class EliCorrupta : EnemyBase
     [Header("Datos")]
     public EliCorruptaData data;
     private Transform eliNormal;   // referencia al jugador
+    private PlayerMovement eliMovement; // referencia al script de movimiento del jugador
     private Rigidbody2D rb;
+    public CrosshairController crosshair; // referencia al crosshair
+    Animator anim; 
+
+
+    bool canDash = true;
+    bool isDashing = false;
+    public float dashDuration = 0.15f;
+    public float dashCooldown = 0.5f;
+    public float dashSpeed = 12f;
+
+    [Header("Punch")]
+    public int punchDamage = 1;
+    public float punchRange = 1f;
 
     [Header("Ataque espejo")]
     private bool puedeDisparar;
@@ -20,6 +34,7 @@ public class EliCorrupta : EnemyBase
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();   
+        anim = GetComponent<Animator>();
         InitializeStats(data.maxHealth , 7f, this.GetComponent<Rigidbody2D>());
         puedeDisparar = true;
         moveSpeed = data.moveSpeed;
@@ -31,6 +46,7 @@ public class EliCorrupta : EnemyBase
         if (player != null)
         {
             eliNormal = player.transform;
+            eliMovement = player.GetComponent<PlayerMovement>();
         }
     }
 
@@ -40,27 +56,31 @@ public class EliCorrupta : EnemyBase
 
         float distancia = DistanciaJugador();
 
+        // Eli corrupta no se mueve hacia el jugador , solo cuando este cerca
 
-        // --- Movimiento hacia Eli ---
-      
-        if (distancia < detectionRange && distancia > attackRange)
-        {
-            Vector2 dir = (eliNormal.position - transform.position).normalized;
-            rb.linearVelocity = dir * moveSpeed;
+        if (distancia <= 4.5f ) {
+            // 🔹 Girar en el eje X según la posición del jugador
+            if (eliNormal.position.x > transform.position.x)
+            {
+                // Eli está a la derecha → mirar a la derecha
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else if (eliNormal.position.x < transform.position.x)
+            {
+                // Eli está a la izquierda → mirar a la izquierda
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
 
-        }
-      
-    
-        // 🔹 Girar en el eje X según la posición del jugador
-        if (eliNormal.position.x > transform.position.x)
-        {
-            // Eli está a la derecha → mirar a la derecha
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        else if (eliNormal.position.x < transform.position.x)
-        {
-            // Eli está a la izquierda → mirar a la izquierda
-            transform.localScale = new Vector3(-1, 1, 1);
+
+            if (eliMovement.IsMoving())
+            {
+
+                this.rb.linearVelocity = -eliMovement.getMoveDirection().normalized * moveSpeed;
+
+            }
+
+
+
         }
     }
 
@@ -90,49 +110,26 @@ public class EliCorrupta : EnemyBase
 
     public void Punch()
     {
-        if (crosshair == null) return;
+       
 
         Vector3 attackPos = transform.position;
 
         // Detecta todo lo que esté en el rango del puño
         Collider2D[] hits = Physics2D.OverlapCircleAll(attackPos, punchRange);
 
-        foreach (var hit in hits)
-        {
-            SombraAbandono sombra = hit.GetComponent<SombraAbandono>();
-            if (sombra != null)
-            {
-                // sombra.TakeDamageFromLight(1); 
-            }
-
-            BossController boss = hit.GetComponent<BossController>();
-
-            if (boss == null) boss = hit.GetComponentInParent<BossController>();
-
-            if (boss != null)
-            {
-                boss.TakeDamage(punchDamage);
-            }
-
-            MinionAI minion = hit.GetComponent<MinionAI>();
-            if (minion != null)
-            {
-                minion.TakeDamage(punchDamage);
-            }
-        }
+        eliNormal.parent.GetComponent<PlayerHealthHearts>()?.TakeDamage(punchDamage);
     }
 
     public void CargarAtaqueArea()
     {
         animator.SetTrigger("LoadingArea");
         rb.linearVelocity = Vector2.zero;
-        StartCoroutine(returnCharging());
+        StartCoroutine(returnChargingCooldown());
     }
 
-    public IEnumerator returnCharging()
+    public IEnumerator returnChargingCooldown()
     {
         yield return new WaitForSeconds(5f);
-        animator.SetTrigger("finished");
     }
 
     private IEnumerator CooldownDisparo()
@@ -171,7 +168,7 @@ public class EliCorrupta : EnemyBase
     // Para el sistema de utilidad , distancia respecto al jugador
     public float DistanciaJugador()
     {
-        if (eliNormal == null) return Mathf.Infinity;
+        //if (eliNormal == null) return Mathf.Infinity;
         return Vector2.Distance(transform.position, eliNormal.position);    
     }
 
@@ -180,28 +177,30 @@ public class EliCorrupta : EnemyBase
     {
         rb.linearVelocity = Vector2.zero;
     }
-    public int VidaActual()
+    public float VidaActual()
     {
         return currentHealth;
-    }   
+    }
 
-    public StatusFlags MovimientoCorrupto()
+    public IEnumerator DoDash()
     {
-        float distancia = DistanciaJugador();
+        canDash = false;
+        isDashing = true;
+
+        anim.SetTrigger("Dash");
 
 
-        // --- Movimiento hacia Eli ---
-        if (distancia < detectionRange && distancia > attackRange)
-        {
-            Vector2 dir = (eliNormal.position - transform.position).normalized;
-            rb.linearVelocity = dir * moveSpeed;
-            return StatusFlags.Success;
-        }
-        else
-        {
-            rb.linearVelocity = Vector2.zero;
-            return StatusFlags.Failure;
-        }
+        rb.linearVelocity = -eliMovement.getMoveDirection() * dashSpeed;
+
+
+        yield return new WaitForSeconds(dashDuration);
+
+        isDashing = false;
+        rb.linearVelocity = Vector2.zero;
+
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
+
     }
 
     protected override void Die()

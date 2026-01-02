@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4722639314154556709}
   - component: {fileID: 5277729711080046217}
   - component: {fileID: 1846964537047548153}
+  - component: {fileID: 970966269049874255}
   m_Layer: 0
   m_Name: ElifullCorrupta
   m_TagString: Untagged
@@ -142,6 +143,12 @@ MonoBehaviour:
   knockbackForce: {x: 2, y: 2}
   flashDuration: 0.15
   data: {fileID: 11400000, guid: 5d859d5398441b54d8917a0a9a516bbc, type: 2}
+  crosshair: {fileID: 0}
+  dashDuration: 0.15
+  dashCooldown: 0.5
+  dashSpeed: 12
+  punchDamage: 1
+  punchRange: 1
   lagrimasCooldown: 0.5
 --- !u!50 &4722639314154556709
 Rigidbody2D:
@@ -228,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executeOnLoop: 0
+  executeOnLoop: 1
   interruptOptions: 0
   _eventHandler:
     debugStatusChanges: 0
@@ -287,7 +294,7 @@ MonoBehaviour:
         - e090d4f7-ceb1-4e6e-98fc-6485a55cb6b0
       - name: DisparoEspejo
         id: 9b083ca1-f9d4-45bf-af66-7afdc6fab108
-        position: {x: 1563.2, y: 288}
+        position: {x: 1587.2, y: 300.8}
         node:
           rid: 3735656270429421658
         references:
@@ -301,7 +308,7 @@ MonoBehaviour:
         - 883348f7-c8db-4195-8d3f-57b000a2b400
       - name: AreaDamage
         id: 1505b8fb-0025-4e55-80a2-0e669dd6fd58
-        position: {x: 1587.2, y: 476.80002}
+        position: {x: 1579.2, y: 476.80002}
         node:
           rid: 3735656275603882068
         references:
@@ -312,18 +319,7 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
         parentIds: []
         childIds:
-        - 4100fb16-72c5-401a-8dc9-0330631d6402
-      - name: Suma ponderada
-        id: 4100fb16-72c5-401a-8dc9-0330631d6402
-        position: {x: 1283.2, y: 436}
-        node:
-          rid: 3735656317097869388
-        references: []
-        parentIds:
-        - 1505b8fb-0025-4e55-80a2-0e669dd6fd58
-        childIds:
-        - 883348f7-c8db-4195-8d3f-57b000a2b400
-        - 5b2a774a-2feb-48c9-94e8-684db086d3a2
+        - 34012f3f-d5af-4d77-b972-a7f0a51c7a6a
       - name: Distancia - Idle
         id: e090d4f7-ceb1-4e6e-98fc-6485a55cb6b0
         position: {x: 952, y: 134.4}
@@ -342,7 +338,7 @@ MonoBehaviour:
         references: []
         parentIds:
         - 9b083ca1-f9d4-45bf-af66-7afdc6fab108
-        - 4100fb16-72c5-401a-8dc9-0330631d6402
+        - 34012f3f-d5af-4d77-b972-a7f0a51c7a6a
         childIds:
         - f63d6584-1919-451c-9d0a-e9f49404a09c
       - name: vida_a_1
@@ -352,9 +348,20 @@ MonoBehaviour:
           rid: 3735656317097869396
         references: []
         parentIds:
-        - 4100fb16-72c5-401a-8dc9-0330631d6402
+        - 34012f3f-d5af-4d77-b972-a7f0a51c7a6a
         childIds:
         - 62a47dc4-a3c0-4f97-a1bb-72356e0e59ad
+      - name: Maximo
+        id: 34012f3f-d5af-4d77-b972-a7f0a51c7a6a
+        position: {x: 1276.8, y: 436}
+        node:
+          rid: 8416304174059749460
+        references: []
+        parentIds:
+        - 1505b8fb-0025-4e55-80a2-0e669dd6fd58
+        childIds:
+        - 883348f7-c8db-4195-8d3f-57b000a2b400
+        - 5b2a774a-2feb-48c9-94e8-684db086d3a2
     pushPerceptions: []
   references:
     version: 2
@@ -368,7 +375,7 @@ MonoBehaviour:
       data:
         PullingEnabled: 1
         min: 0
-        max: 100000
+        max: 20
     - rid: 3735656270429421653
       type: {class: SerializedContextMethod, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -406,13 +413,6 @@ MonoBehaviour:
       data:
         PullingEnabled: 1
         FinishSystemOnComplete: 0
-    - rid: 3735656317097869388
-      type: {class: WeightedFusionFactor, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
-      data:
-        PullingEnabled: 1
-        Weights:
-        - 0.5
-        - 0.5
     - rid: 3735656317097869393
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -443,6 +443,25 @@ MonoBehaviour:
         method:
           componentName: EliCorrupta
           methodName: Idle
+    - rid: 8416304174059749460
+      type: {class: MaxFusionFactor, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+--- !u!114 &970966269049874255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5537925331262944303}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ecd5e53f36370e4d8efb4d913e23858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeOnLoop: 1
+  interruptOptions: 0
+  m_EliCorrupta: {fileID: 0}
 --- !u!1 &6044984798678404715
 GameObject:
   m_ObjectHideFlags: 0

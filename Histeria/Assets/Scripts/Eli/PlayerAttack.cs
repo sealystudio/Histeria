@@ -71,6 +71,16 @@ public class PlayerAttack : MonoBehaviour
             {
                 minion.TakeDamage(punchDamage);
             }
+
+
+            EliCorrupta[] clones = UnityEngine.Object.FindObjectsByType<EliCorrupta>(FindObjectsSortMode.None);
+            foreach (var clone in clones)
+            {
+                // Debug.Log($"Clone: {clone.name} puedeDisparar={clone.PuedeDispararDebug()}");
+                clone.Punch();
+            }
+
+
         }
     }
 
