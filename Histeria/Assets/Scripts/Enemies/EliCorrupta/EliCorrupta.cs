@@ -15,6 +15,7 @@ public class EliCorrupta : EnemyBase
 
     bool canDash = true;
     bool isDashing = false;
+
     public float dashDuration = 0.15f;
     public float dashCooldown = 0.5f;
     public float dashSpeed = 12f;
@@ -26,6 +27,12 @@ public class EliCorrupta : EnemyBase
     [Header("Ataque espejo")]
     private bool puedeDisparar;
     public float lagrimasCooldown = 0.5f;
+
+
+    [Header("Area Attack")]
+    public bool puedeArea = true;
+    public bool isCharging = false;
+    public float areaCooldown = 6f;
 
     public bool PuedeDispararDebug() => puedeDisparar;
     private LevelManager lm;
@@ -72,7 +79,7 @@ public class EliCorrupta : EnemyBase
             }
 
 
-            if (eliMovement.IsMoving())
+            if (eliMovement.IsMoving() && !isCharging)
             {
 
                 this.rb.linearVelocity = -eliMovement.getMoveDirection().normalized * moveSpeed;
@@ -87,7 +94,7 @@ public class EliCorrupta : EnemyBase
     // --- Método público para disparo espejo ---
     public void DispararEspejo(Vector3 direccionOriginal) // HAY QUE QUITAR EL ARGUMENTO
     {
-        if (!puedeDisparar || data.lagrimaPrefab == null || eliNormal == null) return;
+        if (!puedeDisparar || data.lagrimaPrefab == null || eliNormal == null || isCharging) return;
 
         //Vector3 direccionOriginal = (eliNormal.position - transform.position).normalized;
 
@@ -122,14 +129,34 @@ public class EliCorrupta : EnemyBase
 
     public void CargarAtaqueArea()
     {
-        animator.SetTrigger("LoadingArea");
+        if (!puedeArea || isCharging)
+            return;
+
+        puedeArea = false;
+        isCharging = true;
+
         rb.linearVelocity = Vector2.zero;
-        StartCoroutine(returnChargingCooldown());
+        anim.SetTrigger("LoadingArea");
     }
+
+    public void FinishAreaAttack()
+    {
+        isCharging = false;
+        StartCoroutine(AreaCooldown());
+    }
+
+    private IEnumerator AreaCooldown()
+    {
+        yield return new WaitForSeconds(areaCooldown);
+        puedeArea = true;
+    }
+
 
     public IEnumerator returnChargingCooldown()
     {
+        
         yield return new WaitForSeconds(5f);
+        isCharging = false;
     }
 
     private IEnumerator CooldownDisparo()
@@ -144,6 +171,7 @@ public class EliCorrupta : EnemyBase
     {
         if (eliNormal == null) return;
 
+        
         float distancia = DistanciaJugador();
         if (distancia <= 4.5f)
         {
@@ -172,6 +200,17 @@ public class EliCorrupta : EnemyBase
         return Vector2.Distance(transform.position, eliNormal.position);    
     }
 
+
+    public float NoEstaCargando()
+    {
+        return isCharging ? 0f : 1f;
+    }
+
+
+    public float PuedeArea()
+    {
+        return puedeArea ? 1f : 0f;
+    }
 
     public void Idle()
     {
