@@ -268,7 +268,7 @@ MonoBehaviour:
         childIds: []
       - name: Vida
         id: 62a47dc4-a3c0-4f97-a1bb-72356e0e59ad
-        position: {x: 604, y: 497.6}
+        position: {x: 664.8, y: 665.60004}
         node:
           rid: 3735656270429421654
         references:
@@ -295,23 +295,9 @@ MonoBehaviour:
         parentIds: []
         childIds:
         - e090d4f7-ceb1-4e6e-98fc-6485a55cb6b0
-      - name: DisparoEspejo
-        id: 9b083ca1-f9d4-45bf-af66-7afdc6fab108
-        position: {x: 1606.4, y: 298.4}
-        node:
-          rid: 3735656270429421658
-        references:
-        - fieldName: Action
-          value:
-            rid: 3735656275603881985
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds: []
-        childIds:
-        - 883348f7-c8db-4195-8d3f-57b000a2b400
       - name: AreaDamage
         id: 1505b8fb-0025-4e55-80a2-0e669dd6fd58
-        position: {x: 1665.6, y: 592.80005}
+        position: {x: 1849.6, y: 629.60004}
         node:
           rid: 3735656275603882068
         references:
@@ -340,13 +326,13 @@ MonoBehaviour:
           rid: 3735656317097869395
         references: []
         parentIds:
-        - 9b083ca1-f9d4-45bf-af66-7afdc6fab108
         - 0f48c149-9e94-47de-a07b-87ebe97a75bc
+        - f19a3693-f62c-45ce-9ee1-3d648ffdd990
         childIds:
         - f63d6584-1919-451c-9d0a-e9f49404a09c
       - name: vida_a_1
         id: 5b2a774a-2feb-48c9-94e8-684db086d3a2
-        position: {x: 919.2, y: 496.80002}
+        position: {x: 985.6, y: 657.60004}
         node:
           rid: 3735656317097869396
         references: []
@@ -356,7 +342,7 @@ MonoBehaviour:
         - 62a47dc4-a3c0-4f97-a1bb-72356e0e59ad
       - name: Suma Ponderada
         id: 0f48c149-9e94-47de-a07b-87ebe97a75bc
-        position: {x: 1344, y: 614.4}
+        position: {x: 1494.4, y: 704.80005}
         node:
           rid: 8416304175292874752
         references: []
@@ -369,7 +355,7 @@ MonoBehaviour:
         - 363e87c2-b869-4d3d-b501-aaee17d1294e
       - name: Esta Cargando
         id: 363e87c2-b869-4d3d-b501-aaee17d1294e
-        position: {x: 612, y: 875.2}
+        position: {x: 656.8, y: 999.2001}
         node:
           rid: 8416304175292874849
         references:
@@ -384,7 +370,7 @@ MonoBehaviour:
         childIds: []
       - name: PuedeArea
         id: 453f8a36-691b-4f5c-a6c7-f7d4257b3076
-        position: {x: 612, y: 712.80005}
+        position: {x: 648.8, y: 836.80005}
         node:
           rid: 8416304175292874851
         references:
@@ -397,6 +383,46 @@ MonoBehaviour:
         parentIds:
         - 0f48c149-9e94-47de-a07b-87ebe97a75bc
         childIds: []
+      - name: Puedo Disparar
+        id: 32eff8e2-aeaa-4018-b819-af08702d298f
+        position: {x: 672.8, y: 491.19998}
+        node:
+          rid: 8416304215159734362
+        references:
+        - fieldName: Variable
+          value:
+            rid: 8416304215159734363
+          fieldType: System.Func`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        parentIds:
+        - f19a3693-f62c-45ce-9ee1-3d648ffdd990
+        childIds: []
+      - name: Suma Disparo
+        id: f19a3693-f62c-45ce-9ee1-3d648ffdd990
+        position: {x: 1395.2, y: 453.6}
+        node:
+          rid: 8416304215159734364
+        references: []
+        parentIds:
+        - 684f84ac-e329-4cb6-a690-add3c5845759
+        childIds:
+        - 883348f7-c8db-4195-8d3f-57b000a2b400
+        - 32eff8e2-aeaa-4018-b819-af08702d298f
+      - name: Disparo
+        id: 684f84ac-e329-4cb6-a690-add3c5845759
+        position: {x: 1718.4, y: 432}
+        node:
+          rid: 8416304215159734367
+        references:
+        - fieldName: Action
+          value:
+            rid: 8416304215159734368
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds: []
+        childIds:
+        - f19a3693-f62c-45ce-9ee1-3d648ffdd990
     pushPerceptions: []
   references:
     version: 2
@@ -404,7 +430,7 @@ MonoBehaviour:
     - rid: 3735656270429421651
       type: {class: UtilitySystem, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
       data:
-        Inertia: 1.3
+        Inertia: 1
     - rid: 3735656270429421652
       type: {class: VariableFactor, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
       data:
@@ -432,17 +458,6 @@ MonoBehaviour:
       data:
         PullingEnabled: 1
         FinishSystemOnComplete: 0
-    - rid: 3735656270429421658
-      type: {class: UtilityAction, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
-      data:
-        PullingEnabled: 1
-        FinishSystemOnComplete: 0
-    - rid: 3735656275603881985
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: EliCorrupta
-          methodName: DispararEspejo
     - rid: 3735656275603882068
       type: {class: UtilityAction, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
       data:
@@ -509,6 +524,35 @@ MonoBehaviour:
       data:
         componentName: EliCorrupta
         methodName: PuedeArea
+    - rid: 8416304215159734362
+      type: {class: VariableFactor, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        min: 0
+        max: 1
+    - rid: 8416304215159734363
+      type: {class: SerializedContextMethod, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        componentName: EliCorrupta
+        methodName: PuedeDispararUS
+    - rid: 8416304215159734364
+      type: {class: WeightedFusionFactor, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        Weights:
+        - 0.5
+        - 0.5
+    - rid: 8416304215159734367
+      type: {class: UtilityAction, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        FinishSystemOnComplete: 0
+    - rid: 8416304215159734368
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: EliCorrupta
+          methodName: DIspararEspejoUS
 --- !u!114 &970966269049874255
 MonoBehaviour:
   m_ObjectHideFlags: 0

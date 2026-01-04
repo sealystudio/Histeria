@@ -115,6 +115,36 @@ public class EliCorrupta : EnemyBase
         StartCoroutine(CooldownDisparo());
     }
 
+    
+    private float nextShootTime = 0f;
+
+    public float PuedeDispararUS()
+    {
+        return Time.time >= nextShootTime ? 1f : 0f;
+    }
+
+    public void DispararEspejoUS()
+    {
+        if (Time.time < nextShootTime) return;
+
+        Vector3 dir = (eliNormal.position - transform.position).normalized;
+        Vector3 dirContraria = -dir;
+
+        GameObject tear = Instantiate(data.lagrimaPrefab, transform.position, Quaternion.identity);
+
+        LagrimasAttack la = tear.GetComponent<LagrimasAttack>();
+        if (la != null)
+            la.Initialize(dirContraria, LagrimasAttack.Team.Corrupta);
+
+        nextShootTime = Time.time + lagrimasCooldown;
+    }
+
+
+    
+
+
+
+
     public void Punch()
     {
        
