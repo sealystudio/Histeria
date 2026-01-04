@@ -1,0 +1,378 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db249917b7c50574eaa600c74aff1437, type: 3}
+  m_Name: VacioSystem
+  m_EditorClassIdentifier: 
+  data:
+    graphs:
+    - name: VacioBT
+      id: f90b2a1c-06da-4fc5-875f-976b31c6674d
+      graph:
+        rid: 5971310320813604864
+      nodes:
+      - name: 
+        id: c77c8b06-abd9-4497-8a27-31f318d92978
+        position: {x: 1060, y: -280}
+        node:
+          rid: 5971310320813604887
+        references: []
+        parentIds: []
+        childIds:
+        - 5fbe5fc4-dc0f-421e-a9ee-00f7f722a993
+      - name: VacioCerca?
+        id: 9c3847e2-d330-4687-ae76-cadd79f7e073
+        position: {x: 459.2, y: 401.6}
+        node:
+          rid: 5971310320813604865
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 28a30960-078b-4260-a81e-e884ddc8614d
+        childIds: []
+      - name: Sinergia
+        id: 034f3629-4652-44e4-940e-466c3c1aee79
+        position: {x: 700, y: 399.19998}
+        node:
+          rid: 5971310320813604866
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 28a30960-078b-4260-a81e-e884ddc8614d
+        childIds: []
+      - name: RangoAtaque?
+        id: e394ca09-5f20-4d0d-927e-9feade1f0b37
+        position: {x: 945.6, y: 404}
+        node:
+          rid: 5971310320813604867
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - d78f31b9-c201-495e-a012-7627af74ed67
+        childIds: []
+      - name: Atacar
+        id: 10224818-9bea-4909-9a21-e0548c6a568d
+        position: {x: 1182.4, y: 404.8}
+        node:
+          rid: 5971310320813604868
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - d78f31b9-c201-495e-a012-7627af74ed67
+        childIds: []
+      - name: JugadorMueve?
+        id: f2496fee-8699-4cb8-b310-78acb547d192
+        position: {x: 1452, y: 799.2}
+        node:
+          rid: 5971310320813604869
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - d69b0ae0-adea-4d43-8edc-4e7d7c034f88
+        childIds: []
+      - name: Idle
+        id: d38215a6-a2a1-48d3-8e42-9b06f612ba10
+        position: {x: 1684, y: 802.4}
+        node:
+          rid: 5971310320813604870
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - d69b0ae0-adea-4d43-8edc-4e7d7c034f88
+        childIds: []
+      - name: Perseguir
+        id: 790b0693-6a19-4903-992b-2aa45457a869
+        position: {x: 1908.8, y: 612}
+        node:
+          rid: 5971310320813604871
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 7bec5290-b7a2-4758-989c-225be5dad467
+        childIds: []
+      - name: RangoDeteccion?
+        id: 68717a8d-52e6-4ae9-9da6-18c6221db092
+        position: {x: 1443.2, y: 405.6}
+        node:
+          rid: 5971310320813604872
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - af0f684a-7a70-4c14-9cf2-10d54c25b0ca
+        childIds: []
+      - name: EstaEnOrigen?
+        id: 9cf5f6ad-5308-40fe-bb46-4bee3f64b146
+        position: {x: 1988.8, y: 420.8}
+        node:
+          rid: 5971310320813604873
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - f0bf6ff7-3418-4459-b0e4-71d7ff1478f1
+        childIds: []
+      - name: Patrullar
+        id: 967ad7ee-9211-4f66-80d3-db8ae1d09352
+        position: {x: 2229.6, y: 421.6}
+        node:
+          rid: 5971310320813604874
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - f0bf6ff7-3418-4459-b0e4-71d7ff1478f1
+        childIds: []
+      - name: Volver
+        id: 19a74a33-81d9-432d-9a37-c30dc487c268
+        position: {x: 2539.2, y: 251.19998}
+        node:
+          rid: 5971310320813604875
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 8edbe6c9-387e-4ec4-8e89-1d3cf4cc9562
+        childIds: []
+      - name: 
+        id: 28a30960-078b-4260-a81e-e884ddc8614d
+        position: {x: 577.6, y: 240.79999}
+        node:
+          rid: 5971310320813604876
+        references: []
+        parentIds:
+        - 0b6bbb8c-869c-41e6-8870-a28b35939935
+        childIds:
+        - 9c3847e2-d330-4687-ae76-cadd79f7e073
+        - 034f3629-4652-44e4-940e-466c3c1aee79
+      - name: 
+        id: d78f31b9-c201-495e-a012-7627af74ed67
+        position: {x: 1069.6, y: 245.6}
+        node:
+          rid: 5971310320813604877
+        references: []
+        parentIds:
+        - 5d4cbe26-e88c-41b7-981e-a96445ce3d18
+        childIds:
+        - e394ca09-5f20-4d0d-927e-9feade1f0b37
+        - 10224818-9bea-4909-9a21-e0548c6a568d
+      - name: 
+        id: d69b0ae0-adea-4d43-8edc-4e7d7c034f88
+        position: {x: 1576.8, y: 619.2}
+        node:
+          rid: 5971310320813604878
+        references: []
+        parentIds:
+        - 7bec5290-b7a2-4758-989c-225be5dad467
+        childIds:
+        - f2496fee-8699-4cb8-b310-78acb547d192
+        - d38215a6-a2a1-48d3-8e42-9b06f612ba10
+      - name: 
+        id: af0f684a-7a70-4c14-9cf2-10d54c25b0ca
+        position: {x: 1567.2, y: 238.4}
+        node:
+          rid: 5971310320813604879
+        references: []
+        parentIds:
+        - 8edbe6c9-387e-4ec4-8e89-1d3cf4cc9562
+        childIds:
+        - 68717a8d-52e6-4ae9-9da6-18c6221db092
+        - 7bec5290-b7a2-4758-989c-225be5dad467
+      - name: 
+        id: f0bf6ff7-3418-4459-b0e4-71d7ff1478f1
+        position: {x: 2122.4, y: 245.6}
+        node:
+          rid: 5971310320813604880
+        references: []
+        parentIds:
+        - 8edbe6c9-387e-4ec4-8e89-1d3cf4cc9562
+        childIds:
+        - 9cf5f6ad-5308-40fe-bb46-4bee3f64b146
+        - 967ad7ee-9211-4f66-80d3-db8ae1d09352
+      - name: 
+        id: 7bec5290-b7a2-4758-989c-225be5dad467
+        position: {x: 1717.6, y: 421.6}
+        node:
+          rid: 5971310320813604881
+        references: []
+        parentIds:
+        - af0f684a-7a70-4c14-9cf2-10d54c25b0ca
+        childIds:
+        - d69b0ae0-adea-4d43-8edc-4e7d7c034f88
+        - 790b0693-6a19-4903-992b-2aa45457a869
+      - name: 
+        id: 8edbe6c9-387e-4ec4-8e89-1d3cf4cc9562
+        position: {x: 2120.8, y: 77.6}
+        node:
+          rid: 5971310320813604882
+        references: []
+        parentIds:
+        - 5fbe5fc4-dc0f-421e-a9ee-00f7f722a993
+        childIds:
+        - af0f684a-7a70-4c14-9cf2-10d54c25b0ca
+        - f0bf6ff7-3418-4459-b0e4-71d7ff1478f1
+        - 19a74a33-81d9-432d-9a37-c30dc487c268
+      - name: 
+        id: 5d4cbe26-e88c-41b7-981e-a96445ce3d18
+        position: {x: 1059.2, y: 55.200005}
+        node:
+          rid: 5971310320813604883
+        references: []
+        parentIds:
+        - 5fbe5fc4-dc0f-421e-a9ee-00f7f722a993
+        childIds:
+        - d78f31b9-c201-495e-a012-7627af74ed67
+      - name: 
+        id: 0b6bbb8c-869c-41e6-8870-a28b35939935
+        position: {x: 576.8, y: 59.200005}
+        node:
+          rid: 5971310320813604884
+        references: []
+        parentIds:
+        - 5fbe5fc4-dc0f-421e-a9ee-00f7f722a993
+        childIds:
+        - 28a30960-078b-4260-a81e-e884ddc8614d
+      - name: 
+        id: 5fbe5fc4-dc0f-421e-a9ee-00f7f722a993
+        position: {x: 1055.2, y: -124.8}
+        node:
+          rid: 5971310320813604885
+        references: []
+        parentIds:
+        - c77c8b06-abd9-4497-8a27-31f318d92978
+        childIds:
+        - 5d4cbe26-e88c-41b7-981e-a96445ce3d18
+        - 0b6bbb8c-869c-41e6-8870-a28b35939935
+        - 8edbe6c9-387e-4ec4-8e89-1d3cf4cc9562
+    pushPerceptions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 5971310320813604864
+      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310320813604865
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310320813604866
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310320813604867
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310320813604868
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310320813604869
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310320813604870
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310320813604871
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310320813604872
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310320813604873
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310320813604874
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310320813604875
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310320813604876
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310320813604877
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310320813604878
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310320813604879
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310320813604880
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310320813604881
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310320813604882
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310320813604883
+      type: {class: SuccederNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310320813604884
+      type: {class: SuccederNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310320813604885
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310320813604887
+      type: {class: LoopNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        Iterations: -1
