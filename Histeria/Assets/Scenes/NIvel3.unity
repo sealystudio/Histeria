@@ -10112,7 +10112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1421037044044046486, guid: 563868a53e17f3245babd2d79ae6c2fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.37856
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1421037044044046486, guid: 563868a53e17f3245babd2d79ae6c2fb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10142,10 +10142,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8478276625151023034, guid: 563868a53e17f3245babd2d79ae6c2fb, type: 3}
-      propertyPath: dialoguePrefab
-      value: 
-      objectReference: {fileID: 8893074750125486884, guid: 08e5530320d72ce4d9e0d34202c7a362, type: 3}
     - target: {fileID: 8478276625151023034, guid: 813f56a181c38ca459ae9d5a394c15b0, type: 3}
       propertyPath: dialoguePrefab
       value: 
@@ -23123,9 +23119,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0029603317
+    y: 0.0025866528
     width: 1
-    height: 0.99632925
+    height: 0.99513704
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -28350,7 +28346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1421037044044046486, guid: 563868a53e17f3245babd2d79ae6c2fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.37856
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1421037044044046486, guid: 563868a53e17f3245babd2d79ae6c2fb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28384,10 +28380,6 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8478276625151023034, guid: 563868a53e17f3245babd2d79ae6c2fb, type: 3}
-      propertyPath: dialoguePrefab
-      value: 
-      objectReference: {fileID: 8893074750125486884, guid: 45901ccabf9b07e46a4040123508ebd0, type: 3}
     - target: {fileID: 3608276119445655083, guid: 813f56a181c38ca459ae9d5a394c15b0, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -61877,7 +61869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1421037044044046486, guid: 563868a53e17f3245babd2d79ae6c2fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.37856
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1421037044044046486, guid: 563868a53e17f3245babd2d79ae6c2fb, type: 3}
       propertyPath: m_LocalRotation.w
