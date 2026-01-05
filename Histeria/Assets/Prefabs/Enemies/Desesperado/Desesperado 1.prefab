@@ -1,0 +1,419 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6792398194744548757
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3875091310650382312}
+  - component: {fileID: 6202351251042827963}
+  - component: {fileID: 9216943036857555801}
+  - component: {fileID: 384803201872875726}
+  - component: {fileID: 1876182896587503404}
+  m_Layer: 0
+  m_Name: Desesperado 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3875091310650382312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6792398194744548757}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &6202351251042827963
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6792398194744548757}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 4172103797810666731, guid: ff8504f3c48e3274ebeb3859bd8712f1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.65, y: 0.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!50 &9216943036857555801
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6792398194744548757}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &384803201872875726
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6792398194744548757}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.65, y: 0.6}
+    newSize: {x: 0.65, y: 0.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.65, y: 0.6}
+  m_EdgeRadius: 0
+--- !u!114 &1876182896587503404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6792398194744548757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeOnLoop: 0
+  interruptOptions: 0
+  _eventHandler:
+    debugStatusChanges: 0
+    identifier: 
+  data:
+    graphs:
+    - name: Desesperado
+      id: 24954cf7-b912-44a3-8763-731d1979de3f
+      graph:
+        rid: 8421193750035300352
+      nodes:
+      - name: Loop until fail
+        id: 3a4f4430-2a96-4085-8f3b-dc12e2749f49
+        position: {x: 489, y: 323}
+        node:
+          rid: 8421193750035300364
+        references: []
+        parentIds: []
+        childIds:
+        - 3cfe31dd-629c-4946-a1ae-247aeb0d1704
+      - name: 
+        id: 3cfe31dd-629c-4946-a1ae-247aeb0d1704
+        position: {x: 488, y: 453}
+        node:
+          rid: 8421193750035300355
+        references: []
+        parentIds:
+        - 3a4f4430-2a96-4085-8f3b-dc12e2749f49
+        childIds:
+        - 54f88256-7845-4e2b-82fe-bce5f0b0d11d
+        - 8b9bfac0-ce35-4840-bd1e-24bba0fc0da2
+        - 68abdc86-8a86-4f07-ac57-cc285d68dc51
+      - name: 
+        id: aa9fbd4e-da05-4ac9-8781-b7a25b45d214
+        position: {x: 522, y: 745}
+        node:
+          rid: 8421193750035300354
+        references: []
+        parentIds:
+        - 8b9bfac0-ce35-4840-bd1e-24bba0fc0da2
+        childIds:
+        - 6dfe7e8c-0a91-47c0-90e0-0daa69af886e
+        - 77b66f25-d88b-4419-875e-9d1b9b387aa2
+        - 732bb93f-af1d-4860-8a49-294d4767135a
+      - name: Success
+        id: 8b9bfac0-ce35-4840-bd1e-24bba0fc0da2
+        position: {x: 488, y: 599}
+        node:
+          rid: 8421193750035300356
+        references: []
+        parentIds:
+        - 3cfe31dd-629c-4946-a1ae-247aeb0d1704
+        childIds:
+        - aa9fbd4e-da05-4ac9-8781-b7a25b45d214
+      - name: Inverter
+        id: 54f88256-7845-4e2b-82fe-bce5f0b0d11d
+        position: {x: 172, y: 607}
+        node:
+          rid: 8421193750035300357
+        references: []
+        parentIds:
+        - 3cfe31dd-629c-4946-a1ae-247aeb0d1704
+        childIds:
+        - b0a7e3af-6803-4bf5-ab87-8ea47c0219a1
+      - name: Idle
+        id: 68abdc86-8a86-4f07-ac57-cc285d68dc51
+        position: {x: 847, y: 606}
+        node:
+          rid: 8421193750035300358
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 3cfe31dd-629c-4946-a1ae-247aeb0d1704
+        childIds: []
+      - name: 
+        id: b0a7e3af-6803-4bf5-ab87-8ea47c0219a1
+        position: {x: 180, y: 737}
+        node:
+          rid: 8421193750035300359
+        references: []
+        parentIds:
+        - 54f88256-7845-4e2b-82fe-bce5f0b0d11d
+        childIds:
+        - 2256eb5f-0cb1-47fb-82e2-6deb01a133ee
+        - 9566a58b-79b2-45e5-9f05-048d80076c2e
+      - name: 
+        id: 732bb93f-af1d-4860-8a49-294d4767135a
+        position: {x: 934, y: 910}
+        node:
+          rid: 8421193750035300360
+        references: []
+        parentIds:
+        - aa9fbd4e-da05-4ac9-8781-b7a25b45d214
+        childIds:
+        - 8ac0fbdd-feb7-40f9-b412-521be809c02b
+        - 3dc3ab92-14f0-49a7-a888-4b4c0295df2b
+      - name: Division
+        id: 9566a58b-79b2-45e5-9f05-048d80076c2e
+        position: {x: 252, y: 902}
+        node:
+          rid: 8421193750035300361
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - b0a7e3af-6803-4bf5-ab87-8ea47c0219a1
+        childIds: []
+      - name: Perseguir
+        id: 77b66f25-d88b-4419-875e-9d1b9b387aa2
+        position: {x: 688, y: 1088}
+        node:
+          rid: 8421193750035300362
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - aa9fbd4e-da05-4ac9-8781-b7a25b45d214
+        childIds: []
+      - name: Ataque
+        id: 3dc3ab92-14f0-49a7-a888-4b4c0295df2b
+        position: {x: 1193, y: 1096}
+        node:
+          rid: 8421193750035300363
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 732bb93f-af1d-4860-8a49-294d4767135a
+        childIds: []
+      - name: killed ?
+        id: 2256eb5f-0cb1-47fb-82e2-6deb01a133ee
+        position: {x: 6, y: 918}
+        node:
+          rid: 8421193750035300365
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - b0a7e3af-6803-4bf5-ab87-8ea47c0219a1
+        childIds: []
+      - name: player_near ?
+        id: 6dfe7e8c-0a91-47c0-90e0-0daa69af886e
+        position: {x: 437, y: 1088}
+        node:
+          rid: 8421193750035300366
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - aa9fbd4e-da05-4ac9-8781-b7a25b45d214
+        childIds: []
+      - name: player_near_attack ?
+        id: 8ac0fbdd-feb7-40f9-b412-521be809c02b
+        position: {x: 950, y: 1096}
+        node:
+          rid: 8421193750035300367
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 732bb93f-af1d-4860-8a49-294d4767135a
+        childIds: []
+    pushPerceptions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 8421193750035300352
+      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8421193750035300354
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 8421193750035300355
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 8421193750035300356
+      type: {class: SuccederNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8421193750035300357
+      type: {class: InverterNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8421193750035300358
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8421193750035300359
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 8421193750035300360
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 8421193750035300361
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8421193750035300362
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8421193750035300363
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8421193750035300364
+      type: {class: LoopUntilNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        TargetStatus: 2
+        MaxIterations: -1
+    - rid: 8421193750035300365
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8421193750035300366
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8421193750035300367
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 

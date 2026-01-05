@@ -88,7 +88,7 @@ public class EliCorrupta : EnemyBase
         StartCoroutine(CooldownDisparo());
     }
 
-    public void Punch()
+    /*public void Punch()
     {
         if (crosshair == null) return;
 
@@ -120,7 +120,7 @@ public class EliCorrupta : EnemyBase
                 minion.TakeDamage(punchDamage);
             }
         }
-    }
+    }*/
 
     public void CargarAtaqueArea()
     {
