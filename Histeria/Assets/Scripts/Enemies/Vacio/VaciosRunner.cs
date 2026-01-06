@@ -21,10 +21,7 @@ public class VaciosRunner : BehaviourRunner
     {
         BehaviourTree VaciosBT = new BehaviourTree();
 
-        // ---------------------------------------------------------
-        // 1. LAS PREGUNTAS (CHECKS) -> TIENEN QUE SER FunctionalAction
-        // Porque devuelven 'Status'
-        // ---------------------------------------------------------
+        //--- PERCEPCIONES ---
 
         FunctionalAction VacioCerca_action = new FunctionalAction();
         VacioCerca_action.onUpdated = m_VacioController.CheckVacioCerca;
@@ -46,11 +43,7 @@ public class VaciosRunner : BehaviourRunner
         EstaEnOrigen_action.onUpdated = m_VacioController.CheckPuedePatrullar;
         LeafNode EstaEnOrigen = VaciosBT.CreateLeafNode(EstaEnOrigen_action);
 
-
-        // ---------------------------------------------------------
-        // 2. LAS ACCIONES (VERBOS) -> PUEDEN SER SimpleAction
-        // Porque son 'void'
-        // ---------------------------------------------------------
+        //--- ACCIONES ---
 
         SimpleAction Sinergia_action = new SimpleAction();
         Sinergia_action.action = m_VacioController.AplicarSinergia;
@@ -77,9 +70,7 @@ public class VaciosRunner : BehaviourRunner
         LeafNode Volver = VaciosBT.CreateLeafNode(Volver_action);
 
 
-        // ---------------------------------------------------------
-        // 3. ESTRUCTURA DEL ÁRBOL (NO TOCA NADA AQUÍ)
-        // ---------------------------------------------------------
+        //--- DECORADORES ---
 
         SequencerNode SecuencerSinergia = VaciosBT.CreateComposite<SequencerNode>(false, VacioCerca, Sinergia);
         SecuencerSinergia.IsRandomized = false;

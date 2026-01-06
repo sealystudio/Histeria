@@ -6,15 +6,22 @@ public class VacioController : MonoBehaviour
     [Header("Configuración")]
     public float velocidadBase = 3.0f;
     public float multiplicadorSinergia = 2.0f;
-    public float rangoDeteccion = 4.0f;
+    public float rangoDeteccion = 6.0f;
     public float rangoAtaque = 1.5f;
-    public float rangoSinergia = 1.0f;
-    public float radioPatrulla = 3.0f;
+    public float rangoSinergia = 2.0f;
+    public float radioPatrulla = 5.0f;
+
+    [Header("Combate")]
+    public int dañoAtaque = 1;
+    public float cooldownAtaque = 1.5f;
+    private float tiempoParaSiguienteAtaque = 0f;
 
     [Header("Referencias")]
     public Animator anim;
 
     private Transform jugador;
+    private PlayerHealthHearts scriptVidaJugador;
+
     private Vector3 posicionOrigen;
     private Vector3 puntoDestinoPatrulla;
     private bool estaPatrullando = false;
@@ -33,30 +40,25 @@ public class VacioController : MonoBehaviour
     {
         if (jugador != null) return;
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null) jugador = playerObj.transform;
+        if (playerObj != null)
+        {
+            jugador = playerObj.transform;
+            scriptVidaJugador = playerObj.GetComponent<PlayerHealthHearts>();
+        }
     }
 
     void Update()
     {
         if (jugador == null) BuscarJugador();
         if (estaBufado && CheckVacioCerca() == Status.Failure) DetenerSinergia();
-        Debug.Log("Velocidad: " + velocidadActual);
     }
 
-    // --- PERCEPCIONES (Status) ---
-    // Estas SÍ se quedan como Status porque son preguntas (Check...)
-
+    // --- PERCEPCIONES ---
     public Status CheckRangoDeteccion()
     {
         if (jugador == null) return Status.Failure;
         float distancia = Vector2.Distance(transform.position, jugador.position);
-
-        // SOLO imprime si es Success
-        if (distancia <= rangoDeteccion)
-        {
-            //Debug.Log($"¡TE VEO DE VERDAD! Distancia: {distancia}");
-            return Status.Success;
-        }
+        if (distancia <= rangoDeteccion) return Status.Success;
         return Status.Failure;
     }
 
@@ -73,7 +75,6 @@ public class VacioController : MonoBehaviour
     }
 
     public Status CheckEstaEnOrigen() => (Vector2.Distance(transform.position, posicionOrigen) < 0.2f) ? Status.Success : Status.Failure;
-
     public Status CheckPuedePatrullar() => (CheckEstaEnOrigen() == Status.Success || estaPatrullando) ? Status.Success : Status.Failure;
 
     public Status CheckVacioCerca()
@@ -86,43 +87,51 @@ public class VacioController : MonoBehaviour
         return Status.Failure;
     }
 
-    // --- ACCIONES (AHORA SON VOID / SIMPLE ACTIONS) ---
-    // Ya no devuelven nada, solo hacen "un poquito" de trabajo cada frame.
-
+    // --- ACCIONES ---
     public void Perseguir()
     {
         estaPatrullando = false;
         if (jugador != null) MoverHacia(jugador.position);
-        Debug.Log("¡Perseguir! " + velocidadActual);
+        Debug.Log("Persigo");
     }
 
     public void Patrullar()
     {
         estaPatrullando = true;
-
-        // Si llegamos al destino, calculamos otro
         if (Vector2.Distance(transform.position, puntoDestinoPatrulla) < 0.2f)
         {
             Vector2 puntoAleatorio = Random.insideUnitCircle * radioPatrulla;
             puntoDestinoPatrulla = posicionOrigen + new Vector3(puntoAleatorio.x, puntoAleatorio.y, 0);
         }
         MoverHacia(puntoDestinoPatrulla);
-        Debug.Log("¡Patrulla! " + velocidadActual);
+        Debug.Log("Patrullo");
     }
 
     public void VolverAOrigen()
     {
         estaPatrullando = false;
         MoverHacia(posicionOrigen);
-        Debug.Log("Vuelvo:");
+        Debug.Log("Vuelvo");
     }
 
-    public void Idle() { if (anim) anim.SetBool("Moviendo", false); }
-    public void AplicarSinergia() { if (!estaBufado) { velocidadActual = velocidadBase * multiplicadorSinergia; estaBufado = true; Debug.Log("Me bufo: " + velocidadActual); } }
-    public void Atacar() => Debug.Log("¡Ataque!");
+    public void Idle() { if (anim) anim.SetBool("Moviendo", false); Debug.Log("Me paro"); }
+    public void AplicarSinergia() { if (!estaBufado) { velocidadActual = velocidadBase * multiplicadorSinergia; estaBufado = true; } Debug.Log("Me bufo"); }
 
-    // --- MÉTODOS PRIVADOS ---
-    private void DetenerSinergia() { velocidadActual = velocidadBase; estaBufado = false; }
+    public void Atacar()
+    {
+        if (Time.time < tiempoParaSiguienteAtaque) return;
+
+        if (scriptVidaJugador != null)
+        {
+            Debug.Log("Ataco");
+
+            scriptVidaJugador.TakeDamage(dañoAtaque);
+
+            tiempoParaSiguienteAtaque = Time.time + cooldownAtaque;
+        }
+    }
+
+    private void DetenerSinergia() { velocidadActual = velocidadBase; estaBufado = false; Debug.Log("Quito bufo"); }
 
     private void MoverHacia(Vector3 objetivo)
     {
