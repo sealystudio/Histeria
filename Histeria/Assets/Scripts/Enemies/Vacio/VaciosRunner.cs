@@ -21,8 +21,10 @@ public class VaciosRunner : BehaviourRunner
     {
         BehaviourTree VaciosBT = new BehaviourTree();
 
-        // --- 1. PERCEPCIONES (TIENEN QUE SER FUNCTIONAL ACTION) ---
-        // Estas son las preguntas. Necesitan devolver Status (Success/Failure) para guiar al árbol.
+        // ---------------------------------------------------------
+        // 1. LAS PREGUNTAS (CHECKS) -> TIENEN QUE SER FunctionalAction
+        // Porque devuelven 'Status'
+        // ---------------------------------------------------------
 
         FunctionalAction VacioCerca_action = new FunctionalAction();
         VacioCerca_action.onUpdated = m_VacioController.CheckVacioCerca;
@@ -45,8 +47,10 @@ public class VaciosRunner : BehaviourRunner
         LeafNode EstaEnOrigen = VaciosBT.CreateLeafNode(EstaEnOrigen_action);
 
 
-        // --- 2. ACCIONES (SIMPLE ACTION) ---
-        // Estas son las acciones físicas. Son void. El árbol asume que siempre salen bien.
+        // ---------------------------------------------------------
+        // 2. LAS ACCIONES (VERBOS) -> PUEDEN SER SimpleAction
+        // Porque son 'void'
+        // ---------------------------------------------------------
 
         SimpleAction Sinergia_action = new SimpleAction();
         Sinergia_action.action = m_VacioController.AplicarSinergia;
@@ -69,13 +73,13 @@ public class VaciosRunner : BehaviourRunner
         LeafNode Patrullar = VaciosBT.CreateLeafNode(Patrullar_action);
 
         SimpleAction Volver_action = new SimpleAction();
-        // CORRECCIÓN: Aquí tenías puesto m_VacioController.Patrullar por error de copia/pega
         Volver_action.action = m_VacioController.VolverAOrigen;
         LeafNode Volver = VaciosBT.CreateLeafNode(Volver_action);
 
 
-        // --- 3. ESTRUCTURA DEL ÁRBOL ---
-        // (Esto está perfecto, no lo toco)
+        // ---------------------------------------------------------
+        // 3. ESTRUCTURA DEL ÁRBOL (NO TOCA NADA AQUÍ)
+        // ---------------------------------------------------------
 
         SequencerNode SecuencerSinergia = VaciosBT.CreateComposite<SequencerNode>(false, VacioCerca, Sinergia);
         SecuencerSinergia.IsRandomized = false;

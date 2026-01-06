@@ -4,12 +4,12 @@ using BehaviourAPI.Core;
 public class VacioController : MonoBehaviour
 {
     [Header("Configuración")]
-    public float velocidadBase = 2.0f;
-    public float multiplicadorSinergia = 1.1f;
-    public float rangoDeteccion = 10.0f;
+    public float velocidadBase = 3.0f;
+    public float multiplicadorSinergia = 2.0f;
+    public float rangoDeteccion = 4.0f;
     public float rangoAtaque = 1.5f;
-    public float rangoSinergia = 3.0f;
-    public float radioPatrulla = 5.0f;
+    public float rangoSinergia = 1.0f;
+    public float radioPatrulla = 3.0f;
 
     [Header("Referencias")]
     public Animator anim;
@@ -40,6 +40,7 @@ public class VacioController : MonoBehaviour
     {
         if (jugador == null) BuscarJugador();
         if (estaBufado && CheckVacioCerca() == Status.Failure) DetenerSinergia();
+        Debug.Log("Velocidad: " + velocidadActual);
     }
 
     // --- PERCEPCIONES (Status) ---
@@ -49,7 +50,14 @@ public class VacioController : MonoBehaviour
     {
         if (jugador == null) return Status.Failure;
         float distancia = Vector2.Distance(transform.position, jugador.position);
-        return (distancia <= rangoDeteccion) ? Status.Success : Status.Failure;
+
+        // SOLO imprime si es Success
+        if (distancia <= rangoDeteccion)
+        {
+            //Debug.Log($"¡TE VEO DE VERDAD! Distancia: {distancia}");
+            return Status.Success;
+        }
+        return Status.Failure;
     }
 
     public Status CheckJugadorMueve()
@@ -85,6 +93,7 @@ public class VacioController : MonoBehaviour
     {
         estaPatrullando = false;
         if (jugador != null) MoverHacia(jugador.position);
+        Debug.Log("¡Perseguir! " + velocidadActual);
     }
 
     public void Patrullar()
@@ -98,16 +107,18 @@ public class VacioController : MonoBehaviour
             puntoDestinoPatrulla = posicionOrigen + new Vector3(puntoAleatorio.x, puntoAleatorio.y, 0);
         }
         MoverHacia(puntoDestinoPatrulla);
+        Debug.Log("¡Patrulla! " + velocidadActual);
     }
 
     public void VolverAOrigen()
     {
         estaPatrullando = false;
         MoverHacia(posicionOrigen);
+        Debug.Log("Vuelvo:");
     }
 
     public void Idle() { if (anim) anim.SetBool("Moviendo", false); }
-    public void AplicarSinergia() { if (!estaBufado) { velocidadActual = velocidadBase * multiplicadorSinergia; estaBufado = true; } }
+    public void AplicarSinergia() { if (!estaBufado) { velocidadActual = velocidadBase * multiplicadorSinergia; estaBufado = true; Debug.Log("Me bufo: " + velocidadActual); } }
     public void Atacar() => Debug.Log("¡Ataque!");
 
     // --- MÉTODOS PRIVADOS ---
@@ -132,11 +143,5 @@ public class VacioController : MonoBehaviour
         }
 
         if (anim) anim.SetBool("Moviendo", true);
-    }
-
-    void OnDrawGizmos()
-    {
-        Gizmos.color = new Color(1, 0.92f, 0.016f, 0.5f);
-        Gizmos.DrawWireSphere(transform.position, rangoDeteccion);
     }
 }

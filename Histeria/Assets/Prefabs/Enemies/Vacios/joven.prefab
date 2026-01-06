@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5522035405492140812}
   - component: {fileID: 2552430125511831370}
   - component: {fileID: 533380101013631166}
-  - component: {fileID: 4131865774360263331}
+  - component: {fileID: 1166198614801909010}
   m_Layer: 0
   m_Name: joven
   m_TagString: Untagged
@@ -128,12 +128,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959e43f2880f2524f91de9bbf672e379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadBase: 1
-  multiplicadorSinergia: 1.1
-  rangoDeteccion: 10
+  velocidadBase: 3
+  multiplicadorSinergia: 2
+  rangoDeteccion: 4
   rangoAtaque: 1
-  rangoSinergia: 3
-  radioPatrulla: 5
+  rangoSinergia: 1
+  radioPatrulla: 2
   anim: {fileID: 0}
 --- !u!50 &5522035405492140812
 Rigidbody2D:
@@ -143,7 +143,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433851905028143093}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433851905028143093}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
   m_Name: 
@@ -276,13 +276,13 @@ MonoBehaviour:
         - 96c50d72-53c0-49c4-8223-4229a80d6c61
       - name: VacioCerca
         id: cc59952f-2caf-4e95-a7b9-01896e43719e
-        position: {x: 40, y: 852.80005}
+        position: {x: 53.6, y: 853.60004}
         node:
           rid: 5971310335700238616
         references:
         - fieldName: Action
           value:
-            rid: 5971310335700238648
+            rid: 5971310358262448202
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -331,7 +331,7 @@ MonoBehaviour:
         references:
         - fieldName: Action
           value:
-            rid: 5971310335700238649
+            rid: 5971310358262448203
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -376,13 +376,13 @@ MonoBehaviour:
         - 90e9ca22-8a21-4be8-8180-d025b078bb0b
       - name: RangoDeteccion
         id: ee718741-41b0-4156-80f1-d42dc4c73e4a
-        position: {x: 1100.8, y: 856.80005}
+        position: {x: 1117.6, y: 874.4}
         node:
           rid: 5971310335700238626
         references:
         - fieldName: Action
           value:
-            rid: 5971310335700238650
+            rid: 5971310358262448204
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -418,7 +418,7 @@ MonoBehaviour:
         references:
         - fieldName: Action
           value:
-            rid: 5971310335700238651
+            rid: 5971310358262448205
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -471,7 +471,7 @@ MonoBehaviour:
         references:
         - fieldName: Action
           value:
-            rid: 5971310335700238653
+            rid: 5971310358262448206
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -493,7 +493,7 @@ MonoBehaviour:
         childIds: []
       - name: Volver
         id: 0f13f978-c796-480d-bec1-50343498e114
-        position: {x: 2230.4, y: 707.2}
+        position: {x: 2246.4, y: 714.4}
         node:
           rid: 5971310335700238636
         references:
@@ -605,42 +605,12 @@ MonoBehaviour:
         method:
           componentName: VacioController
           methodName: Idle
-    - rid: 5971310335700238648
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: VacioController
-          methodName: CheckVacioCerca
-    - rid: 5971310335700238649
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: VacioController
-          methodName: CheckRangoAtaque
-    - rid: 5971310335700238650
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: VacioController
-          methodName: CheckRangoDeteccion
-    - rid: 5971310335700238651
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: VacioController
-          methodName: CheckJugadorMueve
     - rid: 5971310335700238652
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
         method:
           componentName: VacioController
           methodName: Perseguir
-    - rid: 5971310335700238653
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: VacioController
-          methodName: CheckPuedePatrullar
     - rid: 5971310335700238654
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -652,8 +622,98 @@ MonoBehaviour:
       data:
         method:
           componentName: VacioController
-          methodName: Patrullar
---- !u!114 &4131865774360263331
+          methodName: VolverAOrigen
+    - rid: 5971310358262448202
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: VacioController
+          methodName: CheckVacioCerca
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 5971310358262448203
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: VacioController
+          methodName: CheckRangoAtaque
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 5971310358262448204
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: VacioController
+          methodName: CheckRangoDeteccion
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 5971310358262448205
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: VacioController
+          methodName: CheckJugadorMueve
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 5971310358262448206
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: VacioController
+          methodName: CheckPuedePatrullar
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+--- !u!114 &1166198614801909010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -665,9 +725,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eb746c69f3e06a4a8cc15d341a95390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executeOnLoop: 0
+  executeOnLoop: 1
   interruptOptions: 0
-  m_VacioController: {fileID: 0}
+  m_VacioController: {fileID: 6796481288382566153}
 --- !u!1 &7551078021879021136
 GameObject:
   m_ObjectHideFlags: 0
