@@ -30,16 +30,20 @@ public class BossContext : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        if (isInvulnerable)
+        // Buscamos el cerebro para avisarle del golpe
+        BossBrain brain = GetComponent<BossBrain>();
+
+        // Si estamos en la fase final (Survival), ignoramos el daño pero reiniciamos el tiempo
+        if (brain != null && brain.IsPhaseSurvival())
         {
-            timeSinceLastDamage = 0f; // Reiniciamos contador si le pegan en fase final
-            Debug.Log("Boss Invulnerable: Contador reiniciado.");
+            brain.OnBossHit(); // Reinicia el contador de 15s en BossBrain
+            Debug.Log("<color=yellow>BOSS FINAL: Inmortal. ¡Contador de 15s reiniciado por golpe!</color>");
             return;
         }
 
+        // Lógica normal para el resto del combate
         currentHP -= amount;
         timeSinceLastDamage = 0f;
-
         Debug.Log($"Vida Boss: {currentHP}/{maxHP}");
     }
 

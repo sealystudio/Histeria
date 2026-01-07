@@ -555,9 +555,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.11960785
-    width: 0.705623
-    height: 0.70274514
+    y: 0.0017421603
+    width: 1
+    height: 0.99512196
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -18495,7 +18495,7 @@ MonoBehaviour:
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 3302343768140677188
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -18993,6 +18993,24 @@ MonoBehaviour:
         ExecuteOnLoop: 1
         InterruptOptions: 2
         subgraphId: 86ca7781-d7fc-45c1-893e-ec0433854f4e
+    - rid: 3302343768140677188
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: BossBrain
+          methodName: Action_SurvivalMode
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
 --- !u!114 &7457079641217972221 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3355700159375257988, guid: 2e8192b015ef7414387a126d6972900b, type: 3}

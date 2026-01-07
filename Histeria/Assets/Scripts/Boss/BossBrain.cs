@@ -13,147 +13,155 @@ public class BossBrain : MonoBehaviour
     private Vector2 moveDirection;
     private Rigidbody2D rb;
 
+    [Header("Fase Supervivencia")]
+    private float survivalTimer = 0f;
+    private bool isDead = false;
+
     private float nextHazardTime = 0f;
     private float nextSpecialAttackTime = 0f;
+    private float lastAttackTime = 0f;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
         if (context == null) context = GetComponent<BossContext>();
         if (actions == null) actions = GetComponent<BossActions>();
-
-        Debug.Log("BOSS BRAIN: Iniciado. ¿Contexto encontrado? " + (context != null));
     }
 
     private void Update()
     {
-        // 1. GESTIÓN FÍSICA DEL MOVIMIENTO
+        if (isDead) return;
+
+        // 1. GESTIÓN FÍSICA
         if (rb != null)
         {
             rb.linearVelocity = moveDirection.normalized * moveSpeed;
         }
-        else
-        {
-            Debug.LogError("BOSS BRAIN: ¡Falta el Rigidbody2D!");
-        }
 
-        // 2. GESTIÓN DE ANIMACIÓN (¡LO NUEVO!)
+        // 2. GESTIÓN DE ANIMACIÓN
         if (context.animator != null)
         {
-            // Si la velocidad física es mayor que 0.1, es que se está moviendo
             bool isMoving = rb.linearVelocity.magnitude > 0.1f;
             context.animator.SetBool("IsWalking", isMoving);
         }
 
-        // 3. ACTUALIZAR DIRECCIÓN DE MIRADA (FLIP)
-        if (context.playerTransform != null)
+        // 3. ACTUALIZAR DIRECCIÓN DE MIRADA
+        if (context.playerTransform != null && context.DistanceToPlayer > 0.5f)
         {
-            // Solo giramos si está persiguiendo o lejos, para evitar giros locos cuerpo a cuerpo
-            if (context.DistanceToPlayer > 0.5f)
-            {
-                if (context.playerTransform.position.x > transform.position.x)
-                    transform.localScale = new Vector3(1, 1, 1);
-                else
-                    transform.localScale = new Vector3(-1, 1, 1);
-            }
+            if (context.playerTransform.position.x > transform.position.x)
+                transform.localScale = new Vector3(1, 1, 1);
+            else
+                transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
     // =================================================================================
-    //                CONDICIONES (CON LOGS)
+    //                                  SISTEMA DE DAÑO
     // =================================================================================
 
-    public bool IsPhaseOleada()
+    /// <summary>
+    /// Llama a este método desde el script donde el Boss recibe daño.
+    /// </summary>
+    public void OnBossHit()
     {
-        return context.HealthPercentage > 0.5f;
-    }
-
-    public bool IsPhaseHisteria()
-    {
-        return context.HealthPercentage <= 0.5f && context.HealthPercentage > 0.10f;
-    }
-
-    public bool IsPhaseSurvival()
-    {
-        return context.HealthPercentage <= 0.10f;
-    }
-
-    public bool IsSurvivalTimeOver()
-    {
-        return context.SurvivalTime >= 15f;
-    }
-
-    public bool IsPlayerCloseMelee()
-    {
-        float dist = context.DistanceToPlayer;
-        bool isClose = dist <= 4.5f;
-
-        return isClose;
-    }
-
-    // =================================================================================
-    //                  ACCIONES (CON LOGS)
-    // =================================================================================
-
-    public StatusFlags Action_ChasePlayer()
-    {
-        if (context.playerTransform == null)
+        if (IsPhaseSurvival())
         {
-            Debug.LogError("BOSS ACCION: ¡No encuentro al PlayerTransform!");
-            return StatusFlags.Failure;
+            Debug.Log("<color=red>BOSS: ¡Golpe recibido! Reiniciando contador de 15s.</color>");
+            survivalTimer = 0f; // Reinicia el tiempo si el jugador le pega
+        }
+    }
+
+    // =================================================================================
+    //                                ACCIÓN FASE FINAL
+    // =================================================================================
+
+    public StatusFlags Action_SurvivalMode()
+    {
+        if (isDead) return StatusFlags.Success;
+
+        // 1. COMPORTAMIENTO AGRESIVO: Sigue atacando como en Histeria
+        if (IsPlayerCloseMelee())
+        {
+            Action_DoMeleeAttack();
+        }
+        else
+        {
+            Action_ChasePlayer();
         }
 
-        // Calculamos dirección
-        moveDirection = (context.playerTransform.position - transform.position).normalized;
-        moveSpeed = 2.5f;
+        // 2. CONTADOR DE SUPERVIVENCIA: Solo muere si el jugador NO le pega
+        survivalTimer += Time.deltaTime;
 
-        Debug.Log($"BOSS ACCION: Persecución activa. Dirección: {moveDirection}");
+        // Debug visual del tiempo restante
+        if (Mathf.FloorToInt(survivalTimer) % 5 == 0 && survivalTimer > 1f)
+            Debug.Log($"BOSS: Tiempo en paz: {survivalTimer:F1}/15s");
 
-        // Si llega, paramos
-        if (context.DistanceToPlayer <= 2.5f)
+        if (survivalTimer >= 15f)
         {
-            moveDirection = Vector2.zero;
-            Debug.Log("BOSS ACCION: He llegado al jugador. Paro.");
+            Die();
             return StatusFlags.Success;
         }
 
         return StatusFlags.Running;
     }
 
-    private float lastAttackTime = 0f; // Variable para recordar cuándo pegó
+    private void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+        moveDirection = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
+        Debug.Log("<color=green>BOSS: El jugador ha superado la prueba de paz. Muerte final.</color>");
 
+        // Disparar aquí tu animación de muerte o evento
+        // actions.ExecuteDeath(); 
+        Destroy(gameObject, 1.0f);
+    }
+
+    // =================================================================================
+    //                                  CONDICIONES
+    // =================================================================================
+
+    public bool IsPhaseOleada() => context.HealthPercentage > 0.5f;
+
+    public bool IsPhaseHisteria() => context.HealthPercentage <= 0.5f && context.HealthPercentage > 0.10f;
+
+    public bool IsPhaseSurvival() => context.HealthPercentage <= 0.10f && !isDead;
+
+    public bool IsPlayerCloseMelee() => context.DistanceToPlayer <= 4.5f;
+
+    // =================================================================================
+    //                                   ACCIONES
+    // =================================================================================
+
+    public StatusFlags Action_ChasePlayer()
+    {
+        if (context.playerTransform == null) return StatusFlags.Failure;
+
+        moveDirection = (context.playerTransform.position - transform.position).normalized;
+        moveSpeed = 2.5f;
+
+        if (context.DistanceToPlayer <= 2.5f)
+        {
+            moveDirection = Vector2.zero;
+            return StatusFlags.Success;
+        }
+        return StatusFlags.Running;
+    }
 
     public StatusFlags Action_DoMeleeAttack()
     {
         moveDirection = Vector2.zero;
+        if (Time.time < lastAttackTime + 2.0f) return StatusFlags.Failure;
 
-        // 1. CHEQUEO DE COOLDOWN (DESCANSO)
-        if (Time.time < lastAttackTime + 2.0f) // 2.0f es el tiempo de espera
-        {
-            return StatusFlags.Failure; // "Aún estoy cansado, no pego"
-        }
-
-        // 2. EJECUCIÓN
         if (!actions.IsBusy)
         {
-            Debug.Log("BOSS ACCION: Lanzando golpe melee...");
             actions.ExecuteBasicAttack();
-            lastAttackTime = Time.time; // ¡Guardamos la hora del golpe!
+            lastAttackTime = Time.time;
             return StatusFlags.Running;
         }
-
-        // 3. FINALIZACIÓN
-        // Si IsBusy es falso AQUÍ, significa que ya ha terminado la animación
-        // (porque el primer if ya habría saltado si estuviera libre para empezar)
-        // NOTA: Con la lógica actual, este bloque final necesita cuidado, 
-        // pero con el cooldown arriba, funcionará bien.
-
         return StatusFlags.Success;
     }
-
-    // ... Resto de acciones (SpecialAttack, SpawnMinion, DropHazard) igual ...
-    // Añádeles logs si los necesitas, pero céntrate en Chase y Melee primero.
 
     public StatusFlags Action_SpawnMinion()
     {
@@ -164,52 +172,33 @@ public class BossBrain : MonoBehaviour
 
     public StatusFlags Action_DoSpecialAttack()
     {
-
         if (context.playerTransform != null)
         {
-            // Calculamos dirección hacia el jugador
             moveDirection = (context.playerTransform.position - transform.position).normalized;
-
-            moveSpeed = 1.5f; 
+            moveSpeed = 1.5f;
         }
-
 
         if (Time.time >= nextSpecialAttackTime && !actions.IsBusy)
         {
             actions.ExecuteSpecialAttack();
-
-            Debug.Log("BOSS: Disparo especial en movimiento");
-
             nextSpecialAttackTime = Time.time + 2.5f;
         }
-
         return StatusFlags.Running;
     }
 
     public StatusFlags Action_DropHazard()
     {
-
         if (context.playerTransform != null)
         {
             moveDirection = (context.playerTransform.position - transform.position).normalized;
-
-            moveSpeed = 2.5f; 
+            moveSpeed = 2.5f;
         }
 
         if (Time.time >= nextHazardTime)
         {
             context.worldInteraction.DropHazard();
-
-            Debug.Log("BOSS: ¡Dejando rastro de veneno!");
-
             nextHazardTime = Time.time + 4.0f;
         }
         return StatusFlags.Running;
     }
-
-    public float GetDistanceToPlayer()
-    {
-        return context.DistanceToPlayer;
-    }
-
 }
