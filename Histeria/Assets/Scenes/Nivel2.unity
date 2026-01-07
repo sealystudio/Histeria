@@ -2794,9 +2794,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0020833334
+    y: 0.0026595744
     width: 1
-    height: 0.9955556
+    height: 0.9948936
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -5520,6 +5520,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 384803201872875726, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.03125
+      objectReference: {fileID: 0}
+    - target: {fileID: 384803201872875726, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 384803201872875726, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.03125
+      objectReference: {fileID: 0}
+    - target: {fileID: 384803201872875726, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: 'managedReferences[-2]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: 'managedReferences[8421193750035300451]'
       value: BehaviourAPI.UnityToolkit.GUIDesigner.Framework BehaviourAPI.UnityToolkit.GUIDesigner.Framework.CustomAction
@@ -5545,6 +5565,10 @@ PrefabInstance:
       value: BehaviourAPI.UnityToolkit BehaviourAPI.UnityToolkit.TargetRequestAction
       objectReference: {fileID: 0}
     - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: 'managedReferences[8421193818152370176]'
+      value: BehaviourAPI.UnityToolkit.GUIDesigner.Framework BehaviourAPI.UnityToolkit.GUIDesigner.Framework.CustomAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: managedReferences[8421193750035300456].smartObject
       value: 
       objectReference: {fileID: 0}
@@ -5558,6 +5582,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: managedReferences[8421193750035300455].stop.methodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: managedReferences[8421193818152370176].stop.methodName
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
@@ -5589,6 +5617,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: managedReferences[8421193818152370176].pause.methodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: managedReferences[8421193818152370176].start.methodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: data.graphs.Array.data[0].nodes.Array.data[8].position.x
       value: 276
       objectReference: {fileID: 0}
@@ -5617,6 +5653,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: managedReferences[8421193818152370176].update.methodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: managedReferences[8421193750035300451].stop.componentName
       value: 
       objectReference: {fileID: 0}
@@ -5638,6 +5678,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: managedReferences[8421193750035300455].unpause.methodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: managedReferences[8421193818152370176].stop.componentName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: managedReferences[8421193818152370176].unpause.methodName
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
@@ -5665,6 +5713,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: managedReferences[8421193818152370176].pause.componentName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: managedReferences[8421193818152370176].start.componentName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: managedReferences[8421193750035300451].update.componentName
       value: 
       objectReference: {fileID: 0}
@@ -5685,6 +5741,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: managedReferences[8421193818152370176].update.componentName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: managedReferences[8421193750035300451].unpause.componentName
       value: 
       objectReference: {fileID: 0}
@@ -5694,6 +5754,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: managedReferences[8421193750035300455].unpause.componentName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: managedReferences[8421193818152370176].unpause.componentName
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1876182896587503404, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
@@ -5859,6 +5923,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: DesesperadoPequeno
       objectReference: {fileID: 0}
+    - target: {fileID: 4099542129584833659, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
+      propertyPath: 'managedReferences[8421193818152370177]'
+      value: BehaviourAPI.UnityToolkit BehaviourAPI.UnityToolkit.DelayAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099542129584833659, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
+      propertyPath: managedReferences[8421193818152370177].delayTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099542129584833659, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
+      propertyPath: data.graphs.Array.data[0].nodes.Array.data[4].references.Array.data[0].value
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 8430361241352361199, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
       propertyPath: m_SortingLayer
       value: 9
@@ -5866,6 +5942,14 @@ PrefabInstance:
     - target: {fileID: 8430361241352361199, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
       propertyPath: m_SortingLayerID
       value: 506638373
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754559104386969564, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
+      propertyPath: moveSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754559104386969564, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
+      propertyPath: detectionRange
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
