@@ -87,7 +87,7 @@ SpriteRenderer:
   m_Size: {x: 0.65, y: 0.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &9216943036857555801
@@ -242,13 +242,13 @@ MonoBehaviour:
         - b0a7e3af-6803-4bf5-ab87-8ea47c0219a1
       - name: Idle
         id: 68abdc86-8a86-4f07-ac57-cc285d68dc51
-        position: {x: 847, y: 606}
+        position: {x: 861.6, y: 621.60004}
         node:
           rid: 8421193750035300358
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 5703798107443822671
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -278,13 +278,13 @@ MonoBehaviour:
         - 3dc3ab92-14f0-49a7-a888-4b4c0295df2b
       - name: Division
         id: 9566a58b-79b2-45e5-9f05-048d80076c2e
-        position: {x: 252, y: 902}
+        position: {x: 268.8, y: 917.60004}
         node:
           rid: 8421193750035300361
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 5703798107443822674
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -298,7 +298,7 @@ MonoBehaviour:
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 5703798107443822673
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -312,7 +312,7 @@ MonoBehaviour:
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 5703798107443822672
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -326,7 +326,7 @@ MonoBehaviour:
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 5703798107443822675
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -340,7 +340,7 @@ MonoBehaviour:
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 5703798107443822676
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -348,13 +348,13 @@ MonoBehaviour:
         childIds: []
       - name: player_near_attack ?
         id: 8ac0fbdd-feb7-40f9-b412-521be809c02b
-        position: {x: 950, y: 1096}
+        position: {x: 968, y: 1112.8}
         node:
           rid: 8421193750035300367
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 5703798107443822677
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -364,8 +364,48 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 5703798107443822671
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: Desesperado
+          methodName: AccionIdle
+    - rid: 5703798107443822672
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: Desesperado
+          methodName: AccionAtaque
+    - rid: 5703798107443822673
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: Desesperado
+          methodName: AccionPerseguir
+    - rid: 5703798107443822674
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: Desesperado
+          methodName: AccionDivision
+    - rid: 5703798107443822675
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: Desesperado
+          methodName: Killed
+    - rid: 5703798107443822676
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: Desesperado
+          methodName: JugadorEnRango
+    - rid: 5703798107443822677
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: Desesperado
+          methodName: JugadorEnRangoAtaque
     - rid: 8421193750035300352
       type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 

@@ -2794,9 +2794,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0026595744
+    y: 0.0020833334
     width: 1
-    height: 0.9948936
+    height: 0.9955556
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -3817,11 +3817,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5725431805286734497, guid: 7a754c433cf6bfe47b95ff636307f51f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 5.09
       objectReference: {fileID: 0}
     - target: {fileID: 5725431805286734497, guid: 7a754c433cf6bfe47b95ff636307f51f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.99
+      value: 1.03
       objectReference: {fileID: 0}
     - target: {fileID: 5725431805286734497, guid: 7a754c433cf6bfe47b95ff636307f51f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3960,6 +3960,7 @@ MonoBehaviour:
   contadorObjetos: {fileID: 1504251312}
   enemiesToSpawn:
   - {fileID: 5537925331262944303, guid: 7a754c433cf6bfe47b95ff636307f51f, type: 3}
+  - {fileID: 4867593870879561258}
   contadorEnemigos: {fileID: 1890644536}
   populationDelay: 1
   enemyNumber: 15
@@ -5701,23 +5702,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3875091310650382312, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.3081
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3875091310650382312, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.3081
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3875091310650382312, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.3081
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3875091310650382312, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.78
+      value: 9.16
       objectReference: {fileID: 0}
     - target: {fileID: 3875091310650382312, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 3875091310650382312, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5751,6 +5752,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6202351251042827963, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: m_Size.x
+      value: 2.03125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202351251042827963, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: m_Size.y
+      value: 1.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202351251042827963, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1664950448, guid: ff8504f3c48e3274ebeb3859bd8712f1, type: 3}
+    - target: {fileID: 6202351251042827963, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202351251042827963, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 506638373
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202351251042827963, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6792398194744548757, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       propertyPath: m_Name
       value: Desesperado
@@ -5766,6 +5791,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6792398194744548757, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9178571387649392726}
+    - targetCorrespondingSourceObject: {fileID: 6792398194744548757, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9178571387649392732}
   m_SourcePrefab: {fileID: 100100000, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
 --- !u!1001 &3902639488662745934
 PrefabInstance:
@@ -5776,12 +5804,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 141754429848150612, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 141754429848150612, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 141754429848150612, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 141754429848150612, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.43
+      value: 11.42
       objectReference: {fileID: 0}
     - target: {fileID: 141754429848150612, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.19
+      value: -0.81
       objectReference: {fileID: 0}
     - target: {fileID: 141754429848150612, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5819,6 +5859,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DesesperadoPequeno
       objectReference: {fileID: 0}
+    - target: {fileID: 8430361241352361199, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430361241352361199, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 506638373
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5848,21 +5896,36 @@ MonoBehaviour:
   attackRange: 3
   damage: 1
   contactCooldown: 0
-  lastContactTime: -10
   isDead: 0
   canMove: 0
   canAttack: 0
-  animator: {fileID: 0}
+  animator: {fileID: 9178571387649392732}
   knockbackForce: {x: 2, y: 2}
   flashDuration: 0.15
-  spriteRenderer: {fileID: 0}
-  rb: {fileID: 0}
   velocidadPersecucion: 0.7
   desesperadoPequenoPrefab: {fileID: 0}
-  player: {fileID: 0}
-  rb: {fileID: 0}
-  direccionMovimiento: {x: 0, y: 0}
-  yaSeDividio: 0
+--- !u!95 &9178571387649392732
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4867593870879561258}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d0e9a2b3c73b4264ea13ad6cfb06a78c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

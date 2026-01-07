@@ -1,4 +1,4 @@
-/*using UnityEngine;
+using UnityEngine;
 using BehaviourAPI.Core;
 using System.Collections;
 
@@ -12,6 +12,7 @@ public class Desesperado : EnemyBase
     private Rigidbody2D rb;
     private Vector2 direccionMovimiento;
     private bool yaSeDividio = false;
+
 
     private void Awake()
     {
@@ -63,6 +64,9 @@ public class Desesperado : EnemyBase
 
     public StatusFlags AccionPerseguir()
     {
+        if (animator != null)
+            animator.SetTrigger("Mover");
+
         if (player == null) return StatusFlags.Failure;
 
         direccionMovimiento = (player.transform.position - transform.position).normalized;
@@ -89,7 +93,7 @@ public class Desesperado : EnemyBase
                 Instantiate(desesperadoPequenoPrefab, transform.position + spawnOffset, Quaternion.identity);
             }
         }
-
+        
         yaSeDividio = true;
         Die();
         return StatusFlags.Success;
@@ -101,4 +105,4 @@ public class Desesperado : EnemyBase
         isDead = true;
         base.Die();
     }
-}*/
+}

@@ -1,4 +1,4 @@
-/*using UnityEngine;
+using UnityEngine;
 using BehaviourAPI.Core;
 using System.Collections;
 
@@ -51,4 +51,4 @@ public class DesesperadoPequeno : EnemyBase
 
         return StatusFlags.Running;
     }
-}*/
+}
