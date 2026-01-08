@@ -490,9 +490,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 3
   maxHealth: 3
-  moveSpeed: 1
+  moveSpeed: 1.5
   detectionRange: 5
-  attackRange: 1
+  attackRange: 3
   damage: 1
   contactCooldown: 1
   isDead: 0

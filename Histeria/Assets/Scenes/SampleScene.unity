@@ -1570,9 +1570,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.5294409
-    width: 0.3379694
-    height: 0.33666503
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -3275,9 +3275,10 @@ MonoBehaviour:
   contadorObjetos: {fileID: 2009156441}
   enemiesToSpawn:
   - {fileID: 6653928382663917490, guid: 324c58677f8e23748842c5ddf35c1635, type: 3}
+  - {fileID: 6792398194744548757, guid: d0922d1ec501a8245bbbe8aa14883305, type: 3}
   contadorEnemigos: {fileID: 1923188365}
   populationDelay: 1
-  enemyNumber: 15
+  enemyNumber: 7
   numObj: 0
   objectSpawnPoints: []
   enemySpawnPoints: []

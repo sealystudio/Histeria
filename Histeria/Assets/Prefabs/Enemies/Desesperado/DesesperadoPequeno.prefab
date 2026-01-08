@@ -367,8 +367,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 1
   maxHealth: 1
-  moveSpeed: 3
-  detectionRange: 3
+  moveSpeed: 5
+  detectionRange: 7
   attackRange: 0
   damage: 0
   contactCooldown: 1
