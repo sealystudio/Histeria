@@ -128,12 +128,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959e43f2880f2524f91de9bbf672e379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadBase: 3
+  velocidadBase: 10
   multiplicadorSinergia: 2
-  rangoDeteccion: 4
+  rangoDeteccion: 5
   rangoAtaque: 1
-  rangoSinergia: 1
-  radioPatrulla: 2
+  rangoSinergia: 3
+  radioPatrulla: 5
+  "da\xF1oAtaque": 1
+  cooldownAtaque: 2
   anim: {fileID: 0}
 --- !u!50 &5522035405492140812
 Rigidbody2D:
@@ -200,7 +202,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.375, y: 4.5}
+    oldSize: {x: 0.6875, y: 2.25}
     newSize: {x: 0.6875, y: 2.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
