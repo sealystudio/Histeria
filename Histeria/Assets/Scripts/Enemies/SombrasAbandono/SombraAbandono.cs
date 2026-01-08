@@ -3,6 +3,7 @@ using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using BehaviourAPI.Core;
 
 public class SombraAbandono : EnemyBase
 {
@@ -186,7 +187,7 @@ public class SombraAbandono : EnemyBase
     public bool TengoLuz() => _hasTarget;
     public bool HaLlegadoLuz() => Vector2.Distance(transform.position, globalLightPos) < 1f;
 
-    /*
+    
     public StatusFlags SeekLight()
     {
         lights = FindObjectsOfType<Light2D>();
@@ -295,7 +296,7 @@ public class SombraAbandono : EnemyBase
 
         return StatusFlags.Success;
     }
-    */
+   
     protected override void OnHit()
     {
         if (animator != null) animator.SetTrigger("Hit");

@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 9216943036857555801}
   - component: {fileID: 384803201872875726}
   - component: {fileID: 1876182896587503404}
-  m_Layer: 3
-  m_Name: Desesperado 1
-  m_TagString: Untagged
+  - component: {fileID: 1896940216011190503}
+  - component: {fileID: 1910327756796308802}
+  m_Layer: 0
+  m_Name: Desesperado
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,8 +78,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 506638373
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: 3619233616230784253, guid: 57c672c6abd885f47bb098454a9a9ceb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -175,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executeOnLoop: 0
+  executeOnLoop: 1
   interruptOptions: 0
   _eventHandler:
     debugStatusChanges: 0
@@ -188,60 +190,49 @@ MonoBehaviour:
         rid: 8421193750035300352
       nodes:
       - name: 
-        id: ecc94163-656e-4b67-aac1-2ab85d299709
-        position: {x: 504, y: 316.8}
+        id: e223807e-0e9d-4885-9427-7e0076f88429
+        position: {x: 531, y: 357}
         node:
-          rid: 8416304309698560095
+          rid: 8421193840752066560
         references: []
         parentIds: []
         childIds:
-        - 3cfe31dd-629c-4946-a1ae-247aeb0d1704
+        - 8f516415-30ac-448e-a3c1-31972533de4b
       - name: 
-        id: 3cfe31dd-629c-4946-a1ae-247aeb0d1704
-        position: {x: 488, y: 453}
+        id: 8f516415-30ac-448e-a3c1-31972533de4b
+        position: {x: 531, y: 495}
         node:
-          rid: 8421193750035300355
+          rid: 8421193839224291406
         references: []
         parentIds:
-        - ecc94163-656e-4b67-aac1-2ab85d299709
+        - e223807e-0e9d-4885-9427-7e0076f88429
         childIds:
         - ca0cf126-41d3-4dad-9763-2f8ad07bb178
-        - aa9fbd4e-da05-4ac9-8781-b7a25b45d214
+        - ea2fc6df-f491-444f-81b2-e0ccb663e3b5
         - 68abdc86-8a86-4f07-ac57-cc285d68dc51
-      - name: main_selector
-        id: aa9fbd4e-da05-4ac9-8781-b7a25b45d214
-        position: {x: 584.8, y: 708}
-        node:
-          rid: 8421193750035300354
-        references: []
-        parentIds:
-        - 3cfe31dd-629c-4946-a1ae-247aeb0d1704
-        childIds:
-        - ea936b73-f77a-40b7-9b1f-621866095c51
-        - fbc9bfb5-955a-4783-86a3-888e8c077d48
       - name: Idle
         id: 68abdc86-8a86-4f07-ac57-cc285d68dc51
-        position: {x: 960, y: 672.80005}
+        position: {x: 977, y: 689}
         node:
           rid: 8421193750035300358
         references:
         - fieldName: Action
           value:
-            rid: 5703798107443822671
+            rid: 8421193840752066634
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 3cfe31dd-629c-4946-a1ae-247aeb0d1704
+        - 8f516415-30ac-448e-a3c1-31972533de4b
         childIds: []
       - name: Division
         id: 9566a58b-79b2-45e5-9f05-048d80076c2e
-        position: {x: 200.8, y: 968.80005}
+        position: {x: 170, y: 958}
         node:
           rid: 8421193750035300361
         references:
         - fieldName: Action
           value:
-            rid: 5703798107443822674
+            rid: 8416304313733480524
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -249,7 +240,7 @@ MonoBehaviour:
         childIds: []
       - name: Perseguir
         id: 77b66f25-d88b-4419-875e-9d1b9b387aa2
-        position: {x: 468.8, y: 1050.4}
+        position: {x: 824, y: 1076}
         node:
           rid: 8421193750035300362
         references:
@@ -263,21 +254,21 @@ MonoBehaviour:
         childIds: []
       - name: Ataque
         id: 3dc3ab92-14f0-49a7-a888-4b4c0295df2b
-        position: {x: 752, y: 1051.2001}
+        position: {x: 546, y: 1060}
         node:
           rid: 8421193750035300363
         references:
         - fieldName: Action
           value:
-            rid: 5703798107443822672
+            rid: 8421193840752066632
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - fbc9bfb5-955a-4783-86a3-888e8c077d48
+        - 82f4385c-206e-41be-8eef-7bd898a04cb5
         childIds: []
       - name: is_killed?
         id: ca0cf126-41d3-4dad-9763-2f8ad07bb178
-        position: {x: 192.8, y: 734.4}
+        position: {x: 204, y: 723}
         node:
           rid: 8416304309263925329
         references:
@@ -287,12 +278,12 @@ MonoBehaviour:
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 3cfe31dd-629c-4946-a1ae-247aeb0d1704
+        - 8f516415-30ac-448e-a3c1-31972533de4b
         childIds:
         - 9566a58b-79b2-45e5-9f05-048d80076c2e
       - name: player_near?
         id: ea936b73-f77a-40b7-9b1f-621866095c51
-        position: {x: 480.8, y: 875.2}
+        position: {x: 816, y: 875}
         node:
           rid: 8416304309263925331
         references:
@@ -302,46 +293,39 @@ MonoBehaviour:
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         parentIds:
-        - aa9fbd4e-da05-4ac9-8781-b7a25b45d214
+        - ea2fc6df-f491-444f-81b2-e0ccb663e3b5
         childIds:
         - 77b66f25-d88b-4419-875e-9d1b9b387aa2
-      - name: player_near_attack
-        id: fbc9bfb5-955a-4783-86a3-888e8c077d48
-        position: {x: 744, y: 891.2}
+      - name: 
+        id: ea2fc6df-f491-444f-81b2-e0ccb663e3b5
+        position: {x: 591, y: 706}
         node:
-          rid: 8416304309263925333
+          rid: 8421193839224291408
+        references: []
+        parentIds:
+        - 8f516415-30ac-448e-a3c1-31972533de4b
+        childIds:
+        - 82f4385c-206e-41be-8eef-7bd898a04cb5
+        - ea936b73-f77a-40b7-9b1f-621866095c51
+      - name: player_near_attack
+        id: 82f4385c-206e-41be-8eef-7bd898a04cb5
+        position: {x: 538, y: 867}
+        node:
+          rid: 8421193840752066630
         references:
         - fieldName: Perception
           value:
-            rid: 8416304309263925334
+            rid: 8421193840752066631
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         parentIds:
-        - aa9fbd4e-da05-4ac9-8781-b7a25b45d214
+        - ea2fc6df-f491-444f-81b2-e0ccb663e3b5
         childIds:
         - 3dc3ab92-14f0-49a7-a888-4b4c0295df2b
     pushPerceptions: []
   references:
     version: 2
     RefIds:
-    - rid: 5703798107443822671
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: Desesperado
-          methodName: AccionIdle
-    - rid: 5703798107443822672
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: Desesperado
-          methodName: AccionAtaque
-    - rid: 5703798107443822674
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: Desesperado
-          methodName: AccionDivision
     - rid: 8416304309263925329
       type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
@@ -384,31 +368,6 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
-    - rid: 8416304309263925333
-      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8416304309263925334
-      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        init:
-          componentName: 
-          methodName: 
-        check:
-          componentName: Desesperado
-          methodName: JugadorEnRangoAtaque
-        reset:
-          componentName: 
-          methodName: 
-        pause:
-          componentName: 
-          methodName: 
-        unpause:
-          componentName: 
-          methodName: 
-    - rid: 8416304309698560095
-      type: {class: LoopNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        Iterations: -1
     - rid: 8416304309698560096
       type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -427,17 +386,15 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
+    - rid: 8416304313733480524
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: Desesperado
+          methodName: Die
     - rid: 8421193750035300352
       type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8421193750035300354
-      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        IsRandomized: 0
-    - rid: 8421193750035300355
-      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        IsRandomized: 0
     - rid: 8421193750035300358
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
@@ -450,3 +407,124 @@ MonoBehaviour:
     - rid: 8421193750035300363
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
+    - rid: 8421193839224291406
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 8421193839224291408
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 8421193840752066560
+      type: {class: LoopNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        Iterations: -1
+    - rid: 8421193840752066630
+      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8421193840752066631
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: Desesperado
+          methodName: JugadorEnRangoAtaque
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8421193840752066632
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: Desesperado
+          methodName: AccionAtaque
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8421193840752066634
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: Desesperado
+          methodName: AccionIdle
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+--- !u!114 &1896940216011190503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6792398194744548757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a361527cd365d44fab3216a8ad97f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 3
+  maxHealth: 3
+  moveSpeed: 1.5
+  detectionRange: 5
+  attackRange: 3
+  damage: 1
+  contactCooldown: 1
+  isDead: 0
+  canMove: 0
+  canAttack: 0
+  animator: {fileID: 0}
+  knockbackForce: {x: 2, y: 2}
+  flashDuration: 0.15
+  velocidadPersecucion: 2
+  desesperadoPequenoPrefab: {fileID: 1529164715400458354, guid: 680c419b25770a24dac783347fb6b1d0, type: 3}
+  damageAmount: 1
+  attackRadius: 1.5
+  damagePoint: 0.5
+--- !u!95 &1910327756796308802
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6792398194744548757}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d0e9a2b3c73b4264ea13ad6cfb06a78c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
