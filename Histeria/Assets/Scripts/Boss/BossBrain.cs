@@ -71,6 +71,17 @@ public class BossBrain : MonoBehaviour
         }
     }
 
+    public float GetDistanceToPlayer()
+    {
+        if (context != null)
+        {
+            // Debug para confirmar que se está llamando
+            Debug.Log($"UTILITY INPUT: Distancia enviada = {context.DistanceToPlayer}");
+            return context.DistanceToPlayer;
+        }
+        return 999f; // Si no hay contexto, decimos que está muy lejos para que no tire veneno
+    }
+
     // =================================================================================
     //                                ACCIÓN FASE FINAL
     // =================================================================================
