@@ -11,8 +11,11 @@ GameObject:
   - component: {fileID: 1421037044044046486}
   - component: {fileID: 3608276119445655083}
   - component: {fileID: 628095612626308657}
+  - component: {fileID: 6796481288382566153}
+  - component: {fileID: 5522035405492140812}
   - component: {fileID: 2552430125511831370}
-  - component: {fileID: 8478276625151023034}
+  - component: {fileID: 533380101013631166}
+  - component: {fileID: 1166198614801909010}
   m_Layer: 0
   m_Name: joven
   m_TagString: Untagged
@@ -30,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.34, y: 7.87, z: 0}
-  m_LocalScale: {x: 0.56867, y: 0.56867, z: 0.56867}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3374038501315448526}
@@ -113,6 +116,54 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6796481288382566153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433851905028143093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959e43f2880f2524f91de9bbf672e379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadBase: 10
+  multiplicadorSinergia: 2
+  rangoDeteccion: 5
+  rangoAtaque: 1
+  rangoSinergia: 3
+  radioPatrulla: 5
+  "da\xF1oAtaque": 1
+  cooldownAtaque: 2
+  anim: {fileID: 0}
+--- !u!50 &5522035405492140812
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433851905028143093}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &2552430125511831370
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -151,7 +202,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.375, y: 4.5}
+    oldSize: {x: 0.6875, y: 2.25}
     newSize: {x: 0.6875, y: 2.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -159,7 +210,512 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6875, y: 2.25}
   m_EdgeRadius: 0
---- !u!114 &8478276625151023034
+--- !u!114 &533380101013631166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433851905028143093}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeOnLoop: 1
+  interruptOptions: 0
+  _eventHandler:
+    debugStatusChanges: 0
+    identifier: 
+  data:
+    graphs:
+    - name: VaciosBT
+      id: fa4ab9be-fb26-4f42-b563-572ee985d068
+      graph:
+        rid: 5971310335700238610
+      nodes:
+      - name: LoopPrincipal
+        id: a977feb6-a627-4b55-9584-8c34230f8888
+        position: {x: 701.6, y: 232.79999}
+        node:
+          rid: 5971310335700238611
+        references: []
+        parentIds: []
+        childIds:
+        - 4ba4393b-627a-4cbf-a10e-22fc9f577f7d
+      - name: SecuenciaPrincipal
+        id: 4ba4393b-627a-4cbf-a10e-22fc9f577f7d
+        position: {x: 702.4, y: 376.8}
+        node:
+          rid: 5971310335700238612
+        references: []
+        parentIds:
+        - a977feb6-a627-4b55-9584-8c34230f8888
+        childIds:
+        - 01a11499-6406-40f0-92ab-a8193f641a9b
+        - 1ac4b101-2c85-489e-9920-d2bfad13581e
+        - 399b668f-41d6-4e0f-a99f-9c131a1c82c1
+      - name: SucceederSinergia
+        id: 01a11499-6406-40f0-92ab-a8193f641a9b
+        position: {x: 139.2, y: 533.60004}
+        node:
+          rid: 5971310335700238613
+        references: []
+        parentIds:
+        - 4ba4393b-627a-4cbf-a10e-22fc9f577f7d
+        childIds:
+        - d0f32b61-e99f-417b-8ce1-6f7330518e36
+      - name: SecuencerSinergia
+        id: d0f32b61-e99f-417b-8ce1-6f7330518e36
+        position: {x: 140, y: 685.60004}
+        node:
+          rid: 5971310335700238615
+        references: []
+        parentIds:
+        - 01a11499-6406-40f0-92ab-a8193f641a9b
+        childIds:
+        - cc59952f-2caf-4e95-a7b9-01896e43719e
+        - 96c50d72-53c0-49c4-8223-4229a80d6c61
+      - name: VacioCerca
+        id: cc59952f-2caf-4e95-a7b9-01896e43719e
+        position: {x: 53.6, y: 853.60004}
+        node:
+          rid: 5971310335700238616
+        references:
+        - fieldName: Action
+          value:
+            rid: 5971310358262448202
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - d0f32b61-e99f-417b-8ce1-6f7330518e36
+        childIds: []
+      - name: Sinergia
+        id: 96c50d72-53c0-49c4-8223-4229a80d6c61
+        position: {x: 268, y: 844.80005}
+        node:
+          rid: 5971310335700238617
+        references:
+        - fieldName: Action
+          value:
+            rid: 5971310335700238637
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - d0f32b61-e99f-417b-8ce1-6f7330518e36
+        childIds: []
+      - name: SucceederAtacar
+        id: 1ac4b101-2c85-489e-9920-d2bfad13581e
+        position: {x: 695.2, y: 532}
+        node:
+          rid: 5971310335700238619
+        references: []
+        parentIds:
+        - 4ba4393b-627a-4cbf-a10e-22fc9f577f7d
+        childIds:
+        - cc8f8bdd-5074-453b-8f80-6fb5cd2f4fdc
+      - name: SecuenciaAtacar
+        id: cc8f8bdd-5074-453b-8f80-6fb5cd2f4fdc
+        position: {x: 697.6, y: 686.4}
+        node:
+          rid: 5971310335700238620
+        references: []
+        parentIds:
+        - 1ac4b101-2c85-489e-9920-d2bfad13581e
+        childIds:
+        - 638291ef-bd20-4d74-9dde-fe29e48e8966
+        - 2a3bf0de-2688-4c2d-a314-d3850ac79eb1
+      - name: RangoAtaque
+        id: 638291ef-bd20-4d74-9dde-fe29e48e8966
+        position: {x: 560, y: 848.80005}
+        node:
+          rid: 5971310335700238621
+        references:
+        - fieldName: Action
+          value:
+            rid: 5971310358262448203
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - cc8f8bdd-5074-453b-8f80-6fb5cd2f4fdc
+        childIds: []
+      - name: Atacar
+        id: 2a3bf0de-2688-4c2d-a314-d3850ac79eb1
+        position: {x: 832, y: 849.60004}
+        node:
+          rid: 5971310335700238622
+        references:
+        - fieldName: Action
+          value:
+            rid: 5971310335700238638
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - cc8f8bdd-5074-453b-8f80-6fb5cd2f4fdc
+        childIds: []
+      - name: SelectorMovimiento
+        id: 399b668f-41d6-4e0f-a99f-9c131a1c82c1
+        position: {x: 1805.6, y: 543.2}
+        node:
+          rid: 5971310335700238624
+        references: []
+        parentIds:
+        - 4ba4393b-627a-4cbf-a10e-22fc9f577f7d
+        childIds:
+        - f21a7b70-b122-4831-9f1d-168573575a0d
+        - 0a9e7c95-c650-4e92-8053-1b0a0b7295ad
+        - 0f13f978-c796-480d-bec1-50343498e114
+      - name: SecuenciaDeteccion
+        id: f21a7b70-b122-4831-9f1d-168573575a0d
+        position: {x: 1245.6, y: 704.80005}
+        node:
+          rid: 5971310335700238625
+        references: []
+        parentIds:
+        - 399b668f-41d6-4e0f-a99f-9c131a1c82c1
+        childIds:
+        - ee718741-41b0-4156-80f1-d42dc4c73e4a
+        - 90e9ca22-8a21-4be8-8180-d025b078bb0b
+      - name: RangoDeteccion
+        id: ee718741-41b0-4156-80f1-d42dc4c73e4a
+        position: {x: 1117.6, y: 874.4}
+        node:
+          rid: 5971310335700238626
+        references:
+        - fieldName: Action
+          value:
+            rid: 5971310358262448204
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - f21a7b70-b122-4831-9f1d-168573575a0d
+        childIds: []
+      - name: SelectorPerseguir
+        id: 90e9ca22-8a21-4be8-8180-d025b078bb0b
+        position: {x: 1376, y: 856}
+        node:
+          rid: 5971310335700238628
+        references: []
+        parentIds:
+        - f21a7b70-b122-4831-9f1d-168573575a0d
+        childIds:
+        - c039cc9d-7599-4b97-a1a6-ea2b0641bafe
+        - 653db082-c4fc-4329-877e-980626f4fb1d
+      - name: SecuenciaIdle
+        id: c039cc9d-7599-4b97-a1a6-ea2b0641bafe
+        position: {x: 1252, y: 1018.4}
+        node:
+          rid: 5971310335700238629
+        references: []
+        parentIds:
+        - 90e9ca22-8a21-4be8-8180-d025b078bb0b
+        childIds:
+        - 3775af80-0d7a-4999-bc49-35bb09186b28
+        - 737670f8-164d-4685-a7c8-c5dbc3ce5c79
+      - name: JugadorMueve
+        id: 3775af80-0d7a-4999-bc49-35bb09186b28
+        position: {x: 1122.4, y: 1181.6}
+        node:
+          rid: 5971310335700238630
+        references:
+        - fieldName: Action
+          value:
+            rid: 5971310358262448205
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - c039cc9d-7599-4b97-a1a6-ea2b0641bafe
+        childIds: []
+      - name: Idle
+        id: 737670f8-164d-4685-a7c8-c5dbc3ce5c79
+        position: {x: 1383.2, y: 1185.6}
+        node:
+          rid: 5971310335700238631
+        references:
+        - fieldName: Action
+          value:
+            rid: 5971310335700238639
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - c039cc9d-7599-4b97-a1a6-ea2b0641bafe
+        childIds: []
+      - name: Perseguir
+        id: 653db082-c4fc-4329-877e-980626f4fb1d
+        position: {x: 1509.6, y: 1016.80005}
+        node:
+          rid: 5971310335700238632
+        references:
+        - fieldName: Action
+          value:
+            rid: 5971310335700238652
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 90e9ca22-8a21-4be8-8180-d025b078bb0b
+        childIds: []
+      - name: SecuenciaPatrullar
+        id: 0a9e7c95-c650-4e92-8053-1b0a0b7295ad
+        position: {x: 1805.6, y: 703.2}
+        node:
+          rid: 5971310335700238633
+        references: []
+        parentIds:
+        - 399b668f-41d6-4e0f-a99f-9c131a1c82c1
+        childIds:
+        - 1ebb77b7-5150-4545-83cb-0e4a23ccc5a8
+        - d1831b0c-e2e5-4700-b651-5c1245823779
+      - name: EstaEnOrigen
+        id: 1ebb77b7-5150-4545-83cb-0e4a23ccc5a8
+        position: {x: 1679.2, y: 858.4}
+        node:
+          rid: 5971310335700238634
+        references:
+        - fieldName: Action
+          value:
+            rid: 5971310358262448206
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 0a9e7c95-c650-4e92-8053-1b0a0b7295ad
+        childIds: []
+      - name: Patrullar
+        id: d1831b0c-e2e5-4700-b651-5c1245823779
+        position: {x: 1928.8, y: 858.4}
+        node:
+          rid: 5971310335700238635
+        references:
+        - fieldName: Action
+          value:
+            rid: 5971310335700238654
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 0a9e7c95-c650-4e92-8053-1b0a0b7295ad
+        childIds: []
+      - name: Volver
+        id: 0f13f978-c796-480d-bec1-50343498e114
+        position: {x: 2246.4, y: 714.4}
+        node:
+          rid: 5971310335700238636
+        references:
+        - fieldName: Action
+          value:
+            rid: 5971310335700238655
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 399b668f-41d6-4e0f-a99f-9c131a1c82c1
+        childIds: []
+    pushPerceptions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5971310335700238610
+      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310335700238611
+      type: {class: LoopNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        Iterations: -1
+    - rid: 5971310335700238612
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310335700238613
+      type: {class: SuccederNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310335700238615
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310335700238616
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310335700238617
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310335700238619
+      type: {class: SuccederNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310335700238620
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310335700238621
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310335700238622
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310335700238624
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310335700238625
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310335700238626
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310335700238628
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310335700238629
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310335700238630
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310335700238631
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310335700238632
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310335700238633
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 5971310335700238634
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310335700238635
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310335700238636
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 5971310335700238637
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: VacioController
+          methodName: AplicarSinergia
+    - rid: 5971310335700238638
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: VacioController
+          methodName: Atacar
+    - rid: 5971310335700238639
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: VacioController
+          methodName: Idle
+    - rid: 5971310335700238652
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: VacioController
+          methodName: Perseguir
+    - rid: 5971310335700238654
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: VacioController
+          methodName: Patrullar
+    - rid: 5971310335700238655
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: VacioController
+          methodName: VolverAOrigen
+    - rid: 5971310358262448202
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: VacioController
+          methodName: CheckVacioCerca
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 5971310358262448203
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: VacioController
+          methodName: CheckRangoAtaque
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 5971310358262448204
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: VacioController
+          methodName: CheckRangoDeteccion
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 5971310358262448205
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: VacioController
+          methodName: CheckJugadorMueve
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 5971310358262448206
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: VacioController
+          methodName: CheckPuedePatrullar
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+--- !u!114 &1166198614801909010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,11 +724,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 433851905028143093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc523877230b78e43a1e2892d931aaf3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1eb746c69f3e06a4a8cc15d341a95390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePrefab: {fileID: 8893074750125486884, guid: 1f2cf9821de373b47a99d9a197087a58, type: 3}
-  soloUnaVez: 1
+  executeOnLoop: 1
+  interruptOptions: 0
+  m_VacioController: {fileID: 6796481288382566153}
 --- !u!1 &7551078021879021136
 GameObject:
   m_ObjectHideFlags: 0
