@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Collar2
   m_EditorClassIdentifier: 
   itemName: Trozo de Collar
-  description: "\xA1Otro trozo del collar! \xBFSer\xE1 que tengo que encontrarlos
-    todos...?"
+  description: SOLAMENTE USAR PARA AVANZAR DE NIVEL
   icon: {fileID: -5172918413599513391, guid: b0b03253f1ab42f4ca8d33ad3531501a, type: 3}
   itemType: 1
   consumableData:

@@ -554,10 +554,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.0023923444
-    width: 1
-    height: 0.9954067
+    x: 0.3927711
+    y: 0
+    width: 0.90146303
+    height: 0.89721626
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -15786,6 +15786,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1139228368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1658239834712821598, guid: c1c776845278d3a418eb2c6cded81229, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 48.26444
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658239834712821598, guid: c1c776845278d3a418eb2c6cded81229, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.0943353
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658239834712821598, guid: c1c776845278d3a418eb2c6cded81229, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658239834712821598, guid: c1c776845278d3a418eb2c6cded81229, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658239834712821598, guid: c1c776845278d3a418eb2c6cded81229, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658239834712821598, guid: c1c776845278d3a418eb2c6cded81229, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658239834712821598, guid: c1c776845278d3a418eb2c6cded81229, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658239834712821598, guid: c1c776845278d3a418eb2c6cded81229, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658239834712821598, guid: c1c776845278d3a418eb2c6cded81229, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658239834712821598, guid: c1c776845278d3a418eb2c6cded81229, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394067301948519984, guid: c1c776845278d3a418eb2c6cded81229, type: 3}
+      propertyPath: m_Name
+      value: Collar4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1c776845278d3a418eb2c6cded81229, type: 3}
 --- !u!1 &1278460500
 GameObject:
   m_ObjectHideFlags: 0
@@ -18411,7 +18468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 10
-  currentHP: 0
+  currentHP: 10
   isInvulnerable: 0
   timeSinceLastDamage: 0
   actions: {fileID: 7457079641217972223}
@@ -19082,3 +19139,4 @@ SceneRoots:
   - {fileID: 7457079641217972204}
   - {fileID: 244903533}
   - {fileID: 954220926}
+  - {fileID: 1139228368}

@@ -66,10 +66,18 @@ public class MirrorBossBrain : EnemyBase
     {
         if (playerTransform != null && !isDead)
         {
+            // Si el jugador está a la derecha (x mayor)
             if (playerTransform.position.x > transform.position.x)
-                transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
-            else if (playerTransform.position.x < transform.position.x)
+            {
+                // Ponemos el signo MENOS delante del Abs para que mire a la IZQUIERDA
                 transform.localScale = new Vector3(-Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
+            }
+            // Si el jugador está a la izquierda (x menor)
+            else if (playerTransform.position.x < transform.position.x)
+            {
+                // Quitamos el signo menos para que mire a la DERECHA
+                transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
+            }
         }
     }
 

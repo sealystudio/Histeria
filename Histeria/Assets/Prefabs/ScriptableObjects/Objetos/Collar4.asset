@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Collar4
   m_EditorClassIdentifier: 
   itemName: Trozo de Collar
-  description: "\xDAltimo trozo... \xBFY ahora qu\xE9...?"
+  description: SOLAMENTE USAR PARA AVANZAR DE NIVEL
   icon: {fileID: -5172918413599513391, guid: b0b03253f1ab42f4ca8d33ad3531501a, type: 3}
   itemType: 1
   consumableData:

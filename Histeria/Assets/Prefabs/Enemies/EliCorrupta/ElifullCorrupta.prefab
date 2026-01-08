@@ -142,6 +142,7 @@ MonoBehaviour:
   animator: {fileID: 8943298083337417929}
   knockbackForce: {x: 2, y: 2}
   flashDuration: 0.15
+  rb: {fileID: 0}
   data: {fileID: 11400000, guid: 5d859d5398441b54d8917a0a9a516bbc, type: 2}
   crosshair: {fileID: 0}
   dashDuration: 0.15
