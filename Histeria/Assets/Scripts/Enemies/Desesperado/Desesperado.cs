@@ -58,6 +58,12 @@ public class Desesperado : EnemyBase
     {
         if (player == null) return StatusFlags.Failure;
 
+        if (anim != null)
+        {
+            anim.SetTrigger("Mover");
+        }
+
+
         if (JugadorEnRangoAtaque())
         {
             direccionMovimiento = Vector2.zero;
@@ -158,7 +164,9 @@ public class Desesperado : EnemyBase
 
         if (desesperadoPequenoPrefab != null)
         {
-            for (int i = 0; i < 2; i++)
+            int numToSpawn = Random.Range(2,5); 
+
+            for (int i = 0; i < numToSpawn; i++)
             {
                 Vector3 spawnOffset = new Vector3(
                     Random.Range(-0.5f, 0.5f),
