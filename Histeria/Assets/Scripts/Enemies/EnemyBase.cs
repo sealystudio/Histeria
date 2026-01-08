@@ -27,8 +27,8 @@ public abstract class EnemyBase : MonoBehaviour
     public Vector2 knockbackForce = new Vector2(2f, 2f);
     public float flashDuration = 0.15f;  // duración del parpadeo
     private SpriteRenderer spriteRenderer;
-    
-   private Rigidbody2D rb;
+
+    private Rigidbody2D rb;
 
     void Awake()
     {
@@ -46,7 +46,7 @@ public abstract class EnemyBase : MonoBehaviour
         }
     }
 
-    public virtual void InitializeStats(int health , float dT , Rigidbody2D rigid)
+    public virtual void InitializeStats(int health, float dT, Rigidbody2D rigid)
     {
         maxHealth = health;
         currentHealth = maxHealth;
@@ -82,7 +82,7 @@ public abstract class EnemyBase : MonoBehaviour
         if (animator != null)
             animator.SetTrigger("Hit");
 
-       
+
         // parpadeo visual
         if (spriteRenderer != null)
             StartCoroutine(FlashCoroutine());

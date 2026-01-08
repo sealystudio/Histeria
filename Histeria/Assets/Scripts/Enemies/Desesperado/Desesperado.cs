@@ -1,6 +1,5 @@
 using UnityEngine;
 using BehaviourAPI.Core;
-using System.Collections;
 
 public class Desesperado : EnemyBase
 {
@@ -8,11 +7,18 @@ public class Desesperado : EnemyBase
     public float velocidadPersecucion = 3f;
     public GameObject desesperadoPequenoPrefab;
 
+    [Header("Configuración de Daño")]
+    public int damageAmount = 1;
+    public float attackRadius = 1.5f;
+    [Range(0, 1)]
+    public float damagePoint = 0.5f;
+
     private GameObject player;
     private Rigidbody2D rb;
     private Vector2 direccionMovimiento;
     private bool yaSeDividio = false;
-
+    private bool yaHizoDañoEnEsteCiclo = false;
+    Animator anim;
 
     private void Awake()
     {
@@ -22,88 +28,128 @@ public class Desesperado : EnemyBase
 
     private void Start()
     {
-        // Inicializamos las stats directamente con las variables del Inspector de EnemyBase
         InitializeStats(maxHealth, detectionRange, rb);
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
         if (rb != null && !isDead)
         {
-            // Movimiento plano físico
             rb.linearVelocity = direccionMovimiento * moveSpeed;
         }
     }
 
-    // --- PERCEPCIONES (PULL) ---
+    // --- PERCEPCIONES ---
+    public bool Killed() => currentHealth <= 0;
+    public bool JugadorEnRango() => player != null && Vector2.Distance(transform.position, player.transform.position) < detectionRange;
+    public bool JugadorEnRangoAtaque() => player != null && Vector2.Distance(transform.position, player.transform.position) < attackRange;
 
-    public bool Killed()
-    {
-        return currentHealth <= 0 ;
-    }
+    // --- ACCIONES ---
 
-    public bool JugadorEnRango()
-    {
-        if (player == null) return false;
-        return Vector2.Distance(transform.position, player.transform.position) < detectionRange;
-    }
-
-    public bool JugadorEnRangoAtaque()
-    {
-        if (player == null) return false;
-        return Vector2.Distance(transform.position, player.transform.position) < attackRange;
-    }
-
-    // --- ACCIONES (STATUS FLAGS) ---
-
-    public void AccionIdle()
+    public StatusFlags AccionIdle()
     {
         direccionMovimiento = Vector2.zero;
-        
+        return !JugadorEnRango() ? StatusFlags.Running : StatusFlags.Failure;
     }
 
     public StatusFlags AccionPerseguir()
     {
-        if (animator != null)
-            animator.SetTrigger("Mover");
-
         if (player == null) return StatusFlags.Failure;
+
+        if (JugadorEnRangoAtaque())
+        {
+            direccionMovimiento = Vector2.zero;
+            return StatusFlags.Failure;
+        }
 
         direccionMovimiento = (player.transform.position - transform.position).normalized;
         moveSpeed = velocidadPersecucion;
-
-        if(JugadorEnRangoAtaque()) return StatusFlags.Failure;
-
         return JugadorEnRango() ? StatusFlags.Running : StatusFlags.Failure;
     }
 
-    public void AccionAtaque()
+    public StatusFlags AccionAtaque()
     {
         direccionMovimiento = Vector2.zero;
-        
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+        if (!stateInfo.IsName("Atacar") && !anim.IsInTransition(0))
+        {
+            anim.SetTrigger("Atacar");
+            yaHizoDañoEnEsteCiclo = false;
+            return StatusFlags.Running;
+        }
+
+        if (stateInfo.IsName("Atacar"))
+        {
+            if (stateInfo.normalizedTime >= damagePoint && !yaHizoDañoEnEsteCiclo)
+            {
+                EjecutarDeteccionDeDaño();
+                yaHizoDañoEnEsteCiclo = true;
+            }
+
+            if (stateInfo.normalizedTime < 1.0f) return StatusFlags.Running;
+        }
+
+        return StatusFlags.Success;
+    }
+
+    private void EjecutarDeteccionDeDaño()
+    {
+        Collider2D[] objectsHit = Physics2D.OverlapCircleAll(transform.position, attackRadius);
+
+        foreach (Collider2D hit in objectsHit)
+        {
+            if (hit.CompareTag("Player"))
+            {
+                var playerHealth = hit.GetComponentInParent<PlayerHealthHearts>();
+
+                if (playerHealth != null)
+                {
+                    Debug.Log("<color=green>[ÉXITO]</color> Daño aplicado a Eli.");
+                    playerHealth.TakeDamage(damageAmount);
+                }
+                break;
+            }
+        }
+    }
+    public void HacerDano()
+    {
+        float distancia = Vector2.Distance(transform.position, player.transform.position);
+        if (distancia <= 1.5f)
+        {
+            PlayerHealthHearts ph = player.GetComponent<PlayerHealthHearts>();
+            if (ph != null)
+            {
+                ph.TakeDamage();
+            }
+        }
     }
 
     public void AccionDivision()
     {
         if (yaSeDividio) return;
-
         if (desesperadoPequenoPrefab != null)
         {
-            for (int i = 0; i < 2; i++) // Se divide en 2 según el doc
+            for (int i = 0; i < 2; i++)
             {
                 Vector3 spawnOffset = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
                 Instantiate(desesperadoPequenoPrefab, transform.position + spawnOffset, Quaternion.identity);
             }
         }
-        
         yaSeDividio = true;
         Die();
-        }
+    }
 
     protected override void Die()
     {
-        direccionMovimiento = Vector2.zero;
         isDead = true;
         base.Die();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
 }
