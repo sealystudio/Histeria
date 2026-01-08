@@ -28,7 +28,7 @@ public abstract class EnemyBase : MonoBehaviour
     public float flashDuration = 0.15f;  // duración del parpadeo
     private SpriteRenderer spriteRenderer;
     
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     void Awake()
     {
