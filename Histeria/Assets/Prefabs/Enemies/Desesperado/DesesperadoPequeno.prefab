@@ -190,24 +190,13 @@ MonoBehaviour:
       nodes:
       - name: 
         id: 85791e79-6be0-4953-93d3-7f4f05d42f4a
-        position: {x: 639, y: 541}
+        position: {x: 664, y: 416.8}
         node:
           rid: 8421193840752066635
         references: []
         parentIds: []
         childIds:
-        - 9d421981-d5ff-4201-a656-fb9dcb56b21f
-      - name: main_sequence
-        id: 9d421981-d5ff-4201-a656-fb9dcb56b21f
-        position: {x: 679.2, y: 703.2}
-        node:
-          rid: 8416304309698560002
-        references: []
-        parentIds:
-        - 85791e79-6be0-4953-93d3-7f4f05d42f4a
-        childIds:
-        - 7fdc9d6d-10a9-464c-a973-c3636d84be6f
-        - 37a15f48-1a3e-4618-9452-88c2ad9f6598
+        - e1898cab-6484-4556-ac6c-1e3050230286
       - name: Kill
         id: 7b094ae5-3c02-4f99-91b9-e92c8a205c4a
         position: {x: 496, y: 1122.4}
@@ -248,7 +237,7 @@ MonoBehaviour:
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 9d421981-d5ff-4201-a656-fb9dcb56b21f
+        - e1898cab-6484-4556-ac6c-1e3050230286
         childIds:
         - 7b094ae5-3c02-4f99-91b9-e92c8a205c4a
       - name: Jugador a rango
@@ -263,9 +252,20 @@ MonoBehaviour:
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 9d421981-d5ff-4201-a656-fb9dcb56b21f
+        - e1898cab-6484-4556-ac6c-1e3050230286
         childIds:
         - c093a98c-e984-4d93-94a9-e46f083727a2
+      - name: main_sel
+        id: e1898cab-6484-4556-ac6c-1e3050230286
+        position: {x: 664.8, y: 674.4}
+        node:
+          rid: 8416304313733480532
+        references: []
+        parentIds:
+        - 85791e79-6be0-4953-93d3-7f4f05d42f4a
+        childIds:
+        - 7fdc9d6d-10a9-464c-a973-c3636d84be6f
+        - 37a15f48-1a3e-4618-9452-88c2ad9f6598
     pushPerceptions: []
   references:
     version: 2
@@ -276,10 +276,6 @@ MonoBehaviour:
     - rid: 8416304309698560001
       type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8416304309698560002
-      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        IsRandomized: 0
     - rid: 8416304309698560003
       type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -340,6 +336,10 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
+    - rid: 8416304313733480532
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
     - rid: 8421193766572130304
       type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 1
   maxHealth: 1
-  moveSpeed: 1
+  moveSpeed: 3
   detectionRange: 3
   attackRange: 0
   damage: 0

@@ -1,5 +1,6 @@
 using UnityEngine;
 using BehaviourAPI.Core;
+using System.Collections;
 
 public class Desesperado : EnemyBase
 {
@@ -125,27 +126,74 @@ public class Desesperado : EnemyBase
             }
         }
     }
+    /*
+    public void AccionDivision()
+    {
+        Debug.Log("DIVIDIÉNDOSE");
 
+        if (desesperadoPequenoPrefab == null)
+        {
+            Debug.LogError("Prefab NULL");
+            return;
+        }
+
+        for (int i = 0; i < 2; i++)
+        {
+            var go = Instantiate(
+                desesperadoPequenoPrefab,
+                transform.position,
+                Quaternion.identity
+            );
+
+            Debug.Log("Instanciado: " + go.name);
+        }
+
+        yaSeDividio = true;
+    }
+    */
+    
     public void AccionDivision()
     {
         if (yaSeDividio) return;
+
         if (desesperadoPequenoPrefab != null)
         {
             for (int i = 0; i < 2; i++)
             {
-                Vector3 spawnOffset = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
-                Instantiate(desesperadoPequenoPrefab, transform.position + spawnOffset, Quaternion.identity);
+                Vector3 spawnOffset = new Vector3(
+                    Random.Range(-0.5f, 0.5f),
+                    Random.Range(-0.5f, 0.5f),
+                    0
+                );
+
+                Instantiate(
+                    desesperadoPequenoPrefab,
+                    transform.position + spawnOffset,
+                    Quaternion.identity
+                );
             }
         }
+
         yaSeDividio = true;
-        Die();
     }
+   
 
     protected override void Die()
     {
+        if (!yaSeDividio)
+        {
+            AccionDivision();
+        }
+
         isDead = true;
+        StartCoroutine(DieDelayed());
+    }
+    private IEnumerator DieDelayed()
+    {
+        yield return null; // espera 1 frame
         base.Die();
     }
+
 
     private void OnDrawGizmosSelected()
     {

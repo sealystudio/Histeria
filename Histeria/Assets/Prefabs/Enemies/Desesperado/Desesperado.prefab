@@ -232,7 +232,7 @@ MonoBehaviour:
         references:
         - fieldName: Action
           value:
-            rid: 8421193840752066633
+            rid: 8416304313733480524
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -386,6 +386,12 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
+    - rid: 8416304313733480524
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: Desesperado
+          methodName: Die
     - rid: 8421193750035300352
       type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
@@ -443,24 +449,6 @@ MonoBehaviour:
         update:
           componentName: Desesperado
           methodName: AccionAtaque
-        stop:
-          componentName: 
-          methodName: 
-        pause:
-          componentName: 
-          methodName: 
-        unpause:
-          componentName: 
-          methodName: 
-    - rid: 8421193840752066633
-      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        start:
-          componentName: 
-          methodName: 
-        update:
-          componentName: Desesperado
-          methodName: AccionDivision
         stop:
           componentName: 
           methodName: 
