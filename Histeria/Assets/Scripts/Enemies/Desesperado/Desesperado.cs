@@ -39,7 +39,7 @@ public class Desesperado : EnemyBase
 
     public bool Killed()
     {
-        return currentHealth <= 0 || isDead;
+        return currentHealth <= 0 ;
     }
 
     public bool JugadorEnRango()
@@ -56,10 +56,10 @@ public class Desesperado : EnemyBase
 
     // --- ACCIONES (STATUS FLAGS) ---
 
-    public StatusFlags AccionIdle()
+    public void AccionIdle()
     {
         direccionMovimiento = Vector2.zero;
-        return StatusFlags.Success;
+        
     }
 
     public StatusFlags AccionPerseguir()
@@ -72,18 +72,20 @@ public class Desesperado : EnemyBase
         direccionMovimiento = (player.transform.position - transform.position).normalized;
         moveSpeed = velocidadPersecucion;
 
+        if(JugadorEnRangoAtaque()) return StatusFlags.Failure;
+
         return JugadorEnRango() ? StatusFlags.Running : StatusFlags.Failure;
     }
 
-    public StatusFlags AccionAtaque()
+    public void AccionAtaque()
     {
         direccionMovimiento = Vector2.zero;
-        return JugadorEnRangoAtaque() ? StatusFlags.Success : StatusFlags.Failure;
+        
     }
 
-    public StatusFlags AccionDivision()
+    public void AccionDivision()
     {
-        if (yaSeDividio) return StatusFlags.Success;
+        if (yaSeDividio) return;
 
         if (desesperadoPequenoPrefab != null)
         {
@@ -96,8 +98,7 @@ public class Desesperado : EnemyBase
         
         yaSeDividio = true;
         Die();
-        return StatusFlags.Success;
-    }
+        }
 
     protected override void Die()
     {

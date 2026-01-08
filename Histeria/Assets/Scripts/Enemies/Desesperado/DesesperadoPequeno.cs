@@ -44,11 +44,19 @@ public class DesesperadoPequeno : EnemyBase
 
     public StatusFlags AccionHuir()
     {
-        if (player == null) return StatusFlags.Failure;
+        if (player == null || !JugadorEnRango()) return StatusFlags.Failure;
 
         // Dirección opuesta al jugador
         direccionMovimiento = (transform.position - player.transform.position).normalized;
 
         return StatusFlags.Running;
+    }
+
+
+    protected override void Die()
+    {
+        direccionMovimiento = Vector2.zero;
+        isDead = true;
+        base.Die();
     }
 }

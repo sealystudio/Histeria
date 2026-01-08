@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7508860008413611425}
   - component: {fileID: 4099542129584833659}
   - component: {fileID: 8754559104386969564}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DesesperadoPequeno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,93 +190,166 @@ MonoBehaviour:
       nodes:
       - name: Loop Until Fail
         id: 3dcfe5c5-0987-4f92-968a-0b6a03eb0d9c
-        position: {x: 660, y: 218}
+        position: {x: 692, y: 435.19998}
         node:
           rid: 8421193766572130305
         references: []
         parentIds: []
         childIds:
-        - 1a7b9c1f-db23-4fc3-9f85-db8ba543e2e0
-      - name: 
-        id: 1a7b9c1f-db23-4fc3-9f85-db8ba543e2e0
-        position: {x: 667, y: 381}
-        node:
-          rid: 8421193766572130306
-        references: []
-        parentIds:
-        - 3dcfe5c5-0987-4f92-968a-0b6a03eb0d9c
-        childIds:
         - 1678176f-2b9c-4251-80b3-f93659bab503
-        - a8b7e073-6586-47ae-b4ac-f7a5a09a3d12
       - name: Inverter
         id: 1678176f-2b9c-4251-80b3-f93659bab503
-        position: {x: 513, y: 564}
+        position: {x: 676, y: 559.2}
         node:
           rid: 8421193766572130307
         references: []
         parentIds:
-        - 1a7b9c1f-db23-4fc3-9f85-db8ba543e2e0
+        - 3dcfe5c5-0987-4f92-968a-0b6a03eb0d9c
         childIds:
-        - 7b094ae5-3c02-4f99-91b9-e92c8a205c4a
-      - name: 
-        id: a8b7e073-6586-47ae-b4ac-f7a5a09a3d12
-        position: {x: 839, y: 572}
-        node:
-          rid: 8421193766572130308
-        references: []
-        parentIds:
-        - 1a7b9c1f-db23-4fc3-9f85-db8ba543e2e0
-        childIds:
-        - 28915853-8421-4905-9197-746d6b8c4959
-        - c093a98c-e984-4d93-94a9-e46f083727a2
-      - name: Killed ?
+        - 9d421981-d5ff-4201-a656-fb9dcb56b21f
+      - name: Kill
         id: 7b094ae5-3c02-4f99-91b9-e92c8a205c4a
-        position: {x: 511, y: 749}
+        position: {x: 496, y: 1122.4}
         node:
           rid: 8421193766572130309
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 8416304309698560004
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 1678176f-2b9c-4251-80b3-f93659bab503
-        childIds: []
-      - name: Player_near ?
-        id: 28915853-8421-4905-9197-746d6b8c4959
-        position: {x: 783, y: 757}
-        node:
-          rid: 8421193766572130310
-        references:
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - a8b7e073-6586-47ae-b4ac-f7a5a09a3d12
+        - 7fdc9d6d-10a9-464c-a973-c3636d84be6f
         childIds: []
       - name: Huir
         id: c093a98c-e984-4d93-94a9-e46f083727a2
-        position: {x: 1045, y: 765}
+        position: {x: 886.4, y: 1129.6}
         node:
           rid: 8421193766572130311
         references:
         - fieldName: Action
           value:
-            rid: -2
+            rid: 8416304309698560003
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - a8b7e073-6586-47ae-b4ac-f7a5a09a3d12
+        - 37a15f48-1a3e-4618-9452-88c2ad9f6598
         childIds: []
+      - name: killed?
+        id: 7fdc9d6d-10a9-464c-a973-c3636d84be6f
+        position: {x: 480, y: 941.60004}
+        node:
+          rid: 8416304309698560000
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8416304309698560005
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 9d421981-d5ff-4201-a656-fb9dcb56b21f
+        childIds:
+        - 7b094ae5-3c02-4f99-91b9-e92c8a205c4a
+      - name: Jugador a rango
+        id: 37a15f48-1a3e-4618-9452-88c2ad9f6598
+        position: {x: 883.2, y: 957.6}
+        node:
+          rid: 8416304309698560001
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8416304309698560006
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 9d421981-d5ff-4201-a656-fb9dcb56b21f
+        childIds:
+        - c093a98c-e984-4d93-94a9-e46f083727a2
+      - name: main_sequence
+        id: 9d421981-d5ff-4201-a656-fb9dcb56b21f
+        position: {x: 679.2, y: 703.2}
+        node:
+          rid: 8416304309698560002
+        references: []
+        parentIds:
+        - 1678176f-2b9c-4251-80b3-f93659bab503
+        childIds:
+        - 7fdc9d6d-10a9-464c-a973-c3636d84be6f
+        - 37a15f48-1a3e-4618-9452-88c2ad9f6598
     pushPerceptions: []
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 8416304309698560000
+      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8416304309698560001
+      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8416304309698560002
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 8416304309698560003
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: DesesperadoPequeno
+          methodName: AccionHuir
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8416304309698560004
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: DesesperadoPequeno
+          methodName: Die
+    - rid: 8416304309698560005
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: DesesperadoPequeno
+          methodName: Killed
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8416304309698560006
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: DesesperadoPequeno
+          methodName: JugadorEnRango
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
     - rid: 8421193766572130304
       type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
@@ -285,21 +358,10 @@ MonoBehaviour:
       data:
         TargetStatus: 2
         MaxIterations: -1
-    - rid: 8421193766572130306
-      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        IsRandomized: 0
     - rid: 8421193766572130307
       type: {class: InverterNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8421193766572130308
-      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        IsRandomized: 0
     - rid: 8421193766572130309
-      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8421193766572130310
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
     - rid: 8421193766572130311
