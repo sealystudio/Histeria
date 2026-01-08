@@ -115,6 +115,7 @@ public class EliCorrupta : EnemyBase
         StartCoroutine(CooldownDisparo());
     }
 
+<<<<<<< HEAD
     
     private float nextShootTime = 0f;
 
@@ -146,6 +147,9 @@ public class EliCorrupta : EnemyBase
 
 
     public void Punch()
+=======
+    /*public void Punch()
+>>>>>>> origin/Sergio
     {
        
 
@@ -154,8 +158,35 @@ public class EliCorrupta : EnemyBase
         // Detecta todo lo que esté en el rango del puño
         Collider2D[] hits = Physics2D.OverlapCircleAll(attackPos, punchRange);
 
+<<<<<<< HEAD
         eliNormal.parent.GetComponent<PlayerHealthHearts>()?.TakeDamage(punchDamage);
     }
+=======
+        foreach (var hit in hits)
+        {
+            SombraAbandono sombra = hit.GetComponent<SombraAbandono>();
+            if (sombra != null)
+            {
+                // sombra.TakeDamageFromLight(1); 
+            }
+
+            BossController boss = hit.GetComponent<BossController>();
+
+            if (boss == null) boss = hit.GetComponentInParent<BossController>();
+
+            if (boss != null)
+            {
+                boss.TakeDamage(punchDamage);
+            }
+
+            MinionAI minion = hit.GetComponent<MinionAI>();
+            if (minion != null)
+            {
+                minion.TakeDamage(punchDamage);
+            }
+        }
+    }*/
+>>>>>>> origin/Sergio
 
     public void CargarAtaqueArea()
     {

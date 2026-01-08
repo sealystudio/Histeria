@@ -510,7 +510,7 @@ MonoBehaviour:
         childIds: []
       - name: luz
         id: 0acafc25-868c-4f7b-a76c-d2833a3bbffa
-        position: {x: 444, y: 592}
+        position: {x: 460.8, y: 608}
         node:
           rid: 5876995672795775063
         references:
@@ -525,7 +525,7 @@ MonoBehaviour:
         - 6a863306-7769-4e7f-a91e-88a5ff04e1d2
       - name: moverseALuz
         id: 6a863306-7769-4e7f-a91e-88a5ff04e1d2
-        position: {x: 451, y: 807}
+        position: {x: 466.4, y: 823.2}
         node:
           rid: 5876995672795775064
         references:
@@ -553,7 +553,7 @@ MonoBehaviour:
         childIds: []
       - name: idle
         id: 0f1f8a98-87e2-4c70-be06-e25ec3063798
-        position: {x: 980, y: 589}
+        position: {x: 996.8, y: 604.80005}
         node:
           rid: 5876995672795775066
         references:
