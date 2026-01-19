@@ -15053,6 +15053,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: canvasMobile
       objectReference: {fileID: 0}
+    - target: {fileID: 3263172617668383529, guid: 32a85433818b9b34ba3244e87e331a3a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4630468780461283176, guid: 32a85433818b9b34ba3244e87e331a3a, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -15099,7 +15103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5803737448125016315, guid: 32a85433818b9b34ba3244e87e331a3a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.1869373
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5803737448125016315, guid: 32a85433818b9b34ba3244e87e331a3a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15107,23 +15111,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5803737448125016315, guid: 32a85433818b9b34ba3244e87e331a3a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5803737448125016315, guid: 32a85433818b9b34ba3244e87e331a3a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5803737448125016315, guid: 32a85433818b9b34ba3244e87e331a3a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5803737448125016315, guid: 32a85433818b9b34ba3244e87e331a3a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 344.32678
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5803737448125016315, guid: 32a85433818b9b34ba3244e87e331a3a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 191.31656
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5803737448125016315, guid: 32a85433818b9b34ba3244e87e331a3a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -17253,9 +17257,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.5294409
-    width: 0.3379694
-    height: 0.33666503
+    y: 0.0024119634
+    width: 1
+    height: 0.9954655
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34

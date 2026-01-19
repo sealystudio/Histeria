@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TransicionNivel4.unity
     guid: 360cf55242023244db13ef2c6015bbf9
+  - enabled: 1
+    path: Assets/Scenes/Epilogo.unity
+    guid: 608f00038cfca784d9476a9960f3eecb
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

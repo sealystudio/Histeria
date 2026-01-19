@@ -24,7 +24,6 @@ public class LevelManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // si quieres que persista entre escenas
         }
         else
         {
